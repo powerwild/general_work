@@ -8,44 +8,37 @@ The function returned by countDownTimer can then be invoked n times before it
 returns a string of "Happy New Year!". Look closely at how this function is
 invoked below:
 
-Example 1:
-  console.log(countDownTimer(0)); // prints "Happy New Year!"
 
-Example 3:
-  let oneDay = countDownTimer(1); // returns a function
-  console.log(oneDay()); // prints "Happy New Year!"
+console.log(countDownTimer(0)); // prints "Happy New Year!"
 
-Example 3:
-  let twoDays = countDownTimer(2); // returns a function
-  console.log(twoDays()); // returns a function
-  console.log(twoDays()); // prints "Happy New Year!"
+let oneDay = countDownTimer(1); // returns a function
+console.log(oneDay()); // prints "Happy New Year!"
 
-Example 4:
+
+let twoDays = countDownTimer(2); // returns a function
+console.log(twoDays()); // returns a function
+console.log(twoDays()); // prints "Happy New Year!"
+
 
 ***********************************************************************/
 
 function countDownTimer(n){
-  if (n === 0) return 'Happy New Year!'
-  if (n > 0){
-  return function(){
-      n -= 1;
-      return n;
-    }
-  }
+  let count = n;
+  return function counter() {
+    count--;
+    if (count === 0) {
+    return console.log("Happy New Year!");
+      };
+    if (count > 0) return counter;
+  };
 };
-// function countDownTimer(n){
-//   if (n >= 0){
-//     let count = () => {
-//       n -= 1;
-//       if (n === 0) return 'Happy New Year!';
-//     }; else return count;
-//   };
-// };
 
 let threeDays = countDownTimer(3); // returns a function
+console.log(threeDays);
 console.log(threeDays()); // returns a function
 console.log(threeDays()); // returns a function
-console.log(threeDays()); // prints "Happy New Year!"
+console.log(threeDays()); // prints "Happy New Year!
+
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {
