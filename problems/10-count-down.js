@@ -24,23 +24,20 @@ Example 4:
 
 ***********************************************************************/
 
-// function countDownTimer(n){
-//   if (n > 0){
-//     return function(){
-//       n -= 1;
-//       console.log(n);
-//     };
-//   }
-//   if (n === 0) return 'Happy New Year!';
-// };
 function countDownTimer(n){
-  if (n >= 0){
-    let count = () => {
+  if (n === 0) return console.log('Happy New Year!');
+    return function(){
       n -= 1;
-      if (n === 0) return 'Happy New Year!';
-    }; else return count;
-  };
+    };
 };
+// function countDownTimer(n){
+//   if (n >= 0){
+//     let count = () => {
+//       n -= 1;
+//       if (n === 0) return 'Happy New Year!';
+//     }; else return count;
+//   };
+// };
 
 let threeDays = countDownTimer(3); // returns a function
 console.log(threeDays()); // returns a function
