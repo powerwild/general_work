@@ -25,8 +25,8 @@ Example 4:
 ***********************************************************************/
 
 function countDownTimer(n){
-  if (n === 0) return console.log('Happy New Year!');
-    return function(){
+  return function(){
+      if (n === 0) return console.log('Happy New Year!');
       n -= 1;
     };
 };
