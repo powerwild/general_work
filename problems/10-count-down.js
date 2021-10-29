@@ -9,27 +9,41 @@ returns a string of "Happy New Year!". Look closely at how this function is
 invoked below:
 
 
-console.log(countDownTimer(0)); // prints "Happy New Year!"
-
-let oneDay = countDownTimer(1); // returns a function
-console.log(oneDay()); // prints "Happy New Year!"
-
-
-let twoDays = countDownTimer(2); // returns a function
-console.log(twoDays()); // returns a function
-console.log(twoDays()); // prints "Happy New Year!"
 
 
 ***********************************************************************/
 
-function countDownTimer(n){
-  let count = n;
-  return function counter(){
-    count -= 1;
-    if (count === 0) return "Happy New Year!";
-    if (count > 0) return counter;
+// function countDownTimer(n) {
+//   let count = Math.abs(n);
+//   return function counter() {
+//     if (count === 0) return console.log("Happy New Year!");
+//     count -= 1;
+//     return counter;
+//   }
+// };
+function countDownTimer(num) {
+  if (num === 0) return 'Happy New Year!';
+  const _count = () => {
+    num -= 1;
+    if (num <= 0) {
+      return 'Happy New Year!';
+    } else {
+      return _count;
+    }
   };
-};
+  return _count;
+}
+console.log(countDownTimer(0)); // prints "Happy New Year!"
+
+let oneDay = countDownTimer(1); // returns a function
+console.log(oneDay);
+console.log(oneDay()); // prints "Happy New Year!"
+
+
+let twoDays = countDownTimer(2); // returns a function
+console.log(twoDays);
+console.log(twoDays()); // returns a function
+console.log(twoDays()); // prints "Happy New Year!"
 
 let threeDays = countDownTimer(3); // returns a function
 console.log(threeDays);
