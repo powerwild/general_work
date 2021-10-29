@@ -20,24 +20,22 @@ console.log(twoDays()); // returns a function
 console.log(twoDays()); // prints "Happy New Year!"
 
 
-***********************************************************************/
-
-function countDownTimer(n){
-  let count = n;
-  return function counter() {
-    count--;
-    if (count === 0) {
-    return console.log("Happy New Year!");
-      };
-    if (count > 0) return counter;
-  };
-};
-
 let threeDays = countDownTimer(3); // returns a function
 console.log(threeDays);
 console.log(threeDays()); // returns a function
 console.log(threeDays()); // returns a function
 console.log(threeDays()); // prints "Happy New Year!
+***********************************************************************/
+
+function countDownTimer(n){
+  if (n === 0) return "Happy New Year!";
+  if (n > 0) counter();
+  function counter(){
+    n -= 1;
+  };
+  return counter;
+};
+
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
