@@ -25,10 +25,13 @@ Example 4:
 ***********************************************************************/
 
 function countDownTimer(n){
+  if (n === 0) return 'Happy New Year!'
+  if (n > 0){
   return function(){
-      if (n === 0) return console.log('Happy New Year!');
       n -= 1;
-    };
+      return n;
+    }
+  }
 };
 // function countDownTimer(n){
 //   if (n >= 0){
