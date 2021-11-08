@@ -42,7 +42,30 @@ AFTER YOU ARE FINISHED WITH THIS PROBLEM, ASK FOR A CODE REVIEW
   be useful
 ***********************************************************************/
 
-// your code here
+
+
+
+
+
+
+
+
+
+function curriedSum(count, nums = []){
+  if (nums.length === count){
+    return nums.reduce((accum, num) => accum + num);
+  }
+  return (number) => {
+    nums.push(number);
+    return curriedSum(count, nums);
+  }
+};
+const sum = curriedSum(4); // returns a function
+console.log(sum(5), // returns a function
+sum(20), // returns a function
+sum(30), // returns a function
+sum(20), // => returns 75
+curriedSum(3)(2)(1)(7)) // => returns 10
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
