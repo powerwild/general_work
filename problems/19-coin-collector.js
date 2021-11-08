@@ -25,7 +25,24 @@ Example 3:
 
 ***********************************************************************/
 
-// your code here
+
+
+
+
+
+
+
+
+
+function coinCollector(numCoins){
+  let coinArr = [];
+  return (coin) => {
+    coinArr.push(coin);
+    numCoins -= 1;
+    if (!numCoins) return coinArr;
+    return coinCollector;
+  };
+};
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
