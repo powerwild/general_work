@@ -1,3 +1,6 @@
 module.exports = function reverseString(string) {
-  // Your code here
+  if (typeof string !== 'string'){
+    throw Error("Please input a string");
+  }
+  return string.split('').reverse().join('');
 };

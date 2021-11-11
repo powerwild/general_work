@@ -1,9 +1,10 @@
 function returnsThree() {
-  // Your code here
+  return 3;
 }
 
 function reciprocal(n) {
-  // Your code here
+  if (typeof n !== 'number') console.log('Please input a number');
+  return 1 / n;
 }
 
 module.exports = {
