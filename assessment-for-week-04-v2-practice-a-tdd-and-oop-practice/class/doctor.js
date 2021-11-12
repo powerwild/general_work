@@ -20,14 +20,5 @@ class Doctor extends User {
         this.insurance = this.insurance.filter(el => el !== str);
     }
 }
-let me = new Doctor('Casey', 04, 06, 1991);
-console.log(me.getBirthday());
-console.log(me.getAge());
-console.log(me.acceptsInsurance('BNL'));
-console.log(me.addInsurance('BNL'));
-console.log(me.insurance);
-console.log(me.acceptsInsurance('BNL'));
-console.log(me.removeInsurance('BNL'));
-console.log(me.insurance);
-console.log(me.acceptsInsurance('BNL'));
+
 module.exports = Doctor;

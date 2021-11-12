@@ -2,7 +2,7 @@ const { expect } = require('chai');
 
 const User = require("../class/user.js");
 const Doctor = require("../class/doctor.js");
-// const Patient = require("../class/patient.js");
+const Patient = require("../class/patient.js");
 
 // const [Appointment, AppointmentError] = require("../class/appointment.js");
 

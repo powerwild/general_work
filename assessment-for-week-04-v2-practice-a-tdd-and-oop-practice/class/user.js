@@ -11,13 +11,5 @@ class User {
 
 };
 
-let me = new User('Casey', 04, 06, 1991);
-console.log(me.name);
-console.log(me.birthdate);
-console.log(me.getBirthday());
-console.log(me.getAge());
-console.log();
-console.log();
-console.log();
-console.log();
+
 module.exports = User;
