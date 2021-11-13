@@ -5,19 +5,18 @@ class Doctor extends User {
         super(name, month, day, year);
         this.name = name;
         this.birthdate = new Date(year, month - 1, day);
-        this.insurance = [];
+        this.insurance = null;
+        this.docApps = [];
     }
     addInsurance = (str) => {
-        this.insurance.push(str);
+        this.insurance = str;
     }
     acceptsInsurance = (str) => {
-        for (let i = 0; i < this.insurance.length; i++){
-            if (str === this.insurance[i]) return true;
-        }
+            if (str === this.insurance) return true;
         return false;
     }
-    removeInsurance = (str) => {
-        this.insurance = this.insurance.filter(el => el !== str);
+    removeInsurance = () => {
+        this.insurance = null;
     }
 }
 
