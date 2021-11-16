@@ -1,22 +1,21 @@
 class DynamicArray {
 
-  constructor(defaultSize=4) {
-
-    // Fill this out
-
+  constructor(capacity) {
+    this.capacity = capacity || 4;
+    this.data = new Array(this.capacity);
+    this.length = 0;
   }
 
   read(index) {
-
-    // Fill this out
-    // You may not use any built-in JS array functions
+    return this.data[index];
   }
 
   unshift(val) {
-
-    // Fill this out
-    // You may not use any built-in JS array functions
-
+    for (let i = this.capacity - 1; i > 0; i--){
+      this.data[i] = this.data[i - 1];
+    }
+    this.data[0] = val;
+    this.length += 1;
   }
 
 }
