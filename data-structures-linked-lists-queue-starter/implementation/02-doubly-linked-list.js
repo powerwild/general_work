@@ -15,52 +15,59 @@ class DoublyLinkedList {
     }
 
     addToHead(val) {
-        // There are bugs in this method! Fix them!!!
-        // Write your hypothesis on the time complexity of this method here
+        let node = new DoublyLinkedNode(val);
 
-        // Add node of val to head of linked list
-        let newNode = new DoublyLinkedNode(val);
-
-        if (this.length >= 0) {
-            this.head.previous = newNode;
-            newNode.next = this.head;
-            this.head = newNode;
+        if (this.tail) {
+            this.head.prev = node;
+            node.next = this.head;
+            this.head = node;
         } else {
-            this.head = newNode;
-            this.tail = newNode;
+            this.head = node;
+            this.tail = node;
         }
 
         this.length++;
     }
 
     addToTail(val) {
-        // Add node of val to tail of linked list
-
-        // Write your hypothesis on the time complexity of this method here
+        const node = new DoublyLinkedNode(val);
+        if (!this.length){
+            this.head = node;
+            this.tail = node;
+        } else {
+            this.tail.next = node;
+            node.prev = this.tail;
+            this.tail = node;
+        }
+        this.length++;
     }
 
     removeFromHead() {
-        // Remove node at head
-
-        // Write your hypothesis on the time complexity of this method here
+        if (!this.head) return undefined;
+        let bad = this.head;
+        this.head = this.head.next;
+        if (this.head) this.head.prev = null;
+        this.length--;
+        return bad.value;
     }
 
     removeFromTail() {
-        // Remove node at tail
-
-        // Write your hypothesis on the time complexity of this method here
+        if (!this.head) return undefined;
+        let badTail = this.tail;
+        this.tail = this.tail.prev;
+        if (this.tail) this.tail.next = null;
+        this.length--;
+        return badTail.value;
     }
 
     peekAtHead() {
-        // Return value of head node
-
-        // Write your hypothesis on the time complexity of this method here
+        if (!this.head) return undefined;
+        return this.head.value;
     }
 
     peekAtTail() {
-        // Return value of tail node
-        
-        // Write your hypothesis on the time complexity of this method here
+        if(!this.head) return undefined;
+        return this.tail.value;
     }
 }
 
