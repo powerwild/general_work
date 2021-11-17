@@ -88,25 +88,24 @@ class Queue {
 const dll = new LinkedList();
 let n = 10000;
 let a = Date.now();
-for (let i = 1; i < n; i++){
+for (let i = 1; i <= n; i++){
   dll.addToHead(i);
 }
 let b = Date.now();
 console.log(b - a);
-
-for (let i = 1; i < n; i++){
+for (let i = 1; i <= n; i++){
   dll.removeFromHead();
 }
 let c = Date.now();
 console.log(c - b);
 
-for (let i = 1; i < n; i++){
+for (let i = 1; i <= n; i++){
   dll.addToTail(i);
 }
 let d = Date.now();
 console.log(d - c);
 
-for (let i = 1; i < n; i++){
+for (let i = 1; i <= n; i++){
   dll.removeFromTail();
 }
 let e = Date.now();
