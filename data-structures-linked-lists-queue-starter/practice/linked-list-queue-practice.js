@@ -31,7 +31,7 @@ class SinglyLinkedList {
 
     listLength() {
         // Returns the length of the list
-        // Implement in O(n) and in O(1) time complexity
+        // Implement in O(n) and in O(1) time complexit
     }
 
     sumOfNodes() {

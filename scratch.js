@@ -85,45 +85,46 @@ class Queue {
     }
 
   }
-const dll = new LinkedList();
-let n = 10000;
-let a = Date.now();
-for (let i = 1; i <= n; i++){
-  dll.addToHead(i);
-}
-let b = Date.now();
-console.log(b - a);
-for (let i = 1; i <= n; i++){
-  dll.removeFromHead();
-}
-let c = Date.now();
-console.log(c - b);
+// const dll = new LinkedList();
+// let n = 10000;
+// let a = Date.now();
+// for (let i = 1; i <= n; i++){
+//   dll.addToHead(i);
+// }
+// let b = Date.now();
+// console.log(b - a);
+// for (let i = 1; i <= n; i++){
+//   dll.removeFromHead();
+// }
+// let c = Date.now();
+// console.log(c - b);
 
-for (let i = 1; i <= n; i++){
-  dll.addToTail(i);
-}
-let d = Date.now();
-console.log(d - c);
+// for (let i = 1; i <= n; i++){
+//   dll.addToTail(i);
+// }
+// let d = Date.now();
+// console.log(d - c);
 
-for (let i = 1; i <= n; i++){
-  dll.removeFromTail();
-}
-let e = Date.now();
-console.log(e - d);
-q = new Queue();
-n = 100000
+// for (let i = 1; i <= n; i++){
+//   dll.removeFromTail();
+// }
+// let e = Date.now();
+// console.log(e - d);
+// q = new Queue();
+// n = 100000
 
-enqueueStartTime = Date.now();
-for (let i = 0 ; i < n ; i++) {
-  q.enqueue(i);
-}
-enqueueEndTime = Date.now();
+// enqueueStartTime = Date.now();
+// for (let i = 0 ; i < n ; i++) {
+//   q.enqueue(i);
+// }
+// enqueueEndTime = Date.now();
 
-dequeueStartTime = Date.now();
-for (let i = 0 ; i < n ; i++) {
-  q.dequeue();
-}
-dequeueEndTime = Date.now();
+// dequeueStartTime = Date.now();
+// for (let i = 0 ; i < n ; i++) {
+//   q.dequeue();
+// }
+// dequeueEndTime = Date.now();
 
-console.log(`Enqueue time: ${enqueueEndTime - enqueueStartTime}ms`);
-console.log(`Dequeue time: ${dequeueEndTime - dequeueStartTime}ms`);
+// console.log(`Enqueue time: ${enqueueEndTime - enqueueStartTime}ms`);
+// console.log(`Dequeue time: ${dequeueEndTime - dequeueStartTime}ms`);
+
