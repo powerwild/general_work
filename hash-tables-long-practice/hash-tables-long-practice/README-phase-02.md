@@ -66,8 +66,8 @@ the specified pattern. Solve this in `O(n)` time.
 Example:
 
 ```js
-wordPattern("ABBA", ['dog', 'cat', 'cat', 'dog']);     // => true
-wordPattern("ABBA", ['dog', 'dog', 'dog', 'dog']);     // => false
+wordPattern("AABB", ['dog', 'cat', 'cat', 'dog']);     // => true
+wordPattern("BABA", ['dog', 'dog', 'dog', 'dog']);     // => false
 wordPattern("AAAA", ['dog', 'dog', 'dog', 'dog']);     // => true
 wordPattern("ABCD", ['dog', 'cat', 'dog', 'cat']);     // => false
 ```

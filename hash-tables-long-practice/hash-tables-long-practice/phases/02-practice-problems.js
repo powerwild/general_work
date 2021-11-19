@@ -15,22 +15,29 @@ function commonElements(arr1, arr2) {
 
 
 function duplicate(arr) {
-
-
+    let set = new Set();
+    for (let i = 0; i < arr.length; i++) {
+        if (set.has(arr[i])) return arr[i];
+        set.add(arr[i]);
+    }
 }
 
 
 function twoSum(nums, target) {
-
-    // Fill this in
-
+    let set = new Set(nums);
+    for (let i = 0; i < nums.length; i++) {
+        if (set.has(target - nums[i]) && nums[i] !== target / 2) return true;
+    }
+    return false;
 }
 
-
 function wordPattern(pattern, strings) {
-
-    // Fill this in
-
+    if (new Set(pattern.split('')).size !== new Set(strings).size) return false;
+    for (let i = 0; i < strings.length - 1; i++) {
+        if (pattern[i] === pattern[i + 1] && strings[i] !== strings[i + 1]) return false;
+        if (pattern[i] !== pattern[i + 1] && strings[i] === strings[i + 1]) return false;
+    }
+    return true;
 }
 
 
