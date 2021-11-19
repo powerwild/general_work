@@ -50,7 +50,7 @@ operations and optimize them to be `O(1)`.
 
 ## Number sorter
 
-You are given a class called `NumSorter` which stores an ordered list of
+You are given a class called `NumSorter` which stores an ordered list o
 numbers, and a collection of allowed numbers. You can add allowed numbers to
 the list, and retrieve them in the order they were added. You cannot add a
 number to the list that is not allowed.
