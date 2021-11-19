@@ -1,0 +1,100 @@
+function logBetween (lowNum, highNum) {
+    let = arr = [];
+    if (typeof lowNum === 'number' && typeof highNum === 'number'){
+        for (let i = lowNum; i <= highNum; i++) {
+        arr.push(i);
+        }
+    }
+    return arr;
+    //return an array of all numbers between low and high
+}
+******************************************************************************
+printReverse
+Write a function printReverse(min, max) that returns an array of all numbers from max to min (exclusive), in reverse order.
+//write a function that takes a min and max
+// create an array and fill it with numbers from max to min exclusively
+//return the array
+const printReverse(min, max) {
+    let arr = [];
+    if (typeof min === 'number' && typeof max === 'number'){
+        for (let i = max - 1; i > min; i--) {
+        arr.push(i);
+        }
+    }
+    return arr;
+}
+Examples:
+printReverse(13, 18) // => [17, 16, 15, 14]
+printReverse(90, 94) // => [93, 92, 91]
+***************************************************************************
+isPrime
+Define a function isPrime(number) that returns true if number is prime. Otherwise, false. Assume number is a positive integer.
+//write a function that tests if a num is prime
+const isPrime(number) {
+    if (typeof number !== 'number') return `Not a number.';
+    if (number <= 1) return false;
+    for (let i = 2; i < number; i++) {
+        if (number % i === 0) return false;
+    }
+    return true;
+}
+Examples:
+isPrime(2);  // => true
+isPrime(10);  // => false
+isPrime(11);  // => true
+isPrime(9);  // => false
+isPrime(2017);  // => true
+****************************************************************************************
+myIndexOf
+Write a function myIndexOf(array, target) that takes in an array of numbers and a target number as arguments. It should return the index value of the target if it is present in the array or -1 if it is not present.
+CONSTRAINT: Do not use the indexOf or includes method
+//write a function that takes an array and a target number
+// returns index of target if present in the array
+//returns -1 if not present
+
+const myIndexOf(arr, target) {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === target) return i;
+    }
+    return -1;
+}
+Examples:
+myIndexOf([1,2,3,4],4); // => 3
+myIndexOf([5,6,7,8],2); // => -1
+*********************************************************************************************
+oddRange
+Write a function oddRange(end) that takes in a number and returns an array containing all positive odd numbers up to end.
+//write a function that take in a max value
+//create empty array
+//push numbers lower than or equal to max that are odd integers
+//return array
+const oddRange(end) {
+    let arr = [];
+    for (let i = 1; i <= end; i++) {
+        if (arr[i] % 2 !== 0) arr.push(i);
+    }
+    return arr;
+}
+Examples:
+oddRange(13);  // => [ 1, 3, 5, 7, 9, 11, 13 ]
+oddRange(6);  // => [ 1, 3, 5 ]
+**********************************************************************************************
+intersect
+Write a function intersect(arr1, arr2) that takes in two arrays and returns a new array containing the elements common to both arr1 and arr2.
+//write a function that takes in two arrays
+//create an empty array
+//push elements that are in both arrays into new empty array
+//return array of common elements
+function intersect(arr1, arr2, arr = []) {
+    if (!arr2.length) return arr;
+    for (let i = 0; i < arr1.length; i++) {
+        if (arr2[arr2.length - 1] === arr1[i]) arr.push(arr1[i]);
+    }
+    arr2.pop();
+    return intersect(arr1, arr2, arr);
+}
+                                    //use set.has()
+Examples:
+intersect(['a', 'b', 'c', 'd'], ['b', 'd', 'e']) // => [ 'b', 'd' ]
+intersect(['a', 'b', 'c'], ['x', 'y', 'z']) // => []
+******************************************************************************************
