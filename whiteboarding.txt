@@ -30,8 +30,8 @@ printReverse(90, 94) // => [93, 92, 91]
 isPrime
 Define a function isPrime(number) that returns true if number is prime. Otherwise, false. Assume number is a positive integer.
 //write a function that tests if a num is prime
-const isPrime(number) {
-    if (typeof number !== 'number') return `Not a number.';
+function isPrime(number) {
+    if (typeof number !== 'number') return 'Not a number.';
     if (number <= 1) return false;
     for (let i = 2; i < number; i++) {
         if (number % i === 0) return false;
@@ -97,4 +97,83 @@ function intersect(arr1, arr2, arr = []) {
 Examples:
 intersect(['a', 'b', 'c', 'd'], ['b', 'd', 'e']) // => [ 'b', 'd' ]
 intersect(['a', 'b', 'c'], ['x', 'y', 'z']) // => []
-******************************************************************************************
+**********************************************************************************************************
+abbreviate
+Write a function abbreviate(sentence) that takes in a sentence string and returns a new sentence
+where words longer than 4 characters have their vowels removed. Assume the sentence has all
+lowercase characters. Feel free to use the array below in your solution: const vowels = 'a', 'e', 'i', 'o', 'u';
+//removes vowels from words that are longer than 4 length
+//return new sentence
+function abbreviate(sent) {
+    let vowels = 'aeiou';
+    let arr = sent.split(' ');
+    let elArr = arr[0].split('');
+    let str = '';
+
+    if (elArr.length > 4) {
+        for (let i = 0; i < elArr.length; i++) {
+            if (!vowels.includes(elArr[i])) str += elArr[i];
+        }
+    }
+    arr.shift();
+    if (!str.length) str = elArr.join('');
+    if (!arr.length) return str;
+    return `${str} ${abbreviate(arr.join(' '))}`;
+}
+Examples:
+console.log(abbreviate('the bootcamp is fun'), // => 'the btcmp is fun'
+abbreviate('programming is fantastic'), // => 'prgrmmng is fntstc'
+abbreviate('hello world'), // => 'hll wrld'
+abbreviate('how are you')); // => 'how are you'
+**********************************************************************************************************
+countScores
+Write a function countScores(people) that takes in an array of score objects, people, as its input. A score object, people, has two key-value pairs: a name (string) and a score (number). countScores(people) should return an object that has key-value pairs where each name is a key and the value is their total score.
+//
+function countScores(people) {
+    let obj = {};
+    for (let i = 0; i < people.length; i++) {
+      let person = people[i];
+        if (!obj[person.name]) obj[person.name] = person.score;
+        else obj[person.name] += person.score
+    }
+    return obj;
+    }
+// Example 1:
+const ppl = [
+  { name: "Anthony", score: 10 },
+  { name: "Fred", score : 10 },
+  { name: "Anthony", score: -8 },
+  { name: "Winnie", score: 12 }
+];
+countScores(ppl); // => { Anthony: 2, Fred: 10, Winnie: 12 }
+
+// Example 2
+const peeps = [
+  { name: "Anthony", score: 2 },
+  { name: "Winnie", score: 2 },
+  { name: "Fred", score: 2 },
+  { name: "Winnie", score: 2 },
+  { name: "Fred", score: 2 },
+  { name: "Anthony", score: 2 },
+  { name: "Winnie", score: 2 }
+];
+
+countScores(peeps); // => { Anthony: 4, Fred: 4, Winnie: 6 }
+***********************************************************************************************************
+peakFinder
+Write a function peakFinder(array) that takes in an array of numbers. It should return an array containing the indices of all the peaks. A peak is an element that is greater than both of its neighbors. If it is the first or last element, it is a peak if it is greater than its one neighbor. Assume the array has a length of at least 2.
+function peakFinder(array) {
+let arr = [];
+for (let i = 0; i < array.length; i++) {
+    if (i === 0 && array[i] > array[i + 1]) arr.push(i);
+    else if (i === array.length - 1 && array[i] > arr[i - 1]) arr.push(i);
+    else {
+        if (array[i] > array[i - 1] && array[i] > array[i + 1]) arr.push(i);
+    }
+}
+return array;
+}
+
+peakFinder([1, 2, 3, 2, 1]); // => [2]
+peakFinder([2, 1, 2, 3, 4, 5]); // => [0, 5]
+peakFinder([4, 6, 9, 4, 2, -7, 2, -4, 5]); // => [2, 6, 8]
