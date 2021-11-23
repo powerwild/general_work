@@ -22,5 +22,5 @@ const convertToBase2 = element => {
 // console.log(convertToBase2('0x1234')); // 0b1001000110100
 // console.log(convertToBase2('0xc9a1')); // 0b1100100110100001
 // console.log(convertToBase2('0xbf12')); // 0b1011111100010010
-console.log(convertToBase2('0xC9'));
-console.log(convertToBase2(201));
+console.log(convertToBase2('0xA5'));
+console.log(convertToBase2(165));
