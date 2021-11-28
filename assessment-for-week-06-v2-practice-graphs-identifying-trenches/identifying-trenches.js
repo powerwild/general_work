@@ -24,43 +24,36 @@ function findNeighbors(node, matrix) {
 }
 
 function trenchTraversal(node, matrix, visited) {
-    if (matrix.length <= 1) return false;
     let row = node[0];
-    for (let col = node[1]; col < matrix[0].length; col++) {
-        let neighbors = findNeighbors([row, col], matrix)
-        if (neighbors.length === 2) return true;
-        if (row !== matrix.length && col === matrix[0].length -1) {
-            row++;
-            col = -1;
-        }
-    }
-    return false;
-
-
-    // Traverse the potential trench to count it's length
-    // Your code here
-}
-
-function identifyTrench(trenchMatrix) {
-    if (trenchMatrix.length <= 1) return false;
-    let row = 0;
-    let neighbor;
+    let col = node[1];
+    if (matrix[row][col] > -6) return false;
     let hasTrench = false;
-    let trench = false;
-    for (let col = 0; col < trenchMatrix[0].length; col++) {
-        neighbor = findNeighbors([row, col], trenchMatrix);
-        if (trench) {
-            if (neighbor.length === 2) hasTrench = true;
-            if (neighbor.length > 2) hasTrench = false;
-            if (!neighbor.length) trench = false;
-        }
-        if (neighbor.length) trench = true;
-        if (row < trenchMatrix.length - 1 && col === trenchMatrix[0].length -1) {
+    let arr = findNeighbors([row, col], matrix);
+    while (arr.length) {
+        arr = findNeighbors([row, col], matrix);
+        if (arr.length === 2) hasTrench = true;
+        if (arr.length > 2) hasTrench = false;
+        col++;
+        if (col === matrix[row].length - 1) {
             row++;
-            col = -1;
+            col = 0;
         }
     }
     return hasTrench;
+}
+
+function identifyTrench(trenchMatrix) {
+    let row = 0;
+    for (let col = 0; row < trenchMatrix.length; col++) {
+        if (findNeighbors([row, col], trenchMatrix).length) {
+            if (trenchTraversal([row, col], trenchMatrix)) return true;
+        }
+        if (col === trenchMatrix[row].length - 1) {
+            col = -1;
+            row++;
+        }
+    }
+    return false;
 }
 
 // Uncomment for local testing
