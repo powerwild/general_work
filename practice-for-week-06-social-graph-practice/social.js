@@ -41,7 +41,26 @@ class SocialNetwork {
   }
 
   getRecommendedFollows(userID, degrees) {
-    
+    let recFollows = [];
+    let notRec = new Set([...this.getFollows(userID)])
+    notRec.add(userID);
+    let queue = [...this.getFollows(userID)];
+    let lastEl = queue[queue.length - 1];
+    while (degrees > 0) {
+      let curr = queue.shift();
+      let follows = this.getFollows(curr);
+      follows.forEach(el => {
+        if (!notRec.has(el)) {
+          recFollows.push(el);
+          queue.push(el);
+        }
+      })
+      if (curr === lastEl) {
+        degrees--;
+        lastEl = queue[queue.length - 1];
+      }
+    }
+    return recFollows;
   }
 }
 
