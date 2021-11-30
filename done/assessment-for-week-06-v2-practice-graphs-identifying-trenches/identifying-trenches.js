@@ -24,38 +24,31 @@ function findNeighbors(node, matrix) {
 }
 
 function trenchTraversal(node, matrix, visited) {
-    let row = node[0];
-    let col = node[1];
-    if (matrix[row][col] > -6) return false;
-    let trench = [];
-    while (col < matrix[row].length) {
-        let neighbors = findNeighbors([row, col]);
-        if (neighbors.length > 0) trench.push([row, col]);
-        if (neighbors.length > 2) trench = null;
-        col++;
+    if (matrix[node[0]][node[1]] > -6) return false;
+    let trench = [node];
+    visited.add(`${node}`);
+    let i = 0;
+    while (i < trench.length) {
+        let curr = trench[i];
+        let neighbors = findNeighbors(curr, matrix);
+        if (neighbors.length > 2) return false;
+        neighbors.forEach(el => {
+            if (!visited.has(`${el}`)) {
+                visited.add(`${el}`);
+                trench.push(el);
+            }
+        })
+        i++;
     }
-    if (!trench || trench.length < 3) return false;
+    if (trench.length < 3) return false;
     return true;
-    // let hasTrench = false;
-    // let arr = findNeighbors([row, col], matrix);
-    // while (arr.length) {
-    //     arr = findNeighbors([row, col], matrix);
-    //     if (arr.length === 2) hasTrench = true;
-    //     if (arr.length > 2) hasTrench = false;
-    //     col++;
-    //     if (col === matrix[row].length - 1) {
-    //         row++;
-    //         col = 0;
-    //     }
-    // }
-    // return hasTrench;
 }
 
 function identifyTrench(trenchMatrix) {
     let row = 0;
     for (let col = 0; row < trenchMatrix.length; col++) {
-        if (findNeighbors([row, col], trenchMatrix).length) {
-            if (trenchTraversal([row, col], trenchMatrix)) return true;
+        if (findNeighbors([row, col], trenchMatrix).length > 0) {
+            if (trenchTraversal([row, col], trenchMatrix, new Set())) return true;
         }
         if (col === trenchMatrix[row].length - 1) {
             col = -1;
