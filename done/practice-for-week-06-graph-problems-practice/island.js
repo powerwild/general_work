@@ -35,4 +35,5 @@ function islandSize(row, col, graph) {
   }
    return size;
 }
+// 
 module.exports = [getNeighbors, islandSize];

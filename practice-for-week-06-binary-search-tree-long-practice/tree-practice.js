@@ -89,15 +89,8 @@ function getParentNode (rootNode, target) {
 }
 
 
-function inOrderPredecessor (rootNode, target, x, y) {
-  if (target <= 1 || !rootNode) return null;
-  if(!x) {
-    x = 1;
-  if (target < rootNode.val) return inOrderPredecessor(rootNode.left, target, x, y);
-  if (target > rootNode.val) return inOrderPredecessor(rootNode.right, target, x, y);
-  }
+function inOrderPredecessor (rootNode, target, prevNode) {
   
-
 }
 
 

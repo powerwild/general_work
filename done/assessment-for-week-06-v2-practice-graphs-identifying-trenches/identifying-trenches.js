@@ -40,14 +40,13 @@ function trenchTraversal(node, matrix, visited) {
         })
         i++;
     }
-    if (trench.length < 3) return false;
-    return true;
+    return trench.length >= 3;
 }
 
 function identifyTrench(trenchMatrix) {
     let row = 0;
     for (let col = 0; row < trenchMatrix.length; col++) {
-        if (findNeighbors([row, col], trenchMatrix).length > 0) {
+        if (findNeighbors([row, col], trenchMatrix).length) {
             if (trenchTraversal([row, col], trenchMatrix, new Set())) return true;
         }
         if (col === trenchMatrix[row].length - 1) {
