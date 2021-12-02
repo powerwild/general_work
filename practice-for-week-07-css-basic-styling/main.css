@@ -1,16 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Gwendolyn:wght@700&display=swap');
+body {
+    font-family: "Gwendolyn", cursive;
+}
 h1 {
-    font-size: ;
+    font-size: 70px;
     font-family: ;
     padding: ;
     margin: ;
-    font-weight: ;
+    font-weight: 900;
     text-decoration: ;
     color: ;
     background-color: ;
 }
 
 h2 {
-    font-size: ;
+    font-size: 50px;
     font-family: ;
     padding: ;
     margin: ;
@@ -21,17 +25,17 @@ h2 {
 
 p {
     font-family: ;
-    font-size: ;
+    font-size: 40px;
     padding: ;
-    margin: ;
+    margin: auto 20px;
     color: ;
     background-color: ;
 }
 
 .logo {
     background-size: cover;
-    background-image: url();
-    background-color: ;
-    height: ;
-    width: ;
+    background-image: url("https://appacademy.github.io/styleguide/assets/logo/logo-emblem-black-1000.png");
+    background-color: red;
+    height: 300px;
+    width: 300px;
 }
