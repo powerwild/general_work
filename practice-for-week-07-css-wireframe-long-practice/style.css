@@ -1,0 +1,76 @@
+.nav__upper {
+    width: auto;
+}
+.upper__right {
+    float: right;
+    margin-right: 15px;
+}
+.sign-in {
+    color:rgb(131, 199, 30);
+    margin-right: 10px;
+}
+.get-started {
+    color: rgb(131, 199, 30);
+    padding: 6px 12px 6px 12px;
+    border: 1px solid rgb(131, 199, 30);
+    border-radius: 5px;
+}
+.upper__left {
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+}
+.nav__lower {
+    width: auto;
+    display: flex;
+    justify-content: space-around;
+    padding: 3%;
+    font-size: 15px;
+}
+.nav__lower > a {
+    text-decoration: none;
+    color: grey;
+}
+.footer__right {
+    width: fit-content;
+    height: auto;
+    float: right;
+}
+.footer__right > a {
+    text-decoration: none;
+    color: grey;
+}
+.content {
+    max-width: 600px;
+    margin: auto;
+}
+
+.footer__left {
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+}
+li > a {
+    color: blue;
+}
+.grid {
+    max-width: 600px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    padding: 30px 0;
+    gap: 30px;
+}
+.about {
+    padding-right: 10px;
+}
+body {
+    padding: 0 10% 0 10%;
+}
+.grid > a {
+    text-decoration: none;
+}
+.material-icons-outlined {
+    font-size: 12px;
+}
