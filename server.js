@@ -1,22 +1,43 @@
 const http = require("http");
 const fs = require('fs');
+
 const server = http.createServer((req, res) => {
-    const htmlTemplate = fs.readFileSync('./profile-page.html', 'utf-8');
-    const htmlPage = htmlTemplate;
-    htmlPage.replace(/#{username}/g, 'DemoUser'); // will replace the username variable in 
-    htmlPage.replace(/#{biography}/g, 'Hello World!');  // the html template with the provided string
+    console.log(`${req.method} ${req.url}`);
 
-    let reqBody = "";
-    req.on('data', (data) => reqBody += data);
-    reqBody.split('&');
-    reqBody = reqBody.map(el => el.split('='));
-
-    if(req.method === 'GET' && req.url === '/') {
+    if (req.method === 'GET' && req.url === '/') {
+        const resBody = fs.readFileSync('index.html');
+        res.statusCode = 200;
+        res.setHeader('content-type', 'text/html');
+        //res.write(); can write in specific body content
+        return res.end(resBody); // either adds to the body but end can only add once and can just be empty
+    }
+    if (req.method === 'GET' && req.url === '/main.css') {
+        const resBody = fs.readFileSync('main.css');
         res.statusCode = 200;
         res.setHeader('content-type', 'text/css');
-        res.write('Hello World');
-        return res.end('!'); // either adds to the body but end can only add once and can just be empty
+        return res.end(resBody);
     }
+    let reqBody = "";
+    req.on('data', (data) => reqBody += data);
+    req.on('end', () => {
+        if (reqBody) {
+            req.body = reqBody;
+                .split('&')
+                .map((keyValuePair) => keyValuePair.split('='))
+                .map(([key, value]) => [key, value.replace('+', ' ')])
+                .map(([key, value]) => [key, decodeURIComponent(value)])
+                .reduce((acc, [key,value]) => {
+                acc[key] = value;
+                return acc;
+                }, {})
+        }
+        // app.use(express.urlencoded)  //does the same thing as above
+    })
+    // const htmlTemplate = fs.readFileSync('./profile-page.html', 'utf-8');
+    // const htmlPage = htmlTemplate;
+    // htmlPage.replace(/#{username}/g, 'DemoUser'); // will replace the username variable in
+    // htmlPage.replace(/#{biography}/g, 'Hello World!');  // the html template with the provided string
+
 });
 const port = 5000;
 server.listen(port, () => console.log('Server is listening on port', port));
