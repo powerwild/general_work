@@ -1,14 +1,28 @@
 const http = require("http");
 const fs = require('fs');
 
+let database = [];
+let taskId = 1;
+
 const server = http.createServer((req, res) => {
     console.log(`${req.method} ${req.url}`);
+
+    if (req.method === '' && req.url === '') {
+        const htmlPage = fs.readFileSync('index.html');
+        const taskList = database.map(task => {
+            return `<li>${task['tasks']} - ${task['time']}</li>`;
+        });
+        const resBody = htmlPage.replace('#{tasks}', taskList.join(''));
+        res.statusCode = 200;
+        res.setHeader('content-type', 'text/html');
+        return res.end(resBody);
+    }
 
     if (req.method === 'GET' && req.url === '/') {
         const resBody = fs.readFileSync('index.html');
         res.statusCode = 200;
         res.setHeader('content-type', 'text/html');
-        //res.write(); can write in specific body content
+        //res.write(); //  can write in specific body content
         return res.end(resBody); // either adds to the body but end can only add once and can just be empty
     }
     if (req.method === 'GET' && req.url === '/main.css') {
