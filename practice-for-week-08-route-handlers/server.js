@@ -33,7 +33,50 @@ const server = http.createServer((req, res) => {
     }
     // Do not edit above this line
 
-    // define route handlers here
+    if (req.method === 'GET' && req.url === "/") {
+      res.statusCode = 200;
+      res.setHeader('content-type', 'text/plain');
+      return res.end(`Dog Club`);
+    }
+
+    if (req.method === 'GET' && req.url === '/dogs') {
+      res.statusCode = 200;
+      res.setHeader('content-type', 'text/plain');
+      return res.end(`Dogs index`);
+    }
+
+    if (req.method === 'GET' && req.url.startsWith('/dogs/') && req.url.split('/').length === '/dogs/:dogId'.split('/').length) {
+      const reqUrlArr = req.url.split('/');
+      res.statusCode = 200;
+      res.setHeader('content-type', 'text/plain');
+      return res.end(`Dog details for dogId: ${reqUrlArr[reqUrlArr.length - 1]}`)
+    }
+
+    if (req.method === 'GET' && req.url === '/dogs/new') {
+      res.statusCode = 200;
+      res.setHeader('content-type', 'text/plain');
+      return res.end(`Dog create form page`);
+    }
+
+    if (req.method === 'POST' && req.url === '/dogs') {
+      res.statusCode = 302;
+      res.setHeader('location', `/dogs/${getNewDogId()}`)
+      return res.end();
+    }
+
+    if (req.method === 'POST' && req.url.startsWith('/dogs/') && req.url.split('/').length === '/dogs/:dogId'.split('/').length) {
+      const reqUrlArr = req.url.split('/');
+      res.statusCode = 302;
+      res.setHeader('location', `/dogs/${reqUrlArr[reqUrlArr.length - 1]}`);
+      return res.end();
+    }
+
+    if (req.method === 'GET' && req.url.startsWith('/dogs') && req.url.split('/').length === '/dogs/:dogId/edit'.split('/').length) {
+      const reqUrlArr = req.url.split('/');
+      res.statusCode = 200;
+      res.setHeader('content-type', 'text/plain');
+      return res.end(`Dog edit form page for dogId: ${reqUrlArr[reqUrlArr.length - 2]}`)
+    }
 
     // Do not edit below this line
     // Return a 404 response when there is no matching route handler
