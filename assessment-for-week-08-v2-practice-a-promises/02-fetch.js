@@ -8,6 +8,6 @@ if (!fetch) {
 
  ******************************************************************************/
 
-fetch('/colors/1', { method: "PUT", "content-type": "application/json", body: JSON.stringify({color: "green"})})
+fetch('/colors/1', { method: "PUT", contheaders: {"ent-type": "application/json"}, body: JSON.stringify({color: "green"})})
 .then(res => res.json())
 .then(resBody => console.log(resBody));

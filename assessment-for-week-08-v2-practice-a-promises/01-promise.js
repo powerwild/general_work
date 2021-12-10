@@ -13,9 +13,9 @@ const growPlant = makePromise('growPlant');
 async function potPlant(seed) {
   await addSoil();
   return await growPlant(await plantSeed(seed));
-  // const plant = await plantSeed(seed);
-  // return await growPlant(plant);
-}
+//   const plant = await plantSeed(seed);
+//   return await growPlant(plant);
+// // }
 
 /*******************************************************************************
  * Do not change code below this line.
