@@ -8,4 +8,6 @@ if (!fetch) {
 
  ******************************************************************************/
 
-// Your code here
+fetch('/colors/1', { method: "PUT", "content-type": "application/json", body: JSON.stringify({color: "green"})})
+.then(res => res.json())
+.then(resBody => console.log(resBody));
