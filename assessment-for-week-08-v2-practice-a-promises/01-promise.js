@@ -16,7 +16,9 @@ async function potPlant(seed) {
 //   const plant = await plantSeed(seed);
 //   return await growPlant(plant);
 // // }
-
+// function potPlant(seed) {
+//    return addSoil().then(() => plantSeed(seed)).then(plant => growPlant(plant))
+// }
 /*******************************************************************************
  * Do not change code below this line.
  */
