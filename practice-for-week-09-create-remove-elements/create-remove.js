@@ -7,9 +7,7 @@ add.addEventListener("click", async () => {
 
         const url = data.message; // URL of new dog image
 
-       const ul = document.body.querySelector('ul');
-       const breed = url.split('/')[4];
-       ul.innerHTML += `<li><figure><img src=${url}><figcaption>${breed}</figcaption>`
+       document.body.querySelector('ul').innerHTML += `<li><figure><img src=${url}><figcaption>${url.split('/')[4]}</figcaption></figure><li>`;
 
     } catch (e) {
         console.log("Couldn't fetch dog :(")
