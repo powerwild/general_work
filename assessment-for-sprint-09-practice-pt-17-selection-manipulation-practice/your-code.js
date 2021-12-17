@@ -7,30 +7,43 @@ the HTML or CSS files
 // Select the first square using its id. Add a button inside the square with the
 // number 1 on it.
 
-// Your code here
-
+const boxOne = document.getElementById('problem-one');
+boxOne.innerText = null;
+const buttoneOne = document.createElement('button');
+buttoneOne.innerText = '1';
+boxOne.append(buttoneOne);
 
 // Problem Two
 // Select the second square using class names. Change the background color to
 // orange, the text color white, and the border to 5px dashed black.
 
-// Your code here
+const boxTwo = document.querySelector('.two');
+boxTwo.style.backgroundColor = 'orange';
+boxTwo.style.color = 'white';
+boxTwo.style.border = '5px dashed black';
 
 
 // Problem 3
 // Select all of the squares that have a class of "plus", and double their
-// width. Increase the size of the font as well. 
+// width. Increase the size of the font as well.
 // HINT: Check the CSS file or use your Dev Tools to find the original width and
 // font-size, and then double those sizes.
 
-// Your code here
+const plusBoxes = [...document.querySelectorAll('.plus')];
+plusBoxes.forEach(el => {
+    el.style.width = '100px';
+    el.style.fontSize = '60px';
+})
 
 // Problem 4
 // Select the fourth box. Give it an id of "problem-four". Remove the class of
 // "square" and add a class "round". As a result, the item should turn a
 // different color and shape due to code in the css file.
 
-// Your code here
+const boxFour = document.querySelector('.square.four');
+boxFour.id = 'problem-four';
+boxFour.removeAttribute('class');
+boxFour.setAttribute('class', 'round');
 
 // Problem 5
 // Use JavaScript to remove boxes 5, 6, and 7. Can you remove multiple boxes at
@@ -40,4 +53,8 @@ the HTML or CSS files
 // NOTE: There are many possible approaches to this. Try 2-3 approaches and
 // evaluate which one achieves the goal in the best way.
 
-// Your code here
+document.querySelector('.square.two').id = 'square-two';
+const someBoxes = [...document.querySelectorAll('#root .square')];
+someBoxes.filter((el, i) => {
+    if (i === 3 || i === 4 || i === 5) el.remove();
+})
