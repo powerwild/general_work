@@ -8,10 +8,7 @@ the HTML or CSS files
 // number 1 on it.
 
 const boxOne = document.getElementById('problem-one');
-boxOne.innerText = null;
-const buttoneOne = document.createElement('button');
-buttoneOne.innerText = '1';
-boxOne.append(buttoneOne);
+boxOne.innerHTML = '<button>1</button>';
 
 // Problem Two
 // Select the second square using class names. Change the background color to
