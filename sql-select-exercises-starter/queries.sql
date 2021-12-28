@@ -256,6 +256,8 @@ B.4) ORDER BY and LIMIT Clauses: Refactor Phase 3, Query #10 to return only one
        the census population in 2010.
 */
 
--- your query here
+SELECT city, population_estimate_2018, population_census_2010 FROM cities
+ORDER BY (population_estimate_2018 - population_census_2010) DESC
+LIMIT 1;
 
 \echo ========= (done!) ========================================================
