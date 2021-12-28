@@ -1,0 +1,44 @@
+ id |       name       |        type         | price_per_pound | in_stock 
+----+------------------+---------------------+-----------------+----------
+  1 | Chia             | Pseudocereal        |            6.95 | t
+  2 | Flax             | Pseudocereal        |             6.9 | t
+  3 | Amaranth         | Pseudocereal        |           14.99 | t
+  4 | Quinoa           | Pseudocereal        |           12.49 | f
+  5 | Sesame           | Pseudocereal        |           13.49 | t
+  6 | Hemp             | Other               |           10.99 | t
+  7 | Chickpea         | Legume              |            7.99 | t
+  8 | Pea              | Legume              |             7.5 | f
+  9 | Soybean          | Legume              |           12.99 | t
+ 10 | Acorn            | Nut                 |           11.99 | t
+ 11 | Almond           | Nut                 |           13.99 | t
+ 12 | Beech            | Nut                 |           10.94 | t
+ 13 | Chestnut         | Nut                 |           13.99 | t
+ 14 | Water Chestnut   | Nut                 |            9.99 | f
+ 15 | Macadamia        | Nut                 |              25 | t
+ 16 | Pistachio        | Nut                 |              20 | t
+ 17 | Pine nuts        | Nut-like gymnosperm |              23 | t
+ 18 | Pecan            | Nut                 |            6.99 | t
+ 19 | Juniper berries  | Nut-like gymnosperm |           11.99 | t
+ 20 | Cashew           | Nut                 |           23.61 | t
+ 21 | Hazelnut         | Nut                 |           25.49 | t
+ 22 | Sunflower seed   | Other               |            9.99 | t
+ 23 | Poppy seed       | Other               |           12.99 | t
+ 24 | Barley           | Cereal              |            9.99 | t
+ 25 | Maize            | Cereal              |            6.98 | t
+ 26 | Oats             | Cereal              |            9.99 | t
+ 27 | Rice             | Cereal              |             7.9 | t
+ 28 | Rye              | Cereal              |            9.87 | t
+ 29 | Spelt            | Cereal              |             7.5 | t
+ 30 | Wheat berries    | Cereal              |             2.5 | f
+ 31 | Buckwheat        | Pseudocereal        |             5.6 | t
+ 32 | Jackfruit        | Other               |              15 | t
+ 33 | Durian           | Other               |            8.26 | f
+ 34 | Lotus seed       | Other               |           12.99 | t
+ 35 | Ginko            | Nut-like gymnosperm |            12.8 | t
+ 36 | Peanut           | Legume              |            5.99 | t
+ 37 | Pumpkin seed     | Other               |            5.99 | t
+ 38 | Watermelon seed  | Other               |            6.99 | t
+ 39 | Pomegranate seed | Other               |           27.63 | t
+ 40 | Cacao bean       | Other               |           12.99 | t
+(40 rows)
+
