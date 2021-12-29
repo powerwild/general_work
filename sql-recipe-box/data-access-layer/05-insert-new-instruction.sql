@@ -41,5 +41,9 @@
 --   «positional parameter»,
 -- )
 
-
-
+INSERT INTO instructions (list_order, specification, recipe_id)
+VALUES (
+    (SELECT list_order + 1 FROM instructions WHERE recipe_id = $2)
+    , $1
+    , $2
+);
