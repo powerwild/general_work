@@ -39,7 +39,7 @@ VALUES
     ('Mage Knight', 8.1, 4, 'Adventure'),
     ('Rising Sun', 7.88, 5, 'Strategy');
 
-    INSERT INTO players (name, fave_category, prefers_video_games)
+    INSERT INTO players (name, fav_category, prefers_video_games)
 VALUES
     ('Alec', 'Strategy', DEFAULT),
     ('Nathaniel', 'Cooperative', DEFAULT),
@@ -107,8 +107,34 @@ VALUES
     (1, 4);
 
 
-SELECT boardgames.name, boardgames.id, lookingforgame_lfg.game_id,lookingforgame_lfg.player_id, players.id, players.name
-FROM boardgames
-JOIN lookingforgame_lfg ON (boardgames.id = lookingforgame_lfg.game_id)
-JOIN players ON (lookingforgame_lfg.player_id = players.id)
-WHERE boardgames.name = 'Terraforming Mars';
+-- SELECT boardgames.name, boardgames.id, lookingforgame_lfg.game_id,lookingforgame_lfg.player_id, players.id, players.name
+-- FROM boardgames
+-- JOIN lookingforgame_lfg ON (boardgames.id = lookingforgame_lfg.game_id)
+-- JOIN players ON (lookingforgame_lfg.player_id = players.id)
+-- WHERE boardgames.name = 'Terraforming Mars';
+
+
+-- SELECT boardgames.name, reviews.content FROM boardgames
+-- JOIN reviews ON (boardgames.id = reviews.boardgame_id)
+-- WHERE reviews.content LIKE 'T%';
+
+
+-- SELECT boardgames.name FROM boardgames
+-- WHERE boardgames.id IN (
+--     SELECT boardgame_id FROM reviews
+--     WHERE content LIKE 'T%');
+
+
+-- SELECT players.name FROM players                                                 //grabs the name of players with ids matching the nested query
+-- WHERE players.id IN (
+--     SELECT lookingforgame_lfg.player_id FROM lookingforgame_lfg                  //grabs all the player ids from the lfg table
+--     WHERE game_id = (
+--         SELECT * FROM boardgames                                                 //grabs the boardgame id
+--         WHERE boardgames.name = 'Terraforming Mars'));
+
+
+-- SELECT boardgames.name FROM boardgames
+-- WHERE category = (
+--     SELECT fav_category FROM players
+--     WHERE players.name = 'Alec'
+-- );
