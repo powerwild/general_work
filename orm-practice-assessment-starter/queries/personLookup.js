@@ -1,15 +1,24 @@
-const { Person, Course  } = require('../models');
+const { Person, Course, sequelize  } = require('../models');
 
 async function lookupPersonAndCourses(personId) {
-  // Find person and associated courses by `personId`
+ return await Person.findByPk(personId, {
+   include: {
+     model: Course
+   }
+ })
 };
 
 async function lookupPersonByLastName(lastName) {
-  // Find people by `lastName`
+  return await Person.findAll({where: {lastName}});
 };
 
 async function lookupCoursesByPersonEmail(email) {
-  // Find person by `email` and return associated courses
+  return await Course.findAll({
+    include: {
+      model: Person,
+      where: {email}
+    }
+  })
 };
 
 module.exports = {
