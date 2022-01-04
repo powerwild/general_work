@@ -46,7 +46,7 @@
 //                 }, {})
 //         }
         // app.use(express.urlencoded)  //does the same thing as above
-    })
+    // })
     // const htmlTemplate = fs.readFileSync('./profile-page.html', 'utf-8');
     // const htmlPage = htmlTemplate;
     // htmlPage.replace(/#{username}/g, 'DemoUser'); // will replace the username variable in
