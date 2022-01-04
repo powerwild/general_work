@@ -22,3 +22,7 @@ Response Types
     json
     render
     redirect
+
+Setting up Pug:
+    npm install pug
+    app.set('view engine', 'pug')

@@ -1,0 +1,10 @@
+html
+    head
+        title Breadditt
+    body
+        each banana in users
+            p= banana.username
+            p= banana.email
+            p= banana.password
+            p= banana.faveBread
+            a(href=`/users/${banana.id}`)
