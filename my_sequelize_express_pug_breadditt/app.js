@@ -9,16 +9,13 @@ app.get('/', (req, res) => {
     res.send('Hello from Express!')
 });
 
-// app.get('/users', async (req, res) => {
-//     const users = await User.findAll();
-//     res.render('users', {users});
-// });
+app.get(/^\/[abc]+$/, (req, res) => {
+    res.send('regex route')
+});
 
-// app.get('/users/:id', async(req, res) => {
-//     const userId = req.params.id;
-//     const user = await User.findByPk(userId);
-//     res.render('profile', {user});
-// });
+app.all('*', (req, res) => {
+    res.send('hello from catch all')
+});
 
 const port = 8080
-app.listen(port, () => console.log(`Listening on port ${port}...`))
+app.listen(port, () => console.log(`Listening on port ${port}...`));
