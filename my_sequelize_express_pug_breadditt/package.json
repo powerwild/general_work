@@ -1,5 +1,5 @@
 {
-  "name": "my_sequelize_express_pug_breadditt",
+  "name": "breaddit_dev",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,6 +11,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "csurf": "^1.11.0",
     "express": "^4.17.2",
     "nodemon": "^2.0.15",
     "pg": "^8.7.1",

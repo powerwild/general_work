@@ -1,10 +1,13 @@
 const express = require('express');
-const userRouter = require('./routes/user_routes')
+const cookieParser = require('cookie-parser');
+const userRouter = require('./routes/user_routes');
+
 
 const app = express();
 app.set('view engine', 'pug');
-app.use('/users', userRouter);
 app.use(express.urlencoded({extended: false}));
+app.use(cookieParser());
+app.use('/users', userRouter);
 
 app.get('/', (req, res) => {
     res.render('layout')
