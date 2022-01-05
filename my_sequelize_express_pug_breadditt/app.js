@@ -4,9 +4,10 @@ const userRouter = require('./routes/user_routes')
 const app = express();
 app.set('view engine', 'pug');
 app.use('/users', userRouter);
+app.use(express.urlencoded({extended: false}));
 
 app.get('/', (req, res) => {
-    res.send('Hello from Express!')
+    res.render('layout')
 });
 
 app.get(/^\/[abc]+$/, (req, res) => {

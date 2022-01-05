@@ -1,10 +1,17 @@
-html
-    head
-        title Breadditt
-    body
-        each banana in users
-            p= banana.username
-            p= banana.email
-            p= banana.password
-            p= banana.faveBread
-            a(href=`/users/${banana.id}`)
+extends layout.pug
+
+include utils.pug
+
+block content
+    table
+        thead
+            tr
+                th Username
+                th Email
+                th Password
+                th Favorite Bread
+                th Link
+        tbody
+            if usersRes
+                each user in usersRes
+                    +userRow(user, user.id)
