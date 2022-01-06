@@ -20,8 +20,7 @@ app.get('/guest', (req, res) => {
 function validateGuest(req, res, next) {
     const { fullname, email, numGuests } = req.body;
     const errors = [];
-    if (!fullname || fullname.split(' ').length < 2
-    ) errors.push('Please fill out the name field with first and last name.');
+    if (!fullname || fullname.split(' ').length < 2) errors.push('Please fill out the name field with first and last name.');
     if (!email) errors.push('Please fill out the email field with a valid email.');
     if (!numGuests || numGuests < 1) errors.push('Please fill out the Num Guests field with a number greater than zero.');
     req.errors = errors;
