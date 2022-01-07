@@ -1,0 +1,17 @@
+extends nav.pug
+
+include utils.pug
+
+block content
+    form(action='/new-person' method='post')
+        input(type='hidden' name='_csrf' value=csrfToken)
+        +addFormData('First Name', 'firstName', firstName, 'text')
+        +addFormData('Last Name', 'lastName', lastName, 'text')
+        +addFormData('Age', 'age', age, 'number')
+        label(for='biography') Biography
+        textarea(type='textarea' name='biography' id='biography' value=biography)
+        label(for='hairColorId') Hair Color
+        select(name='hairColorId' id='hairColorId' required)
+            each color in hairColors
+                option(value=color) #{color}
+        button Submit

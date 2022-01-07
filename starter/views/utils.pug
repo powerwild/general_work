@@ -1,0 +1,4 @@
+mixin addFormData(labelText, fieldName, fieldValue, dataType)
+    #form-data
+        label(for=fieldName)= labelText
+        input(type=dataType id=fieldName name=fieldName required value=fieldValue)
