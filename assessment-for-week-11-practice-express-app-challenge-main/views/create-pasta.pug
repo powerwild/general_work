@@ -1,0 +1,19 @@
+extends nav.pug
+
+block content
+    form(action='/pasta/create' method='post')
+        input(type='hidden' name='_csrf' value=csrfToken)
+        label(for='label') Label
+        input(type='single-line text' name='label' required value=label)
+        label(for='description') Description
+        input(type='multi-line text' name='description' value=description)
+        label(for='taste') Taste
+        input(type='number' name='taste' value=taste)
+        label(for='noodleId') Noodle
+        select(name='noodleId' id='noodleId' required)
+            each noodle in noodles
+                option(value=noodle.id) #{noodle.name}
+        label(for='sauceId') Sauce
+        select(name='sauceId' id='sauceId' required)
+            each sauce in sauces
+                option(value=sauce.id) #{sauce.name}

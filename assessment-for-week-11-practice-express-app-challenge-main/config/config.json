@@ -1,0 +1,10 @@
+{
+  "development": {
+    "username": "express_practice_b_app",
+    "password": "password",
+    "database": "database_development",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "seederStorage": "sequelize"
+  }
+}

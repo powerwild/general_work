@@ -1,0 +1,20 @@
+extends nav.pug
+
+block content
+    if pastaList
+        table
+            thead
+                tr
+                    th Label
+                    th Description
+                    th Taste
+                    th Noodle
+                    th Sauce
+            tbody
+                each pasta in pastaList
+                    tr
+                        td= pasta.label
+                        td= pasta.description
+                        td= pasta.taste
+                        td: a(href=`/noodle/${pasta.noodleId}`)= pasta.noodle
+                        td: a(href=`/noodle/${pasta.sauceId}`)= pasta.sauce
