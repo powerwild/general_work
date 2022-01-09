@@ -25,6 +25,12 @@ const asyncHandler = (handler) => {
   })
 };
 
+app.get('/', asyncHandler(async(req, res) => {
+  const pastaList = await Pasta.findAll({include: [{model: Noodle}, {model: Sauce}]});
+  res.render('pasta', {pastaList});
+}))
+
+
 app.route('/pasta/create')
 .get(csrfProtection, asyncHandler(async(req, res) => {
   const noodles = await Noodle.findAll();
@@ -32,8 +38,28 @@ app.route('/pasta/create')
   res.render('create-pasta', {noodles, sauces, csrfToken: req.csrfToken()})
 }))
 .post(csrfProtection, asyncHandler(async(req, res) => {
+  const { label, description, taste, sauceId, noodleId } = req.body;
+  const pasta = await Pasta.create({
+    label,
+    description,
+    taste,
+    sauceId,
+    noodleId,
+    createdAt: new Date(),
+    updatedAt: new Date()
+  });
+  res.status(302).redirect('/');
+}));
 
-  res.redirect('/');
+app.get('/noodle/:id', asyncHandler(async(req, res) => {
+  const id = req.params.id;
+  const pastaList = await Pasta.findAll({where: {noodleId: id}, include: [{model: Noodle}, {model: Sauce}]});
+  res.render('pasta', {pastaList})
+}));
+app.get('/sauce/:id', asyncHandler(async(req, res) => {
+  const id = req.params.id;
+  const pastaList = await Pasta.findAll({where: {sauceId: id}, include: [{model: Sauce}, {model: Noodle}]});
+  res.render('pasta', {pastaList})
 }));
 
 const port = 8081;

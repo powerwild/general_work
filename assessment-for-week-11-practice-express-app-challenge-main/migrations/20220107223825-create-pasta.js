@@ -13,12 +13,10 @@ module.exports = {
         type: Sequelize.STRING(50)
       },
       description: {
-        allowNull: false,
         type: Sequelize.STRING
       },
       taste: {
-        allowNull: false,
-        type: Sequelize.NUMERIC(3,1),
+        type: Sequelize.NUMERIC(2),
         validate: {
           min: 0,
           max: 10
@@ -45,6 +43,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Pasta');
+    return queryInterface.dropTable('Pastas');
   }
 };

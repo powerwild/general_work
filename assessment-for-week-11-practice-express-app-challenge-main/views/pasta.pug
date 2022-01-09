@@ -1,7 +1,7 @@
 extends nav.pug
 
 block content
-    if pastaList
+    if pastaList.length
         table
             thead
                 tr
@@ -16,5 +16,5 @@ block content
                         td= pasta.label
                         td= pasta.description
                         td= pasta.taste
-                        td: a(href=`/noodle/${pasta.noodleId}`)= pasta.noodle
-                        td: a(href=`/noodle/${pasta.sauceId}`)= pasta.sauce
+                        td: a(href=`/noodle/${pasta.noodleId}`)= pasta.Noodle.name
+                        td: a(href=`/sauce/${pasta.sauceId}`)= pasta.Sauce.name

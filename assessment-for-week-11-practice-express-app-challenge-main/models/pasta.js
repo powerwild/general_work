@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     label: DataTypes.STRING,
     description: DataTypes.STRING,
     taste: DataTypes.NUMERIC
-  }, {});
+  }, {tableName: 'Pastas'});
   Pasta.associate = function(models) {
     Pasta.belongsTo(models.Noodle, {foreignKey: 'noodleId'});
     Pasta.belongsTo(models.Sauce, {foreignKey: 'sauceId'})
