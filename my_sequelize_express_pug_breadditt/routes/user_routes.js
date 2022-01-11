@@ -1,6 +1,7 @@
 const express = require('express');
 const csurf = require('csurf');
 const { User } = require('../database/models');
+const bcrypt = require('bcryptjs');
 
 const csrfProtection = csurf({cookie: true});
 
@@ -38,16 +39,39 @@ router.get('/signup', csrfProtection, (req, res) => {
 });
 
 router.post('/signup', csrfProtection, emailChecker, asyncHandler(async (req, res) => {
-    const { username, email, password, faveBread } = req.body
+    const { username, email, password, faveBread } = req.body;
+    const hashedPassword = await bcrypt.hash(password, 10);
     if (!req.errors) {
         const user = await User.create({
             username,
             email,
-            password,
+            password: hashedPassword,
             faveBread
          })
+         req.session.user = {userId: user.id, username: user.name};
         res.redirect('/users')
     } else res.render('signup', {breads: ['white', 'wheat', 'wholegrain'], body: req.body, errors: req.errors, csrfToken: req.csrfToken()})
 }));
+
+router.get('/login', csrfProtection, (req, res) => {
+    res.render('login', {csrfToken: req.csrfToken()})
+});
+
+router.post('/login', csrfProtection, asyncHandler(async(req, res) => {
+    const { email, password } = req.body;
+    const user = await User.findOne({where: {email}});
+    const isPass = await bcrypt.compare(password, user.hashedPassword);
+    if (isPass) {
+        req.session.user = {userId: user.id, username: user.name};
+        res.redirect('/users');
+    }
+}));
+
+router.get('/logout', (req, res) => {
+    delete req.session.user;
+    req.session.save(() => {
+        res.redirect('/users');
+    })
+});
 
 module.exports = router;

@@ -1,6 +1,8 @@
 const express = require('express');
 const cookieParser = require('cookie-parser');
+const session = require('express-session');
 const userRouter = require('./routes/user_routes');
+const postRouter = require('./routes/posts');
 
 
 const app = express();
@@ -9,7 +11,15 @@ app.use(express.urlencoded({extended: false}));
 app.use(express.static('public'));
 
 app.use(cookieParser());
+app.use(session({
+    secret: 'secretKeyFromENVFile',
+    resave: false,
+    saveUninitialized: false
+}
+));
+
 app.use('/users', userRouter);
+app.use('/posts', postRouter);
 
 app.get('/', (req, res) => {
     res.render('layout')
