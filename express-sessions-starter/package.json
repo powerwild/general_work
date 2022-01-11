@@ -1,0 +1,22 @@
+{
+  "name": "reading-1-4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "PGUSER=session_example_app PGDATABASE=session_example PGPASSWORD=astrongpassword nodemon app.js",
+    "dev": "DATABASE_URL=postgresql://session_example_app:password@localhost:5432/session_example nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "connect-pg-simple": "^7.0.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "pug": "^2.0.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
+}
