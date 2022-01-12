@@ -3,6 +3,7 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const userRouter = require('./routes/user_routes');
 const postRouter = require('./routes/posts');
+const { restoreUser } = require('./routes/utils')
 
 
 const app = express();
@@ -18,6 +19,7 @@ app.use(session({
 }
 ));
 
+app.use(restoreUser);
 app.use('/users', userRouter);
 app.use('/posts', postRouter);
 
@@ -36,7 +38,7 @@ app.get(/^\/[abc]+$/, (req, res) => {
 app.use((req, res, next) => {
     const error = new Error('Page Not Found')
     error.status = 404
-    next(err)
+    next(error)
 });
 
 app.use((err, req, res, next) => {
