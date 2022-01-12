@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const db = require("../db/models");
 const { check, validationResult } = require("express-validator");
+const cors = require("cors");
 
 const { Task } = db;
 const validateTask = [
@@ -37,12 +38,15 @@ const asyncAwait = (handler) => (req, res, next) => {
     handler(req, res, next).catch(err);
 };
 
-router.get("/", asyncAwait(async (req, res) => {
+
+//router.use(cors({ origin: 'http://localhost:8080 })); //specifies allowed origins to recieve requests from
+router.get("/", cors(), asyncAwait(async (req, res) => {
     const tasks = await Task.findAll();
     res.json({tasks});
 }));
 
-router.post('/', validateTask, handleValidationErrors, asyncAwait(async (req, res) => {
+//router.options("/", cors());
+router.post('/', cors(), validateTask, handleValidationErrors, asyncAwait(async (req, res) => {
     const { name } = req.body;
     const task = await Task.create({ name });
     res.status(201).json({ task });
