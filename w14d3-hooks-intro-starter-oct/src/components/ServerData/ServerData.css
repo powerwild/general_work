@@ -1,0 +1,23 @@
+.img {
+  width: 100%;
+}
+
+.serverContainer {
+  padding: 20;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 100px;
+  background: black;
+  color: white;
+}
+
+.serverContainer:last-child {
+  margin-bottom: 0;
+}
+
+h1.title,
+h2.body {
+  text-align: center;
+}

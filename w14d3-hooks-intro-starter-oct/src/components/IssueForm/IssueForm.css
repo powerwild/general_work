@@ -1,0 +1,114 @@
+*,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background: rgb(34, 193, 195);
+  background: linear-gradient(
+    0deg,
+    rgba(34, 193, 195, 1) 0%,
+    rgba(45, 115, 253, 1) 100%
+  );
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+div .issueContainer {
+  margin-bottom: 10px;
+  height: 100vh;
+}
+
+h1,
+h2 {
+  margin-top: 20px;
+  text-align: center;
+  color: white;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+input,
+textarea,
+select {
+  margin: 0.5em 0;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+input,
+select {
+  height: 3em;
+}
+
+button {
+  font-size: 1.2em;
+  font-weight: bold;
+  width: 5.2em;
+  height: 3.2em;
+  color: white;
+  margin-bottom: 20px;
+  background-color: rgb(46, 174, 46);
+  border: 3px solid white;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: rgb(95, 240, 95);
+}
+
+label {
+  margin-right: 20px;
+}
+
+hr {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.level {
+  color: red;
+  font-size: 12px;
+  font-style: italic;
+}
+
+.form {
+  position: abosulute;
+  margin: 50px 100px;
+  padding: 20px;
+}
+
+.errors {
+  color: red;
+  font-style: italic;
+  line-height: 0;
+  margin: 20px;
+}
+
+.listErrors {
+  position: relative;
+  font-size: 13px;
+  left: 100;
+}
+
+.issueContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.issue {
+  max-width: 800px;
+  max-height: 300px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px gray;
+  margin: 20px;
+  padding: 10px;
+  background: white;
+}

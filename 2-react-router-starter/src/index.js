@@ -1,12 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import your Router
-import './index.css';
+import { BrowserRouter } from 'react-router-dom';
 import App from './App';
+import './index.css';
 
 
 // create Root component here
-
+const Root = () => {
+  return (
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  )
+}
 // React Router basically is made up of 3 parts
 // 1. Routers/BrowserRouter gives us access to react-router-dom
 // 2. Router matchers set up navigation to our components
@@ -15,7 +21,7 @@ import App from './App';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Root />
   </React.StrictMode>,
   document.getElementById('root')
 );
