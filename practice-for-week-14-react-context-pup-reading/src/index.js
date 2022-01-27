@@ -1,11 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import { PupProvider } from './context/PupContext';
 import App from './App';
+import './index.css';
+
+const Root = () => {
+  return (
+    <PupProvider>
+      <App />
+    </PupProvider>
+  )
+}
 
 ReactDOM.render(
   <React.StrictMode>
-      <App />
+      <Root id='root'/>
   </React.StrictMode>,
   document.getElementById('root')
 );
