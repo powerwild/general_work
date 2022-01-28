@@ -35,10 +35,10 @@ function FruitForm({ fruits }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     const newFruit = {
-      name: `${name}`,
-      sweetness: `${sweetness}`,
-      color: `${color}`,
-      seeds: `${seeds}`
+      name,
+      sweetness,
+      color,
+      seeds
     }
     console.log(newFruit);
     // history.push('/')
