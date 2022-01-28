@@ -27,7 +27,7 @@ function App() {
           <SetFavoriteFruit fruits={fruits}/>
         </Route>
         <Route path='/fruits/:fruitId'>
-          <FruitShow />
+          <FruitShow fruits={fruits}/>
         </Route>
         <Route>Page Not Found</Route>
       </Switch>
