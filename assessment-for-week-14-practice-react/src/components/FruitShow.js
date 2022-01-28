@@ -1,5 +1,9 @@
+
+
 function FruitShow() {
-  return null;
+  return (
+    <div></div>
+  )
 }
 
 export default FruitShow;
