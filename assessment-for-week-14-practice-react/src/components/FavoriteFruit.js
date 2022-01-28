@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { FavFruitContext, useFruitContext } from "../context/FavFruitContext";
+import {  useFruitContext } from "../context/FavFruitContext";
 
 const FavoriteFruit = () => {
   const { favFruitId } = useFruitContext();
