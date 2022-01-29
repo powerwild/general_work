@@ -1,9 +1,9 @@
 import { Header } from './components/Header';
 import { Navigation } from './components/Navigation';
 import { Switch, Route } from 'react-router-dom';
-
-import './App.css';
 import { SampleSurvey } from './components/SampleSurvey';
+import './App.css';
+
 
 function App() {
   return (
