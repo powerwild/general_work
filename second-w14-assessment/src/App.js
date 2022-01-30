@@ -5,11 +5,13 @@ import FavoriteFruit from './components/FavoriteFruit';
 import SetFavoriteFruit from "./components/SetFavoriteFruit";
 import FruitShow from "./components/FruitShow";
 import fruits from "./mockData/fruits.json";
+import Navigation from "./components/Navigation";
 
 function App() {
   return (
     <>
       <h1>Welcome to Fruits App</h1>
+      <Navigation />
       <Switch>
         <Route exact path='/'>
           <FruitsIndex fruits={fruits} />
@@ -18,13 +20,13 @@ function App() {
           <FruitForm fruits={fruits} />
         </Route>
         <Route path='/fav-fruit'>
-          <FavoriteFruit />
+          <FavoriteFruit fruits={fruits}/>
         </Route>
         <Route path='/set-fav-fruit'>
           <SetFavoriteFruit fruits={fruits}/>
         </Route>
         <Route path='/fruits/:fruitId'>
-          <FruitShow />
+          <FruitShow fruits={fruits}/>
         </Route>
         <Route>Page Not Found</Route>
       </Switch>
