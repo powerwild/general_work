@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react';
+import { createContext, useState, useContext } from 'react';
 
 const TYPES = {
   1: 'Deciduous',
@@ -6,6 +6,7 @@ const TYPES = {
 };
 
 export const TreeTypeContext = createContext();
+export const useTreeContext = () => useContext(TreeTypeContext);
 
 export default function TreeTypeProvider(props) {
   const [treeTypeId, setTreeTypeId] = useState("1");
@@ -15,7 +16,7 @@ export default function TreeTypeProvider(props) {
       value={{
         treeTypeId,
         setTreeTypeId,
-        treeType: TYPES[treeTypeId]
+        treeType: TYPES[treeTypeId],
       }}
     >
       {props.children}
