@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "name": "Apple",
+    "type": "Deciduous",
+    "avgHeight": 4
+  },
+  {
+    "id": "2",
+    "name": "Banyan",
+    "type": "Deciduous",
+    "avgHeight": 20
+  },
+  {
+    "id": "3",
+    "name": "River Red Gum",
+    "type": "Evergreen",
+    "avgHeight": 32
+  },
+  {
+    "id": "4",
+    "name": "Douglas Fir",
+    "type": "Evergreen",
+    "avgHeight": 50
+  }
+]
