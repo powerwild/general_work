@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { nanoid } from 'nanoid';
+import { useDispatch } from 'react-redux';
+import { addArticle } from '../../store/articleReducer';
 import './ArticleInput.css';
 
 // When only one component cares about the state, use local state, not Redux
@@ -15,8 +17,21 @@ const ArticleInput = () => {
   const [body, setBody] = useState('');
   const [imageUrl, setImageUrl] = useState('');
 
+  const dispatch = useDispatch();
+
+
   const handleSubmit = (e) => {
-    console.log('handleSubmit clicked');
+    e.preventDefault();
+
+    const newArticle = {
+      id: nanoid(),
+      title,
+      imageUrl,
+      body
+    }
+
+    dispatch(addArticle(newArticle));
+    reset();
   };
 
   const reset = () => {

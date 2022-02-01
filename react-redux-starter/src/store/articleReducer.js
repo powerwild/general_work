@@ -6,6 +6,8 @@ import articles from '../data/data.json';
 
 //create CONSTANTS for action creators
 const LOAD_ARTICLES = 'articles/loadArticles';
+const ADD_ARTICLE = 'articles/addArticle';
+
 //show action object
 export const loadArticles = () => {
     return {
@@ -14,6 +16,12 @@ export const loadArticles = () => {
     }
 }
 
+export const addArticle = (article) => {
+    return {
+        type: ADD_ARTICLE,
+        article
+    }
+}
 //create Action Creators
 
 //create initialState
@@ -24,6 +32,8 @@ const articleReducer = (state= initialState, action) => {
     switch(action.type) {
         case LOAD_ARTICLES:
             return {...state, entries: [...action.articles]}
+        case ADD_ARTICLE:
+            return {...state, entries: [...state.entries, action.article]}
         default:
             return state;
     }
