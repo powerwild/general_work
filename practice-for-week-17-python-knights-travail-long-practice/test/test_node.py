@@ -87,7 +87,7 @@ class TreeNodeRemoveChild(unittest.TestCase):
             parent = tree.Node('parent')
             child = tree.Node('child')
             parent._children.append(child)
-            child._parent = parent
+            child.parent = parent
 
             parent.remove_child(child)
             mock_prop.assert_called_with(None)
@@ -120,8 +120,9 @@ class TreeNodeIsSearchableByDepthFirst(TreeNodeIsSearchable, unittest.TestCase):
         self.assertEqual(self.nodes[0].depth_search('e'), self.nodes[4])
 
         self.nodes[2].depth_search.assert_not_called()
-        for i in [0, 1, 3, 4]:
-            self.nodes[i].depth_search.assert_called()
+
+        for index in [0, 1, 3, 4]:
+            self.nodes[index].depth_search.assert_called()
 
 
 if __name__ == '__main__':
