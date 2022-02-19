@@ -121,8 +121,10 @@ class TreeNodeIsSearchableByDepthFirst(TreeNodeIsSearchable, unittest.TestCase):
 
         self.nodes[2].depth_search.assert_not_called()
 
-        for index in [0, 1, 3, 4]:
-            self.nodes[index].depth_search.assert_called()
+        for i in [0, 1, 3, 4]:
+            self.nodes[i].depth_search(' ')
+            self.nodes[i].depth_search.assert_called()
+
 
 
 if __name__ == '__main__':
