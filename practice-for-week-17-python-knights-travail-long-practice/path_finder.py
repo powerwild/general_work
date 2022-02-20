@@ -36,26 +36,16 @@ class KnightPathFinder:
         return list(moves)
 
 
-    def build_move_tree(self, pos=None):
-        # if pos == None:
-        #     pos = self._root
-        # move_list = self.new_move_positions(pos.value)
-        # if len(move_list) < 1: return
-        # for move in move_list:
-        #     new_node = Node(move)
-        #     pos.add_child(new_node)
-        #     self.build_move_tree(new_node)
-        if pos == None:
-            pos = [self._root]
-        new_children = []
-        for coords in pos:
-            move_list = self.new_move_positions(coords.value)
-            if len(move_list) < 1: continue
+    def build_move_tree(self):
+        start = self._root
+        tree_nodes = [start]
+        while len(tree_nodes) >= 1:
+            curr_node = tree_nodes.pop(0)
+            move_list = self.new_move_positions(curr_node.value)
             for move in move_list:
                 new_node = Node(move)
-                new_children.append(new_node)
-                coords.add_child(new_node)
-        self.build_move_tree()
+                curr_node.add_child(new_node)
+                tree_nodes.append(new_node)
 
 
     def find_path(self, end_pos):
