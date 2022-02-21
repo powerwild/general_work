@@ -12,7 +12,8 @@ def space_value(board, index):
     Arguments: board: An array of nine strings index: The value in the board to
     interrogate
     """
-    pass
+    if board[index] == ' ': return str(index)
+    else: return board[index]
 
 
 def draw_board(board):
@@ -57,7 +58,10 @@ def play_again():
     "y". If the value does begin with "y", then return True. Otherwise, return
     False.
     """
-    pass
+    rematch = input('Want to play again? ')
+    if rematch[0].lower() == 'y':
+        return True
+    else: return False
 
 
 def make_move(board, letter, move):
@@ -73,7 +77,14 @@ def is_winner(board, letter):
     Given the board and the player's letter, this function returns True if that
     player has won.
     """
-    pass
+    if board[1] == letter and board[2] == letter and board[3] == letter: return True
+    elif board[4] == letter and board[5] == letter and board[6] == letter: return True
+    elif board[7] == letter and board[8] == letter and board[9] == letter: return True
+    elif board[1] == letter and board[4] == letter and board[7] == letter: return True
+    elif board[2] == letter and board[5] == letter and board[8] == letter: return True
+    elif board[3] == letter and board[6] == letter and board[9] == letter: return True
+    elif board[1] == letter and board[5] == letter and board[9] == letter: return True
+    elif board[3] == letter and board[5] == letter and board[7] == letter: return True
 
 
 def is_space_free(board, move):
@@ -91,7 +102,14 @@ def get_player_move(board):
     then the function tells the player that is an invalid move and prompts the
     player, again, for a value.
     """
-    pass
+    while True:
+        player_move = int(input('Please make a move...  '))
+        if is_space_free(board, player_move):
+            make_move(board, player, player_move)
+            break
+        else:
+            print('Invalid Move')
+            continue
 
 
 # This function must be completed
@@ -102,7 +120,13 @@ def get_random_move(board):
 
     To get nice random moves, consider using the random.shuffle method, here.
     """
-    pass
+    while True:
+        computer_move = random.randint(1, 9)
+        if is_space_free(board, computer_move):
+            make_move(board, computer, computer_move)
+            break
+        else:
+            continue
 
 
 # This function must be completed
@@ -111,7 +135,7 @@ def is_board_full(board):
     Return True if every space on the board has been taken. Otherwise return
     False.
     """
-    pass
+    return all(board)
 
 print("Welcome to Tic Tac Toe!")
 
