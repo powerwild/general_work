@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Welcome to my Flask App</h1>
+<p>Glad you could make it.</p>
+
+{{ display_item }}
+
+<ul>
+    {% for x in display_item %}
+    <li>{{ x }}</li>
+    {% endfor %}
+</ul>
+
+
+{% if x == 1 %}
+{{ x }}
+{% elif > 1 %}
+<p>x is greater than 1</p>
+{% else functionality %}
+<p>x is less than 1</p>
+{% endif %}
+
+{% endblock %}
