@@ -1,0 +1,10 @@
+
+
+<form method="POST" action="/books/new_book">
+    {{ form.csrf_token }}
+    {{ form.title() }}
+    {{ form.title.label }} {{ form.title }}
+    {{ form.author.label }} {{ form.author }}
+    {{ form.rating.label }} {{ form.rating }}
+    {{ form.submit }}
+</form>

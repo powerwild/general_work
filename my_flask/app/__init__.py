@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect
 from app.config import Config
 from app.routes.flask_routes import flask_router
 from app.forms.login import LoginForm
@@ -14,7 +14,9 @@ def index():
     return render_template('index.html', display_item=my_list, title='Flask App')
 
 
-@app.route('/login')
+@app.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
+    if form.validate_on_submit():
+        return redirect('/')
     return render_template('login.html', form=form)
