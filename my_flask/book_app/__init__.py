@@ -1,12 +1,16 @@
 from flask import Flask, render_template, redirect
-from app.config import Config
-from app.routes.flask_routes import flask_router
-from app.forms.login import LoginForm
+from book_app.config import Config
+from book_app.routes.book_routes import book_router
+from book_app.forms.login import LoginForm
+from book_app.models.db import db
 
 app = Flask(__name__)
 app.config.from_object(Config)
 
-app.register_blueprint(flask_router, url_prefix='/books')
+app.register_blueprint(book_router, url_prefix='/books')
+
+
+db.init_app(app)
 
 @app.route('/')
 def index():

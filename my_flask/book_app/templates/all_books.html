@@ -4,6 +4,7 @@
 
 {% for book in all_books %}
 {{ book }}
-<h3>Title: {{ book[1] }}</h3>
-<h3>Author: {{ book[2] }}</h3>
+<h3>Title: {{ book.title }}</h3>
+<h3>Author: {{ book.Author.name }}</h3>
+{% endfor %}
 {% endblock %}
