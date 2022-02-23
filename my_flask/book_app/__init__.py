@@ -15,7 +15,12 @@ db.init_app(app)
 @app.route('/')
 def index():
     my_list = [1, 2, 3]
-    return render_template('index.html', display_item=my_list, title='Flask App')
+    views = session.get('views')
+    if views is not None:
+        session['views'] += 1
+    else:
+        session['views'] = 1
+    return render_template('index.html', display_item=my_list, title='Flask App', views=views)
 
 
 @app.route('/login', methods=['GET', 'POST'])

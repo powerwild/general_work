@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, redirect
 import psycopg2
 from book_app.forms.new_book_form import NewBookForm
-from book_app.models import Book
+from book_app.models import Book, Author
 
 book_router = Blueprint('books', __name__)
 
@@ -28,6 +28,12 @@ def get_book_by_id(id):
 def a_books():
     books = Book.query.filter(Book.title.like('A%')).all()
     return render_template('all_books.html', all_books=books)
+
+
+@book_router.route('/pages_over_100')
+def pages_over_100():
+    authors = Author.query.join(Book).filter(Book.pages >= 100).all()
+    return render_template('author_info.html', authors=authors)
 
 
 @book_router.route('/new_book', methods=['GET', 'POST'])
