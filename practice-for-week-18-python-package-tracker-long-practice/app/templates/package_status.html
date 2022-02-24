@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{ title }}</title>
+    </head>
+    <body>
+        <a href="{{ url_for('new_package') }}">New Package</a>
+        <ul style="list-style-type: none;">
+            {% if packages %}
+            {% for pack in packages %}
+            <li style="border: 3px black solid">
+                <p>ID Number: {{ pack.id }}</p>
+                <p>Sender: {{ pack.sender }}</p>
+                <p>Recipient: {{ pack.recipient }}</p>
+                <p>Origin: {{ pack.origin }}</p>
+                <p>Destination: {{ pack.destination }}</p>
+                <p>Location: {{ pack.location }}</p>
+            </li>
+            {% endfor %}
+            {% endif %}
+        </ul>
+    </body>
+</html>

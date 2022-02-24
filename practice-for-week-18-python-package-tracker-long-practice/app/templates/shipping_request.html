@@ -1,0 +1,13 @@
+
+<div class="new-package-form-div">
+    <form method='POST' action='/new_package'>
+        {{ form.csrf_token }}
+        {{ form.sender.label }} {{ form.sender }}
+        {{ form.recipient.label }} {{ form.recipient }}
+        {{ form.origin.label }} {{ form.origin }}
+        {{ form.destination.label }} {{ form.destination }}
+        {{ form.chose_express.label }} {{ form.chose_express }}
+        {{ form.submit }}
+    </form>
+    <a href="{{ url_for('index') }}" style="color: black;border: 1px black solid; border-radius: 3px; padding: 3px; text-decoration: none; background-color: rgb(223, 223, 223);">Cancel</a>
+</div>
