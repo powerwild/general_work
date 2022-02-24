@@ -76,3 +76,8 @@
 # print(widget1.price)
 # print(widget2.price)
 # print(Widget.price)
+from book_app.models.book import Book
+
+book1 = Book(title='Hello World', pages=200)
+
+print(list(book1))

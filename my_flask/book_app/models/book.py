@@ -10,3 +10,14 @@ class Book(db.Model):
     author = db.relationship('Author', back_populates='books')
 
     publishers = db.relationship('Publisher', back_populates='books', secondary=publishers_books)
+
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'title': self.title,
+            'pages': self.pages,
+            'author_id': self.author_id,
+            'author': self.author.name,
+            'publishers': [(pub.id, pub.name, pub.city) for pub in self.publishers]
+        }
