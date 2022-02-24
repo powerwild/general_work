@@ -12,6 +12,7 @@ wtforms = "*"
 sqlalchemy = "*"
 flask-sqlalchemy = "*"
 alembic = "*"
+flask-migrate = "*"
 
 [dev-packages]
 

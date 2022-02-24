@@ -3,6 +3,7 @@ from book_app.config import Config
 from book_app.routes.book_routes import book_router
 from book_app.forms.login import LoginForm
 from book_app.models.db import db
+from flask_migrate import Migrate
 
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -11,6 +12,8 @@ app.register_blueprint(book_router, url_prefix='/books')
 
 
 db.init_app(app)
+
+Migrate(app, db)
 
 @app.route('/')
 def index():

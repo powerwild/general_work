@@ -6,5 +6,6 @@ class Publisher(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50), nullable=False)
+    city = db.Column(db.String(100))
 
     books = db.relationship('Book', back_populates='publishers', secondary=publishers_books)
