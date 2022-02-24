@@ -11,6 +11,7 @@ flask-wtf = "*"
 wtforms = "*"
 sqlalchemy = "*"
 flask-sqlalchemy = "*"
+alembic = "*"
 
 [dev-packages]
 

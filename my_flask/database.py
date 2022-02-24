@@ -1,9 +1,15 @@
 from book_app import app
 from book_app.models import db, Author, Book, Publisher
+# from book_app.config import Config
+# from sqlalchemy import create_engine
 
 with app.app_context():
     #will be replaced with migrations
     db.drop_all()
+
+    # engine = create_engine()
+
+
     db.create_all()
 
     book1 = Book(title='Alice in Wonderland', pages=300)
