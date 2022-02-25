@@ -5,6 +5,11 @@
     </head>
     <body>
         <a href="{{ url_for('new_package') }}">New Package</a>
+        {% if current_user.is_authenticated %}
+        <form method="POST" action="{{ url_for('logout') }}">
+            <button>Logout</button>
+        </form>
+        {% endif %}
         <ul style="list-style-type: none;">
             {% if packages %}
             {% for pack in packages %}
