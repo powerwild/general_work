@@ -1,11 +1,11 @@
 <form method="post" action="{{ url_for('login') }}">
     {{ form.csrf_token }}
     <div>
-      {{ form.ein.label }} {{ form.ein }}
+      {{ form.name.label }} {{ form.name }}
 
-      {% if form.ein.errors %}
+      {% if form.name.errors %}
         <ul>
-          {% for error in form.ein.errors %}
+          {% for error in form.name.errors %}
             <li>{{ error }}</li>
           {% endfor %}
         </ul>

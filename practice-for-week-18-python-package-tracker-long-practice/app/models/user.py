@@ -8,7 +8,6 @@ class User(db.Model, UserMixin):
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), nullable=False)
-    ein = db.Column(db.Integer, nullable=False, unique=True)
     hashed_pasword = db.Column(db.String(255), nullable=False)
 
     @property

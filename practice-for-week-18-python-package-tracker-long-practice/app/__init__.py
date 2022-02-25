@@ -49,6 +49,15 @@ def new_package():
 
 
 
+@app.route('/delete_package/<id>')
+def delete_package(id):
+    bad_package = Package.query.filter(Package.id == int(id[0])).first()
+    db.session.delete(bad_package)
+    db.session.commit()
+    return redirect('/')
+
+
+
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
     form = SignupForm()
@@ -56,12 +65,11 @@ def signup():
     if form.validate_on_submit():
         new_user = User(
             name=form.data['name'],
-            ein=form.data['ein'],
             password=form.data['password']
         )
         db.session.add(new_user)
         db.session.commit()
-        user = User.query.filter(User.ein == new_user.ein).first()
+        user = User.query.filter(User.name == new_user.name).first()
         login_user(user)
         return redirect('/')
     if form.errors:
@@ -77,8 +85,8 @@ def login():
         return redirect(url_for("index"))
     form = LoginForm()
     if form.validate_on_submit():
-        empl_number = form.data['ein']
-        user = User.query.filter(User.ein == empl_number).first()
+        name = form.data['name']
+        user = User.query.filter(User.name == name).first()
         if not user.check_password(form.data['password']):
             return form.errors
         if not user:

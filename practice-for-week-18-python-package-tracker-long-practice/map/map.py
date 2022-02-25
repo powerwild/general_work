@@ -80,15 +80,41 @@ map_dij = {
 }
 
 # map is designated as a parameter instead of referencing map_dij directly from the higher scope
-# This allows for the function to be dynamic. 
+# This allows for the function to be dynamic.
 # It is used in the testing examples below on a simpler map.
 def find_shortest_path_dij(map, start, end):
-    pass
-    # Your code here
+    locations = {city: float('inf') for city in list(map) if not city == start}
+    locations[start] = 0
+    node_before_node = dict()
+    unvisited = list(map)
+    curr_node = None
+    while unvisited:
+        for local in unvisited:
+            if curr_node == None:
+                curr_node = start
+            elif locations[curr_node] > locations[local]:
+                curr_node = local
+        for city, dist in map[curr_node]:
+            if locations[curr_node] + dist < locations[city]:
+                locations[city] = locations[curr_node] + dist
+                node_before_node[city] = curr_node
+        unvisited.remove(curr_node)
+        curr_node = unvisited[0] if unvisited else None
+
+    curr_node = end
+    while not curr_node == start:
+        unvisited.insert(0, curr_node)
+        curr_node = node_before_node[curr_node]
+    unvisited.insert(0, curr_node)
+    return unvisited
+
+
+
+
 
 # PHASE TWO Testing
 # print("BFS:", find_shortest_path("Seattle", "Washington D.C."))  # BFS: ['Seattle', 'Washington D.C.']
-# print("Dij:", find_shortest_path_dij(map_dij, "Seattle", "Washington D.C."))  # Dij: ['Seattle', 'San Francisco', 'Denver', 'Kansas City', 'Chicago', 'New York', 'Washington D.C.']
+print("Dij:", find_shortest_path_dij(map_dij, "Seattle", "Washington D.C."))  # Dij: ['Seattle', 'San Francisco', 'Denver', 'Kansas City', 'Chicago', 'New York', 'Washington D.C.']
 
 
 # Simpler example
@@ -120,7 +146,7 @@ simple_map_dij = {
          D
 '''
 
-# PHASE TWO Testing with simpler map
-# print("Dij:", find_shortest_path_dij(simple_map_dij, "A", "B"))  # Dij: ['A', 'B']
-# print("Dij:", find_shortest_path_dij(simple_map_dij, "A", "E"))  # Dij: ['A', 'F', 'E']
-# print("Dij:", find_shortest_path_dij(simple_map_dij, "C", "F"))  # Dij: ['C', 'D', 'E', 'F']
+# # PHASE TWO Testing with simpler map
+print("Dij:", find_shortest_path_dij(simple_map_dij, "A", "B"))  # Dij: ['A', 'B']
+print("Dij:", find_shortest_path_dij(simple_map_dij, "A", "E"))  # Dij: ['A', 'F', 'E']
+print("Dij:", find_shortest_path_dij(simple_map_dij, "C", "F"))  # Dij: ['C', 'D', 'E', 'F']

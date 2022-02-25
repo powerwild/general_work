@@ -4,6 +4,6 @@ from wtforms.validators import InputRequired
 
 v = [InputRequired()]
 class LoginForm(FlaskForm):
-    ein = StringField('EIN', v)
+    name = StringField('Name', v)
     password = PasswordField('Password', v)
     submit = SubmitField('Login')
