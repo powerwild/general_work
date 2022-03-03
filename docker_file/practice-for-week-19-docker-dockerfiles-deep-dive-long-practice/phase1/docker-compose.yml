@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  nginx:
+    build: .
+    image: my_nginx
+    ports:
+      - 81:80
+
+networks:
+  my_network:
+
+volumes:
+  phase1_volume:

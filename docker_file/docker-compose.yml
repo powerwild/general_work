@@ -1,0 +1,47 @@
+version: '3.8'
+
+
+#containers to be run
+services:
+  express:
+    #build from the Dockerfile in the current directory if named Dockerfile
+    build: .
+    #names the built image
+    image: express_server
+    networks:
+      - network_name
+    #same as the -p flag in a docker container run
+    ports:
+      - 8000:3000
+
+
+  database:
+  #uses a pre-built image
+    image: postgres
+    volumes:
+    #volumes keywork takes a bulleted list using -
+      - /local/path/to/file:/path/in/container
+      #use a named volume instead of the path
+      - volume_name:/path/in/container
+      #anonymous volumes are difficult to use and are agaist standard convention
+      - /path/in/container
+    #does NOT keep these secret
+    environment:
+      POSTGRES_PASSWORD: password
+    #keeps env variables hidden by accessing a .env
+    env_file:
+      - .env
+    ports:
+      - 5431:5432
+
+
+networks:
+  #the named network from the express service
+  network_name:
+
+
+volumes:
+  #the volume_name from the database volumes
+  volume_name:
+    #will look for already created volume with the provided name
+    external: True
