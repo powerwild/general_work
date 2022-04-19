@@ -1,7 +1,7 @@
 from datetime import datetime
 
 
-def solution(n):
+def my_solution(n):
     hash_map = {}
     for i in range(n+1):
         for j in range(n+1):
@@ -15,10 +15,7 @@ def solution(n):
     return hash_map[str(n)+str(n)] - 1
 
 
-print(solution(3))
-print(solution(200))
-
-def solution2(n):
+def ref_solution(n):
     m = [[0 for i in range(n + 1)] for j in range(n + 1)]
     m[0][0] = 1  # base case
     for stair in range(1, n + 1):
@@ -28,3 +25,47 @@ def solution2(n):
 	            m[stair][left] += m[stair - 1][left - stair]
 
     return m[n][n] -1
+
+
+
+
+#(17, 4)
+#17 18 19 20
+#21 22 23
+#25 26
+#29
+
+
+def queue_solution(start, length):
+    def bit(num):
+        x = num % 4
+        return num if x == 0 else 1 if x == 1 else num+1 if x == 2 else 0
+
+    xor = bit(start + (2 * (length - 1)))
+    if start >= 2:
+        xor ^= bit(start - 1)
+    for i in range(length - 2):
+        y = length - i - 2
+        z = start + (length * (i + 2) - 1)
+        xor ^= bit(y + z) ^ bit(z)
+    return xor
+    # sum = None
+    # curr = 0
+    # l = length
+    # while l > 0:
+    #     if curr == l:
+    #         start += (length - l)
+    #         curr = 0
+    #         l -= 1
+    #         continue
+    #     if sum == None:
+    #         sum = start
+    #     else:
+    #         sum = sum^start
+    #     curr += 1
+    #     start += 1
+    # return sum
+
+
+
+print(queue_solution(17, 4))
