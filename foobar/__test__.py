@@ -2,17 +2,17 @@ from datetime import datetime
 
 
 def my_solution(n):
-    hash_map = {}
+    hmap = {}
     for i in range(n+1):
         for j in range(n+1):
-            hash_map[str(i)+str(j)] = 0
-    hash_map['00'] = 1
+            hmap[str(i)+str(j)] = 0
+    hmap['00'] = 1
     for step in range(1, n+1):
         for prev in range(n+1):
-            hash_map[str(step)+str(prev)] = hash_map[str(step-1)+str(prev)]
+            hmap[str(step)+str(prev)] = hmap[str(step-1)+str(prev)]
             if prev >= step:
-                hash_map[str(step)+str(prev)] += hash_map[str(step-1)+str(prev-step)]
-    return hash_map[str(n)+str(n)] - 1
+                hmap[str(step)+str(prev)] += hmap[str(step-1)+str(prev-step)]
+    return hmap[str(n)+str(n)] - 1
 
 
 def ref_solution(n):
@@ -68,4 +68,51 @@ def queue_solution(start, length):
 
 
 
-print(queue_solution(17, 4))
+
+def pair_sentries(banana_list):
+    banana_list = sorted(banana_list, reverse=True)
+    length = len(banana_list)
+    hash_tab = {num: [] for num in banana_list}
+    i = 0
+    while True:
+        if len(banana_list) == 1:
+            break
+        n1 = banana_list[i]
+        n2 = banana_list[-1]
+        n3 = n1 + n2
+        while n2:
+            n1, n2 = n2, n1 % n2
+        isInf = bool(int(n3/n1) and (int(n3/n1) - 1))
+        if not banana_list[i] == banana_list[-1] and isInf:
+            hash_tab[banana_list[i]].append(banana_list[-1])
+            hash_tab[banana_list[-1]].append(banana_list[i])
+        i += 1
+        if i == len(banana_list) - 1:
+            i = 0
+            banana_list.pop()
+    i = 0
+    poss = len( hash_tab[ max( hash_tab, key=lambda key: len(hash_tab[key]) ) ] )
+    while len(hash_tab) >= 2 and poss >= 1:
+        s_node = min( hash_tab, key=lambda key: len(hash_tab[key]) )
+        m_poss = [len(hash_tab[ hash_tab[s_node][0] ]) + 1, 0]
+        for num in hash_tab[s_node]:
+            if len(hash_tab[num]) < m_poss[0]:
+                m_poss = [len( hash_tab[num] ), num]
+            for j in range(len( hash_tab[num] )):
+                if hash_tab[num][j] == s_node:
+                    del hash_tab[num][j]
+                    break
+        for num in hash_tab[m_poss[1]]:
+            for j in range(len( hash_tab[num] )):
+                if hash_tab[num][j] == m_poss[1]:
+                    del hash_tab[num][j]
+                    break
+        del hash_tab[s_node]
+        del hash_tab[m_poss[1]]
+        i += 2
+        if len(hash_tab) > 1:
+            poss = len( hash_tab[ max( hash_tab, key=lambda key: len(hash_tab[key]) ) ] )
+    return length - i
+
+print(pair_sentries([1, 1]))
+print(pair_sentries([1, 7, 3, 21, 13, 19]))
