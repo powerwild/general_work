@@ -33,3 +33,6 @@ var addTwoNumbers = function(l1, l2) {
     }
     return newHead
 }
+
+
+const dataJSON = await fetch('')
