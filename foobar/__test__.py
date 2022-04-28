@@ -1,4 +1,4 @@
-# from datetime import datetime
+from datetime import datetime
 
 
 # def my_solution(n):
@@ -117,14 +117,102 @@
 # print(pair_sentries([1, 1]))
 # print(pair_sentries([1, 7, 3, 21, 13, 19]))
 
+# def get_breakpoints(n):
+#     breakpoints = {}
+#     done, even, p, q = False, True, 1,1
+#     while not done:
+#         if even:
+#             if q <= n: breakpoints[q] = p
+#             else: done = True
+
+#         else:
+#             if p <= n: breakpoints[p] = 2 * q
+#             else: done = True
+
+#         p, q = p + 2 * q, p + q
+#         even = not even
+#     return breakpoints
+# def calc_cum_sums(end, keys, breakpoints, cum_sums):
+#     cum_sum, loc, offset = 0,0,0
+#     j = len(keys) - 1
+#     while j >= 0:
+#         key0 = keys[j]
+#         stride = key0
+#         while loc + stride <= end:
+#             cum_sum += cum_sums[key0]
+#             loc += stride
+#             cum_sum += offset * stride
+#             offset += breakpoints[key0]
+#         j -= 1
+#     return cum_sum
+
+# def solution(str_n):
+#     n = int(str_n)
+#     breakpoints = get_breakpoints(n)
+#     keys = sorted(breakpoints.keys())
+#     cum_sums = {}
+
+#     for i in range(len(keys)):
+
+#         key = keys[i]
+#         cum_sum = calc_cum_sums(key-1, keys[:i], breakpoints, cum_sums)
+#         cum_sums[key] = cum_sum + breakpoints[key]
+#     cum_sum = calc_cum_sums(n, keys, breakpoints, cum_sums)
+
+#     return str(cum_sum)
+
+
+
+
+
+# def my_solution(s):
+#     num = int(s)
+#     accum = sum(range(1, num + 1))
+#     accum = int(accum * (2**(1/2)))
+#     accum -= num // 2
+#     return str(accum)
+
+def find_total(last, keys, separators, sums):
+    sum = 0
+    l = 0
+    v = 0
+    length = len(keys) - 1
+    while length >= 0:
+        key = keys[length]
+        while l + key <= last:
+            sum += sums[key]
+            l += key
+            sum += v * key
+            v += separators[key]
+        length -= 1
+    return sum
 
 def solution(s):
     num = int(s)
-    accum = sum(range(1, num + 1))
-    accum = int(accum * (2**(1/2)))
-    accum -= num // 2
-    return f"{accum}"
+    separators = {}
+    curr = True
+    pivot = True
+    x, y = 1, 1
+    while curr:
+        if pivot:
+            if y <= num: separators[y] = x
+            else: curr = False
+        else:
+            if x <= num: separators[x] = y * 2
+            else: curr = False
+        x, y = x + (2 * y), x + y
+        pivot = False if pivot else True
+    keys = sorted(separators.keys())
+    sums = {}
+    for i in range(len(keys)):
+        key = keys[i]
+        sum = find_total(key - 1, keys[:i], separators, sums)
+        sums[key] = sum + separators[key]
+    sum = find_total(num, keys, separators, sums)
+    return str(sum)
 
+print(solution('5'))
+print(solution('77'))
 
 # from decimal import Decimal, localcontext
 
@@ -144,6 +232,3 @@ def solution(s):
 #             return (Brn * (Brn + 1)) / 2 - solve(Brns) - Brns * (Brns + 1)
 
 #         return str(int(solve(n)))
-
-
-print(solution('77'))
