@@ -1,38 +1,38 @@
-var addTwoNumbers = function(l1, l2) {
-    let node1Val = '';
-    let node2Val = '';
-    let currNode = l1;
-    while (currNode) {
-        node1Val = (currNode.val).toString() + node1Val;
-        currNode = currNode.next;
-    };
-    currNode = l2;
-    while (currNode) {
-        node2Val = (currNode.val).toString() + node2Val;
-        currNode = currNode.next;
-    }
-    let newVal;
-    if (node1Val.length > node2Val.length) {
-        newVal = node1Val.slice((node1Val.length - 1) - node2Val.length) + (parseInt(node1Val.slice((node1Val.length - 1) - node2Val.length, node1Val.length)) + parseInt(node2Val)).toString();
-    } else if (node1Val.length < node2Val.length) {
-        newVal = node2Val.slice((node2Val.length - 1) - node1Val.length) + (parseInt(node2Val.slice((node2Val.length - 1) - node1Val.length, node2Val.length)) + parseInt(node1Val)).toString();
-    } else {
-        newVal = (parseInt(node1Val) + parseInt(node2Val)).toString();
-    }
-    let newHead = null;
-    let prevNode;
-    for (let i = newVal.length - 1; i >= 0; i--) {
-        if (newHead === null) {
-            newHead = new ListNode(newVal[i]);
-            prevNode = newHead;
-            continue
-        }
-        currNode = new ListNode(newVal[i]);
-        prevNode.next = currNode;
-        prevNode = currNode;
-    }
-    return newHead
-}
+// var addTwoNumbers = function(l1, l2) {
+//     let node1Val = '';
+//     let node2Val = '';
+//     let currNode = l1;
+//     while (currNode) {
+//         node1Val = (currNode.val).toString() + node1Val;
+//         currNode = currNode.next;
+//     };
+//     currNode = l2;
+//     while (currNode) {
+//         node2Val = (currNode.val).toString() + node2Val;
+//         currNode = currNode.next;
+//     }
+//     let newVal;
+//     if (node1Val.length > node2Val.length) {
+//         newVal = node1Val.slice((node1Val.length - 1) - node2Val.length) + (parseInt(node1Val.slice((node1Val.length - 1) - node2Val.length, node1Val.length)) + parseInt(node2Val)).toString();
+//     } else if (node1Val.length < node2Val.length) {
+//         newVal = node2Val.slice((node2Val.length - 1) - node1Val.length) + (parseInt(node2Val.slice((node2Val.length - 1) - node1Val.length, node2Val.length)) + parseInt(node1Val)).toString();
+//     } else {
+//         newVal = (parseInt(node1Val) + parseInt(node2Val)).toString();
+//     }
+//     let newHead = null;
+//     let prevNode;
+//     for (let i = newVal.length - 1; i >= 0; i--) {
+//         if (newHead === null) {
+//             newHead = new ListNode(newVal[i]);
+//             prevNode = newHead;
+//             continue
+//         }
+//         currNode = new ListNode(newVal[i]);
+//         prevNode.next = currNode;
+//         prevNode = currNode;
+//     }
+//     return newHead
+// }
 
 
 // need to refactor for speed
@@ -76,3 +76,33 @@ var groupAnagrams = function(strs) {
 };
 
 
+// var topKFrequent = function(nums, k) {
+//     if (nums.length === 1) return nums;
+//     let hash = {};
+//     for (let num of nums) {
+//         if (!hash[num.toString()]) hash[num.toString()] = [1, num];
+//         else hash[num.toString()][0] += 1;
+//     }
+//     let counts = Object.values(hash).sort((a, b) => b[0] - a[0]);
+//     return counts.slice(0, k).map(el => el[1])
+// };
+
+// console.log(topKFrequent([1,1,1,2,2,3,], 2))
+
+
+// var productExceptSelf = function(nums) {
+//     let total = 1;
+//     let exempt = 0;
+//     let arr = [];
+//     for (let i = 0; i < nums.length; i++) {
+//         if (exempt !== i) total *= nums[i];
+//         if (i === nums.length - 1) {
+//             arr.push(total);
+//             total = 1;
+//             if (exempt < nums.length - 1) i = -1;
+//             exempt += 1;
+//         }
+//     }
+//     return arr;
+// };
+// console.log(productExceptSelf([1,2,3,4]))
