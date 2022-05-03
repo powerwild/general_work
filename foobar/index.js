@@ -106,3 +106,25 @@ var groupAnagrams = function(strs) {
 //     return arr;
 // };
 // console.log(productExceptSelf([1,2,3,4]))
+
+
+// var isPalindrome = function(s) {
+//     let arr = s.split('').map(el => {
+//         let code = el.charCodeAt();
+//         if (code >= 48 && code <= 57 || code >= 65 && code <= 90 || code >= 97 && code <= 122) return el.toLowerCase();
+//     });
+//     let original = arr.join('');
+//     arr.reverse();
+//     return arr.join('') === original;
+// };
+// console.log(isPalindrome('A man, a plan, a canal: Panama'))
+
+
+// var twoSum = function(numbers, target) {
+//     let hash = {};
+//     for (let i = 0; i < numbers.length; i++) {
+//         if (hash[`${numbers[i]}`]) return [hash[`${numbers[i]}`], i+1];
+//         else hash[`${target - numbers[i]}`] = i+1;
+//     }
+// };
+// console.log(twoSum([2,3,4], 6))
