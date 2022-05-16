@@ -1,0 +1,29 @@
+### Test GET
+
+GET http://127.0.0.1:5001/api/questions
+Content-Type: application/json
+
+
+
+### Test Delete
+
+DELETE http://127.0.0.1:5001/api/questions/6282c6ff71bf0b4c7542e187
+Content-Type: application/json
+
+
+
+### Test POST
+
+POST http://127.0.0.1:5001/api/questions
+Content-Type: application/json
+
+{
+    "name": "User",
+    "content": "Another Question?"
+}
+
+
+### Test PUT
+
+PUT http://127.0.0.1:5001/api/questions/6282ca8ead1e0b7e1fee96ed
+Content-Type: application/json
