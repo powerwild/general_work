@@ -1,0 +1,5 @@
+### Test GET
+
+GET http://127.0.0.1:5002/api/questions
+Content-Type: application/json
+
