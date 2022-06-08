@@ -130,25 +130,79 @@ var groupAnagrams = function(strs) {
 // console.log(twoSum([2,3,4], 6))
 
 
-var threeSum = function(nums) {
-    if (nums.length < 3) return [];
-    let sets = [];
-    nums.sort((a, b) => a - b);
-    for (let i in nums) {
-        if (i > 0 && nums[i] === nums[i-1]) continue;
-        let left = parseInt(i) + 1;
-        let right = nums.length - 1;
-        while (left < right) {
-            let sum = nums[i] + nums[left] + nums[right];
-            if (sum > 0) right--;
-            else if (sum < 0) left++;
-            else {
-                sets.push([nums[i], nums[left], nums[right]]);
-                left++;
-                while (nums[left] === nums[left-1]) left++;
-            }
+// var threeSum = function(nums) {
+//     if (nums.length < 3) return [];
+//     let sets = [];
+//     nums.sort((a, b) => a - b);
+//     for (let i in nums) {
+//         if (i > 0 && nums[i] === nums[i-1]) continue;
+//         let left = parseInt(i) + 1;
+//         let right = nums.length - 1;
+//         while (left < right) {
+//             let sum = nums[i] + nums[left] + nums[right];
+//             if (sum > 0) right--;
+//             else if (sum < 0) left++;
+//             else {
+//                 sets.push([nums[i], nums[left], nums[right]]);
+//                 left++;
+//                 while (nums[left] === nums[left-1]) left++;
+//             }
+//         }
+//     }
+//     return sets;
+// };
+// console.log(threeSum([-1,0,1,2,-1,-4]))
+
+
+var isValidSudoku = function(board) {
+    for(let i = 0; i < 9; i++){
+        const hash = {};
+        for(let j = 0; j < 9; j++){
+            const value = board[i][j];
+            if (value < 1 || value > 9) return false;
+            if(value === '.') continue;
+            if(hash[value]) return false;
+
+            hash[value] = true;
         }
     }
-    return sets;
+
+    for(let i = 0; i < 9; i++){
+        const hash = {};
+        for(let j = 0; j < 9; j++){
+            const value = board[j][i];
+            if(value === '.') continue;
+            if(hash[value]) return false;
+            hash[value] = true;
+        }
+    }
+
+    let start1 = 0;
+    while(start1 < 9){
+        let start2 = 0;
+        while(start2 < 9){
+            const hash = {};
+            for(let i = start1; i < start1 + 3; i++){
+                for(let j = start2; j < start2 + 3; j++){
+                    const value = board[i][j];
+                    if(value === '.') continue;
+                    if(hash[value]) return false;
+                    hash[value] = true;
+                }
+            }
+            start2 += 3;
+        }
+        start1 += 3;
+    }
+
+    return true;
 };
-console.log(threeSum([-1,0,1,2,-1,-4]))
+console.log(isValidSudoku([["5","3",".",".","7",".",".",".","."]
+,["6",".",".","1","9","5",".",".","."]
+,[".","9","8",".",".",".",".","6","."]
+,["8",".",".",".","6",".",".",".","3"]
+,["4",".",".","8",".","3",".",".","1"]
+,["7",".",".",".","2",".",".",".","6"]
+,[".","6",".",".",".",".","2","8","."]
+,[".",".",".","4","1","9",".",".","5"]
+,[".",".",".",".","8",".",".","7","9"]]))
