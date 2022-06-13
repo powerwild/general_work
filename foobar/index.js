@@ -223,21 +223,26 @@ var groupAnagrams = function(strs) {
 // console.log(decode(out))
 
 
-var longestConsecutive = function(nums) {
-    if (nums.length < 1) return 0;
-    nums = [...new Set(nums.sort((a, b) => a-b))];
-    let findex = 0;
-    let lindex = 0;
-    let longest = 0;
-    for (let i = 1; i < nums.length; i++) {
-        if (nums[i-1] === nums[i] - 1) lindex = i;
-        else {
-            longest = longest < (lindex - findex) ? (lindex - findex) : longest;
-            findex = i;
-            lindex = i;
-        }
-        if (i === nums.length - 1) longest = longest < (lindex - findex) ? (lindex - findex) : longest;
-    }
-    return longest + 1;
+// var longestConsecutive = function(nums) {
+//     if (nums.length < 1) return 0;
+//     nums = [...new Set(nums.sort((a, b) => a-b))];
+//     let findex = 0;
+//     let lindex = 0;
+//     let longest = 0;
+//     for (let i = 1; i < nums.length; i++) {
+//         if (nums[i-1] === nums[i] - 1) lindex = i;
+//         else {
+//             longest = longest < (lindex - findex) ? (lindex - findex) : longest;
+//             findex = i;
+//             lindex = i;
+//         }
+//         if (i === nums.length - 1) longest = longest < (lindex - findex) ? (lindex - findex) : longest;
+//     }
+//     return longest + 1;
+// };
+// console.log(longestConsecutive([1,2,0,1]))
+
+
+var trap = function(height) {
+
 };
-console.log(longestConsecutive([1,2,0,1]))
