@@ -208,16 +208,21 @@ var groupAnagrams = function(strs) {
 // ,[".",".",".",".","8",".",".","7","9"]]))
 
 
-const encode = (strs) => {
-    let string = strs[0];
-    for (let s of strs.slice(1)) {
-        string += `<>${s}`;
-    }
-    return string;
-}
-const out = encode(["we", "say", ":", "yes"]);
-console.log(out)
-const decode = (str) => {
-    return str.split('<>');
-}
-console.log(decode(out))
+// const encode = (strs) => {
+//     let string = strs[0];
+//     for (let s of strs.slice(1)) {
+//         string += `<>${s}`;
+//     }
+//     return string;
+// }
+// const out = encode(["we", "say", ":", "yes"]);
+// console.log(out)
+// const decode = (str) => {
+//     return str.split('<>');
+// }
+// console.log(decode(out))
+
+
+var longestConsecutive = function(nums) {
+
+};
