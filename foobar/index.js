@@ -244,5 +244,25 @@ var groupAnagrams = function(strs) {
 
 
 var trap = function(height) {
-
+    if (height.length < 1) return 0;
+    let l = 0;
+    let r = height.length - 1;
+    let lmax = height[l];
+    let rmax = height[r];
+    let rain = 0;
+    while (l < r) {
+        if (lmax < rmax) {
+            l++;
+            lmax = Math.max(lmax, height[l]);
+            console.log('left------', lmax - height[l])
+            rain += lmax - height[l];
+        } else {
+            r--;
+            rmax = Math.max(rmax, height[r]);
+            console.log('right-------', rmax - height[r])
+            rain += rmax - height[r];
+        }
+    }
+    return rain;
 };
+console.log(trap([0,1,0,2,1,0,1,3,2,1,2,1]))
