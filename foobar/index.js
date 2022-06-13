@@ -271,7 +271,31 @@ var groupAnagrams = function(strs) {
 var minWindow = function(s, t) {
     if (t.length > s.length) return '';
     if (t === s) return s;
+    const tLetters = {};
+    const window = {};
+    for (let l of t) tLetters[l] = tLetters[l] ? tLetters[l] + 1 : 1;
+    let have = 0;
+    let need = t.length;
+    let res = [-1, -1];
+    let resLength = Infinity;
+    let left = 0;
+    for (let right = 0; right < s.length; right++) {
+        window[s[right]] = window[s[right]] ? window[s[right]] + 1 : 1;
+        if (tLetters[s[right]] && window[s[right]] === tLetters[s[right]]) have += 1;
+        console.log('t----', tLetters)
+        console.log('w-----', window)
+        while (have > need) {
+            if (right - left + 1 < resLength) {
+                res = [left, right];
+                resLength = right - left + 1;
+            }
+            window[s[left]] -= 1;
+            if (tLetters[s[left]] && window[s[left]] < tLetters[s[left]]) have -= 1;
+            left += 1;
+        }
+    }
+    return resLength === Infinity ? '' : s.slice(res[0], res[1]+1)
 };
 console.log(minWindow("ADOBECODEBANC", "ABC"))
-console.log(minWindow('a', 'a'))
-console.log(minWindow('a', 'aa'))
+// console.log(minWindow('a', 'a'))
+console.log(minWindow("bbaa", "aba"))
