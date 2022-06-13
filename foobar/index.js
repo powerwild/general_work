@@ -243,26 +243,35 @@ var groupAnagrams = function(strs) {
 // console.log(longestConsecutive([1,2,0,1]))
 
 
-var trap = function(height) {
-    if (height.length < 1) return 0;
-    let l = 0;
-    let r = height.length - 1;
-    let lmax = height[l];
-    let rmax = height[r];
-    let rain = 0;
-    while (l < r) {
-        if (lmax < rmax) {
-            l++;
-            lmax = Math.max(lmax, height[l]);
-            console.log('left------', lmax - height[l])
-            rain += lmax - height[l];
-        } else {
-            r--;
-            rmax = Math.max(rmax, height[r]);
-            console.log('right-------', rmax - height[r])
-            rain += rmax - height[r];
-        }
-    }
-    return rain;
+// var trap = function(height) {
+//     if (height.length < 1) return 0;
+//     let l = 0;
+//     let r = height.length - 1;
+//     let lmax = height[l];
+//     let rmax = height[r];
+//     let rain = 0;
+//     while (l < r) {
+//         if (lmax < rmax) {
+//             l++;
+//             lmax = Math.max(lmax, height[l]);
+//             console.log('left------', lmax - height[l])
+//             rain += lmax - height[l];
+//         } else {
+//             r--;
+//             rmax = Math.max(rmax, height[r]);
+//             console.log('right-------', rmax - height[r])
+//             rain += rmax - height[r];
+//         }
+//     }
+//     return rain;
+// };
+// console.log(trap([0,1,0,2,1,0,1,3,2,1,2,1]))
+
+
+var minWindow = function(s, t) {
+    if (t.length > s.length) return '';
+    if (t === s) return s;
 };
-console.log(trap([0,1,0,2,1,0,1,3,2,1,2,1]))
+console.log(minWindow("ADOBECODEBANC", "ABC"))
+console.log(minWindow('a', 'a'))
+console.log(minWindow('a', 'aa'))
