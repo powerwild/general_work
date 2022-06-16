@@ -268,34 +268,80 @@ var groupAnagrams = function(strs) {
 // console.log(trap([0,1,0,2,1,0,1,3,2,1,2,1]))
 
 
-var minWindow = function(s, t) {
-    if (t.length > s.length) return '';
-    if (t === s) return s;
-    const tLetters = {};
-    const window = {};
-    for (let l of t) tLetters[l] = tLetters[l] ? tLetters[l] + 1 : 1;
-    let have = 0;
-    let need = t.length;
-    let res = [-1, -1];
-    let resLength = Infinity;
-    let left = 0;
-    for (let right = 0; right < s.length; right++) {
-        window[s[right]] = window[s[right]] ? window[s[right]] + 1 : 1;
-        if (tLetters[s[right]] && window[s[right]] === tLetters[s[right]]) have += 1;
-        console.log('t----', tLetters)
-        console.log('w-----', window)
-        while (have > need) {
-            if (right - left + 1 < resLength) {
-                res = [left, right];
-                resLength = right - left + 1;
-            }
-            window[s[left]] -= 1;
-            if (tLetters[s[left]] && window[s[left]] < tLetters[s[left]]) have -= 1;
-            left += 1;
+// var minWindow = function(s, t) {
+//     if (t.length > s.length) return '';
+//     if (t === s) return s;
+//     const tLetters = {};
+//     const window = {};
+//     for (let l of t) tLetters[l] = tLetters[l] ? tLetters[l] + 1 : 1;
+//     let have = 0;
+//     let need = t.length;
+//     let res = [-1, -1];
+//     let resLength = Infinity;
+//     let left = 0;
+//     for (let right = 0; right < s.length; right++) {
+//         window[s[right]] = window[s[right]] ? window[s[right]] + 1 : 1;
+//         if (tLetters[s[right]] && window[s[right]] === tLetters[s[right]]) have += 1;
+//         console.log('t----', tLetters)
+//         console.log('w-----', window)
+//         while (have > need) {
+//             if (right - left + 1 < resLength) {
+//                 res = [left, right];
+//                 resLength = right - left + 1;
+//             }
+//             window[s[left]] -= 1;
+//             if (tLetters[s[left]] && window[s[left]] < tLetters[s[left]]) have -= 1;
+//             left += 1;
+//         }
+//     }
+//     return resLength === Infinity ? '' : s.slice(res[0], res[1]+1)
+// };
+// console.log(minWindow("ADOBECODEBANC", "ABC"))
+// // console.log(minWindow('a', 'a'))
+// console.log(minWindow("bbaa", "aba"))
+
+const addIslands = (grid, xy, memo) => {
+    const q = [xy];
+    while (q.length) {
+        let [x, y] = q.pop();
+        if (x > 0) if (grid[x - 1][y] === '1' && !memo.has(String([x-1, y]))) {
+            memo.add(String([x-1, y]));
+            q.push([x-1, y]);
+        }
+        if (x < grid.length - 1) if (grid[x + 1][y] === '1' && !memo.has(String([x+1, y]))) {
+            memo.add(String([x+1, y]));
+            q.push([x+1, y]);
+        }
+        if (y > 0) if (grid[x][y - 1] === '1' && !memo.has(String([x, y-1]))) {
+            memo.add(String([x, y-1]));
+            q.push([x, y-1]);
+        }
+        if (y < grid[0].length - 1) if (grid[x][y + 1] === '1' && !memo.has(String([x, y+1]))) {
+            memo.add(String([x, y+1]));
+            q.push([x, y+1]);
         }
     }
-    return resLength === Infinity ? '' : s.slice(res[0], res[1]+1)
-};
-console.log(minWindow("ADOBECODEBANC", "ABC"))
-// console.log(minWindow('a', 'a'))
-console.log(minWindow("bbaa", "aba"))
+    return memo;
+}
+
+const numIslands = (grid) => {
+    if (grid[0].length === 0) return 0;
+    const coords = new Set();
+    let x = 0;
+    let y = 0;
+    let islands = 0;
+    while (x < grid.length && y < grid[0].length) {
+        if (grid[x][y] === '1' && !coords.has(String([x, y]))) {
+            addIslands(grid, [x, y], coords);
+            islands += 1;
+        }
+        if (y === grid[0].length - 1 && x < grid.length - 1) {
+            y = -1;
+            x += 1;
+        }
+        y += 1;
+    }
+    return islands;
+}
+console.log(numIslands([["1","1","1","1","0"], ["1","1","0","1","0"], ["1","1","0","0","0"], ["0","0","0","0","0"]]));
+console.log(numIslands([["1","1","0","0","0"], ["1","1","0","0","0"], ["0","0","1","0","0"], ["0","0","0","1","1"]]));
