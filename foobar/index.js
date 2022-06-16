@@ -300,48 +300,75 @@ var groupAnagrams = function(strs) {
 // // console.log(minWindow('a', 'a'))
 // console.log(minWindow("bbaa", "aba"))
 
-const addIslands = (grid, xy, memo) => {
-    const q = [xy];
-    while (q.length) {
-        let [x, y] = q.pop();
-        if (x > 0) if (grid[x - 1][y] === '1' && !memo.has(String([x-1, y]))) {
-            memo.add(String([x-1, y]));
-            q.push([x-1, y]);
-        }
-        if (x < grid.length - 1) if (grid[x + 1][y] === '1' && !memo.has(String([x+1, y]))) {
-            memo.add(String([x+1, y]));
-            q.push([x+1, y]);
-        }
-        if (y > 0) if (grid[x][y - 1] === '1' && !memo.has(String([x, y-1]))) {
-            memo.add(String([x, y-1]));
-            q.push([x, y-1]);
-        }
-        if (y < grid[0].length - 1) if (grid[x][y + 1] === '1' && !memo.has(String([x, y+1]))) {
-            memo.add(String([x, y+1]));
-            q.push([x, y+1]);
-        }
-    }
-    return memo;
-}
+// const addIslands = (grid, xy, memo) => {
+//     const q = [xy];
+//     while (q.length) {
+//         let [x, y] = q.pop();
+//         if (x > 0) if (grid[x - 1][y] === '1' && !memo.has(String([x-1, y]))) {
+//             memo.add(String([x-1, y]));
+//             q.push([x-1, y]);
+//         }
+//         if (x < grid.length - 1) if (grid[x + 1][y] === '1' && !memo.has(String([x+1, y]))) {
+//             memo.add(String([x+1, y]));
+//             q.push([x+1, y]);
+//         }
+//         if (y > 0) if (grid[x][y - 1] === '1' && !memo.has(String([x, y-1]))) {
+//             memo.add(String([x, y-1]));
+//             q.push([x, y-1]);
+//         }
+//         if (y < grid[0].length - 1) if (grid[x][y + 1] === '1' && !memo.has(String([x, y+1]))) {
+//             memo.add(String([x, y+1]));
+//             q.push([x, y+1]);
+//         }
+//     }
+//     return memo;
+// }
 
-const numIslands = (grid) => {
-    if (grid[0].length === 0) return 0;
-    const coords = new Set();
-    let x = 0;
-    let y = 0;
-    let islands = 0;
-    while (x < grid.length && y < grid[0].length) {
-        if (grid[x][y] === '1' && !coords.has(String([x, y]))) {
-            addIslands(grid, [x, y], coords);
-            islands += 1;
+// const numIslands = (grid) => {
+//     if (grid[0].length === 0) return 0;
+//     const coords = new Set();
+//     let x = 0;
+//     let y = 0;
+//     let islands = 0;
+//     while (x < grid.length && y < grid[0].length) {
+//         if (grid[x][y] === '1' && !coords.has(String([x, y]))) {
+//             addIslands(grid, [x, y], coords);
+//             islands += 1;
+//         }
+//         if (y === grid[0].length - 1 && x < grid.length - 1) {
+//             y = -1;
+//             x += 1;
+//         }
+//         y += 1;
+//     }
+//     return islands;
+// }
+// console.log(numIslands([["1","1","1","1","0"], ["1","1","0","1","0"], ["1","1","0","0","0"], ["0","0","0","0","0"]]));
+// console.log(numIslands([["1","1","0","0","0"], ["1","1","0","0","0"], ["0","0","1","0","0"], ["0","0","0","1","1"]]));
+
+
+const cloneGraph = (node) => {
+    if (node === null) return null;
+    const visited = new Set(String(node.val));
+    const q = [node];
+    const root = new Node(node.val);
+    const hash = {};
+    hash[String(root.val)] = root;
+    let curr;
+    while (q.length) {
+        curr = q.pop();
+        if (!visited.has(String(curr.val))) {
+            visited.add(String(curr.val))
+            hash[String(curr.val)] = new Node(curr.val);
         }
-        if (y === grid[0].length - 1 && x < grid.length - 1) {
-            y = -1;
-            x += 1;
+        for (let n of curr.neighbors) {
+            if (!visited.has(String(n.val))) {
+                visited.add(String(n.val));
+                q.push(n);
+                hash[String(n.val)] = new Node(n.val);
+            }
+            hash[curr.val].neighbors.push(hash[String(n.val)]);
         }
-        y += 1;
     }
-    return islands;
+    return root;
 }
-console.log(numIslands([["1","1","1","1","0"], ["1","1","0","1","0"], ["1","1","0","0","0"], ["0","0","0","0","0"]]));
-console.log(numIslands([["1","1","0","0","0"], ["1","1","0","0","0"], ["0","0","1","0","0"], ["0","0","0","1","1"]]));
