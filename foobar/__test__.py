@@ -172,47 +172,47 @@ from datetime import datetime
 #     accum -= num // 2
 #     return str(accum)
 
-def find_total(last, keys, separators, sums):
-    sum = 0
-    l = 0
-    v = 0
-    length = len(keys) - 1
-    while length >= 0:
-        key = keys[length]
-        while l + key <= last:
-            sum += sums[key]
-            l += key
-            sum += v * key
-            v += separators[key]
-        length -= 1
-    return sum
+# def find_total(last, keys, separators, sums):
+#     sum = 0
+#     l = 0
+#     v = 0
+#     length = len(keys) - 1
+#     while length >= 0:
+#         key = keys[length]
+#         while l + key <= last:
+#             sum += sums[key]
+#             l += key
+#             sum += v * key
+#             v += separators[key]
+#         length -= 1
+#     return sum
 
-def solution(s):
-    num = int(s)
-    separators = {}
-    curr = True
-    pivot = True
-    x, y = 1, 1
-    while curr:
-        if pivot:
-            if y <= num: separators[y] = x
-            else: curr = False
-        else:
-            if x <= num: separators[x] = y * 2
-            else: curr = False
-        x, y = x + (2 * y), x + y
-        pivot = False if pivot else True
-    keys = sorted(separators.keys())
-    sums = {}
-    for i in range(len(keys)):
-        key = keys[i]
-        sum = find_total(key - 1, keys[:i], separators, sums)
-        sums[key] = sum + separators[key]
-    sum = find_total(num, keys, separators, sums)
-    return str(sum)
+# def solution(s):
+#     num = int(s)
+#     separators = {}
+#     curr = True
+#     pivot = True
+#     x, y = 1, 1
+#     while curr:
+#         if pivot:
+#             if y <= num: separators[y] = x
+#             else: curr = False
+#         else:
+#             if x <= num: separators[x] = y * 2
+#             else: curr = False
+#         x, y = x + (2 * y), x + y
+#         pivot = False if pivot else True
+#     keys = sorted(separators.keys())
+#     sums = {}
+#     for i in range(len(keys)):
+#         key = keys[i]
+#         sum = find_total(key - 1, keys[:i], separators, sums)
+#         sums[key] = sum + separators[key]
+#     sum = find_total(num, keys, separators, sums)
+#     return str(sum)
 
-print(solution('5'))
-print(solution('77'))
+# print(solution('5'))
+# print(solution('77'))
 
 # from decimal import Decimal, localcontext
 
@@ -232,3 +232,5 @@ print(solution('77'))
 #             return (Brn * (Brn + 1)) / 2 - solve(Brns) - Brns * (Brns + 1)
 
 #         return str(int(solve(n)))
+
+

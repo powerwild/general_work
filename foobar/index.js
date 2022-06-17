@@ -347,28 +347,48 @@ var groupAnagrams = function(strs) {
 // console.log(numIslands([["1","1","0","0","0"], ["1","1","0","0","0"], ["0","0","1","0","0"], ["0","0","0","1","1"]]));
 
 
-const cloneGraph = (node) => {
-    if (node === null) return null;
-    const visited = new Set(String(node.val));
-    const q = [node];
-    const root = new Node(node.val);
-    const hash = {};
-    hash[String(root.val)] = root;
-    let curr;
-    while (q.length) {
-        curr = q.pop();
-        if (!visited.has(String(curr.val))) {
-            visited.add(String(curr.val))
-            hash[String(curr.val)] = new Node(curr.val);
-        }
-        for (let n of curr.neighbors) {
-            if (!visited.has(String(n.val))) {
-                visited.add(String(n.val));
-                q.push(n);
-                hash[String(n.val)] = new Node(n.val);
-            }
-            hash[curr.val].neighbors.push(hash[String(n.val)]);
-        }
-    }
-    return root;
-}
+// const cloneGraph = (node) => {
+//     if (node === null) return null;
+//     const visited = new Set(String(node.val));
+//     const q = [node];
+//     const root = new Node(node.val);
+//     const hash = {};
+//     hash[String(root.val)] = root;
+//     let curr;
+//     while (q.length) {
+//         curr = q.pop();
+//         if (!visited.has(String(curr.val))) {
+//             visited.add(String(curr.val))
+//             hash[String(curr.val)] = new Node(curr.val);
+//         }
+//         for (let n of curr.neighbors) {
+//             if (!visited.has(String(n.val))) {
+//                 visited.add(String(n.val));
+//                 q.push(n);
+//                 hash[String(n.val)] = new Node(n.val);
+//             }
+//             hash[curr.val].neighbors.push(hash[String(n.val)]);
+//         }
+//     }
+//     return root;
+// }
+
+
+// function solution(N, K) {
+//     const arr = String(N).split('');
+//     let index = 0;
+//     while (index < arr.length) {
+//         let curr = parseInt(arr[index]);
+//         if (K > 0) {
+//             while (K > 0 && curr < 9) {
+//                 K -= 1;
+//                 curr += 1;
+//             }
+//             arr[index] = String(curr);
+//         }
+//         index += 1;
+//     }
+//     return parseInt(arr.join(''));
+// }
+// console.log(solution(191, 4))
+// console.log(solution(285, 20))
