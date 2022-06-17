@@ -392,3 +392,25 @@ var groupAnagrams = function(strs) {
 // }
 // console.log(solution(191, 4))
 // console.log(solution(285, 20))
+
+
+// function solution(D, X) {
+//     let days = 0;
+//     let curr = D[0];
+//     let least = curr - X;
+//     let max = curr + X;
+//     for (let i = 1; i < D.length; i++) {
+//         if (least <= D[i] && D[i] <= max) {
+//             if (D[i] > curr) least = D[i] - X;
+//             else if (D[i] < curr) max = D[i] + X;
+//         } else {
+//             curr = D[i];
+//             least = curr - X;
+//             max = curr + X;
+//             days += 1;
+//         }
+//     }
+//     return days+1;
+// }
+// console.log(solution([1, 12, 10, 4, 5, 2], 2))
+// console.log(solution([2, 5, 9, 2, 1, 4], 4))
