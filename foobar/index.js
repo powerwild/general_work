@@ -414,3 +414,22 @@ var groupAnagrams = function(strs) {
 // }
 // console.log(solution([1, 12, 10, 4, 5, 2], 2))
 // console.log(solution([2, 5, 9, 2, 1, 4], 4))
+
+function cmp(a, b) { return a - b; }
+
+function solution(A, B) {
+    if (!A.length || !B.length) return -1;
+    var n = A.length;
+    var m = B.length;
+    A.sort(cmp);
+    B.sort(cmp);
+    var i = 0;
+    for (var k = 0; k < n; k++) {
+        if (i < m - 1 && B[i] < A[k])
+            i += 1;
+        if (A[k] === B[i]) return A[k];
+    }
+    return -1;
+}
+console.log(solution([1, 3, 2, 1], [4, 2, 5, 3, 2]))
+console.log(solution([2, 2], []))
