@@ -509,3 +509,23 @@ var groupAnagrams = function(strs) {
 //     curr.next = null;
 //     return head;
 // };
+
+// function ListNode(val) {
+//     this.val = val;
+//     this.next = null;
+// }
+// const n1 = new ListNode(1);
+
+// var hasCycle = function(head) {
+//     console.log(head)
+//     if (!head || !head.next) return false;
+//     let memo = new Set();
+//     let curr = head;
+//     while (curr) {
+//         if (memo.has(curr)) return true;
+//         memo.add(curr);
+//         curr = curr.next;
+//     }
+//     return false;
+// };
+// console.log(hasCycle(n1));
