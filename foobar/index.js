@@ -515,7 +515,7 @@ var groupAnagrams = function(strs) {
 //     this.next = null;
 // }
 // const n1 = new ListNode(1);
-
+// console.log(Object.getOwnPropertyDescriptors(n1))
 // var hasCycle = function(head) {
 //     console.log(head)
 //     if (!head || !head.next) return false;
