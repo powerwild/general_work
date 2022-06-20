@@ -458,3 +458,28 @@ var groupAnagrams = function(strs) {
 //     }
 //     return newHead;
 // };
+
+
+var reorderList = function(head) {
+    let curr = head;
+    const arr = [];
+    while (curr) {
+        arr.push(curr.val);
+        curr = curr.next;
+    }
+    if (arr.length < 3) return head;
+    let left = 0;
+    let right = arr.length - 1;
+    curr = head;
+    while (curr) {
+        curr.val = arr[left];
+        left += 1;
+        curr = curr.next;
+        if (curr) {
+            curr.val = arr[right];
+            curr = curr.next;
+        }
+        right -= 1;
+    }
+    return head;
+};
