@@ -460,26 +460,52 @@ var groupAnagrams = function(strs) {
 // };
 
 
-var reorderList = function(head) {
-    let curr = head;
-    const arr = [];
-    while (curr) {
-        arr.push(curr.val);
-        curr = curr.next;
-    }
-    if (arr.length < 3) return head;
-    let left = 0;
-    let right = arr.length - 1;
-    curr = head;
-    while (curr) {
-        curr.val = arr[left];
-        left += 1;
-        curr = curr.next;
-        if (curr) {
-            curr.val = arr[right];
-            curr = curr.next;
-        }
-        right -= 1;
-    }
-    return head;
-};
+// var reorderList = function(head) {
+//     let curr = head;
+//     const arr = [];
+//     while (curr) {
+//         arr.push(curr.val);
+//         curr = curr.next;
+//     }
+//     if (arr.length < 3) return head;
+//     let left = 0;
+//     let right = arr.length - 1;
+//     curr = head;
+//     while (curr) {
+//         curr.val = arr[left];
+//         left += 1;
+//         curr = curr.next;
+//         if (curr) {
+//             curr.val = arr[right];
+//             curr = curr.next;
+//         }
+//         right -= 1;
+//     }
+//     return head;
+// };
+
+// const counter = (node) => {
+//     let count = 0;
+//     while (node) {
+//         count += 1;
+//         node = node.next;
+//     }
+//     return count;
+// }
+
+// var removeNthFromEnd = function(head, n) {
+//     if (!head || !head.next) return null;
+//     let x = 1;
+//     const position = counter(head) - n;
+//     if (position < x) return head.next;
+//     let curr = head;
+//     let prev;
+//     while (x <= position) {
+//         prev = curr;
+//         curr = curr.next;
+//         x += 1;
+//     }
+//     prev.next = curr.next;
+//     curr.next = null;
+//     return head;
+// };
