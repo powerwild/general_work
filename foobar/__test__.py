@@ -234,3 +234,28 @@ from datetime import datetime
 #         return str(int(solve(n)))
 
 
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
+        if len(lists) < 2:
+            return lists[0]
+        new_list_head = None
+        prev = None
+        curr = lists[0]
+        while len(lists) > 0:
+            index = 0
+            for i in range(len(lists)):
+                if not lists[i] == curr and lists[i].val <= curr.val:
+                    curr = lists[i]
+                    index = i
+            if not new_list_head:
+                new_list_head = curr
+            if prev: prev.next = curr
+            prev = curr
+            lists[index] = lists[index].next
+            if lists[index]:
+                lists.pop(index)
+        return new_list_head
