@@ -529,3 +529,39 @@ var groupAnagrams = function(strs) {
 //     return false;
 // };
 // console.log(hasCycle(n1));
+
+
+/**
+ * Definition for a binary tree node.
+ */
+function TreeNode(val, left, right) {
+    this.val = (val===undefined ? 0 : val)
+    this.left = (left===undefined ? null : left)
+    this.right = (right===undefined ? null : right)
+}
+const n7 = new TreeNode(9);
+const n6 = new TreeNode(6);
+const n5 = new TreeNode(3);
+const n4 = new TreeNode(1);
+const n3 = new TreeNode(7, n6, n7);
+const n2 = new TreeNode(2, n4, n5);
+const n1 = new TreeNode(4, n2, n3);
+/*
+ * @param {TreeNode} root
+ * @return {TreeNode}
+ */
+ var invertTree = function(root) {
+    if (!root || !root.next) return root;
+    let head;
+    let arr = [root];
+    while (arr.length) {
+        curr = arr.pop();
+        arr.push(curr.left);
+        arr.push(curr.right);
+        let newLeft = curr.right;
+        curr.right = curr.left
+        curr.left = newLeft;
+    }
+    return head;
+};
+console.log(invertTree(n1));
