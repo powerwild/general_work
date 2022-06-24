@@ -238,24 +238,26 @@ from datetime import datetime
 #     def __init__(self, val=0, next=None):
 #         self.val = val
 #         self.next = next
-class Solution:
-    def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
-        if len(lists) < 2:
-            return lists[0]
-        new_list_head = None
-        prev = None
-        curr = lists[0]
-        while len(lists) > 0:
-            index = 0
-            for i in range(len(lists)):
-                if not lists[i] == curr and lists[i].val <= curr.val:
-                    curr = lists[i]
-                    index = i
-            if not new_list_head:
-                new_list_head = curr
-            if prev: prev.next = curr
-            prev = curr
-            lists[index] = lists[index].next
-            if lists[index]:
-                lists.pop(index)
-        return new_list_head
+# class Solution:
+#     def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
+#         if not len(lists):
+#             return None
+#         if len(lists) < 2:
+#             return lists[0]
+#         all_nodes = []
+#         while len(lists):
+#             curr = lists[0]
+#             while curr:
+#                 all_nodes.append(curr)
+#                 curr = curr.next
+#             lists.pop(0)
+#         sorted_nodes = sorted(all_nodes, key=lambda node: node.val)
+#         if not len(sorted_nodes):
+#             return None
+#         new_head = sorted_nodes[0]
+#         for i in range(len(sorted_nodes)):
+#             if i < len(sorted_nodes) - 1:
+#                 sorted_nodes[i].next = sorted_nodes[i+1]
+#             else:
+#                 sorted_nodes[i].next = None
+#         return new_head
