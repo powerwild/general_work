@@ -534,34 +534,44 @@ var groupAnagrams = function(strs) {
 /**
  * Definition for a binary tree node.
  */
-function TreeNode(val, left, right) {
-    this.val = (val===undefined ? 0 : val)
-    this.left = (left===undefined ? null : left)
-    this.right = (right===undefined ? null : right)
-}
-const n7 = new TreeNode(9);
-const n6 = new TreeNode(6);
-const n5 = new TreeNode(3);
-const n4 = new TreeNode(1);
-const n3 = new TreeNode(7, n6, n7);
-const n2 = new TreeNode(2, n4, n5);
-const n1 = new TreeNode(4, n2, n3);
+// function TreeNode(val, left, right) {
+//     this.val = (val===undefined ? 0 : val)
+//     this.left = (left===undefined ? null : left)
+//     this.right = (right===undefined ? null : right)
+// }
+// const n7 = new TreeNode(9);
+// const n6 = new TreeNode(6);
+// const n5 = new TreeNode(3);
+// const n4 = new TreeNode(1);
+// const n3 = new TreeNode(7, n6, n7);
+// const n2 = new TreeNode(2, n4, n5);
+// const n1 = new TreeNode(4, n2, n3);
 /*
  * @param {TreeNode} root
  * @return {TreeNode}
  */
- var invertTree = function(root) {
-    if (!root || !root.next) return root;
-    let head;
-    let arr = [root];
-    while (arr.length) {
-        curr = arr.pop();
-        arr.push(curr.left);
-        arr.push(curr.right);
-        let newLeft = curr.right;
-        curr.right = curr.left
-        curr.left = newLeft;
-    }
-    return head;
-};
-console.log(invertTree(n1));
+//  var invertTree = function(root) {
+//     if (!root || (!root.left && !root.right)) return root;
+//     const q = [root];
+//     while (q.length) {
+//         const curr = q.pop();
+//         const new_right = curr.left;
+//         curr.left = curr.right;
+//         curr.right = new_right;
+//         if (curr.right) q.push(curr.right);
+//         if (curr.left) q.push(curr.left);
+//     }
+//     return root;
+// };
+// const recurseInvert = (node) => {
+//     if (!node) return;
+//     const new_right = node.left;
+//     node.left = node.right;
+//     node.right = new_right;
+//     recurseInvert(node.left);
+//     recurseInvert(node.right);
+//     return;
+// }
+// console.log(invertTree(n1));
+
+
