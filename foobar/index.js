@@ -575,3 +575,14 @@ var groupAnagrams = function(strs) {
 // console.log(invertTree(n1));
 
 
+// var maxDepth = function(root, depth=0, max=0) {
+//     if (!root) {
+//         if (depth > max) max = depth;
+//         return max;
+//     };
+//     depth += 1;
+//     const left = maxDepth(root.left, depth, max);
+//     const right = maxDepth(root.right, depth, max);
+//     max = left > right ? left : right;
+//     return max;
+// };
