@@ -586,3 +586,18 @@ var groupAnagrams = function(strs) {
 //     max = left > right ? left : right;
 //     return max;
 // };
+
+
+// const diam_of_tree = (root) => {
+//     if (!root) return 0;
+//     let max_path = 0;
+//     const search = (node) => {
+//         if (!node) return 0;
+//         const left = search(node.left);
+//         const right = search(node.right);
+//         max = Math.max(max_path, (left + right));
+//         return Math.max(left, right0 + 1);
+//     }
+//     search(root);
+//     return max_path;
+// }
