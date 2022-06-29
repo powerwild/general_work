@@ -601,3 +601,21 @@ var groupAnagrams = function(strs) {
 //     search(root);
 //     return max_path;
 // }
+
+
+var isSameTree = function(p, q) {
+    let truthy = true;
+    const checkTruth = (n1, n2) => {
+        if (n1 && n2 && n1.val !== n2.val) truthy = false;
+        else if ( (n1 && !n2) || (!n1 && n2) ) {
+            truthy = false
+            return truthy;
+        }
+        else if (!n1 && !n2) return truthy;
+        const left = checkTruth(n1.left, n2.left);
+        const right = checkTruth(n1.right, n2.right);
+        return left && right;
+    }
+    checkTruth(p, q);
+    return truthy;
+};
