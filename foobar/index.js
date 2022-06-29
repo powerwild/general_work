@@ -632,3 +632,17 @@ var groupAnagrams = function(strs) {
 //     }
 //     return checker(root) >= 0;
 // };
+
+
+// const checker = (n1, n2) => {
+//     if (!n1 && !n2) return true;
+//     if (!n1 || !n2 || n1.val !== n2.val) return false;
+//     const l = checker(n1.left, n2.left);
+//     const r = checker(n1.right, n2.right);
+//     return l && r;
+// }
+// var isSubtree = function(root, subRoot) {
+//     if (!root) return false;
+//     if (checker(root, subRoot)) return true;
+//     return isSubtree(root.left, subRoot) || isSubtree(root.right, subRoot)
+// };
