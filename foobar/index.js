@@ -646,3 +646,34 @@ var groupAnagrams = function(strs) {
 //     if (checker(root, subRoot)) return true;
 //     return isSubtree(root.left, subRoot) || isSubtree(root.right, subRoot)
 // };
+
+
+// var hammingWeight = function(n) {
+//     let letters = n.toString(2).split('');
+//     let count = 0;
+//     for (let char of letters) {
+//         if (char === '1') count += 1;
+//     }
+//     return count;
+// };
+
+// var countBits = function(n) {
+//     const ans = [];
+//     for (let i = 0; i <= n; i++) {
+//         ans.push(hammingWeight(i));
+//     }
+//     return ans;
+// };
+
+
+// var reverseBits = function(n) {
+//     const bitArr = n.toString(2).split('');
+//     const newArr = [];
+//     for (let i = bitArr.length - 1; i >= 0; i--) newArr.push(bitArr[i]);
+//     let diff = 32 - bitArr.length;
+//     while (diff > 0) {
+//         newArr.push('0');
+//         diff -= 1;
+//     }
+//     return parseInt(newArr.join(''), 2)
+// };
