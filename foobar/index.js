@@ -677,3 +677,14 @@ var groupAnagrams = function(strs) {
 //     }
 //     return parseInt(newArr.join(''), 2)
 // };
+
+
+// var missingNumber = function(nums) {
+//     const max = nums.length;
+//     nums.sort((a, b) => a - b);
+//     for (let i = 0; i <= max; i++) {
+//         if (nums[i] !== i) return i;
+//     }
+// };
+
+
