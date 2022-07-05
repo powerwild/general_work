@@ -688,3 +688,48 @@ var groupAnagrams = function(strs) {
 // };
 
 
+const checker = (strArr, has, need) => {
+    for (let char of strArr) {
+        if (has[char] < need[char]) return false;
+    }
+    return true;
+}
+var minWindow = function(s, t) {
+    if (s.length < t.length) return '';
+    if (s.length === t.length && s !== t) return '';
+    const sArr = s.split('');
+    if (t.length === 1 && sArr.indexOf(t) !== -1) return t;
+    const tArr = t.split('');
+    const need = {};
+    const has = {};
+    for (let char of tArr) {
+        if (need[char]) need[char] += 1;
+        else need[char] = 1;
+        has[char] = 0;
+    }
+    let min = Infinity;
+    let coords = [0, 0];
+    let left = 0;
+    if (need[sArr[left]]) has[sArr[left]] += 1;
+    let right = 1;
+    while (left < right) {
+        if (need[sArr[right]]) has[sArr[right]] += 1;
+        if (checker(tArr, has, need)) {
+            if ((right - left) + 1 < min) {
+                min = (right - left) + 1;
+                coords[0] = left;
+                coords[1] = right;
+            }
+            if (need[sArr[left]]) has[sArr[left]] -= 1;
+            left += 1;
+        }
+        if (right === sArr.length - 1) {
+            if (need[sArr[left]]) has[sArr[left]] -= 1;
+            left += 1;
+        }
+        if (right < sArr.length - 1) right += 1;
+    }
+    return min === Infinity ? '' : sArr.slice(coords[0], coords[1]+1).join('');
+};
+
+console.log(minWindow("ADOBECODEBANC", 'ABC'))
