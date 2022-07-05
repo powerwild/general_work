@@ -733,3 +733,22 @@ var minWindow = function(s, t) {
 };
 
 console.log(minWindow("ADOBECODEBANC", 'ABC'))
+
+
+var dailyTemperatures = function(temperatures) {
+    if (temperatures.length === 1) return [0];
+    const answer = [];
+    let length = 0;
+    while(temperatures.length) {
+        const curr = temperatures.shift();
+        for (let index in temperatures) {
+            if (temperatures[index] > curr) {
+                answer.push(parseInt(index)+1);
+                break;
+            }
+        }
+        length += 1;
+        if (answer.length < length) answer.push(0);
+    }
+    return answer;
+};
