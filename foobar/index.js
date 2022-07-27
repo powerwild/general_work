@@ -734,3 +734,13 @@ var groupAnagrams = function(strs) {
 //     return stones.length === 0 ? 0 : stones[0];
 // };
 // console.log(lastStoneWeight([2, 2]))
+
+
+
+// var kClosest = function(points, k) {
+//     for (let point of points) point.push(Math.sqrt( (point[0]**2) + (point[1]**2) ));
+//     points.sort((a, b) => a[2] - b[2]);
+//     const closestPoints = [];
+//     for (let i = 0; i < k; ++i) closestPoints.push([points[i][0], points[i][1]]);
+//     return closestPoints;
+// };
