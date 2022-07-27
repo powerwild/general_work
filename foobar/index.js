@@ -718,3 +718,19 @@ var groupAnagrams = function(strs) {
 
 
 
+// var lastStoneWeight = function(stones) {
+//     if (stones.length === 1) return stones[0];
+//     stones.sort((a, b) => a - b);
+//     while (stones.length > 1) {
+//         let y = stones.pop();
+//         let x = stones.pop();
+//         if (x === y) continue;
+//         else {
+//             y -= x;
+//             stones.push(y);
+//             stones.sort((a, b) => a - b);
+//         }
+//     }
+//     return stones.length === 0 ? 0 : stones[0];
+// };
+// console.log(lastStoneWeight([2, 2]))
