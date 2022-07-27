@@ -751,3 +751,20 @@ var groupAnagrams = function(strs) {
 //     nums.sort((a, b) => a - b);
 //     return nums[nums.length - k];
 // };
+
+
+
+// var leastInterval = function(tasks, n) {
+//     const map = {};
+//     let maxCount = 0;
+//     let multiMaxes = 0;
+//     for (let task of tasks) {
+//         if (map[task]) map[task] += 1;
+//         else map[task] = 1;
+//         if (maxCount < map[task]) {
+//             maxCount = map[task];
+//             multiMaxes = 1;
+//         } else if (maxCount === map[task]) multiMaxes += 1;
+//     }
+//     return Math.max(tasks.length, (maxCount - 1) * (n + 1) + multiMaxes);
+// };
