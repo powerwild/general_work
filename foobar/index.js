@@ -838,3 +838,49 @@ var groupAnagrams = function(strs) {
 //     }
 //     return true;
 // };
+
+
+
+// var WordDictionary = function() {
+//     this.root = {}
+// };
+
+// WordDictionary.prototype.addWord = function(word) {
+//     let curr = this.root;
+//     for (let char of word.split('')) {
+//         if (!curr[char]) {
+//             curr[char] = {};
+//         }
+//         curr = curr[char];
+//     }
+//     curr.isWord = true;
+// };
+
+// WordDictionary.prototype.search = function(word) {
+//     let curr = this.root;
+//     const chars = word.split('');
+//     for (let i = 0; i < chars.length; ++i) {
+//         let char = chars[i];
+//         console.log(char)
+//         if (char === '.') {
+//             console.log(curr)
+//             for (let key of Object.keys(curr)) {
+//                 if (curr[key][chars[ i+1 ]]) char = key;
+//             }
+//         } else if (!curr[char]) {
+//             return false;
+//         }
+//         curr = curr[char];
+//         console.log(char)
+//     }
+//     console.log(curr)
+//     return curr.isWord ? true : false;
+// };
+// const wordDictionary = new WordDictionary();
+// wordDictionary.addWord("bad")
+// wordDictionary.addWord("dad")
+// wordDictionary.addWord("mad")
+// wordDictionary.search("pad")
+// wordDictionary.search("bad")
+// wordDictionary.search(".ad")
+// wordDictionary.search("b..")
