@@ -771,31 +771,50 @@ var groupAnagrams = function(strs) {
 
 
 
-var Twitter = function() {
-    this.follows = {};
-    this.tweets = [];
+// var Twitter = function() {
+//     this.follows = {};
+//     this.tweets = [];
+
+// };
+// Twitter.prototype.postTweet = function(userId, tweetId) {
+//     this.tweets.push([userId, tweetId]);
+// };
+// Twitter.prototype.getNewsFeed = function(userId) {
+//     const filtered = this.tweets.filter(t => {
+//         if (t[0] === userId || (this.follows[userId] && this.follows[userId][t[0]])                 ) {
+//             return t;
+//         }
+//     })
+//     const feed = [];
+//     let j = 0;
+//     for (let i = filtered.length - 1; i >= 0 && j < 10; --i, ++j) feed.push(filtered[i]);
+//     return feed;
+// };
+
+// Twitter.prototype.follow = function(followerId, followeeId) {
+//     if (!this.follows[followerId]) this.follows[followerId] = {};
+//     this.follows[followerId][followeeId] = true;
+// };
+// Twitter.prototype.unfollow = function(followerId, followeeId) {
+//     if (!this.follows[followerId]) return;
+//     if (this.follows[followerId][followeeId]) delete this.follows[followerId][followeeId];
+// };
+
+
+
+var Trie = function() {
+        this.root = {}
+};
+
+Trie.prototype.insert = function(word) {
+    for (let char of word.split('')) {
+        
+    }
+};
+
+Trie.prototype.search = function(word) {
 
 };
-Twitter.prototype.postTweet = function(userId, tweetId) {
-    this.tweets.push([userId, tweetId]);
-};
-Twitter.prototype.getNewsFeed = function(userId) {
-    const filtered = this.tweets.filter(t => {
-        if (t[0] === userId || (this.follows[userId] && this.follows[userId][t[0]])                 ) {
-            return t;
-        }
-    })
-    const feed = [];
-    let j = 0;
-    for (let i = filtered.length - 1; i >= 0 && j < 10; --i, ++j) feed.push(filtered[i]);
-    return feed;
-};
+Trie.prototype.startsWith = function(prefix) {
 
-Twitter.prototype.follow = function(followerId, followeeId) {
-    if (!this.follows[followerId]) this.follows[followerId] = {};
-    this.follows[followerId][followeeId] = true;
-};
-Twitter.prototype.unfollow = function(followerId, followeeId) {
-    if (!this.follows[followerId]) return;
-    if (this.follows[followerId][followeeId]) delete this.follows[followerId][followeeId];
 };
