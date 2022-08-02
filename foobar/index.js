@@ -802,19 +802,39 @@ var groupAnagrams = function(strs) {
 
 
 
-var Trie = function() {
-        this.root = {}
-};
+// var Trie = function() {
+//         this.root = {}
+// };
 
-Trie.prototype.insert = function(word) {
-    for (let char of word.split('')) {
-        
-    }
-};
+// Trie.prototype.insert = function(word) {
+//     let curr = this.root;
+//     for (let char of word.split('')) {
+//         if (!curr[char]) {
+//             curr[char] = {};
+//         }
+//         curr = curr[char];
+//     }
+//     curr.isWord = true;
+// };
 
-Trie.prototype.search = function(word) {
+// Trie.prototype.search = function(word) {
+//     let curr = this.root;
+//     for (let char of word.split('')) {
+//         if (!curr[char]) {
+//             return false;
+//         }
+//         curr = curr[char];
+//     }
+//     return curr.isWord ? true : false;
+// };
 
-};
-Trie.prototype.startsWith = function(prefix) {
-
-};
+// Trie.prototype.startsWith = function(prefix) {
+//     let curr = this.root;
+//     for (let char of prefix.split('')) {
+//         if (!curr[char]) {
+//             return false;
+//         }
+//         curr = curr[char];
+//     }
+//     return true;
+// };
