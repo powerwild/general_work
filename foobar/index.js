@@ -884,3 +884,23 @@ var groupAnagrams = function(strs) {
 // wordDictionary.search("bad")
 // wordDictionary.search(".ad")
 // wordDictionary.search("b..")
+
+
+
+// var minCostClimbingStairs = function(cost, amount=0) {
+//     if (!cost.length) return amount;
+//     const ifLengthEOne = cost.length === 1 ? () => amount : () => minCostClimbingStairs(cost.slice(2), amount + cost[1]);
+//     console.log(ifLengthEOne)
+//     return Math.min( minCostClimbingStairs(cost.slice(1), amount + cost[0]), ifLengthEOne() );
+// };
+// var minCostClimbingStairs = function(cost) {
+//     let last = cost[cost.length-1];
+//     let prev = cost[cost.length-2];
+//     for (let i = cost.length - 3; i >= 0; --i) {
+//         let old = prev;
+//         prev = Math.min(prev, last) + cost[i];
+//         last = old;
+//     }
+//     return Math.min(last, prev);
+// };
+// console.log(minCostClimbingStairs([10, 15, 20]))
