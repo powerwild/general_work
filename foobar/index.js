@@ -911,11 +911,9 @@ var groupAnagrams = function(strs) {
 //     if (nums.length === 1) return nums[0];
 //     for (let i = 2; i < nums.length; ++i) {
 //         let odd = nums[i - 3] || 0;
-//         let even = nums[i - 2] || 0;
+//         let even = i !== nums.length-1 ? nums[i - 2] : 0;
 //         nums[i] += Math.max(odd, even);
 //     }
 //     return Math.max(nums[nums.length - 2] || 0, nums[nums.length - 1] || 0);
 // };
 // console.log(rob([2,1,1,2]))
-
-
