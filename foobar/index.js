@@ -917,3 +917,33 @@ var groupAnagrams = function(strs) {
 //     return Math.max(nums[nums.length - 2] || 0, nums[nums.length - 1] || 0);
 // };
 // console.log(rob([2,1,1,2]))
+
+
+
+const palindromicTime = function(A){
+    const revNum = (num) => {
+        const tens = Number(num / 10);
+        const ones = Number(num % 10);
+        return (ones * 10) + tens;
+    }
+    let [hours, minutes] = A.split(':');
+    hours = parseInt(hours);
+    minutes = parseInt(minutes);
+    let palin = revNum(hours);
+    let timeNeed = 0;
+    if (minutes < palin) return hours - minutes;
+    while (minutes !== palin) {
+        if (minutes < palin) {
+            timeNeed += hours - minutes;
+            break;
+        }
+        timeNeed += (60 - minutes);
+        minutes = 0;
+        hours = hours === 23 ? 0 : hours + 1;
+        palin = revNum(hours);
+    }
+    console.log(palin)
+    console.log(hours)
+    console.log(minutes)
+    return timeNeed
+}
