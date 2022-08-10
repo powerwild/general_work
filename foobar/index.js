@@ -958,31 +958,33 @@ var groupAnagrams = function(strs) {
 // }
 
 
-
+// const countNodes = (n, count=1) => {
+//     if (!n) return count;
+//     if (n.next) count += 1;
+//     return countNodes(n.next, count);
+// }
 // var addTwoNumbers = function(l1, l2) {
-//     let num1 = '';
-//     let num2 = '';
-//     let curr = l1;
-//     while (curr) {
-//         num1 = curr.val + num1;
-//         curr = curr.next;
-//     }
-//     curr = l2;
-//     while (curr) {
-//         num2 = curr.val + num2;
-//         curr = curr.next;
-//     }
-//     num1 = num1.split('').reverse().join('');
-//     num2 = num2.split('').reverse().join('');
-//     let num3 = String( Number(num1) + Number(num2) );
-//     num3 = num3.split('').reverse();
-//     const root = new ListNode(Number(num3[0]));
-//     let prev;
-//     curr = prev;
-//     for (let i = 1; i < num3.length; ++i) {
-//         prev = curr;
-//         curr = new ListNode(Number(num3[i]));
-//         prev.next = curr;
+//     let [shorter, longer] = countNodes(l1) > countNodes(l2) ? [l2, l1] : [l1, l2];
+//     const root = longer;
+//     while (shorter) {
+//         longer.val += shorter.val;
+//         shorter = shorter.next;
+//         if (longer.val > 9) {
+//             let diff = longer.val === 10 ? 1 : Math.floor(longer.val / 10);
+//             console.log(longer.val)
+//             console.log(diff)
+//             longer.val = longer.val === 10 ? 0 : longer.val % 10;
+//             if (shorter) shorter.val += diff;
+//             else shorter = new ListNode(diff);
+//         }
+//         if (shorter && !longer.next) {
+//             let node = new ListNode();
+//             longer.next = node;
+//         }
+//         longer = longer.next;
 //     }
 //     return root;
 // };
+
+
+
