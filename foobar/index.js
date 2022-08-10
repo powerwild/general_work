@@ -988,3 +988,26 @@ var groupAnagrams = function(strs) {
 
 
 
+// var copyRandomList = function(head) {
+//     const arr = [];
+//     arr.length = countNodes(head) - 1;
+//     let newHead = new Node(head.val, null, null);
+//     arr.push(newHead);
+//     let old = head;
+//     let curr = newHead;
+//     let index = 1;
+//     while(old) {
+//         if (old.next) {
+//             arr[index] = arr[index] ? arr[index] : new Node(old.next.val, null, null);
+//             if (!arr[index].val) arr[index].val = old.next.val
+//             curr.next = arr[index];
+//         }
+//         if (old.random) {
+//             arr[old.random] = arr[old.random] ? arr[old.random] : new Node(null, null, null);
+//             curr.random = arr[old.random];
+//         }
+//         curr = curr.next;
+//         old = old.next;
+//     }
+//     return newHead;
+// };
