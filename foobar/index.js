@@ -920,30 +920,42 @@ var groupAnagrams = function(strs) {
 
 
 
-const palindromicTime = function(A){
-    const revNum = (num) => {
-        const tens = Number(num / 10);
-        const ones = Number(num % 10);
-        return (ones * 10) + tens;
-    }
-    let [hours, minutes] = A.split(':');
-    hours = parseInt(hours);
-    minutes = parseInt(minutes);
-    let palin = revNum(hours);
-    let timeNeed = 0;
-    if (minutes < palin) return hours - minutes;
-    while (minutes !== palin) {
-        if (minutes < palin) {
-            timeNeed += hours - minutes;
-            break;
-        }
-        timeNeed += (60 - minutes);
-        minutes = 0;
-        hours = hours === 23 ? 0 : hours + 1;
-        palin = revNum(hours);
-    }
-    console.log(palin)
-    console.log(hours)
-    console.log(minutes)
-    return timeNeed
-}
+// const palindromicTime = function(A){
+//     const revNum = (num) => {
+//         const tens = Number(num / 10);
+//         const ones = Number(num % 10);
+//         return (ones * 10) + tens;
+//     }
+//     let [hours, minutes] = A.split(':');
+//     hours = parseInt(hours);
+//     minutes = parseInt(minutes);
+//     let palin = revNum(hours);
+//     let timeNeed = 0;
+//     if (minutes < palin) return hours - minutes;
+//     while (minutes !== palin) {
+//         if (minutes < palin) {
+//             timeNeed += hours - minutes;
+//             break;
+//         }
+//         timeNeed += (60 - minutes);
+//         minutes = 0;
+//         hours = hours === 23 ? 0 : hours + 1;
+//         palin = revNum(hours);
+//     }
+//     console.log(palin)
+//     console.log(hours)
+//     console.log(minutes)
+//     return timeNeed
+// }
+
+
+
+// var lowestCommonAncestor = function(root, p, q) {
+//     const [min, max] = q.val > p.val ? [p, q] : [q, p];
+//     if (root.val >= min.val && root.val <= max) return root;
+//     if (root.val > max.val) return lowestCommonAncestor(root.left, p, q);
+//     if (root.val < min.val) return lowestCommonAncestor(root.right, p, q);
+// }
+
+
+
