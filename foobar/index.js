@@ -959,3 +959,30 @@ var groupAnagrams = function(strs) {
 
 
 
+// var addTwoNumbers = function(l1, l2) {
+//     let num1 = '';
+//     let num2 = '';
+//     let curr = l1;
+//     while (curr) {
+//         num1 = curr.val + num1;
+//         curr = curr.next;
+//     }
+//     curr = l2;
+//     while (curr) {
+//         num2 = curr.val + num2;
+//         curr = curr.next;
+//     }
+//     num1 = num1.split('').reverse().join('');
+//     num2 = num2.split('').reverse().join('');
+//     let num3 = String( Number(num1) + Number(num2) );
+//     num3 = num3.split('').reverse();
+//     const root = new ListNode(Number(num3[0]));
+//     let prev;
+//     curr = prev;
+//     for (let i = 1; i < num3.length; ++i) {
+//         prev = curr;
+//         curr = new ListNode(Number(num3[i]));
+//         prev.next = curr;
+//     }
+//     return root;
+// };
