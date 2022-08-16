@@ -1011,3 +1011,9 @@ var groupAnagrams = function(strs) {
 //     }
 //     return newHead;
 // };
+
+
+function collision(speed, pos) {
+    
+
+}
