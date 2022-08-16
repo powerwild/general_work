@@ -1013,16 +1013,40 @@ var groupAnagrams = function(strs) {
 // };
 
 
-function collision(speed, pos) {
-    const target = speed[pos];
-    let collisions = 0;
-    for (let i = 0; i < speed.length; ++i) {
-        if (i < pos) {
-            if (speed[i] > target) collisions += 1;
-        }
-        if (i > pos) {
-            if (speed[i] < target) collisions += 1;
-        }
-    }
-    return collisions;
-}
+// function collision(speed, pos) {
+//     const target = speed[pos];
+//     let collisions = 0;
+//     for (let i = 0; i < speed.length; ++i) {
+//         if (i < pos) {
+//             if (speed[i] > target) collisions += 1;
+//         }
+//         if (i > pos) {
+//             if (speed[i] < target) collisions += 1;
+//         }
+//     }
+//     return collisions;
+// }
+
+
+
+// const mapArr = (array) => {
+//     const map = {};
+//     for (let i = 0; i < array.length; ++i) {
+//         if (!map[array[i]]) map[array[i]] = 1;
+//         else map[array[i]] += 1;
+//     }
+//     return map;
+// }
+// function getMinimumCost(arr) {
+//     const mapper = mapArr(arr);
+
+//     let i = 0;
+//     const sums = [];
+//     while (i < arr.length) {
+//         sums.push(findSum(arr));
+//         const shift = arr.shift();
+//         arr.push(shift);
+//         i += 1;
+//     }
+//     return Math.min(...sums);
+// }
