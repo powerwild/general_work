@@ -1014,6 +1014,15 @@ var groupAnagrams = function(strs) {
 
 
 function collision(speed, pos) {
-    
-
+    const target = speed[pos];
+    let collisions = 0;
+    for (let i = 0; i < speed.length; ++i) {
+        if (i < pos) {
+            if (speed[i] > target) collisions += 1;
+        }
+        if (i > pos) {
+            if (speed[i] < target) collisions += 1;
+        }
+    }
+    return collisions;
 }
