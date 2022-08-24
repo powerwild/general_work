@@ -1053,3 +1053,7 @@ var groupAnagrams = function(strs) {
 
 
 
+function toolchanger(tools, startIndex, target) {
+    // Write your code here
+
+}
