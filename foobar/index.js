@@ -1064,3 +1064,9 @@ var groupAnagrams = function(strs) {
 //         if (j >= 0 && tools[j] === target) return jSteps;
 //     }
 // }
+
+
+
+function minimumMoves(arr1, arr2) {
+    
+}
