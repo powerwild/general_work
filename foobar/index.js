@@ -1081,3 +1081,6 @@ var groupAnagrams = function(strs) {
 
 
 
+function minMoves(n, startRow, startCol, endRow, endCol) {
+    
+}
