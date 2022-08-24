@@ -1106,3 +1106,10 @@ var groupAnagrams = function(strs) {
 //     }
 //     return -1;
 // }
+
+
+
+var isHappy = function(n) {
+    const q = [];
+
+};
