@@ -1081,6 +1081,28 @@ var groupAnagrams = function(strs) {
 
 
 
-function minMoves(n, startRow, startCol, endRow, endCol) {
-    
-}
+// const checkValidAndMove = (n, x, y, z, moveSet, q) => {
+//     if ((x < n && x >= 0 && y < n && y >= 0) && !moveSet.has(String([x, y]))) {
+//         q.unshift([x, y, z]);
+//         moveSet.add(String([x, y]));
+//     }
+//     return;
+// }
+// function minMoves(n, startRow, startCol, endRow, endCol) {
+//     let q = [[startRow, startCol, 0]];
+//     const moveSet = new Set();
+//     moveSet.add(String([startRow, startCol]));
+//     while (q.length) {
+//         let curr = q.pop();
+//         if (curr[0] === endRow && curr[1] === endCol) return curr[2];
+//         checkValidAndMove(n, curr[0] + 2, curr[1] + 1, curr[2] + 1, moveSet, q);
+//         checkValidAndMove(n, curr[0] + 2, curr[1] - 1, curr[2] + 1, moveSet, q);
+//         checkValidAndMove(n, curr[0] - 2, curr[1] + 1, curr[2] + 1, moveSet, q);
+//         checkValidAndMove(n, curr[0] - 2, curr[1] - 1, curr[2] + 1, moveSet, q);
+//         checkValidAndMove(n, curr[0] + 1, curr[1] + 2, curr[2] + 1, moveSet, q);
+//         checkValidAndMove(n, curr[0] - 1, curr[1] + 2, curr[2] + 1, moveSet, q);
+//         checkValidAndMove(n, curr[0] + 1, curr[1] - 2, curr[2] + 1, moveSet, q);
+//         checkValidAndMove(n, curr[0] - 1, curr[1] - 2, curr[2] + 1, moveSet, q);
+//     }
+//     return -1;
+// }
