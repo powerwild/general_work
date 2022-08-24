@@ -1053,7 +1053,14 @@ var groupAnagrams = function(strs) {
 
 
 
-function toolchanger(tools, startIndex, target) {
-    // Write your code here
-
-}
+// function toolchanger(tools, startIndex, target) {
+//     let j = startIndex - 1;
+//     let iSteps = 1;
+//     let jSteps = 1;
+//     for (let i = startIndex + 1; i !== j; --j, ++i, ++jSteps, ++iSteps) {
+//         if (i === tools.length) i = 0;
+//         if (j === -1) j = tools.length - 1;
+//         if (i < tools.length && tools[i] === target) return iSteps;
+//         if (j >= 0 && tools[j] === target) return jSteps;
+//     }
+// }
