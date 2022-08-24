@@ -1067,6 +1067,17 @@ var groupAnagrams = function(strs) {
 
 
 
-function minimumMoves(arr1, arr2) {
-    
-}
+// function minimumMoves(arr1, arr2) {
+//     let moves = 0;
+//     for (let i = 0; i < arr1.length; ++i) {
+//         let el1 = String(arr1[i]).split('');
+//         let el2 = String(arr2[i]).split('');
+//         for (let j = 0; j < el1.length; ++j) {
+//             moves += Math.abs(Number(el1[j]) - Number(el2[j]));
+//         }
+//     }
+//     return moves;
+// }
+
+
+
