@@ -1109,7 +1109,16 @@ var groupAnagrams = function(strs) {
 
 
 
-var isHappy = function(n) {
-    const q = [];
-
-};
+// var isHappy = function(n) {
+//     const visited = new Set();
+//     let curr = String(n);
+//     while (!visited.has(curr)) {
+//         if (Number(curr) === 1) return true;
+//         visited.add(curr);
+//         let arr = curr.split('');
+//         let sum = 0;
+//         for (let i = 0; i < arr.length; ++i) sum += (Number(arr[i])**2);
+//         curr = String(sum);
+//     }
+//     return false;
+// };
