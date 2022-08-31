@@ -1143,5 +1143,33 @@ var groupAnagrams = function(strs) {
 
 
 function chooseFlask(requirements, flaskTypes, markings) {
-
+    const q = new Array(flaskTypes);
+    for (let i = 0; i < q.length; ++i) q[i] = [];
+    for (let mark of markings) {
+        q[Number(mark[0])].push(mark[1]);
+    }
+    let bestFlask = [0, Infinity];
+    while (q.length) {
+        let curr = q.pop();
+        let x = 0;
+        let y = 0;
+        let waste;
+        while (x < requirements.length && y < curr.length) {
+            if (curr[y] < requirements[x]) {
+                ++y;
+                continue;
+            }
+            if (!waste) waste = 0;
+            waste += (curr[y] - requirements[x]);
+            ++x;
+        }
+        if (waste < bestFlask[1]) {
+            bestFlask = [flaskTypes-1, waste];
+        }
+        flaskTypes -= 1;
+    }
+    return bestFlask[1] === Infinity ? -1 : bestFlask[0];
 }
+
+
+
