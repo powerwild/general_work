@@ -1122,3 +1122,9 @@ var groupAnagrams = function(strs) {
 //     }
 //     return false;
 // };
+
+
+
+function getUniqueCharacter(s) {
+    
+}
