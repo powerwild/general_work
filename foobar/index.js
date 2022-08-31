@@ -1125,17 +1125,23 @@ var groupAnagrams = function(strs) {
 
 
 
-function getUniqueCharacter(s) {
-    if (s.length < 2) return 1;
-    const sArr = s.split('');
-    let map = {};
-    let index = 1;
-    for (let char of sArr) {
-        if (!map[char]) {
-            map[char] = index;
-        } else map[char] = Infinity;
-        ++index;
-    }
-    map = Object.values(map).sort((a,b) => a - b)[0];
-    return map === Infinity ? -1 : map;
+// function getUniqueCharacter(s) {
+//     if (s.length < 2) return 1;
+//     const sArr = s.split('');
+//     let map = {};
+//     let index = 1;
+//     for (let char of sArr) {
+//         if (!map[char]) {
+//             map[char] = index;
+//         } else map[char] = Infinity;
+//         ++index;
+//     }
+//     map = Object.values(map).sort((a,b) => a - b)[0];
+//     return map === Infinity ? -1 : map;
+// }
+
+
+
+function chooseFlask(requirements, flaskTypes, markings) {
+
 }
