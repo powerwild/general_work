@@ -1173,3 +1173,6 @@ function chooseFlask(requirements, flaskTypes, markings) {
 
 
 
+function reachTheEnd(grid, maxTime) {
+    
+}
