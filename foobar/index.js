@@ -1174,5 +1174,16 @@ function chooseFlask(requirements, flaskTypes, markings) {
 
 
 function reachTheEnd(grid, maxTime) {
-    
+    if (x === grid.length - 1 && y === grid[0].length - 1) return steps;
+    if (!memo[String(x, y)]) memo[String(x, y)] = true;
+    let up;
+    let down;
+    let left;
+    let right;
+    if (x > 0 && grid[x][y] === '.' && !memo[String(x-1, y)]) up = reachTheEnd(grid, maxTime, x-1, y, steps+1, memo);
+    if (x < grid.length - 1 && grid[x][y] === '.' && !memo[String(x+1, y)]) down = reachTheEnd(grid, maxTime, x+1, y, steps+1, memo);
+    if (y > 0 && grid[x][y] === '.' && !memo[String(x, y-1)]) left = reachTheEnd(grid, maxTime, x, y-1, steps+1, memo);
+    if (y < grid[0].length - 1 && grid[x][y] === '.' && !memo[String(x, y+1)]) right = reachTheEnd(grid, maxTime, x, y+1, steps+1, memo);
+    console.log(up, down, left, right)
+    return Math.min(up, down, left, right) <= maxTime ? 'Yes' : 'No';
 }
