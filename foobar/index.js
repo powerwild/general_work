@@ -1206,44 +1206,71 @@ var groupAnagrams = function(strs) {
 
 
 
-function traverse(grid, coords, memo, strokes) {
-    const q = [coords];
-    const target = grid[coords[0]][coords[1]];
-    while (q.length) {
-        const [r, c] = q.pop();
-        memo.add(r + '' + c);
-        if (r < grid.length - 1 && !memo.has((r+1) + '' + (c)) && grid[r+1][c] === target) {
-            q.push([r+1, c]);
-        }
-        if (r > 0 && !memo.has((r-1) + '' + (c)) && grid[r-1][c] === target) {
-            q.push([r-1, c]);
-        }
-        if (c < grid[0].length - 1 && !memo.has((r) + '' + (c+1)) && grid[r][c+1] === target) {
-            q.push([r, c+1]);
-        }
-        if (c > 0 && !memo.has((r) + '' + (c-1)) && grid[r][c-1] === target) {
-            q.push([r, c-1]);
-        }
-    }
-    return;
-}
-function strokesRequired(picture) {
-    for (let i = 0; i < picture.length; ++i) picture[i] = picture[i].split('');
-    const memo = new Set();
-    let strokes = 0;
-    let x = 0;
-    for (let y = 0; x < picture.length && y < picture[0].length; ++y) {
-        if (!memo.has(x + '' + y)) {
-            traverse(picture, [x, y], memo, strokes);
-            ++strokes;
-        }
-        if (y === picture[0].length - 1) {
-            y = -1;
-            ++x;
-        }
-    }
-    return strokes;
-}
+// function traverse(grid, coords, memo, strokes) {
+//     const q = [coords];
+//     const target = grid[coords[0]][coords[1]];
+//     while (q.length) {
+//         const [r, c] = q.pop();
+//         memo.add(r + '' + c);
+//         if (r < grid.length - 1 && !memo.has((r+1) + '' + (c)) && grid[r+1][c] === target) {
+//             q.push([r+1, c]);
+//         }
+//         if (r > 0 && !memo.has((r-1) + '' + (c)) && grid[r-1][c] === target) {
+//             q.push([r-1, c]);
+//         }
+//         if (c < grid[0].length - 1 && !memo.has((r) + '' + (c+1)) && grid[r][c+1] === target) {
+//             q.push([r, c+1]);
+//         }
+//         if (c > 0 && !memo.has((r) + '' + (c-1)) && grid[r][c-1] === target) {
+//             q.push([r, c-1]);
+//         }
+//     }
+//     return;
+// }
+// function strokesRequired(picture) {
+//     for (let i = 0; i < picture.length; ++i) picture[i] = picture[i].split('');
+//     const memo = new Set();
+//     let strokes = 0;
+//     let x = 0;
+//     for (let y = 0; x < picture.length && y < picture[0].length; ++y) {
+//         if (!memo.has(x + '' + y)) {
+//             traverse(picture, [x, y], memo, strokes);
+//             ++strokes;
+//         }
+//         if (y === picture[0].length - 1) {
+//             y = -1;
+//             ++x;
+//         }
+//     }
+//     return strokes;
+// }
 
 
 
+// function breakSort(arr) {
+//     if (arr.length < 2) return 0;
+//     let ops = 0;
+//     let prev = arr.pop();
+//     while (arr.length) {
+//         let curr = arr[arr.length - 1];
+//         let a;
+//         let b;
+//         if (curr > prev) {
+//             ++ops;
+//             arr.pop();
+//             if (curr % 2 === 0) {
+//                 a = curr / 2;
+//                 b = a;
+//             } else {
+//                 a = (curr - 1) / 2;
+//                 b = a + 1;
+//             }
+//             if (b < prev) arr.push(a);
+//             else arr.push(b, a)
+//         } else {
+//             prev = curr;
+//             arr.pop();
+//         }
+//     }
+//     return ops - 1;
+// }
