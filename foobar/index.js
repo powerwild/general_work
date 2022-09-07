@@ -1190,16 +1190,22 @@ var groupAnagrams = function(strs) {
 
 
 
-function updateTimes(signalOne, signalTwo) {
-    const updates = [];
-    let x = 0;
-    while (x < signalOne.length && x < signalTwo.length) {
-        if (signalOne[x] === signalTwo[x]) {
-            if (!updates.length || signalOne[x] > updates[updates.length - 1]) {
-                updates.push(signalOne[x]);
-            }
-        }
-        ++x;
-    }
-    return updates.length;
+// function updateTimes(signalOne, signalTwo) {
+//     const updates = [];
+//     let x = 0;
+//     while (x < signalOne.length && x < signalTwo.length) {
+//         if (signalOne[x] === signalTwo[x]) {
+//             if (!updates.length || signalOne[x] > updates[updates.length - 1]) {
+//                 updates.push(signalOne[x]);
+//             }
+//         }
+//         ++x;
+//     }
+//     return updates.length;
+// }
+
+
+
+function strokesRequired(picture) {
+    
 }
