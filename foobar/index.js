@@ -1142,48 +1142,54 @@ var groupAnagrams = function(strs) {
 
 
 
-function chooseFlask(requirements, flaskTypes, markings) {
-    const q = new Array(flaskTypes);
-    for (let i = 0; i < q.length; ++i) q[i] = [];
-    for (let mark of markings) {
-        q[Number(mark[0])].push(mark[1]);
-    }
-    let bestFlask = [0, Infinity];
-    while (q.length) {
-        let curr = q.pop();
-        let x = 0;
-        let y = 0;
-        let waste;
-        while (x < requirements.length && y < curr.length) {
-            if (curr[y] < requirements[x]) {
-                ++y;
-                continue;
-            }
-            if (!waste) waste = 0;
-            waste += (curr[y] - requirements[x]);
-            ++x;
-        }
-        if (waste < bestFlask[1]) {
-            bestFlask = [flaskTypes-1, waste];
-        }
-        flaskTypes -= 1;
-    }
-    return bestFlask[1] === Infinity ? -1 : bestFlask[0];
-}
+// function chooseFlask(requirements, flaskTypes, markings) {
+//     const q = new Array(flaskTypes);
+//     for (let i = 0; i < q.length; ++i) q[i] = [];
+//     for (let mark of markings) {
+//         q[Number(mark[0])].push(mark[1]);
+//     }
+//     let bestFlask = [0, Infinity];
+//     while (q.length) {
+//         let curr = q.pop();
+//         let x = 0;
+//         let y = 0;
+//         let waste;
+//         while (x < requirements.length && y < curr.length) {
+//             if (curr[y] < requirements[x]) {
+//                 ++y;
+//                 continue;
+//             }
+//             if (!waste) waste = 0;
+//             waste += (curr[y] - requirements[x]);
+//             ++x;
+//         }
+//         if (waste < bestFlask[1]) {
+//             bestFlask = [flaskTypes-1, waste];
+//         }
+//         flaskTypes -= 1;
+//     }
+//     return bestFlask[1] === Infinity ? -1 : bestFlask[0];
+// }
 
 
 
-function reachTheEnd(grid, maxTime) {
-    if (x === grid.length - 1 && y === grid[0].length - 1) return steps;
-    if (!memo[String(x, y)]) memo[String(x, y)] = true;
-    let up;
-    let down;
-    let left;
-    let right;
-    if (x > 0 && grid[x][y] === '.' && !memo[String(x-1, y)]) up = reachTheEnd(grid, maxTime, x-1, y, steps+1, memo);
-    if (x < grid.length - 1 && grid[x][y] === '.' && !memo[String(x+1, y)]) down = reachTheEnd(grid, maxTime, x+1, y, steps+1, memo);
-    if (y > 0 && grid[x][y] === '.' && !memo[String(x, y-1)]) left = reachTheEnd(grid, maxTime, x, y-1, steps+1, memo);
-    if (y < grid[0].length - 1 && grid[x][y] === '.' && !memo[String(x, y+1)]) right = reachTheEnd(grid, maxTime, x, y+1, steps+1, memo);
-    console.log(up, down, left, right)
-    return Math.min(up, down, left, right) <= maxTime ? 'Yes' : 'No';
+// function reachTheEnd(grid, maxTime) {
+//     if (x === grid.length - 1 && y === grid[0].length - 1) return steps;
+//     if (!memo[String(x, y)]) memo[String(x, y)] = true;
+//     let up;
+//     let down;
+//     let left;
+//     let right;
+//     if (x > 0 && grid[x][y] === '.' && !memo[String(x-1, y)]) up = reachTheEnd(grid, maxTime, x-1, y, steps+1, memo);
+//     if (x < grid.length - 1 && grid[x][y] === '.' && !memo[String(x+1, y)]) down = reachTheEnd(grid, maxTime, x+1, y, steps+1, memo);
+//     if (y > 0 && grid[x][y] === '.' && !memo[String(x, y-1)]) left = reachTheEnd(grid, maxTime, x, y-1, steps+1, memo);
+//     if (y < grid[0].length - 1 && grid[x][y] === '.' && !memo[String(x, y+1)]) right = reachTheEnd(grid, maxTime, x, y+1, steps+1, memo);
+//     console.log(up, down, left, right)
+//     return Math.min(up, down, left, right) <= maxTime ? 'Yes' : 'No';
+// }
+
+
+
+function updateTimes(signalOne, signalTwo) {
+    
 }
