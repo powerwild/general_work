@@ -1334,6 +1334,28 @@ var groupAnagrams = function(strs) {
 
 
 
-function closestStraightCity(c, x, y, q) {
+// function closestStraightCity(c, x, y, q) {
+//     const cities = {};
+//     for (let i = 0; i < c.length; ++i) {
+//         cities[c[i]] = [x[i], y[i]];
+//     }
+//     const solution = [];
+//     let curr;
+//     for (let j = 0; j < q.length; ++j) {
+//         let closest = [null, Infinity];
+//         curr = cities[q[j]];
 
-}
+//         for (let i = 0; i < c.length; ++i) {
+//             let distance;
+//             if (x[i] === curr[0] && y[i] !== curr[1]) {
+//                 distance = Math.abs(y[i] - curr[1]);
+//             } else if (x[i] !== curr[0] && y[i] === curr[1]) {
+//                 distance = Math.abs(x[i] - curr[0]);
+//             }
+//             if (distance < closest[1] || (distance === closest[1] && c[i].split('').length < closest[0].split('').length)) closest = [c[i], distance];
+//         }
+//         if (!closest[0]) solution.push('NONE');
+//         else solution.push(closest[0]);
+//     }
+//     return solution;
+// }
