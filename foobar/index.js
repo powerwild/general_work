@@ -1315,5 +1315,19 @@ var groupAnagrams = function(strs) {
 
 
 function findLongestSingleSlot(leaveTimes) {
-    
+    const charCode = 97;
+    if (leaveTimes.length < 2) return String.fromCharCode(charCode + leaveTimes[0][0]);
+
+    let prevEndTime = 0;
+    let idAndLongestShift = leaveTimes[0];
+
+    for (let i = 0; i < leaveTimes.length; ++i) {
+        let currTime = leaveTimes[i][1] - prevEndTime;
+        if (currTime > idAndLongestShift[1]) {
+            idAndLongestShift = [leaveTimes[i][0], currTime]
+        }
+        prevEndTime = leaveTimes[i][1];
+    }
+
+    return String.fromCharCode(charCode + idAndLongestShift[0]);
 }
