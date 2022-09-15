@@ -1278,5 +1278,37 @@ var groupAnagrams = function(strs) {
 
 
 function smashTheBricks(bigHits, newtons) {
+    if (bigHits >= newtons.length) return [[newtons.length], (newtons.map((el, i) => i + 1)), [-1]];
+    const indeces = {};
+    const solution = [[0], [], []];
 
+    for (let i = 0; i < newtons.length; ++i) {
+        indeces[newtons[i]] = i + 1;
+    }
+
+    newtons.sort((a, b) => a - b);
+
+    let bigHammers = bigHits;
+    for (let i = newtons.length - 1; bigHammers > 0; --i, --bigHammers) {
+        solution[1].push(indeces[newtons[i]]);
+    }
+
+    solution[0][0] += solution[1].length;
+
+    if (!solution[1].length) solution[1].push(-1);
+    else {
+        solution[1].sort((a, b) => a - b);
+        newtons = newtons.slice(0, (newtons.length - bigHits));
+    }
+
+    for (let i = 0; i < newtons.length; ++i) {
+        solution[0][0] += newtons[i];
+        solution[2].push(indeces[newtons[i]]);
+    }
+
+    if (!solution[2].length) solution[1].push(-1);
+    else solution[2].sort((a, b) => a - b);
+
+    return solution;
 }
+console.log(smashTheBricks(9, [7, 9, 3, 2, 5, 8, 4, 6]))
