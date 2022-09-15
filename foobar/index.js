@@ -1274,3 +1274,9 @@ var groupAnagrams = function(strs) {
 //     }
 //     return ops - 1;
 // }
+
+
+
+function smashTheBricks(bigHits, newtons) {
+
+}
