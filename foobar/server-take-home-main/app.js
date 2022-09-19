@@ -28,6 +28,8 @@ app.use('/', indexRouter);
  */
 
 app.get('/creator', api.creator);
+app.get('/campaign', api.campaign);
+app.put('/campaign/planned_delete', api.plannedDeletion);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
