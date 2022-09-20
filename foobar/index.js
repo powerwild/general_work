@@ -1378,34 +1378,39 @@ var groupAnagrams = function(strs) {
 
 
 
-function checkMap(obj, val) {
-    const vals = Object.values(obj);
-    for (let v of vals) {
-        if (v === val) return true;
-    }
-    return false;
-};
-function degreeOfArray(arr) {
-    const map = {};
-    for (let num of arr) {
-        if (!map[num]) map[num] = 1;
-        else map[num] += 1;
-    }
-    const degree = Object.entries(map).sort((a, b) => b[1] - a[1])[0][1];
-    const keys = Object.keys(map);
-    for (let key of keys) if (map[key] < degree) delete map[key];
-    let i = 0;
-    let j = arr.length - 1;
-    while (true) {
-        let start = [i, j];
-        map[arr[i]] -= 1;
-        if (!checkMap(map, degree)) map[arr[i]] += 1;
-        else i += 1;
-        map[arr[j]] -= 1;
-        if (!checkMap(map, degree)) map[arr[j]] += 1;
-        else j -= 1;
-        if (i === start[0] && j === start[1]) break;
-    }
-    return (j - i) + 1;
-};
-console.log(degreeOfArray([1,2,2,3,1]))
+// function checkMap(obj, val) {
+//     const vals = Object.values(obj);
+//     for (let v of vals) {
+//         if (v === val) return true;
+//     }
+//     return false;
+// };
+// function degreeOfArray(arr) {
+//     const map = {};
+//     for (let num of arr) {
+//         if (!map[num]) map[num] = 1;
+//         else map[num] += 1;
+//     }
+//     const degree = Object.entries(map).sort((a, b) => b[1] - a[1])[0][1];
+//     const keys = Object.keys(map);
+//     for (let key of keys) if (map[key] < degree) delete map[key];
+//     let i = 0;
+//     let j = arr.length - 1;
+//     while (true) {
+//         let start = [i, j];
+//         map[arr[i]] -= 1;
+//         if (!checkMap(map, degree)) map[arr[i]] += 1;
+//         else i += 1;
+//         map[arr[j]] -= 1;
+//         if (!checkMap(map, degree)) map[arr[j]] += 1;
+//         else j -= 1;
+//         if (i === start[0] && j === start[1]) break;
+//     }
+//     return (j - i) + 1;
+// };
+// console.log(degreeOfArray([1,2,2,3,1]))
+
+
+
+function findBestPath(n, m, max_t, beauty, u, v, t) {
+}
