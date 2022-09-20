@@ -1363,5 +1363,15 @@ var groupAnagrams = function(strs) {
 
 
 function reductionCost(num) {
-    
+    if (num.length === 2) return num[0] + num[1];
+    num.sort((a, b) => a - b);
+    let cost = 0;
+    while (num.length > 1) {
+        let prod = num.shift() + num.shift();
+        cost += prod;
+        num.push(prod);
+        num.sort((a, b) => a - b);
+    }
+    return cost;
 }
+console.log(reductionCost([1,2,3,4]))
