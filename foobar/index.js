@@ -1359,3 +1359,9 @@ var groupAnagrams = function(strs) {
 //     }
 //     return solution;
 // }
+
+
+
+function reductionCost(num) {
+    
+}
