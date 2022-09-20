@@ -1412,5 +1412,10 @@ var groupAnagrams = function(strs) {
 
 
 
-function findBestPath(n, m, max_t, beauty, u, v, t) {
-}
+// function findBestPath(n, m, max_t, beauty, u, v, t) {
+//     const maxOneWay = Math.floor(max_t / 2);
+//     const matrix = new Array();
+//     for (let i = 0; i < n; ++i) matrix.push(new Array(n));
+
+// }
+// console.log(findBestPath(4,0,4))
