@@ -1419,3 +1419,9 @@ var groupAnagrams = function(strs) {
 
 // }
 // console.log(findBestPath(4,0,4))
+
+
+
+function rollTheString(s, roll) {
+
+}
