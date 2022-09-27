@@ -1422,21 +1422,27 @@ var groupAnagrams = function(strs) {
 
 
 
-function rollTheString(s, roll) {
-    const arr = s.split('');
-    const increments = {};
-    for (let i = 0; i < roll.length; ++i) {
-        for (let j = 0; j < roll[i]; ++j) {
-            increments[j] = increments[j] ? increments[j] + 1 : 1;
-        }
-    }
-    for (let k = 0; k < arr.length; ++k) {
-        if (increments[k]) {
-            if (increments[k] > 26) increments[k] %= 26;
-            let newCode = arr[k].charCodeAt() + increments[k];
-            arr[k] = newCode <= 122 ? String.fromCharCode(newCode) : String.fromCharCode(newCode - 26);
-        }
-    }
-    return arr.join('');
+// function rollTheString(s, roll) {
+//     const arr = s.split('');
+//     const increments = {};
+//     for (let i = 0; i < roll.length; ++i) {
+//         for (let j = 0; j < roll[i]; ++j) {
+//             increments[j] = increments[j] ? increments[j] + 1 : 1;
+//         }
+//     }
+//     for (let k = 0; k < arr.length; ++k) {
+//         if (increments[k]) {
+//             if (increments[k] > 26) increments[k] %= 26;
+//             let newCode = arr[k].charCodeAt() + increments[k];
+//             arr[k] = newCode <= 122 ? String.fromCharCode(newCode) : String.fromCharCode(newCode - 26);
+//         }
+//     }
+//     return arr.join('');
+// }
+// console.log(rollTheString('abz', [3,2,1]))
+
+
+
+function getMergedIntervals(intervals) {
+
 }
-console.log(rollTheString('abz', [3,2,1]))
