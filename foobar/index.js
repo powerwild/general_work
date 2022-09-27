@@ -1443,21 +1443,27 @@ var groupAnagrams = function(strs) {
 
 
 
-function getMergedIntervals(intervals) {
-    intervals.sort((a, b) => a[0] - b[0]);
-    const results = [];
-    let start = intervals[0][0];
-    let end = intervals[0][1];
-    for (let i = 0; i < intervals.length; ++i) {
-        let [s, e] = intervals[i];
-        if (s <= end) end = Math.max(end, e);
-        else {
-            results.push([start, end]);
-            start = s;
-            end = e;
-        }
-    }
-    results.push([start, end]);
-    return results;
+// function getMergedIntervals(intervals) {
+//     intervals.sort((a, b) => a[0] - b[0]);
+//     const results = [];
+//     let start = intervals[0][0];
+//     let end = intervals[0][1];
+//     for (let i = 0; i < intervals.length; ++i) {
+//         let [s, e] = intervals[i];
+//         if (s <= end) end = Math.max(end, e);
+//         else {
+//             results.push([start, end]);
+//             start = s;
+//             end = e;
+//         }
+//     }
+//     results.push([start, end]);
+//     return results;
+// }
+// console.log(getMergedIntervals([[7,7],[2,3],[6,11],[1,2]]))
+
+
+
+function largestCountValue(a) {
+
 }
-console.log(getMergedIntervals([[7,7],[2,3],[6,11],[1,2]]))
