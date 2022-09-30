@@ -1464,15 +1464,28 @@ var groupAnagrams = function(strs) {
 
 
 
-function largestCountValue(a) {
-    let count = 0;
-    let i = 0;
-    for (let j = 1; j < a.length; ++j) {
-        if (a[i] > a[j]) count += 1;
-        if (j === a.length - 1) {
-            i += 1
-            j = i;
-        }
-    }
-    return count;
-}
+// function largestCountValue(a) {
+//     let count = 0;
+//     let i = 0;
+//     for (let j = 1; j < a.length; ++j) {
+//         if (a[i] > a[j]) count += 1;
+//         if (j === a.length - 1) {
+//             i += 1
+//             j = i;
+//         }
+//     }
+//     return count;
+// }
+// function largestCountValue(a, count=0) {
+//     if (a.length < 2) return a;
+//     let l = a.length;
+//     let mid = l % 2 === 0 ? l / 2 : Math.ceil(l / 2);
+//     let left = largestCountValue(a.slice(0, mid+1), count);
+//     let right = largestCountValue(a.slice(mid));
+//     if (right[0] < left[left.length - 1]) count += 1;
+//     return count;
+// }
+// console.log(largestCountValue([2,3,1]))
+
+
+
