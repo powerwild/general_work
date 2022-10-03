@@ -7,14 +7,19 @@
 // };
 
 
-var pivotIndex = function(nums) {
-    let total = 0;
-    for (let i = 0; i < nums.length; ++i) total += nums[i];
-    let lSum = 0;
-    for (let j = 0; j < nums.length; ++j) {
-        total -= nums[j];
-        if (lSum === total) return j;
-        lSum += nums[j];
-    }
-    return -1;
+// var pivotIndex = function(nums) {
+//     let total = 0;
+//     for (let i = 0; i < nums.length; ++i) total += nums[i];
+//     let lSum = 0;
+//     for (let j = 0; j < nums.length; ++j) {
+//         total -= nums[j];
+//         if (lSum === total) return j;
+//         lSum += nums[j];
+//     }
+//     return -1;
+// };
+
+
+var isIsomorphic = function(s, t) {
+
 };
