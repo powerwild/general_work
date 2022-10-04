@@ -126,5 +126,14 @@
 
 
 var maxProfit = function(prices) {
-    
+    let profit = 0;
+    let i = 0;
+    let j = 1;
+    while (j < prices.length) {
+        let currProf = prices[j] - prices[i];
+        if (currProf > profit) profit = currProf;
+        if (prices[j] < prices[i]) i = j;
+        ++j;
+    }
+    return profit;
 };
