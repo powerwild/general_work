@@ -83,18 +83,23 @@
 // };
 
 
-var reverseList = function(head) {
-    if (!head) return head;
-    const arr = [];
-    let curr = head;
-    while (curr) {
-        arr.push(curr);
-        curr = curr.next;
-    }
-    for (let i = arr.length - 1; i >= 0; --i) {
-        if (i === 0) {
-            arr[i].next = null;
-        } else arr[i].next = arr[i-1];
-    }
-    return arr[arr.length - 1];
+// var reverseList = function(head) {
+//     if (!head) return head;
+//     const arr = [];
+//     let curr = head;
+//     while (curr) {
+//         arr.push(curr);
+//         curr = curr.next;
+//     }
+//     for (let i = arr.length - 1; i >= 0; --i) {
+//         if (i === 0) {
+//             arr[i].next = null;
+//         } else arr[i].next = arr[i-1];
+//     }
+//     return arr[arr.length - 1];
+// };
+
+
+var middleNode = function(head) {
+
 };
