@@ -112,15 +112,19 @@
 // };
 
 
-var detectCycle = function(head) {
-    if (!head || !head.next) return null;
-    const map = new Set();
-    let curr = head;
-    while (curr) {
-        if (map.has(curr)) return curr;
-        map.add(curr);
-        curr = curr.next;
-    }
-    return null;
-};
+// var detectCycle = function(head) {
+//     if (!head || !head.next) return null;
+//     const map = new Set();
+//     let curr = head;
+//     while (curr) {
+//         if (map.has(curr)) return curr;
+//         map.add(curr);
+//         curr = curr.next;
+//     }
+//     return null;
+// };
 
+
+var maxProfit = function(prices) {
+    
+};
