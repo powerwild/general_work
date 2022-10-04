@@ -58,26 +58,31 @@
 // };
 
 
-var mergeTwoLists = function(list1, list2) {
-    if (!list1) return list2;
-    if (!list2) return list1;
-    let curr1 = list1;
-    let curr2 = list2;
-    let prev;
-    const newHead = curr1.val <= curr2.val ? curr1 : curr2;
-    while (curr1 && curr2) {
-        if (curr2 && curr1.val <= curr2.val) {
-            while (curr1.next && curr1.next.val <= curr2.val) curr1 = curr1.next;
-            prev = curr1;
-            curr1 = curr1.next;
-            prev.next = curr2;
-        } else if (!curr2) break;
-        if (curr1 && curr2.val <= curr1.val) {
-            while (curr2.next && curr2.next.val <= curr1.val) curr2 = curr2.next;
-            prev = curr2;
-            curr2 = curr2.next;
-            prev.next = curr1;
-        } else if (!curr1) break;
-    }
-    return newHead;
+// var mergeTwoLists = function(list1, list2) {
+//     if (!list1) return list2;
+//     if (!list2) return list1;
+//     let curr1 = list1;
+//     let curr2 = list2;
+//     let prev;
+//     const newHead = curr1.val <= curr2.val ? curr1 : curr2;
+//     while (curr1 && curr2) {
+//         if (curr2 && curr1.val <= curr2.val) {
+//             while (curr1.next && curr1.next.val <= curr2.val) curr1 = curr1.next;
+//             prev = curr1;
+//             curr1 = curr1.next;
+//             prev.next = curr2;
+//         } else if (!curr2) break;
+//         if (curr1 && curr2.val <= curr1.val) {
+//             while (curr2.next && curr2.next.val <= curr1.val) curr2 = curr2.next;
+//             prev = curr2;
+//             curr2 = curr2.next;
+//             prev.next = curr1;
+//         } else if (!curr1) break;
+//     }
+//     return newHead;
+// };
+
+
+var reverseList = function(head) {
+    
 };
