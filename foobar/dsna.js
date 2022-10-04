@@ -100,13 +100,18 @@
 // };
 
 
-var middleNode = function(head) {
-    if (!head) return head;
-    const arr = [];
-    let curr = head;
-    while (curr) {
-        arr.push(curr);
-        curr = curr.next;
-    }
-    return arr[Math.floor(arr.length / 2)];
+// var middleNode = function(head) {
+//     if (!head) return head;
+//     const arr = [];
+//     let curr = head;
+//     while (curr) {
+//         arr.push(curr);
+//         curr = curr.next;
+//     }
+//     return arr[Math.floor(arr.length / 2)];
+// };
+
+
+var detectCycle = function(head) {
+
 };
