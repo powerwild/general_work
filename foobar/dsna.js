@@ -140,5 +140,21 @@
 
 
 var longestPalindrome = function(s) {
-
+    const map = {};
+    for (let i = 0; i < s.length; ++i) {
+        const char = s[i];
+        if (!map[char]) map[char] = 1;
+        else map[char] += 1;
+    }
+    let oddNumLets = false;
+    let maxLength = 0;
+    const vals = Object.values(map);
+    for (let j = 0; j < vals.length; ++j) {
+        const leftover = vals[j] % 2;
+        if (leftover > 0) {
+            oddNumLets = true;
+            maxLength += vals[j] - leftover;
+        } else maxLength += vals[j];
+    }
+    return maxLength + (oddNumLets ? 1 : 0);
 };
