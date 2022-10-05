@@ -161,5 +161,16 @@
 
 
 var preorder = function(root) {
-
+    if (!root) return [];
+    const vals = [];
+    const stack = [root];
+    let curr;
+    while (stack.length) {
+        curr = stack.pop();
+        vals.push(curr.val);
+        if (curr.children) {
+            for (let i = curr.children.length - 1; i >= 0; --i) stack.push(curr.children[i]);
+        }
+    }
+    return vals;
 };
