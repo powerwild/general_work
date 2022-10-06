@@ -223,6 +223,13 @@ var solution = function(isBadVersion) {
      * @return {integer} The first bad version
      */
     return function(n) {
-
+        if (n === 1) return 1;
+        let s = 1;
+        while (s < n) {
+            let m = Math.floor((n + s) / 2);
+            if (isBadVersion(m)) n = m;
+            else s = m + 1;
+        }
+        return s;
     };
 };
