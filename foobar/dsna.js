@@ -176,26 +176,31 @@
 // };
 
 
-var levelOrder = function(root) {
-    if (!root) return [];
-    const vals = [[root.val]];
-    const q = [root];
-    while (q.length) {
-        let currs = [...q];
-        q.length = 0;
-        let levelArr = [];
-        for (let i = 0; i < currs.length; ++ i) {
-            let curr = currs[i];
-            if (curr.left) {
-                q.push(curr.left);
-                levelArr.push(curr.left.val);
-            }
-            if (curr.right) {
-                q.push(curr.right);
-                levelArr.push(curr.right.val);
-            }
-        }
-        if (levelArr.length) vals.push(levelArr);
-    }
-    return vals;
+// var levelOrder = function(root) {
+//     if (!root) return [];
+//     const vals = [[root.val]];
+//     const q = [root];
+//     while (q.length) {
+//         let currs = [...q];
+//         q.length = 0;
+//         let levelArr = [];
+//         for (let i = 0; i < currs.length; ++ i) {
+//             let curr = currs[i];
+//             if (curr.left) {
+//                 q.push(curr.left);
+//                 levelArr.push(curr.left.val);
+//             }
+//             if (curr.right) {
+//                 q.push(curr.right);
+//                 levelArr.push(curr.right.val);
+//             }
+//         }
+//         if (levelArr.length) vals.push(levelArr);
+//     }
+//     return vals;
+// };
+
+
+var search = function(nums, target) {
+    
 };
