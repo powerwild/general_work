@@ -259,12 +259,17 @@
 //     const [min, max] = p.val < q.val ? [p, q] : [q, p];
 //     return traverse(root, min, max);
 // };
-var lowestCommonAncestor = function(root, p, q) {
-    const [min, max] = p.val < q.val ? [p, q] : [q, p];
-    let curr = root;
-    while (curr.val < min.val || curr.val > max.val) {
-        if (curr.val < min.val) curr = curr.right;
-        else if (curr.val > max.val) curr = curr.left;
-    }
-    return curr;
+// var lowestCommonAncestor = function(root, p, q) {
+//     const [min, max] = p.val < q.val ? [p, q] : [q, p];
+//     let curr = root;
+//     while (curr.val < min.val || curr.val > max.val) {
+//         if (curr.val < min.val) curr = curr.right;
+//         else if (curr.val > max.val) curr = curr.left;
+//     }
+//     return curr;
+// }
+
+
+var reverse = function(x) {
+
 };
