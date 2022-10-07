@@ -271,5 +271,12 @@
 
 
 var reverse = function(x) {
-
+    let negOffset = x < 0 ? -1 : 1;
+    x *= negOffset;
+    x = String(x).split('');
+    x.reverse();
+    x = Number(x.join(''));
+    x *= negOffset;
+    return x < 2147483647 && x > -2147483647 ? x : 0;
 };
+
