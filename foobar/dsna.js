@@ -250,7 +250,12 @@
 //     return isValidBST(root.left, min, root.val) && isValidBST(root.right, root.val, max);
 // };
 
-
+var traverse = function(n, min, max) {
+    if (n.val >= min.val && n.val <= max.val) return n;
+    if (n.val < min.val) return traverse(n.right, min, max);
+    if (n.val > max.val) return traverse(n.left, min, max);
+}
 var lowestCommonAncestor = function(root, p, q) {
-    
+    const [min, max] = p.val < q.val ? [p, q] : [q, p];
+    return traverse(root, min, max);
 };
