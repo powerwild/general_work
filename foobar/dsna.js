@@ -282,5 +282,16 @@
 
 
 var floodFill = function(image, sr, sc, color) {
-
+    const q = [[sr, sc]];
+    let target = image[sr][sc];
+    while (q.length) {
+        let [r, c] = q.pop();
+        if (r < image.length - 1 && image[r+1][c] === target && image[r+1][c] !== color) q.push([r+1, c]);
+        if (r > 0 && image[r-1][c] === target && image[r-1][c] !== color) q.push([r-1, c]);
+        if (c < image[0].length - 1 && image[r][c+1] === target && image[r][c+1] !== color) q.push([r, c+1]);
+        if (c > 0 && image[r][c-1] === target && image[r][c-1] !== color) q.push([r, c-1]);
+        image[r][c] = color;
+    }
+    return image;
 };
+console.log(floodFill([[1,1,1],[1,1,0],[1,0,1]], 1, 1, 2))
