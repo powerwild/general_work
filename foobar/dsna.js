@@ -296,45 +296,50 @@
 // };
 
 
-var addIslands = function(grid, xy, memo) {
-    const q = [xy];
-    while (q.length) {
-        let [x, y] = q.pop();
-        if (x > 0) if (grid[x - 1][y] === '1' && !memo.has(String([x-1, y]))) {
-            memo.add(String([x-1, y]));
-            q.push([x-1, y]);
-        }
-        if (x < grid.length - 1) if (grid[x + 1][y] === '1' && !memo.has(String([x+1, y]))) {
-            memo.add(String([x+1, y]));
-            q.push([x+1, y]);
-        }
-        if (y > 0) if (grid[x][y - 1] === '1' && !memo.has(String([x, y-1]))) {
-            memo.add(String([x, y-1]));
-            q.push([x, y-1]);
-        }
-        if (y < grid[0].length - 1) if (grid[x][y + 1] === '1' && !memo.has(String([x, y+1]))) {
-            memo.add(String([x, y+1]));
-            q.push([x, y+1]);
-        }
-    }
-    return memo;
-}
-var numIslands = function(grid) {
-    if (grid[0].length === 0) return 0;
-    const coords = new Set();
-    let x = 0;
-    let y = 0;
-    let islands = 0;
-    while (x < grid.length && y < grid[0].length) {
-        if (grid[x][y] === '1' && !coords.has(String([x, y]))) {
-            addIslands(grid, [x, y], coords);
-            islands += 1;
-        }
-        if (y === grid[0].length - 1 && x < grid.length - 1) {
-            y = -1;
-            x += 1;
-        }
-        y += 1;
-    }
-    return islands;
+// var addIslands = function(grid, xy, memo) {
+//     const q = [xy];
+//     while (q.length) {
+//         let [x, y] = q.pop();
+//         if (x > 0) if (grid[x - 1][y] === '1' && !memo.has(String([x-1, y]))) {
+//             memo.add(String([x-1, y]));
+//             q.push([x-1, y]);
+//         }
+//         if (x < grid.length - 1) if (grid[x + 1][y] === '1' && !memo.has(String([x+1, y]))) {
+//             memo.add(String([x+1, y]));
+//             q.push([x+1, y]);
+//         }
+//         if (y > 0) if (grid[x][y - 1] === '1' && !memo.has(String([x, y-1]))) {
+//             memo.add(String([x, y-1]));
+//             q.push([x, y-1]);
+//         }
+//         if (y < grid[0].length - 1) if (grid[x][y + 1] === '1' && !memo.has(String([x, y+1]))) {
+//             memo.add(String([x, y+1]));
+//             q.push([x, y+1]);
+//         }
+//     }
+//     return memo;
+// }
+// var numIslands = function(grid) {
+//     if (grid[0].length === 0) return 0;
+//     const coords = new Set();
+//     let x = 0;
+//     let y = 0;
+//     let islands = 0;
+//     while (x < grid.length && y < grid[0].length) {
+//         if (grid[x][y] === '1' && !coords.has(String([x, y]))) {
+//             addIslands(grid, [x, y], coords);
+//             islands += 1;
+//         }
+//         if (y === grid[0].length - 1 && x < grid.length - 1) {
+//             y = -1;
+//             x += 1;
+//         }
+//         y += 1;
+//     }
+//     return islands;
+// };
+
+
+var fib = function(n) {
+
 };
