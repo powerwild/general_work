@@ -341,5 +341,11 @@
 
 
 var fib = function(n) {
-
+    if (n === 0) return 0;
+    const fibs = [1, 1];
+    while (fibs.length < n) {
+        let l = fibs.length - 1;
+        fibs.push(fibs[l] + fibs[l-1]);
+    }
+    return fibs[n-1];
 };
