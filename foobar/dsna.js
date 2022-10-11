@@ -351,13 +351,18 @@
 // };
 
 
-var climbStairs = function(n) {
-    let total = 1;
-    let inc = 1;
-    for (let i = 1; i < n; ++i) {
-        let prev = total;
-        total += inc;
-        inc = prev;
-    }
-    return total;
+// var climbStairs = function(n) {
+//     let total = 1;
+//     let inc = 1;
+//     for (let i = 1; i < n; ++i) {
+//         let prev = total;
+//         total += inc;
+//         inc = prev;
+//     }
+//     return total;
+// };
+
+
+var minCostClimbingStairs = function(cost) {
+
 };
