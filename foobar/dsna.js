@@ -363,13 +363,18 @@
 // };
 
 
-var minCostClimbingStairs = function(cost) {
-    let last = cost[cost.length-1];
-    let prev = cost[cost.length-2];
-    for (let i = cost.length - 3; i >= 0; --i) {
-        let old = prev;
-        prev = Math.min(prev, last) + cost[i];
-        last = old;
-    }
-    return Math.min(last, prev);
+// var minCostClimbingStairs = function(cost) {
+//     let last = cost[cost.length-1];
+//     let prev = cost[cost.length-2];
+//     for (let i = cost.length - 3; i >= 0; --i) {
+//         let old = prev;
+//         prev = Math.min(prev, last) + cost[i];
+//         last = old;
+//     }
+//     return Math.min(last, prev);
+// };
+
+
+var uniquePaths = function(m, n) {
+
 };
