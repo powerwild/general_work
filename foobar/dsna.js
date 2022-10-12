@@ -386,5 +386,39 @@
 
 
 var findAnagrams = function(s, p) {
+    const needLets = {};
 
+    for (let i = 0; i < p.length; ++i) {
+        if (p[i] in needLets) ++needLets[p[i]];
+        else needLets[p[i]] = 1;
+    };
+
+    const results = [];
+    let left = 0;
+    let right = 0;
+    let numOfLets = p.length;
+
+    while (right < s.length) {
+        if (!s[left] in needLets) left = right;
+        if (s[right] in needLets && needLets[s[right]] > 0 && (right - left) <= p.length) {
+            --needLets[s[right]];
+            --numOfLets;
+            if (numOfLets === 0) results.push(left);
+        } else {
+            for ( ; left < right; ++left) {
+                if (s[left] in needLets) {
+                    ++needLets[s[left]];
+                    ++numOfLets;
+                }
+            }
+            if (s[right] in needLets && needLets[s[right]] > 0 && (right - left) <= p.length) {
+                --needLets[s[right]];
+                --numOfLets;
+            }
+        }
+        ++right;
+    }
+
+    return results;
 };
+console.log(findAnagrams('cbaebabacd', 'abc'))
