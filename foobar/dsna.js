@@ -385,34 +385,39 @@
 // };
 
 
-var findAnagrams = function(s, p) {
-    const needLets = {};
+// var findAnagrams = function(s, p) {
+//     const needLets = {};
 
-    for (let i = 0; i < p.length; ++i) {
-        if (p[i] in needLets) ++needLets[p[i]];
-        else needLets[p[i]] = 1;
-    };
+//     for (let i = 0; i < p.length; ++i) {
+//         if (p[i] in needLets) ++needLets[p[i]];
+//         else needLets[p[i]] = 1;
+//     };
 
-    const results = [];
-    let left = 0;
-    let right = 0;
-    let numOfLets = p.length;
+//     const results = [];
+//     let left = 0;
+//     let right = 0;
+//     let numOfLets = p.length;
 
-    while (right < s.length) {
-        if (needLets[s[right]] > 0) {
-            --numOfLets;
-        }
-        --needLets[s[right]];
-        ++right;
-       if (numOfLets === 0) results.push(left);
-       if (right - left === p.length) {
-            if (needLets[s[left]] >= 0) {
-                ++numOfLets;
-            }
-            ++needLets[s[left]];
-            ++left;
-       }
-    }
-    return results;
+//     while (right < s.length) {
+//         if (needLets[s[right]] > 0) {
+//             --numOfLets;
+//         }
+//         --needLets[s[right]];
+//         ++right;
+//        if (numOfLets === 0) results.push(left);
+//        if (right - left === p.length) {
+//             if (needLets[s[left]] >= 0) {
+//                 ++numOfLets;
+//             }
+//             ++needLets[s[left]];
+//             ++left;
+//        }
+//     }
+//     return results;
+// };
+// console.log(findAnagrams('cbaebabacd', 'abc'))
+
+
+var characterReplacement = function(s, k) {
+    
 };
-console.log(findAnagrams('cbaebabacd', 'abc'))
