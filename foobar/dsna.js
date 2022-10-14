@@ -419,5 +419,19 @@
 
 
 var characterReplacement = function(s, k) {
-    
+    let l = 0;
+    let r = 0;
+    let max = 0;
+    let hash = {};
+    while (r < s.length) {
+        if (hash[ s[r] ]) hash[ s[r] ]++;
+        else hash[ s[r] ] = 1;
+        if (hash[ s[r] ] > max) max = hash[ s[r] ];
+        if ( ((r - l) + 1) - max > k ) {
+            hash[ s[l] ]--;
+            l++;
+        }
+        r++;
+    }
+    return r - l;
 };
