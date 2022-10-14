@@ -399,15 +399,17 @@ var findAnagrams = function(s, p) {
     let numOfLets = p.length;
 
     while (right < s.length) {
-        if (s[right] in needLets) {
-            --needLets[s[right]];
+        if (needLets[s[right]] > 0) {
             --numOfLets;
-            ++right;
-       }
+        }
+        --needLets[s[right]];
+        ++right;
        if (numOfLets === 0) results.push(left);
-       if (right - left === p.length && s[left] in needLets) {
+       if (right - left === p.length) {
+            if (needLets[s[left]] >= 0) {
+                ++numOfLets;
+            }
             ++needLets[s[left]];
-            ++numOfLets;
             ++left;
        }
     }
