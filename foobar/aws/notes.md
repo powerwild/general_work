@@ -46,3 +46,69 @@ START
 
 
 
+AWS COMPUTE SERVICES
+
+1. Instance Types
+    Amazon EC2(elastic compute cloud)
+        computing optimized
+        memory optimized
+        strorage optimized
+    AWS Elastic Beanstalk
+2. Containers
+    Amazon ECS (elastic container service)
+    Amazon EKS (elastic kubernetes service)
+3. Serverless
+    AWS Lambda
+        runs on events etc
+    AWS Fargate
+        for containers
+
+
+AWS STORAGE AND DATABASE SERVICES
+
+1. Storage
+    Amazon S3
+        media hosting
+        software delivery
+        data backup
+2. Relational
+    Amazon RDS(relational database service)
+        provisioning and patching
+        backup and recovery
+        failure detection and repair
+        databases
+            amazon aurora
+                ecommerce
+                ERP(enterprise resource planning)
+                CRM(customer relationship management)
+            postgresql
+            mysql
+            mariadb
+            oracle database
+            microsoft sql server
+3. Non-relational
+    Amazon DynamoDB
+        web apps
+        ecommerce
+        game apps
+
+
+AWS IDENTITY SERVICES
+
+1. AWS Identity and Access Management
+    create and manage aws users in groups
+    create roles and access for users and applications
+2. AWS Directory Service
+3. Amazon Cognito
+    sign in through social identity providers
+        google
+        facebook
+        etc
+
+
+AWS Monitoring and auditing services
+
+1. Amazon CloudWatch
+    alarms and logs for keeping your app running smoothly
+2. AWS CloudTrail
+    records action taken via application, command lines, etc
