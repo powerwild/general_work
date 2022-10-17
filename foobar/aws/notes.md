@@ -112,3 +112,20 @@ AWS Monitoring and auditing services
     alarms and logs for keeping your app running smoothly
 2. AWS CloudTrail
     records action taken via application, command lines, etc
+
+
+DEVELOPER TOOLS
+
+1. AWS SDK
+    makes calling an aws service as easy as calling a method on an object
+2. AWS Toolkit for Visual Studio
+3. AWS Toolkit for Visual Studio Code
+4. AWS Toolkit for JetBrains Rider
+5. AWS Tools for PowerShell
+6. AWS Command Line Interface
+7. .NET Core CLI
+8. AWS Toolkit for Azure DevOps
+9. AWS CDK
+
+
+PASSED ASSESSMENT WITH 90%
