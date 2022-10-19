@@ -67,41 +67,46 @@
 // }
 
 
-function removePunctuation(str) {
-    return str.replace(/[^\w\s-]/g, '')
-  }
-  function isSuffix(str) {
-    const suffix = ['Sr', 'Jr', 'II', 'III', 'IV'];
-    for (let s of suffix) {
-      if (s.toLowerCase() === str.toLowerCase()) return true;
-    }
-    return false;
-  }
-  function nameToParts(name) {
-    const results = [];
-    const names = name.split(' ');
-    let i = 0;
-    let j = 0;
-    while (j < 5) {
-      let char = '';
-      if (i === 0 || i === 2) {
-        char = removePunctuation(names[i]);
-        ++j;
-      }
-      if (i === 1) {
-        if ((names[i].length < 2 || names[i][1] === '.')) {
-          char = removePunctuation(names[i]);
-          ++j;
-        }
-      }
-      if (i === 3) {
-        if (i < names.length && isSuffix(names[i])) {
-          char = removePunctuation(names[i]);
-        }
-        j = 5;
-      }
-      results.push(char);
-      ++i;
-    }
-    return results;
-  }
+// function removePunctuation(str) {
+//     return str.replace(/[^\w\s-]/g, '')
+//   }
+//   function isSuffix(str) {
+//     const suffix = ['Sr', 'Jr', 'II', 'III', 'IV'];
+//     for (let s of suffix) {
+//       if (s.toLowerCase() === str.toLowerCase()) return true;
+//     }
+//     return false;
+//   }
+//   function nameToParts(name) {
+//     const results = [];
+//     const names = name.split(' ');
+//     let i = 0;
+//     let j = 0;
+//     while (j < 5) {
+//       let char = '';
+//       if (i === 0 || i === 2) {
+//         char = removePunctuation(names[i]);
+//         ++j;
+//       }
+//       if (i === 1) {
+//         if ((names[i].length < 2 || names[i][1] === '.')) {
+//           char = removePunctuation(names[i]);
+//           ++j;
+//         }
+//       }
+//       if (i === 3) {
+//         if (i < names.length && isSuffix(names[i])) {
+//           char = removePunctuation(names[i]);
+//         }
+//         j = 5;
+//       }
+//       results.push(char);
+//       ++i;
+//     }
+//     return results;
+//   }
+
+
+async function finestFoodOutlet(city, votes) {
+
+}
