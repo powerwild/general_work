@@ -558,5 +558,28 @@ function scatterPalindrome(strToEvaluate) {
 
 
 function findRemainingBalls(direction, strength) {
-
+    const left = [];
+    const right = [];
+    for (let i = 0; i < direction.length; ++i) {
+        let ball = [i, strength[i]];
+        direction[i] === 1 ? right.push(ball) : left.push(ball);
+    }
+    for (let j = 0; j < right.length; ++j) {
+        for (let k = 0; k < left.length; ++k) {
+            if (right[j][0] < left[k][0]) {
+                if (right[j][1] < left[k][1]) right[j] = 0;
+                else if (right[j][1] > left[k][1]) left[k] = 0;
+                else {
+                    right[j] = 0;
+                    left[k] = 0;
+                }
+            }
+        }
+    }
+    let results = [];
+    for (let index = 0; index < right.length || index < left.length; ++index) {
+        if (index < right.length && right[index] !== 0) results.push(right[index][0]);
+        if (index < left.length && left[index] !== 0) results.push(left[index][0]);
+    }
+    return results;
 }
