@@ -529,5 +529,29 @@
 
 
 function scatterPalindrome(strToEvaluate) {
-
+    const strArr = strToEvaluate[0].split('');
+    const map = {};
+    for (let char of strArr) {
+        map[char] = (map[char] + 1 || 1);
+    }
+    let total = 0;
+    let evens = [];
+    let odds = [];
+    for (let entry of Object.entries(map)) {
+        let [k, v] = entry;
+        if (v % 2 === 0) evens.push([k, v / 2]);
+        else {
+            odds.push([k, 1]);
+            evens.push([k, Math.floor(v / 2)]);
+        }
+    }
+    for (let even of evens) {
+        let [eKey, eVal] = even;
+        for (let odd of odds) {
+            let [oKey, oVal] = odd;
+            if (oKey !== eKey) total += oVal;
+        }
+        total += eVal;
+    }
+    return total;
 }
