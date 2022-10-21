@@ -447,47 +447,52 @@
 // };
 
 
-var candyCrush = function(board) {
-    let rows = board.length;
-    let cols = board[0].length;
-    let needCrush = false;
+// var candyCrush = function(board) {
+//     let rows = board.length;
+//     let cols = board[0].length;
+//     let needCrush = false;
 
-    for (let r = 0; r < rows; ++i) {
-        for (let c = 0; c < cols - 2; ++c) {
-            let val = Math.abs(board[r][c]);
-            if (val !== 0 && val === Math.abs(board[r][c+1]) && val === Math.abs(board[r][c+2])) {
-                board[r][c] = val * -1;
-                board[r][c+1] = val * -1;
-                board[r][c+2] = val * -1;
-                needCrush = true;
-            }
-        }
-    }
+//     for (let r = 0; r < rows; ++i) {
+//         for (let c = 0; c < cols - 2; ++c) {
+//             let val = Math.abs(board[r][c]);
+//             if (val !== 0 && val === Math.abs(board[r][c+1]) && val === Math.abs(board[r][c+2])) {
+//                 board[r][c] = val * -1;
+//                 board[r][c+1] = val * -1;
+//                 board[r][c+2] = val * -1;
+//                 needCrush = true;
+//             }
+//         }
+//     }
 
-    for (let r = 0; r < rows - 2; ++r) {
-        for (let c = 0; c < cols; ++c) {
-            let val = Math.abs(board[r][c]);
-            if (val !== 0 && val === Math.abs(board[r+1][c]) && val === Math.abs(board[r+2][c])) {
-                board[r][c] = val * -1;
-                board[r+1][c] = val * -1;
-                board[r+2][c] = val * -1;
-                needCrush = true;
-            }
-        }
-    }
+//     for (let r = 0; r < rows - 2; ++r) {
+//         for (let c = 0; c < cols; ++c) {
+//             let val = Math.abs(board[r][c]);
+//             if (val !== 0 && val === Math.abs(board[r+1][c]) && val === Math.abs(board[r+2][c])) {
+//                 board[r][c] = val * -1;
+//                 board[r+1][c] = val * -1;
+//                 board[r+2][c] = val * -1;
+//                 needCrush = true;
+//             }
+//         }
+//     }
 
-    for (let c = 0; c < cols; ++c) {
-        let anchor = rows - 1;
-        for (let r = anchor; r >= 0; --r) {
-            if (board[r][c] > 0) {
-                board[anchor][c] = board[r][c];
-                anchor -= 1;
-            }
-        }
-        for (let r = 0; r < anchor + 1; ++r) {
-            board[r][c] = 0;
-        }
-    }
+//     for (let c = 0; c < cols; ++c) {
+//         let anchor = rows - 1;
+//         for (let r = anchor; r >= 0; --r) {
+//             if (board[r][c] > 0) {
+//                 board[anchor][c] = board[r][c];
+//                 anchor -= 1;
+//             }
+//         }
+//         for (let r = 0; r < anchor + 1; ++r) {
+//             board[r][c] = 0;
+//         }
+//     }
 
-    return needCrush ? candyCrush(board) : board;
+//     return needCrush ? candyCrush(board) : board;
+// }
+
+
+function minStart(arr) {
+
 }
