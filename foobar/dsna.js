@@ -494,5 +494,35 @@
 
 
 function minStart(arr) {
-
+    let start = 1;
+    let sum = start;
+    for (let i = 0; i < arr.length; ++i) {
+        sum += arr[i];
+        if (sum === 0) {
+            ++start;
+            ++sum;
+        }
+        if (sum < 0) {
+            start += Math.abs(sum) + 1;
+            sum += Math.abs(sum) + 1;
+        }
+    }
+    // let fullLoop = false;
+    // while (!fullLoop) {
+    //     for (let i = 0; i < arr.length; ++i) {
+    //         sum += arr[i];
+    //         if (sum === 0) {
+    //             ++start;
+    //             sum = start;
+    //             break;
+    //         }
+    //         if (sum < 0) {
+    //             start += Math.abs(sum) + 1;
+    //             sum = start;
+    //             break;
+    //         }
+    //         if (i === arr.length - 1) fullLoop = true;
+    //     }
+    // }
+    return start;
 }
