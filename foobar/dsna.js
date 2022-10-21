@@ -555,3 +555,8 @@ function scatterPalindrome(strToEvaluate) {
     }
     return total;
 }
+
+
+function findRemainingBalls(direction, strength) {
+
+}
