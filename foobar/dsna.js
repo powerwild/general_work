@@ -528,82 +528,112 @@
 // }
 
 
-function scatterPalindrome(strToEvaluate) {
-    const results = [];
+// function scatterPalindrome(strToEvaluate) {
+//     const results = [];
 
-    for (let str of strToEvaluate) {
-        let count = 0;
+//     for (let str of strToEvaluate) {
+//         let count = 0;
 
-        for (let i = 0; i , str.length; ++i) {
-            let chars = new Set();
+//         for (let i = 0; i , str.length; ++i) {
+//             let chars = new Set();
 
-            for (let j = i; j < str.length; ++j) {
-                if (chars.has(str[j])) {
-                    chars.delete(str[j]);
-                } else {
-                    chars.add(str[j]);
-                }
-                if (chars.size < 2) ++count;
-            }
+//             for (let j = i; j < str.length; ++j) {
+//                 if (chars.has(str[j])) {
+//                     chars.delete(str[j]);
+//                 } else {
+//                     chars.add(str[j]);
+//                 }
+//                 if (chars.size < 2) ++count;
+//             }
 
-        }
+//         }
 
-        results.push(count);
+//         results.push(count);
 
-    }
-    return results;
+//     }
+//     return results;
 
-    // const strArr = strToEvaluate[0].split('');
-    // const map = {};
-    // for (let char of strArr) {
-    //     map[char] = (map[char] + 1 || 1);
-    // }
-    // let total = 0;
-    // let evens = [];
-    // let odds = [];
-    // for (let entry of Object.entries(map)) {
-    //     let [k, v] = entry;
-    //     if (v % 2 === 0) evens.push([k, v / 2]);
-    //     else {
-    //         odds.push([k, 1]);
-    //         evens.push([k, Math.floor(v / 2)]);
-    //     }
-    // }
-    // for (let even of evens) {
-    //     let [eKey, eVal] = even;
-    //     for (let odd of odds) {
-    //         let [oKey, oVal] = odd;
-    //         if (oKey !== eKey) total += oVal;
-    //     }
-    //     total += eVal;
-    // }
-    // return total;
-}
+//     // const strArr = strToEvaluate[0].split('');
+//     // const map = {};
+//     // for (let char of strArr) {
+//     //     map[char] = (map[char] + 1 || 1);
+//     // }
+//     // let total = 0;
+//     // let evens = [];
+//     // let odds = [];
+//     // for (let entry of Object.entries(map)) {
+//     //     let [k, v] = entry;
+//     //     if (v % 2 === 0) evens.push([k, v / 2]);
+//     //     else {
+//     //         odds.push([k, 1]);
+//     //         evens.push([k, Math.floor(v / 2)]);
+//     //     }
+//     // }
+//     // for (let even of evens) {
+//     //     let [eKey, eVal] = even;
+//     //     for (let odd of odds) {
+//     //         let [oKey, oVal] = odd;
+//     //         if (oKey !== eKey) total += oVal;
+//     //     }
+//     //     total += eVal;
+//     // }
+//     // return total;
+// }
 
 
 function findRemainingBalls(direction, strength) {
-    const left = [];
-    const right = [];
-    for (let i = 0; i < direction.length; ++i) {
-        let ball = [i, strength[i]];
-        direction[i] === 1 ? right.push(ball) : left.push(ball);
-    }
-    for (let j = 0; j < right.length; ++j) {
-        for (let k = 0; k < left.length; ++k) {
-            if (right[j][0] < left[k][0]) {
-                if (right[j][1] < left[k][1]) right[j] = 0;
-                else if (right[j][1] > left[k][1]) left[k] = 0;
-                else {
-                    right[j] = 0;
-                    left[k] = 0;
-                }
+     const right = [];
+
+     for (let i = 0; i < direction.length; ++i) {
+        if (direction[i] > 0) right.push([i, strength[i]]);
+     }
+
+     let k = 0;
+
+     for (let j = 0; j < strength.length && k < right.length; ++j) {
+        if (direction[j] < 0 && j > right[k][0]) {
+            if (strength[j] > right[k][1]) {
+                delete strength[right[k][0]];
+                ++k;
+            } else {
+                delete strength[j];
             }
         }
-    }
-    let results = [];
-    for (let index = 0; index < right.length || index < left.length; ++index) {
-        if (index < right.length && right[index] !== 0) results.push(right[index][0]);
-        if (index < left.length && left[index] !== 0) results.push(left[index][0]);
-    }
-    return results;
+     }
+
+     const results = [];
+
+     for (let l = 0; l < strength.length; ++l) if (strength[l]) results.push(l);
+
+     return results;
+    // const left = [];
+    // const right = [];
+    // for (let i = 0; i < direction.length; ++i) {
+    //     let ball = [i, strength[i]];
+    //     direction[i] === 1 ? right.push(ball) : left.push(ball);
+    // }
+    // for (let j = 0; j < right.length; ++j) {
+    //     for (let k = 0; k < left.length; ++k) {
+    //         if (right[j][0] < left[k][0]) {
+    //             if (right[j][1] < left[k][1]) right[j] = 0;
+    //             else if (right[j][1] > left[k][1]) left[k] = 0;
+    //             else {
+    //                 right[j] = 0;
+    //                 left[k] = 0;
+    //             }
+    //         }
+    //     }
+    // }
+    // let results = [];
+    // for (let index = 0; index < right.length || index < left.length; ++index) {
+    //     if (index < right.length && right[index] !== 0) results.push(right[index][0]);
+    //     if (index < left.length && left[index] !== 0) results.push(left[index][0]);
+    // }
+    // return results;
 }
+console.log(findRemainingBalls([1, -1, 1, -1], [2, 1, 3, 1]))
+
+
+var asteroidCollision = function(asteroids) {
+
+};
