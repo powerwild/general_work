@@ -166,5 +166,16 @@ function createLinkedList(head) {
 
 
 function weightCapacity(weights, maxCapacity) {
-
+    const weightSet = new Set([0]);
+    for (let weight of weights) {
+        const tempSet = new Set();
+        for (let w of weightSet) {
+            if (weight + w === maxCapacity) return maxCapacity;
+            if (weight + w < maxCapacity) tempSet.add(weight + w);
+        }
+        for (let item of tempSet) weightSet.add(item);
+    }
+    let largest = 0;
+    for (let x of weightSet) largest = Math.max(largest, x);
+    return largest;
 }
