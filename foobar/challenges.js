@@ -107,32 +107,37 @@
 //   }
 
 
-function closedPaths(number) {
-    // const map = {
-    //     '0': 1,
-    //     '4': 1,
-    //     '6': 1,
-    //     '9': 1,
-    //     '8': 2
-    // };
-    // number = String(number);
-    // let total = 0;
-    // for (let i = 0; i < number; ++i) {
-    //     if (map[number[i]]) total += map[number[i]];
-    // }
-    // return total;
-    const map = {
-        0: 1,
-        4: 1,
-        6: 1,
-        9: 1,
-        8: 2
-    };
-    let total = 0;
-    while (number > 0) {
-        let curr = number % 10;
-        number = Math.floor(number / 10);
-        if (map[curr]) total += map[curr];
-    }
-    return total;
+// function closedPaths(number) {
+//     // const map = {
+//     //     '0': 1,
+//     //     '4': 1,
+//     //     '6': 1,
+//     //     '9': 1,
+//     //     '8': 2
+//     // };
+//     // number = String(number);
+//     // let total = 0;
+//     // for (let i = 0; i < number; ++i) {
+//     //     if (map[number[i]]) total += map[number[i]];
+//     // }
+//     // return total;
+//     const map = {
+//         0: 1,
+//         4: 1,
+//         6: 1,
+//         9: 1,
+//         8: 2
+//     };
+//     let total = 0;
+//     while (number > 0) {
+//         let curr = number % 10;
+//         number = Math.floor(number / 10);
+//         if (map[curr]) total += map[curr];
+//     }
+//     return total;
+// }
+
+
+function createLinkedList(head) {
+
 }
