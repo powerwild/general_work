@@ -107,6 +107,6 @@
 //   }
 
 
-async function finestFoodOutlet(city, votes) {
+function closedPaths(number) {
 
 }
