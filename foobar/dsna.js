@@ -633,6 +633,32 @@ function findRemainingBalls(direction, strength) {
 }
 
 
-var isHappy = function(n) {
-    
-};
+// var isHappy = function(n) {
+//     // const numbers = [];
+//     // const hash = {};
+//     // while (!hash[n] && n !== 1) {
+//     //     hash[n] = true;
+//     //     while (n >= 10) {
+//     //         numbers.push(n % 10);
+//     //         n = Math.floor(n / 10);
+//     //     }
+//     //     numbers.push(n);
+//     //     n = 0;
+//     //     for (let num of numbers) n += num*num;
+//     //     numbers.length = 0;
+//     // }
+//     // return n === 1;
+//     let total = 0;
+//     const hash = {};
+//     while (!hash[n] && n !== 1) {
+//         hash[n] = true;
+//         while (n >= 10) {
+//             total += (n % 10)**2
+//             n = Math.floor(n / 10);
+//         }
+//         total += n**2;
+//         n = total;
+//         total = 0;
+//     }
+//     return n === 1;
+// };
