@@ -707,5 +707,21 @@ function findRemainingBalls(direction, strength) {
 
 
 var findBall = function(grid) {
-
+    const results = [];
+    let start = 0;
+    for (let ball = 0; ball < grid[0].length; ++ball) {
+        let r = 0;
+        let c = start;
+        while (r < grid.length) {
+            if (c < grid[r].length - 1 && grid[r][c] === 1 && grid[r][c+1] !== -1) {
+                ++c;
+            } else if (c > 0 && grid[r][c] === -1 && grid[r][c-1] !== 1) {
+                --c;
+            } else break;
+            ++r;
+        }
+        r === grid.length ? results.push(c) : results.push(-1);
+        ++start;
+    }
+    return results;
 };
