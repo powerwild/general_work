@@ -664,43 +664,48 @@ function findRemainingBalls(direction, strength) {
 // };
 
 
-var spiralOrder = function(matrix) {
-    function checkAndAdd(r, c, set, arr, mat) {
-        let coord = '' + r + c;
-            if (!set.has(coord)) {
-                arr.push(mat[r][c]);
-                set.add(coord);
-            }
-    }
-    const results = [];
-    const coords = new Set();
+// var spiralOrder = function(matrix) {
+//     function checkAndAdd(r, c, set, arr, mat) {
+//         let coord = '' + r + c;
+//             if (!set.has(coord)) {
+//                 arr.push(mat[r][c]);
+//                 set.add(coord);
+//             }
+//     }
+//     const results = [];
+//     const coords = new Set();
 
-    let x = 0;
-    let w = matrix[0].length - 1;
-    let y = matrix.length - 1;
-    let z = 0;
+//     let x = 0;
+//     let w = matrix[0].length - 1;
+//     let y = matrix.length - 1;
+//     let z = 0;
 
-    while (results.length < (matrix.length * matrix[0].length)) {
+//     while (results.length < (matrix.length * matrix[0].length)) {
 
-        for (let i = 0; i < matrix[x].length; ++i) {
-            checkAndAdd(x, i, coords, results, matrix);
-        }
-        ++x;
+//         for (let i = 0; i < matrix[x].length; ++i) {
+//             checkAndAdd(x, i, coords, results, matrix);
+//         }
+//         ++x;
 
-        for (let j = 0; j < matrix.length; ++j) {
-            checkAndAdd(j, w, coords, results, matrix);
-        }
-        --w;
+//         for (let j = 0; j < matrix.length; ++j) {
+//             checkAndAdd(j, w, coords, results, matrix);
+//         }
+//         --w;
 
-        for (let k = matrix[y].length - 1; k >=0; --k) {
-            checkAndAdd(y, k, coords, results, matrix);
-        }
-        --y;
+//         for (let k = matrix[y].length - 1; k >=0; --k) {
+//             checkAndAdd(y, k, coords, results, matrix);
+//         }
+//         --y;
 
-        for (let l = matrix.length - 1; l >= 0; --l) {
-            checkAndAdd(l, z, coords, results, matrix);
-        }
-        ++z;
-    }
-    return results;
+//         for (let l = matrix.length - 1; l >= 0; --l) {
+//             checkAndAdd(l, z, coords, results, matrix);
+//         }
+//         ++z;
+//     }
+//     return results;
+// };
+
+
+var findBall = function(grid) {
+
 };
