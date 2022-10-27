@@ -631,7 +631,8 @@ function findRemainingBalls(direction, strength) {
     // }
     // return results;
 }
-console.log(findRemainingBalls([1, -1, 1, -1], [2, 1, 3, 1]))
 
 
-
+var isHappy = function(n) {
+    
+};
