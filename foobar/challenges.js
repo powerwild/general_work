@@ -136,8 +136,20 @@
 //     }
 //     return total;
 // }
-function closedPaths(n) {
-    
+function closedPaths(number) {
+    const map = {
+        '0': 1,
+        '4': 1,
+        '6': 1,
+        '9': 1,
+        '8': 2
+    };
+    number = number.toString().split('');
+    let total = 0;
+    for (let i = 0; i < number; ++i) {
+        if (map[number[i]]) total += map[number[i]];
+    }
+    return total;
 }
 
 
