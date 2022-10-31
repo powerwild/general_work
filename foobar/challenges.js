@@ -200,19 +200,40 @@
 
 
 // function weightCapacity(weights, maxCapacity) {
-//     const weightSet = new Set([0]);
-//     for (let weight of weights) {
-//         const tempSet = new Set();
-//         for (let w of weightSet) {
-//             if (weight + w === maxCapacity) return maxCapacity;
-//             if (weight + w < maxCapacity) tempSet.add(weight + w);
+//     const sums = new Set([0]);
+
+//     for (let w of weights) {
+//         const tempSums = new Set();
+
+//         for (let sum of sums) {
+//             if (w + sum === maxCapacity) return maxCapacity;
+//             if (w + sum < maxCapacity) tempSums.add(w + sum);
 //         }
-//         for (let item of tempSet) weightSet.add(item);
+
+//         for (let item of tempSums) sums.add(item);
+
 //     }
-//     let largest = 0;
-//     for (let x of weightSet) largest = Math.max(largest, x);
-//     return largest;
+
+//     let heaviest = 0;
+
+//     for (let sum of sums) heaviest = Math.max(heaviest, sum);
+
+//     return heaviest;
 // }
 function weightCapacity(weights, maxCapacity) {
+    weights.sort((a, b) => a - b);
+    const memo = {};
+    return helper(0, 0);
     
+    function helper(prevW, i) {
+        if (i >= weights.length) return prevW;
+        let key = `${prevW}-${i}`;
+        if (key in memo) return memo[key];
+        let currW = weights[i];
+        if (prevW + currW > maxCapacity) return prevW;
+        let op1 = helper(prevW + currW, i + 1);
+        let op2 = helper(prevW, i + 1);
+        memo[key] = Math.max(op1, op2);
+        return memo[key];
+    }
 }
