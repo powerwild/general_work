@@ -178,25 +178,25 @@
 //     }
 //     return head;
 // }
-function createLinkedList(head) {
-    const dummyHead = new SinglyLinkedListNode();
-    let newCurr = dummyHead;
+// function createLinkedList(head) {
+//     const dummyHead = new SinglyLinkedListNode();
+//     let newCurr = dummyHead;
 
-    while (head) {
-        let oldPrev = null;
-        let oldCurr = head;
-        head = head.next;
+//     while (head) {
+//         let oldPrev = null;
+//         let oldCurr = head;
+//         head = head.next;
 
-        while (oldCurr) {
-            if (oldPrev) oldPrev.next = oldCurr.next;
-            newCurr.next = oldCurr;
-            newCurr = newCurr.next;
-            oldPrev = oldCurr.next;
-            oldCurr = oldPrev?.next;
-        }
-    }
-    return dummyHead.next;
-}
+//         while (oldCurr) {
+//             if (oldPrev) oldPrev.next = oldCurr.next;
+//             newCurr.next = oldCurr;
+//             newCurr = newCurr.next;
+//             oldPrev = oldCurr.next;
+//             oldCurr = oldPrev?.next;
+//         }
+//     }
+//     return dummyHead.next;
+// }
 
 
 // function weightCapacity(weights, maxCapacity) {
@@ -213,3 +213,6 @@ function createLinkedList(head) {
 //     for (let x of weightSet) largest = Math.max(largest, x);
 //     return largest;
 // }
+function weightCapacity(weights, maxCapacity) {
+    
+}
