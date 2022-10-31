@@ -179,7 +179,23 @@
 //     return head;
 // }
 function createLinkedList(head) {
-    
+    const dummyHead = new SinglyLinkedListNode();
+    let newCurr = dummyHead;
+
+    while (head) {
+        let oldPrev = null;
+        let oldCurr = head;
+        head = head.next;
+
+        while (oldCurr) {
+            if (oldPrev) oldPrev.next = oldCurr.next;
+            newCurr.next = oldCurr;
+            newCurr = newCurr.next;
+            oldPrev = oldCurr.next;
+            oldCurr = oldPrev?.next;
+        }
+    }
+    return dummyHead.next;
 }
 
 
