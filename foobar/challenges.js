@@ -136,46 +136,49 @@
 //     }
 //     return total;
 // }
-
-
-function createLinkedList(head) {
-    const nodes = [];
-    let curr = head;
-    while (curr) {
-        nodes.push(curr);
-        curr = curr.next;
-        nodes[nodes.length - 1].next = null;
-    };
-
-    for (let i = 0; i < nodes.length; ++i) {
-        if ((i + 1) % 2 === 0 && nodes[i]) {
-            nodes.push(nodes[i]);
-            nodes[i] = null;
-        }
-    }
-    nodes.push(null);
-    curr = head;
-    for (let j = 2; j < nodes.length; ++ j) {
-        if (nodes[j]) {
-            curr.next = nodes[j];
-            curr = curr.next;
-        }
-    }
-    return head;
+function closedPaths(n) {
+    
 }
 
 
-function weightCapacity(weights, maxCapacity) {
-    const weightSet = new Set([0]);
-    for (let weight of weights) {
-        const tempSet = new Set();
-        for (let w of weightSet) {
-            if (weight + w === maxCapacity) return maxCapacity;
-            if (weight + w < maxCapacity) tempSet.add(weight + w);
-        }
-        for (let item of tempSet) weightSet.add(item);
-    }
-    let largest = 0;
-    for (let x of weightSet) largest = Math.max(largest, x);
-    return largest;
-}
+// function createLinkedList(head) {
+//     const nodes = [];
+//     let curr = head;
+//     while (curr) {
+//         nodes.push(curr);
+//         curr = curr.next;
+//         nodes[nodes.length - 1].next = null;
+//     };
+
+//     for (let i = 0; i < nodes.length; ++i) {
+//         if ((i + 1) % 2 === 0 && nodes[i]) {
+//             nodes.push(nodes[i]);
+//             nodes[i] = null;
+//         }
+//     }
+//     nodes.push(null);
+//     curr = head;
+//     for (let j = 2; j < nodes.length; ++ j) {
+//         if (nodes[j]) {
+//             curr.next = nodes[j];
+//             curr = curr.next;
+//         }
+//     }
+//     return head;
+// }
+
+
+// function weightCapacity(weights, maxCapacity) {
+//     const weightSet = new Set([0]);
+//     for (let weight of weights) {
+//         const tempSet = new Set();
+//         for (let w of weightSet) {
+//             if (weight + w === maxCapacity) return maxCapacity;
+//             if (weight + w < maxCapacity) tempSet.add(weight + w);
+//         }
+//         for (let item of tempSet) weightSet.add(item);
+//     }
+//     let largest = 0;
+//     for (let x of weightSet) largest = Math.max(largest, x);
+//     return largest;
+// }
