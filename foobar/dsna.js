@@ -728,5 +728,22 @@ function findRemainingBalls(direction, strength) {
 
 
 var longestCommonPrefix = function(strs) {
-
+    if (strs.length === 1) return strs[0];
+    const chars = strs[0].split('');
+    function checkMatches(str, arr) {
+        let count = 0;
+        for (let i = 0; i < arr.length; ++i) {
+            if (str[i] === arr[i]) ++count;
+            else break;
+        }
+        return count;
+    }
+    let matches = Infinity;
+    for (let i = 1; i < strs.length; ++i) {
+        matches = Math.min(matches, checkMatches(strs[i], chars));
+    }
+    if (matches === Infinity || matches === 0) return '';
+    let matchingChars = '';
+    for (let i = 0; i < matches; ++i) matchingChars += strs[0][i];
+    return matchingChars;
 };
