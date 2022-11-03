@@ -251,5 +251,39 @@
 
 
 function strokesRequired(picture) {
+    for (let str of picture) str = str.split('');
+    const set = new Set();
 
+    function traverse(coords) {
+        const stack = [coords];
+        let target = picture[coords[0]][coords[1]];
+        while (stack.length) {
+            let [x, y] = stack.pop();
+            set.add(x + '' + y);
+            if (x > 0 && picture[x - 1][y] === target && !set.has((x - 1) + '' + y)) {
+                stack.push([x - 1, y]);
+            }
+            if (x < picture.length - 1 && picture[x + 1][y] === target && !set.has((x + 1) + '' + y)) {
+                stack.push([x + 1, y]);
+            }
+            if (y > 0 && picture[x][y - 1] === target && !set.has(x + '' + (y - 1))) {
+                stack.push([x, y - 1]);
+            }
+            if (y < picture[x].length - 1 && picture[x][y + 1] === target && !set.has(x + '' + (y + 1))) {
+                stack.push([x , y + 1]);
+            }
+        }
+        return;
+    }
+
+    let counts = 0;
+    for (let i = 0; i < picture.length; ++i) {
+        for (let j = 0; j < picture[i].length; ++j) {
+            if (!set.has(i + '' + j)) {
+                ++counts;
+                traverse([i, j]);
+            }
+        }
+    }
+    return counts;
 }
