@@ -749,19 +749,19 @@ function findRemainingBalls(direction, strength) {
 // };
 
 
-var multiply = function(num1, num2) {
-    if (num1 === '0' || num2 === '0') return '0';
-    const nums = [num1, num2];
-    for (let i = 0; i < nums.length; ++i) {
-        let position = 1;
-        let num = 0;
-        for (let j = nums[i].length - 1; j >= 0; --j) {
-            num += (Number(nums[i][j]) * position);
-            position *= 10;
-        }
-        nums[i] = num;
-    }
-    return String(nums.reduce((accum, el) => accum * el, 1));
-};
-//my solution is matching the answer of the literal multiplication but not the answer requested by leetcode?
-console.log(6913259244 * 71103343)
+// var multiply = function(num1, num2) {
+//     if (num1 === '0' || num2 === '0') return '0';
+//     const nums = [num1, num2];
+//     for (let i = 0; i < nums.length; ++i) {
+//         let position = 1;
+//         let num = 0;
+//         for (let j = nums[i].length - 1; j >= 0; --j) {
+//             num += (Number(nums[i][j]) * position);
+//             position *= 10;
+//         }
+//         nums[i] = num;
+//     }
+//     return String(nums.reduce((accum, el) => accum * el, 1));
+// };
+
+
