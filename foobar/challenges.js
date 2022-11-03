@@ -287,3 +287,19 @@ function strokesRequired(picture) {
     }
     return counts;
 }
+
+
+function minMoves(n, startRow, startCol, endRow, endCol, steps=0) {
+    if (startCol > n || startRow > n) return Infinity;
+    if (startCol === endCol && startRow === endRow) return steps;
+    steps += 1;
+    let upL2 = minMoves(n, startRow - 2, startCol - 1, endRow, endCol, steps);
+    let upL1 = minMoves(n, startRow - 1, startCol - 2, endRow, endCol, steps);
+    let upR2 = minMoves(n, startRow - 2, startCol + 1, endRow, endCol, steps);
+    let upR1 = minMoves(n, startRow - 1, startCol + 2, endRow, endCol, steps);
+    let downL2 = minMoves(n, startRow + 2, startCol - 1, endRow, endCol, steps);
+    let downL1 = minMoves(n, startRow + 1, startCol - 2, endRow, endCol, steps);
+    let downR2 = minMoves(n, startRow + 2, startCol + 1, endRow, endCol, steps);
+    let downR1 = minMoves(n, startRow + 1, startCol + 2, endRow, endCol, steps);
+    return Math.min(upL1, upL2, upR1, upR2, downL1, downL2, downR1, downR2);
+}
