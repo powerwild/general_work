@@ -220,20 +220,25 @@
 
 //     return heaviest;
 // }
-function weightCapacity(weights, maxCapacity) {
-    weights.sort((a, b) => a - b);
-    const memo = {};
-    return helper(0, 0);
-    
-    function helper(prevW, i) {
-        if (i >= weights.length) return prevW;
-        let key = `${prevW}-${i}`;
-        if (key in memo) return memo[key];
-        let currW = weights[i];
-        if (prevW + currW > maxCapacity) return prevW;
-        let op1 = helper(prevW + currW, i + 1);
-        let op2 = helper(prevW, i + 1);
-        memo[key] = Math.max(op1, op2);
-        return memo[key];
-    }
+// function weightCapacity(weights, maxCapacity) {
+//     weights.sort((a, b) => a - b);
+//     const memo = {};
+//     return helper(0, 0);
+
+//     function helper(prevW, i) {
+//         if (i >= weights.length) return prevW;
+//         let key = `${prevW}-${i}`;
+//         if (key in memo) return memo[key];
+//         let currW = weights[i];
+//         if (prevW + currW > maxCapacity) return prevW;
+//         let op1 = helper(prevW + currW, i + 1);
+//         let op2 = helper(prevW, i + 1);
+//         memo[key] = Math.max(op1, op2);
+//         return memo[key];
+//     }
+// }
+
+
+function maximumProfit(price) {
+
 }
