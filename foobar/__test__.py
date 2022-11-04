@@ -264,4 +264,5 @@ from datetime import datetime
 #!/usr/bin/env python3
 
 
-
+class Solution:
+    def runningSum(self, nums: List[int]) -> List[int]:
