@@ -273,3 +273,13 @@ from datetime import datetime
 
 class Solution(object):
     def pivotIndex(self, nums):
+        if len(nums) < 3: return -1
+        total = 0
+        for i in range(len(nums)):
+            total += nums[i]
+        l_sum = 0
+        for j in range(len(nums)):
+            total -= nums[j]
+            if total == l_sum: return j
+            l_sum += nums[j]
+        return -1
