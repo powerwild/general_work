@@ -248,61 +248,62 @@
 //     }
 //     return profit;
 // }
-
-
-function strokesRequired(picture) {
-    for (let str of picture) str = str.split('');
-    const set = new Set();
-
-    function traverse(coords) {
-        const stack = [coords];
-        let target = picture[coords[0]][coords[1]];
-        while (stack.length) {
-            let [x, y] = stack.pop();
-            set.add(x + '' + y);
-            if (x > 0 && picture[x - 1][y] === target && !set.has((x - 1) + '' + y)) {
-                stack.push([x - 1, y]);
-            }
-            if (x < picture.length - 1 && picture[x + 1][y] === target && !set.has((x + 1) + '' + y)) {
-                stack.push([x + 1, y]);
-            }
-            if (y > 0 && picture[x][y - 1] === target && !set.has(x + '' + (y - 1))) {
-                stack.push([x, y - 1]);
-            }
-            if (y < picture[x].length - 1 && picture[x][y + 1] === target && !set.has(x + '' + (y + 1))) {
-                stack.push([x , y + 1]);
-            }
-        }
-        return;
-    }
-
-    let counts = 0;
-    for (let i = 0; i < picture.length; ++i) {
-        for (let j = 0; j < picture[i].length; ++j) {
-            if (!set.has(i + '' + j)) {
-                ++counts;
-                traverse([i, j]);
-            }
-        }
-    }
-    return counts;
+function maximumProfit(price) {
+    
 }
 
+// function strokesRequired(picture) {
+//     for (let str of picture) str = str.split('');
+//     const set = new Set();
 
-function minMoves(n, startRow, startCol, endRow, endCol, steps=0, memo={}) {
-    if (startCol > n || startRow > n || startCol < 0 || startRow < 0 || memo[startRow + '' + startCol]) return Infinity;
-    if (startCol === endCol && startRow === endRow) return steps;
-    memo[startRow + '' + startCol] = true;
-    console.log(memo)
-    steps += 1;
-    let upL2 = minMoves(n, startRow - 2, startCol - 1, endRow, endCol, steps, memo);
-    let upL1 = minMoves(n, startRow - 1, startCol - 2, endRow, endCol, steps, memo);
-    let upR2 = minMoves(n, startRow - 2, startCol + 1, endRow, endCol, steps, memo);
-    let upR1 = minMoves(n, startRow - 1, startCol + 2, endRow, endCol, steps, memo);
-    let downL2 = minMoves(n, startRow + 2, startCol - 1, endRow, endCol, steps, memo);
-    let downL1 = minMoves(n, startRow + 1, startCol - 2, endRow, endCol, steps, memo);
-    let downR2 = minMoves(n, startRow + 2, startCol + 1, endRow, endCol, steps, memo);
-    let downR1 = minMoves(n, startRow + 1, startCol + 2, endRow, endCol, steps, memo);
-    return Math.min(upL1, upL2, upR1, upR2, downL1, downL2, downR1, downR2);
-}
-console.log(minMoves(9, 4, 4, 4, 8))
+//     function traverse(coords) {
+//         const stack = [coords];
+//         let target = picture[coords[0]][coords[1]];
+//         while (stack.length) {
+//             let [x, y] = stack.pop();
+//             set.add(x + '' + y);
+//             if (x > 0 && picture[x - 1][y] === target && !set.has((x - 1) + '' + y)) {
+//                 stack.push([x - 1, y]);
+//             }
+//             if (x < picture.length - 1 && picture[x + 1][y] === target && !set.has((x + 1) + '' + y)) {
+//                 stack.push([x + 1, y]);
+//             }
+//             if (y > 0 && picture[x][y - 1] === target && !set.has(x + '' + (y - 1))) {
+//                 stack.push([x, y - 1]);
+//             }
+//             if (y < picture[x].length - 1 && picture[x][y + 1] === target && !set.has(x + '' + (y + 1))) {
+//                 stack.push([x , y + 1]);
+//             }
+//         }
+//         return;
+//     }
+
+//     let counts = 0;
+//     for (let i = 0; i < picture.length; ++i) {
+//         for (let j = 0; j < picture[i].length; ++j) {
+//             if (!set.has(i + '' + j)) {
+//                 ++counts;
+//                 traverse([i, j]);
+//             }
+//         }
+//     }
+//     return counts;
+// }
+
+
+// function minMoves(n, startRow, startCol, endRow, endCol, steps=0, memo={}) {
+//     if (startCol > n || startRow > n || startCol < 0 || startRow < 0 || memo[startRow + '' + startCol]) return Infinity;
+//     if (startCol === endCol && startRow === endRow) return steps;
+//     memo[startRow + '' + startCol] = true;
+//     console.log(memo)
+//     steps += 1;
+//     let upL2 = minMoves(n, startRow - 2, startCol - 1, endRow, endCol, steps, memo);
+//     let upL1 = minMoves(n, startRow - 1, startCol - 2, endRow, endCol, steps, memo);
+//     let upR2 = minMoves(n, startRow - 2, startCol + 1, endRow, endCol, steps, memo);
+//     let upR1 = minMoves(n, startRow - 1, startCol + 2, endRow, endCol, steps, memo);
+//     let downL2 = minMoves(n, startRow + 2, startCol - 1, endRow, endCol, steps, memo);
+//     let downL1 = minMoves(n, startRow + 1, startCol - 2, endRow, endCol, steps, memo);
+//     let downR2 = minMoves(n, startRow + 2, startCol + 1, endRow, endCol, steps, memo);
+//     let downR1 = minMoves(n, startRow + 1, startCol + 2, endRow, endCol, steps, memo);
+//     return Math.min(upL1, upL2, upR1, upR2, downL1, downL2, downR1, downR2);
+// }
