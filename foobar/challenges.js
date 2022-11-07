@@ -248,18 +248,18 @@
 //     }
 //     return profit;
 // }
-function maximumProfit(price) {
-    let max = price[price.length - 1];
-    let profit = 0;
-    for (let i = price.length - 2; i >= 0; --i) {
-        if (max >= price[i]) {
-            profit += max - price[i];
-        } else {
-            max = price[i];
-        }
-    }
-    return profit;
-}
+// function maximumProfit(price) {
+//     let max = price[price.length - 1];
+//     let profit = 0;
+//     for (let i = price.length - 2; i >= 0; --i) {
+//         if (max >= price[i]) {
+//             profit += max - price[i];
+//         } else {
+//             max = price[i];
+//         }
+//     }
+//     return profit;
+// }
 
 // function strokesRequired(picture) {
 //     for (let str of picture) str = str.split('');
@@ -298,7 +298,9 @@ function maximumProfit(price) {
 //     }
 //     return counts;
 // }
-
+function strokesRequired(picture) {
+    
+}
 
 // function minMoves(n, startRow, startCol, endRow, endCol, steps=0, memo={}) {
 //     if (startCol > n || startRow > n || startCol < 0 || startRow < 0 || memo[startRow + '' + startCol]) return Infinity;
