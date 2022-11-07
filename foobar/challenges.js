@@ -270,17 +270,17 @@
 //         let target = picture[coords[0]][coords[1]];
 //         while (stack.length) {
 //             let [x, y] = stack.pop();
-//             set.add(x + '' + y);
-//             if (x > 0 && picture[x - 1][y] === target && !set.has((x - 1) + '' + y)) {
+//             set.add(x + '-' + y);
+//             if (x > 0 && picture[x - 1][y] === target && !set.has((x - 1) + '-' + y)) {
 //                 stack.push([x - 1, y]);
 //             }
-//             if (x < picture.length - 1 && picture[x + 1][y] === target && !set.has((x + 1) + '' + y)) {
+//             if (x < picture.length - 1 && picture[x + 1][y] === target && !set.has((x + 1) + '-' + y)) {
 //                 stack.push([x + 1, y]);
 //             }
-//             if (y > 0 && picture[x][y - 1] === target && !set.has(x + '' + (y - 1))) {
+//             if (y > 0 && picture[x][y - 1] === target && !set.has(x + '-' + (y - 1))) {
 //                 stack.push([x, y - 1]);
 //             }
-//             if (y < picture[x].length - 1 && picture[x][y + 1] === target && !set.has(x + '' + (y + 1))) {
+//             if (y < picture[x].length - 1 && picture[x][y + 1] === target && !set.has(x + '-' + (y + 1))) {
 //                 stack.push([x , y + 1]);
 //             }
 //         }
@@ -290,7 +290,7 @@
 //     let counts = 0;
 //     for (let i = 0; i < picture.length; ++i) {
 //         for (let j = 0; j < picture[i].length; ++j) {
-//             if (!set.has(i + '' + j)) {
+//             if (!set.has(i + '-' + j)) {
 //                 ++counts;
 //                 traverse([i, j]);
 //             }
@@ -299,7 +299,34 @@
 //     return counts;
 // }
 function strokesRequired(picture) {
-    
+    for (let str of picture) str = str.split('');
+    let visited = new Set();
+    let strokes = 0;
+    for (let x = 0; x < picture.length; ++x) {
+        for (let y = 0; y < picture[x].length; ++y) {
+            let target = picture[x][y];
+            dfsFill(picture, x, y, visited, target);
+            ++strokes;
+        }
+    }
+    function dfsFill(matrix, r, c, visited, color) {
+        if (r < 0 || c < 0 || r > matrix.length - 1 || c > matrix[r].length - 1 || color !== matrix[x][y]) return;
+        set.add(x + '-' + y);
+        if (!set.has((r - 1) + '-' + c)) {
+            dfsFill(matrix, r-1, c, visited, color);
+        }
+        if (!visited.has((r + 1) + '-' + c)) {
+            dfsFill(matrix, r+1, c, visited, color);
+        }
+        if (!visited.has(r + '-' + (c - 1))) {
+            dfsFill(matrix, r, c-1, visited, color);
+        }
+        if (!visited.has(r + '-' + (c + 1))) {
+            dfsFill(matrix, r, c+1, visited, color);
+        }
+        return;
+    }
+    return strokes;
 }
 
 // function minMoves(n, startRow, startCol, endRow, endCol, steps=0, memo={}) {
