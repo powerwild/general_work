@@ -249,7 +249,16 @@
 //     return profit;
 // }
 function maximumProfit(price) {
-    
+    let max = price[price.length - 1];
+    let profit = 0;
+    for (let i = price.length - 2; i >= 0; --i) {
+        if (max >= price[i]) {
+            profit += max - price[i];
+        } else {
+            max = price[i];
+        }
+    }
+    return profit;
 }
 
 // function strokesRequired(picture) {
