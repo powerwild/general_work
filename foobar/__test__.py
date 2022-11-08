@@ -378,14 +378,18 @@ from datetime import datetime
 #         return None
 
 
+# class Solution(object):
+#     def maxProfit(self, prices):
+#         profit = 0
+#         max = prices[-1]
+#         for i in range(len(prices)-2, -1, -1):
+#             if prices[i] > max:
+#                 max = prices[i]
+#             else:
+#                 new_profit = max - prices[i]
+#                 profit = new_profit if new_profit > profit else profit
+#         return profit
+
+
 class Solution(object):
-    def maxProfit(self, prices):
-        profit = 0
-        max = prices[-1]
-        for i in range(len(prices)-2, -1, -1):
-            if prices[i] > max:
-                max = prices[i]
-            else:
-                new_profit = max - prices[i]
-                profit = new_profit if new_profit > profit else profit
-        return profit
+    def longestPalindrome(self, s):
