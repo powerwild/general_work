@@ -285,21 +285,29 @@ from datetime import datetime
 #         return -1
 
 
-class Solution(object):
-    def isIsomorphic(self, s, t):
-        s_map = dict()
-        t_map = dict()
-        for i in range(len(s)):
-            if not s_map.get(s[i]):
-                s_map[s[i]] = str(i)
-            else: s_map[s[i]] += str(i)
-            if not t_map.get(t[i]):
-                t_map[t[i]] = str(i)
-            else: t_map[t[i]] += str(i)
-        print(s_map)
-        print(t_map)
-        for j in range(len(t)):
-            if s_map[s[j]] != t_map[t[j]]:
-                return False
-        return True
+# class Solution(object):
+#     def isIsomorphic(self, s, t):
+#         s_map = dict()
+#         t_map = dict()
+#         for i in range(len(s)):
+#             if not s_map.get(s[i]):
+#                 s_map[s[i]] = str(i)
+#             else: s_map[s[i]] += str(i)
+#             if not t_map.get(t[i]):
+#                 t_map[t[i]] = str(i)
+#             else: t_map[t[i]] += str(i)
+#         print(s_map)
+#         print(t_map)
+#         for j in range(len(t)):
+#             if s_map[s[j]] != t_map[t[j]]:
+#                 return False
+#         return True
 
+
+class Solution(object):
+    def isSubsequence(self, s, t):
+        s_index = 0
+        for i in range(len(t)):
+            if s_index < len(s) and s[s_index] == t[i]:
+                s_index += 1
+        return s_index >= len(s)
