@@ -368,3 +368,11 @@ from datetime import datetime
 
 class Solution(object):
     def detectCycle(self, head):
+        nodes = set()
+        while head:
+            if head in nodes:
+                return head
+            else:
+                nodes.add(head)
+            head = head.next
+        return None
