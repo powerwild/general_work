@@ -332,17 +332,23 @@ from datetime import datetime
 #         if list2:
 #             curr.next = list2
 #         return new_head.next
+
+
+# class Solution(object):
+#     def reverseList(self, head):
+#         if not head or not head.next: return head
+#         prev = head
+#         curr = head.next
+#         next = curr.next
+#         prev.next = None
+#         while next:
+#             curr.next = prev
+#             prev = curr
+#             curr = next
+#             next = next.next
+#         curr.next = prev
+#         return curr
+
+
 class Solution(object):
-    def reverseList(self, head):
-        if not head or not head.next: return head
-        prev = head
-        curr = head.next
-        next = curr.next
-        prev.next = None
-        while next:
-            curr.next = prev
-            prev = curr
-            curr = next
-            next = next.next
-        curr.next = prev
-        return curr
+    def middleNode(self, head):
