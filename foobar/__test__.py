@@ -334,3 +334,15 @@ from datetime import datetime
 #         return new_head.next
 class Solution(object):
     def reverseList(self, head):
+        if not head or not head.next: return head
+        prev = head
+        curr = head.next
+        next = curr.next
+        prev.next = None
+        while next:
+            curr.next = prev
+            prev = curr
+            curr = next
+            next = next.next
+        curr.next = prev
+        return curr
