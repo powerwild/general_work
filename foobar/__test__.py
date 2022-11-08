@@ -352,3 +352,15 @@ from datetime import datetime
 
 class Solution(object):
     def middleNode(self, head):
+        if not head.next: return head
+        curr = head
+        num_of_nodes = 0
+        while curr:
+            num_of_nodes += 1
+            curr = curr.next
+        middle = num_of_nodes // 2
+        curr = head
+        while middle > 0:
+            middle -= 1
+            curr = curr.next
+        return curr
