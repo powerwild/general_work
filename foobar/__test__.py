@@ -304,10 +304,14 @@ from datetime import datetime
 #         return True
 
 
+# class Solution(object):
+#     def isSubsequence(self, s, t):
+#         s_index = 0
+#         for i in range(len(t)):
+#             if s_index < len(s) and s[s_index] == t[i]:
+#                 s_index += 1
+#         return s_index >= len(s)
+
+
 class Solution(object):
-    def isSubsequence(self, s, t):
-        s_index = 0
-        for i in range(len(t)):
-            if s_index < len(s) and s[s_index] == t[i]:
-                s_index += 1
-        return s_index >= len(s)
+    def mergeTwoLists(self, list1, list2):
