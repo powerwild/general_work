@@ -366,13 +366,17 @@ from datetime import datetime
 #         return curr
 
 
+# class Solution(object):
+#     def detectCycle(self, head):
+#         nodes = set()
+#         while head:
+#             if head in nodes:
+#                 return head
+#             else:
+#                 nodes.add(head)
+#             head = head.next
+#         return None
+
+
 class Solution(object):
-    def detectCycle(self, head):
-        nodes = set()
-        while head:
-            if head in nodes:
-                return head
-            else:
-                nodes.add(head)
-            head = head.next
-        return None
+    def maxProfit(self, prices):
