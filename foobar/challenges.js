@@ -388,11 +388,10 @@ function playlist(songs) {
     const map = {};
     let pairs = 0;
     for (let song of songs) {
-        let diff = Math.abs(60 - (song % 60));
+        let mod = song % 60;
+        let diff = Math.abs(60 - mod) % 60;
         if (map[diff]) pairs += map[diff];
-        song = song > 60 ? song % 60 : song;
-        console.log(song)
-        map[song] = map[song] ? map[song] + 1 : 1;
+        map[mod] = map[mod] ? map[mod] + 1 : 1;
     }
     return pairs;
 }
