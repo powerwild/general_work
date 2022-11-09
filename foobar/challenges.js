@@ -370,15 +370,20 @@
 // }
 
 
-function countPairs(numbers, k) {
-    const nums = new Set(numbers);
-    let pairs = 0;
-    const map = {};
-    for (let num of nums) {
-        map[num+k] = true;
-    }
-    for (let num of nums) {
-        if (map[num]) ++pairs;
-    }
-    return pairs;
+// function countPairs(numbers, k) {
+//     const nums = new Set(numbers);
+//     let pairs = 0;
+//     const map = {};
+//     for (let num of nums) {
+//         map[num+k] = true;
+//     }
+//     for (let num of nums) {
+//         if (map[num]) ++pairs;
+//     }
+//     return pairs;
+// }
+
+
+function playlist(songs) {
+
 }
