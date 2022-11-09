@@ -396,4 +396,26 @@ function playlist(songs) {
     }
     return pairs;
 }
-console.log(playlist([900, 800, 700]))
+
+
+function reachTheEnd(grid, maxTime) {
+    const stack = [[0, 0, 0]];
+    const coords = new Set();
+    let end = 'No';
+    while (stack.length) {
+        let [x, y, secs] = stack.pop();
+        coords.add(x + '-' + y);
+        if (x === grid.length - 1 && y === grid[x].length -1) {
+            end = 'Yes';
+            break;
+        }
+        if (secs < maxTime) {
+            ++secs;
+            if (x > 0 && grid[x-1][y] === '.' && !coords.has((x-1) + '-' + y)) stack.push([x-1, y, secs]);
+            if (y > 0 && grid[x][y-1] === '.' && !coords.has(x + '-' + (y-1))) stack.push([x, y-1, secs]);
+            if (x < grid.length - 1 && grid[x+1][y] === '.' && !coords.has((x+1) + '-' + y)) stack.push([x+1, y, secs]);
+            if (y < grid[x].length - 1 && grid[x][y+1] === '.' && !coords.has(x + '-' + (y+1))) stack.push([x, y+1, secs]);
+        }
+    }
+    return end;
+}
