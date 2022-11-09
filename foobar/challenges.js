@@ -345,26 +345,31 @@
 //     let downR1 = minMoves(n, startRow + 1, startCol + 2, endRow, endCol, steps, memo);
 //     return Math.min(upL1, upL2, upR1, upR2, downL1, downL2, downR1, downR2);
 // }
-function minMoves(n, startRow, startCol, endRow, endCol) {
-    const q = [[coords]];
-    const paths = [[1, 2], [1, -2], [-1, 2], [-1, -2], [2, 1], [2, -1], [-2, 1], [-2, -1]];
-    const visited = new Set();
-    let steps = 0;
-    visited.add(startRow + '-' + startCol);
-    while(q.length) {
-        for (let i = 0; i < q.length; ++i) {
-            let pos = q.shift();
-            for (let path of paths) {
-                let newRow = path[0] + pos[0];
-                let newCol = path[1] + pos[1];
-                if (!visited.has(newRow + '-' + newCol) && newRow >= 0 && newRow < n && newCol >= 0 && newCol < n) {
-                    if (newRow === endRow && newCol === endCol) return count + 1;
-                    q.push([newRow, newCol]);
-                    visited.add(newRow + '-' + newCol);
-                }
-            }
-        }
-        ++count;
-    }
-    return -1;
+// function minMoves(n, startRow, startCol, endRow, endCol) {
+//     const q = [[coords]];
+//     const paths = [[1, 2], [1, -2], [-1, 2], [-1, -2], [2, 1], [2, -1], [-2, 1], [-2, -1]];
+//     const visited = new Set();
+//     let steps = 0;
+//     visited.add(startRow + '-' + startCol);
+//     while(q.length) {
+//         for (let i = 0; i < q.length; ++i) {
+//             let pos = q.shift();
+//             for (let path of paths) {
+//                 let newRow = path[0] + pos[0];
+//                 let newCol = path[1] + pos[1];
+//                 if (!visited.has(newRow + '-' + newCol) && newRow >= 0 && newRow < n && newCol >= 0 && newCol < n) {
+//                     if (newRow === endRow && newCol === endCol) return count + 1;
+//                     q.push([newRow, newCol]);
+//                     visited.add(newRow + '-' + newCol);
+//                 }
+//             }
+//         }
+//         ++count;
+//     }
+//     return -1;
+// }
+
+
+function countPairs(numbers, k) {
+
 }
