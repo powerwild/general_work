@@ -405,3 +405,12 @@ from datetime import datetime
 
 class Solution(object):
     def preorder(self, root):
+        if not root: return root
+        vals = list()
+        nodes = [root]
+        while len(nodes):
+            curr = nodes.pop()
+            vals.append(curr.val)
+            for i in range(len(curr.children)-1, -1):
+                nodes.append(curr.children[i])
+        return vals
