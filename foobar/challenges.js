@@ -384,17 +384,17 @@
 // }
 
 
-function playlist(songs) {
-    const map = {};
-    let pairs = 0;
-    for (let song of songs) {
-        let mod = song % 60;
-        let diff = Math.abs(60 - mod) % 60;
-        if (map[diff]) pairs += map[diff];
-        map[mod] = map[mod] ? map[mod] + 1 : 1;
-    }
-    return pairs;
-}
+// function playlist(songs) {
+//     const map = {};
+//     let pairs = 0;
+//     for (let song of songs) {
+//         let mod = song % 60;
+//         let diff = Math.abs(60 - mod) % 60;
+//         if (map[diff]) pairs += map[diff];
+//         map[mod] = map[mod] ? map[mod] + 1 : 1;
+//     }
+//     return pairs;
+// }
 
 
 function reachTheEnd(grid, maxTime) {

@@ -391,13 +391,17 @@ from datetime import datetime
 #         return profit
 
 
+# class Solution(object):
+#     def longestPalindrome(self, s):
+#         chars = set()
+#         for i in range(len(s)):
+#             if s[i] in chars:
+#                 chars.remove(s[i])
+#             else:
+#                 chars.add(s[i])
+#         extras = len(chars) - 1 if len(chars) > 0 else 0
+#         return len(s) - extras
+
+
 class Solution(object):
-    def longestPalindrome(self, s):
-        chars = set()
-        for i in range(len(s)):
-            if s[i] in chars:
-                chars.remove(s[i])
-            else:
-                chars.add(s[i])
-        extras = len(chars) - 1 if len(chars) > 0 else 0
-        return len(s) - extras
+    def preorder(self, root):
