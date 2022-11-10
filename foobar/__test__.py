@@ -416,19 +416,23 @@ from datetime import datetime
 #         return vals
 
 
+# class Solution(object):
+#     def levelOrder(self, root):
+#         if not root: return root
+#         levels = list()
+#         nodes = [[root]]
+#         while len(nodes):
+#             this_level = list()
+#             children = list()
+#             currs = nodes.pop(0)
+#             for node in currs:
+#                 this_level.append(node.val)
+#                 if node.left: children.append(node.left)
+#                 if node.right: children.append(node.right)
+#             levels.append(this_level)
+#             if len(children): nodes.append(children)
+#         return levels
+
+
 class Solution(object):
-    def levelOrder(self, root):
-        if not root: return root
-        levels = list()
-        nodes = [[root]]
-        while len(nodes):
-            this_level = list()
-            children = list()
-            currs = nodes.pop(0)
-            for node in currs:
-                this_level.append(node.val)
-                if node.left: children.append(node.left)
-                if node.right: children.append(node.right)
-            levels.append(this_level)
-            if len(children): nodes.append(children)
-        return levels
+    def search(self, nums, target):
