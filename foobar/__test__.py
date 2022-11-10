@@ -434,20 +434,24 @@ from datetime import datetime
 #         return levels
 
 
+# class Solution(object):
+#     def search(self, nums, target):
+#         l = 0
+#         if nums[l] == target: return l
+#         r = len(nums) - 1
+#         if nums[r] == target: return r
+#         m = len(nums) // 2
+#         if nums[m] == target: return m
+#         while m != l and m != r:
+#             if nums[m] < target:
+#                 l = m
+#             elif nums[m] > target:
+#                 r = m
+#             else:
+#                 break
+#             m = l + ((r - l) // 2)
+#         return m if nums[m] == target else -1
+
+
 class Solution(object):
-    def search(self, nums, target):
-        l = 0
-        if nums[l] == target: return l
-        r = len(nums) - 1
-        if nums[r] == target: return r
-        m = len(nums) // 2
-        if nums[m] == target: return m
-        while m != l and m != r:
-            if nums[m] < target:
-                l = m
-            elif nums[m] > target:
-                r = m
-            else:
-                break
-            m = l + ((r - l) // 2)
-        return m if nums[m] == target else -1
+    def firstBadVersion(self, n):
