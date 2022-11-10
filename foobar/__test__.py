@@ -453,15 +453,18 @@ from datetime import datetime
 #         return m if nums[m] == target else -1
 
 
-class Solution(object):
-    def firstBadVersion(self, n):
-        if n == 1:
-            return n
-        v = 1
-        while v < n:
-            m = (n + v) // 2
-            if isBadVersion(m):
-                n = m
-            else:
-                v = m +1
-        return v
+# class Solution(object):
+#     def firstBadVersion(self, n):
+#         if n == 1:
+#             return n
+#         v = 1
+#         while v < n:
+#             m = (n + v) // 2
+#             if isBadVersion(m):
+#                 n = m
+#             else:
+#                 v = m +1
+#         return v
+
+
+def mergeSort(lst, start, end):
