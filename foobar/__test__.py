@@ -466,5 +466,27 @@ from datetime import datetime
 #                 v = m +1
 #         return v
 
-
+def gather(arr, temp, index, max_index):
+    while index <= max_index:
+        temp.append(arr[index])
+        index += 1
+    return
 def mergeSort(lst, start, end):
+    if start == end: return
+    mid = start + ((end - start) // 2)
+    mergeSort(lst, start, mid)
+    mergeSort(lst, mid+1, end)
+    i = start
+    j = mid + 1
+    temp_lst = list()
+    while i <= mid and j <= end:
+        if lst[i] <= lst[j]:
+            temp_lst.append(lst[i])
+            i += 1
+        else:
+            temp_lst.append(lst[j])
+            j += 1
+    gather(lst, temp_lst, i, mid)
+    gather(lst, temp_lst, j, end)
+    lst[start:end+1] = temp_lst
+    return
