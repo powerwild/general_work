@@ -455,3 +455,13 @@ from datetime import datetime
 
 class Solution(object):
     def firstBadVersion(self, n):
+        if n == 1:
+            return n
+        v = 1
+        while v < n:
+            m = (n + v) // 2
+            if isBadVersion(m):
+                n = m
+            else:
+                v = m +1
+        return v
