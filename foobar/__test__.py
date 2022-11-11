@@ -509,3 +509,13 @@ from datetime import datetime
 
 class Solution(object):
     def lowestCommonAncestor(self, root, p, q):
+        if not root or root.val == p.val or root.val == q.val:
+            return root
+        l = self.lowestCommonAncestor(root.left, p, q)
+        r = self.lowestCommonAncestor(root.right, p, q)
+        if l and r:
+            return root
+        elif l:
+            return l
+        else:
+            return r
