@@ -521,18 +521,22 @@ from datetime import datetime
 #             return r
 
 
+# class Solution(object):
+#     def searchInsert(self, nums, target):
+#         if target <= nums[0]:
+#             return 0
+#         l = 0
+#         r = len(nums) - 1
+#         if target > nums[r]:
+#             return r+1
+#         while l+1 < r:
+#             m = l + ((r - l) // 2)
+#             if nums[m] < target:
+#                 l = m
+#             else:
+#                 r = m
+#         return r
+
+
 class Solution(object):
-    def searchInsert(self, nums, target):
-        if target <= nums[0]:
-            return 0
-        l = 0
-        r = len(nums) - 1
-        if target > nums[r]:
-            return r+1
-        while l+1 < r:
-            m = l + ((r - l) // 2)
-            if nums[m] < target:
-                l = m
-            else:
-                r = m
-        return r
+    def containsDuplicate(self, nums):
