@@ -544,12 +544,16 @@ from datetime import datetime
 #         return len(unique) != len(nums)
 
 
+# class Solution(object):
+#     def maxSubArray(self, nums):
+#         for i in range(1, len(nums)):
+#             sub_sum = nums[i] + nums[i-1]
+#             if sub_sum <= nums[i]:
+#                 continue
+#             else:
+#                 nums[i] = sub_sum
+#         return max(nums)
+
+
 class Solution(object):
-    def maxSubArray(self, nums):
-        for i in range(1, len(nums)):
-            sub_sum = nums[i] + nums[i-1]
-            if sub_sum <= nums[i]:
-                continue
-            else:
-                nums[i] = sub_sum
-        return max(nums)
+    def countOdds(self, low, high):
