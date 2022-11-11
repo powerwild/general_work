@@ -568,3 +568,15 @@ from datetime import datetime
 
 class Solution(object):
     def average(self, salary):
+        max = float('-inf')
+        min = float('inf')
+        divisor = len(salary) - 2
+        sum = 0
+        for sal in salary:
+            if sal < min:
+                min = sal
+            if sal > max:
+                max = sal
+            sum += sal
+        sum -= (max + min)
+        return float(sum) / divisor
