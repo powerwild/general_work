@@ -538,7 +538,11 @@ from datetime import datetime
 #         return r
 
 
+# class Solution(object):
+#     def containsDuplicate(self, nums):
+#         unique = set(nums)
+#         return len(unique) != len(nums)
+
+
 class Solution(object):
-    def containsDuplicate(self, nums):
-        unique = set(nums)
-        return len(unique) != len(nums)
+    def maxSubArray(self, nums):
