@@ -492,16 +492,20 @@ from datetime import datetime
 #     return
 
 
+# class Solution(object):
+#     def isValidBST(self, root):
+#         def traverse(node, smaller, larger):
+#             if not node:
+#                 return True
+#             for s in smaller:
+#                 if node.val <= s.val:
+#                     return False
+#             for l in larger:
+#                 if node.val >= l.val:
+#                     return False
+#             return traverse(node.left, smaller, larger+[node]) and traverse(node.right, smaller+[node], larger)
+#         return traverse(root, [], [])
+
+
 class Solution(object):
-    def isValidBST(self, root):
-        def traverse(node, smaller, larger):
-            if not node:
-                return True
-            for s in smaller:
-                if node.val <= s.val:
-                    return False
-            for l in larger:
-                if node.val >= l.val:
-                    return False
-            return traverse(node.left, smaller, larger+[node]) and traverse(node.right, smaller+[node], larger)
-        return traverse(root, [], [])
+    def lowestCommonAncestor(self, root, p, q):
