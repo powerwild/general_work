@@ -555,15 +555,16 @@ from datetime import datetime
 #         return max(nums)
 
 
+# class Solution(object):
+#     def countOdds(self, low, high):
+#         even = 0
+#         odd = 0
+#         if low % 2 == 0:
+#             even += 1
+#         else:
+#             odd += 1
+#         return ((high - low + even) // 2) + odd
+
+
 class Solution(object):
-    def countOdds(self, low, high):
-        even = 0
-        odd = 0
-        if low % 2 == 0:
-            even += 1
-        else:
-            odd += 1
-        return ((high - low + even) // 2) + odd
-        if low % 2 == 0:
-            return (high-low+1)//2
-        return (high-low)//2 + 1
+    def average(self, salary):
