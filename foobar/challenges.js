@@ -382,6 +382,9 @@
 //     }
 //     return pairs;
 // }
+function countPairs(numbers, k) {
+
+}
 
 
 // function playlist(songs) {
