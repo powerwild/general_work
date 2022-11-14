@@ -426,4 +426,6 @@
 //     }
 //     return end;
 // }
+function reachTheEnd(grid, maxTime) {
 
+}
