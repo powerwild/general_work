@@ -602,44 +602,46 @@ from datetime import datetime
 #         return image
 
 
+# class Solution(object):
+#     def numIslands(self, grid):
+#         def isGoodCoords(grid, x, y, vis):
+#             if x < 0 or x >= len(grid):
+#                 return False
+#             if y < 0 or y >= len(grid[x]):
+#                 return False
+#             if grid[x][y] == '0':
+#                 return False
+#             if '{0}-{1}'.format(x, y) in vis:
+#                 return False
+#             return True
+
+#         def addCoords(lst, x, y, vis):
+#             lst.append([x, y])
+#             vis.add('{0}-{1}'.format(x, y))
+
+#         visited = set()
+#         islands = 0
+#         for r in range(len(grid)):
+#             for c in range(len(grid[r])):
+#                 if isGoodCoords(grid, r, c, visited):
+#                     stack = []
+#                     addCoords(stack, r, c, visited)
+#                     while len(stack):
+#                         row, col = stack.pop()
+#                         if isGoodCoords(grid, row+1, col, visited):
+#                             addCoords(stack, row+1, col, visited)
+
+#                         if isGoodCoords(grid, row-1, col, visited):
+#                             addCoords(stack, row-1, col, visited)
+
+#                         if isGoodCoords(grid, row, col+1, visited):
+#                             addCoords(stack, row, col+1, visited)
+
+#                         if isGoodCoords(grid, row, col-1, visited):
+#                             addCoords(stack, row, col-1, visited)
+#                     islands += 1
+#         return islands
+
+
 class Solution(object):
-    def numIslands(self, grid):
-        def isGoodCoords(grid, x, y, vis):
-            if x < 0 or x >= len(grid):
-                return False
-            if y < 0 or y >= len(grid[x]):
-                return False
-            print(x)
-            print(y)
-            if grid[x][y] == '0':
-                return False
-            if '{0}-{1}'.format(x, y) in vis:
-                return False
-            return True
-
-        def addCoords(lst, x, y, vis):
-            lst.append([x, y])
-            vis.add('{0}-{1}'.format(x, y))
-
-        visited = set()
-        islands = 0
-        for r in range(len(grid)):
-            for c in range(len(grid[r])):
-                if isGoodCoords(grid, r, c, visited):
-                    stack = []
-                    addCoords(stack, r, c, visited)
-                    while len(stack):
-                        row, col = stack.pop()
-                        if isGoodCoords(grid, row+1, col, visited):
-                            addCoords(stack, row+1, col, visited)
-
-                        if isGoodCoords(grid, row-1, col, visited):
-                            addCoords(stack, row-1, col, visited)
-
-                        if isGoodCoords(grid, row, col+1, visited):
-                            addCoords(stack, row, col+1, visited)
-
-                        if isGoodCoords(grid, row, col-1, visited):
-                            addCoords(stack, row, col-1, visited)
-                    islands += 1
-        return islands
+    def fib(self, n):
