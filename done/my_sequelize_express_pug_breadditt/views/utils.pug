@@ -1,8 +1,0 @@
-mixin userRow(user, id)
-    tr
-        td= user.username
-        td= user.email
-        td= user.password
-        td= user.faveBread
-        if id
-            td: a(href=`/users/${user.id}`) Profile
