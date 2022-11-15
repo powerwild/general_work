@@ -466,6 +466,42 @@
 // }
 
 
-function sortRoman(names) {
 
+function romanValue(str) {
+    const numerals = {
+        'L': 50,
+        'X': 10,
+        'V': 5,
+        'I': 1
+    };
+    let value = 0;
+    for (let i = 0; i < str.length; ++i) {
+        if (i < str.length - 2 && numerals[str[i+1]] > numerals[str[i]]) {
+            value += numerals[str[i+1]] - numerals[str[i]];
+        } else value += numerals[str[i]];
+    }
+    return value;
 }
+function sortRoman(names) {
+    const diffNames = {};
+    /* diffName = {
+        'name': [[name, numeral], [name, numeral]]
+    }
+    */
+    for (let name of names) {
+        name = name.split(' ');
+        if (diffNames[name[0]]) diffNames[name[0]].push(name);
+        else diffNames[name[0]] = [name];
+    }
+    const entries = Object.entries(diffNames);
+    entries.sort();
+    console.log(entries)
+    const result = [];
+    for (let [key, value] of entries) {
+        value.sort((a, b) => romanValue(a[1]) < romanValue(b[1]));
+        console.log(value)
+        value.forEach(el => result.push(el.join(' ')));
+    }
+    return result;
+}
+
