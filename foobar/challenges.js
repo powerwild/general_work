@@ -443,5 +443,24 @@
 
 
 function htmlElements(s) {
-
+    let elements = '';
+    let beg = 0;
+    for (let end = 0; end < s.length; ++end) {
+        if (s[end] === '<' && (s[end+1] !== '<' && s[end-1] !== '<')) beg = end;
+        if (s[end] === '>' && (s[end+1] !== '>' && s[end-1] !== '>')) {
+            if (s[beg+1] === '\\') {
+                elements += ' /' + s.slice(beg+2, end);
+            } else elements += ' ' + s.slice(beg+1, end);
+        }
+    }
+    elements = elements.split(' ')
+    const tags = [];
+    for (let el of elements) {
+        if (el[0] === '/') {
+            if ('/' + tags[tags.length -1] === el) tags.pop();
+        } else {
+            if (el !== '') tags.push(el);
+        }
+    }
+    return tags.length ? tags[tags.length - 1] : true;
 }
