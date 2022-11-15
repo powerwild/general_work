@@ -643,15 +643,19 @@ from datetime import datetime
 #         return islands
 
 
+# class Solution(object):
+#     def fib(self, n):
+#         num = 1
+#         prev = 0
+#         temp = 0
+#         curr = 1
+#         while num < n:
+#             temp = curr
+#             curr += prev
+#             prev = temp
+#             num += 1
+#         return 0 if n == 0 else curr
+
+
 class Solution(object):
-    def fib(self, n):
-        num = 1
-        prev = 0
-        temp = 0
-        curr = 1
-        while num < n:
-            temp = curr
-            curr += prev
-            prev = temp
-            num += 1
-        return 0 if n == 0 else curr
+    def climbStairs(self, n):
