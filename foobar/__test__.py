@@ -582,21 +582,25 @@ from datetime import datetime
 #         return float(sum) / divisor
 
 
+# class Solution(object):
+#     def floodFill(self, image, sr, sc, color):
+#         target = image[sr][sc]
+#         stack = [[sr, sc]]
+#         visited = set()
+#         while len(stack):
+#             r, c = stack.pop()
+#             image[r][c] = color
+#             visited.add('{0}-{1}'.format(r, c))
+#             if r > 0 and image[r-1][c] == target and '{0}-{1}'.format(r-1, c) not in visited:
+#                 stack.append([r-1, c])
+#             if r < len(image)-1 and image[r+1][c] == target and '{0}-{1}'.format(r+1, c) not in visited:
+#                 stack.append([r+1, c])
+#             if c > 0 and image[r][c-1] == target and '{0}-{1}'.format(r, c-1) not in visited:
+#                 stack.append([r, c-1])
+#             if c < len(image[r])-1 and image[r][c+1] == target and '{0}-{1}'.format(r, c+1) not in visited:
+#                 stack.append([r, c+1])
+#         return image
+
+
 class Solution(object):
-    def floodFill(self, image, sr, sc, color):
-        target = image[sr][sc]
-        stack = [[sr, sc]]
-        visited = set()
-        while len(stack):
-            r, c = stack.pop()
-            image[r][c] = color
-            visited.add('{0}-{1}'.format(r, c))
-            if r > 0 and image[r-1][c] == target and '{0}-{1}'.format(r-1, c) not in visited:
-                stack.append([r-1, c])
-            if r < len(image)-1 and image[r+1][c] == target and '{0}-{1}'.format(r+1, c) not in visited:
-                stack.append([r+1, c])
-            if c > 0 and image[r][c-1] == target and '{0}-{1}'.format(r, c-1) not in visited:
-                stack.append([r, c-1])
-            if c < len(image[r])-1 and image[r][c+1] == target and '{0}-{1}'.format(r, c+1) not in visited:
-                stack.append([r, c+1])
-        return image
+    def numIslands(self, grid):
