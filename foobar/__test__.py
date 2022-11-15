@@ -659,3 +659,10 @@ from datetime import datetime
 
 class Solution(object):
     def climbStairs(self, n):
+        uniqueWays = 1
+        increment = 1
+        for i in range(1, n):
+            prev = uniqueWays
+            uniqueWays += increment
+            increment = prev
+        return uniqueWays
