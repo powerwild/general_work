@@ -657,12 +657,24 @@ from datetime import datetime
 #         return 0 if n == 0 else curr
 
 
+# class Solution(object):
+#     def climbStairs(self, n):
+#         uniqueWays = 1
+#         increment = 1
+#         for i in range(1, n):
+#             prev = uniqueWays
+#             uniqueWays += increment
+#             increment = prev
+#         return uniqueWays
+
+
 class Solution(object):
-    def climbStairs(self, n):
-        uniqueWays = 1
-        increment = 1
-        for i in range(1, n):
-            prev = uniqueWays
-            uniqueWays += increment
-            increment = prev
-        return uniqueWays
+    def minCostClimbingStairs(self, cost, price=0, index=0):
+        l = len(cost)
+        end = cost[l-1]
+        next = cost[l-2]
+        for i in range(l-3, -1, -1):
+            prev = next
+            next = min(next, end) + cost[i]
+            end = prev
+        return min(end, next)
