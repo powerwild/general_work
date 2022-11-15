@@ -426,6 +426,8 @@
 //     }
 //     return end;
 // }
-function reachTheEnd(grid, maxTime) {
-    function 
+
+
+function minNum(samDaily, kellyDaily, difference) {
+
 }
