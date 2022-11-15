@@ -429,5 +429,14 @@
 
 
 function minNum(samDaily, kellyDaily, difference) {
-
+    if (samDaily > kellyDaily) return -1;
+    let sam = difference;
+    let kelly = 0;
+    let days = 0;
+    while (kelly <= sam) {
+        ++days;
+        sam += samDaily;
+        kelly += kellyDaily;
+    }
+    return days;
 }
