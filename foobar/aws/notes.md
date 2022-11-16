@@ -199,3 +199,40 @@ Why DevOps?
     to account for
         will disrupt how you work and interact will others
         will have organizational and team-level impacts
+
+Culture - transparency, effective and seamles collaboration and common goals
+    requires the people of the organization to have the right mindset to nurture the DevOps culture
+
+    1. Create a highly collaborative environment
+        development, testing, security, operations and all others have end-to-end ownership for the software
+        work together to optimize the productivity of developers and the reliabililty of operations
+        teams learn from each other's experiences
+        listen to concerns and perspectives
+        streamline processes to achieve results
+        increased visibility enables processes to be unified and continuously improve
+        creates a high-trust culture that values the efforts of each team member
+        transfers knowledge and best practices across teams and the organization
+    2. Automate repeatable tasks when possible
+        enables teams to focus on innovation
+        provides the means to rapid development, testing and deployment
+        automation opportunities: code integrations, reviews, testing, security, deployments and monitoring
+        example:
+            infrastruce-as-code can be used for predefined or approved environments and versioned so that repeatable and consistent environments are built
+            define regulatory checks that run as part of your release pipeline
+    3. Focus on customer needs
+        use feedback loops to stay in touch with customers and develop software to meet their needs
+        microservices architecture allow you to quickly switch directions and align with those needs
+        streamlined processes and automation deliver updates faster and keep customer satifaction high
+        monitoring helps determine the success of the application and continuously align with customer needs
+    4. Develop small and release often
+        design with smaller, loosely coupled components
+        backward compatibility and change management provide governance to development efforts
+        organize teams to match the required system architecture to instill a sense of ownership for their efforts
+        adopting small and frequent code releases gives teams the agility to be responsive of customer and business needs
+    5. Include security at every phase
+        security must be iterative, incremental, automated and in every phase of the application lifecycle
+        educate the development and operations teams to embed it in every step of the lifecycle
+        can identify and resolve potential vulnerabilities before they become major issues and are more expensive to fix
+    6. Continuously experiment and learn
+        inquiry, innovation, learning and mentoring are encouraged
+        teams are innovative and their progress is monitored
