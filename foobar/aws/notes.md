@@ -131,6 +131,10 @@ DEVELOPER TOOLS
 PASSED ASSESSMENT WITH 90%
 
 
+
+
+
+
 DEVOPS - Improves the pace at with development, delivery and evolving/improving happens to better serve customers and compete in the market.
 
 1. Plan -> Code -> Build -> Test -> Release -> Deploy -> Operate -> Monitor -> REPEAT
@@ -163,3 +167,35 @@ Problems - waterfall development, monolithic applications, manual processes and 
         requires sheduled and rigid hand offs
         each team has own priorities, tools and processes
         reduces efficiency when project members are reporting to different units and aimed at different results
+
+Why DevOps?
+    proven success - shorter delivery cycles, decreased change failures rates and improved performance
+        106 times faster from commit to deploy
+        208 times more frequent deployments
+        7 times lower change failure rate
+        2604 times faster time to recover
+
+    benefits
+        Agility
+            anticipate market needs and deliver value
+            monitor your apps and support your strategies with real data
+            have development strategies that allow high velocity and continuous delivery of small, controlled updates
+        Rapid delivery
+            able to produce a functional product more quickly
+        Reliability
+            ensure quality of updates and changes so you can deliver at a more rapid pace
+            use CI/CD to test that each change is safe and functional
+            monitor and observe to stay informed of performance in real-time
+        Scale
+            is able to scale as needed more easily or can be easily changed to do so
+        Improved collaboration
+            emphasize ownership and accountability
+            developers and operations teams collaborate, share responsibilities and combine workflows
+            reduces inefficiencies and saves time
+            writing code that works in the production environment will reduce handover periods between developers and operations teams
+        Security
+            can be integrated during the development of the product instead of after
+
+    to account for
+        will disrupt how you work and interact will others
+        will have organizational and team-level impacts
