@@ -129,3 +129,37 @@ DEVELOPER TOOLS
 
 
 PASSED ASSESSMENT WITH 90%
+
+
+DEVOPS - Improves the pace at with development, delivery and evolving/improving happens to better serve customers and compete in the market.
+
+1. Plan -> Code -> Build -> Test -> Release -> Deploy -> Operate -> Monitor -> REPEAT
+2. Dev -> Developers: change things quickly, release often, measure success by rate of delivery
+3. Ops -> Operations: maintain the stability of the application
+4. DevOps combines siloed roles to optimize productivity and reliability: development, IT operations, quality engineering and security
+5. Cultural philosophies for removing barriers and sharing end-to-end resposibility
+6. Processes developed for speed and quality
+7. Tools that align with processes and automate repeatable tasks, improving the release process and application reliability
+
+Problems - waterfall development, monolithic applications, manual processes and siloed teams cause bottlenecks and delays
+    Waterfall development projects
+        slow, not iterative, resisitant to change and have long release cycles
+        requirements are rigid, set at project start and will likely not change
+        development phases are siloed and only start after the previous phase has ended. hand offs to the next phase are often long
+        testing and security come after implementation, making corrective actions responsive and expensive
+
+    Monolithic applications - hard to deploy and update
+        developed and deployed as a single unit, so when changes are made the entire application must be redeployed
+        has tightly coupled functionality, so maintenance often requires understanding of entire application
+        uses a single tech stack so changing techs is difficult and expensive
+
+    Manual processes
+        slow, inconsistent and error-prone
+            example: manually setting and configuring the infrastructure is time-consuming
+        manually repeating processes is no guarantee that a step will not be missed
+            example: thoroughly testing code is slow and does not guarantee that a test or two will not be missed
+
+    Siloed teams - business, development, quality assurance, specialists, maintenance and operations
+        requires sheduled and rigid hand offs
+        each team has own priorities, tools and processes
+        reduces efficiency when project members are reporting to different units and aimed at different results
