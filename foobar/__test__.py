@@ -700,3 +700,41 @@ from datetime import datetime
 
 class Solution(object):
     def findAnagrams(self, s, p):
+        def is_anagram(d1, d2):
+            if len(d1) != len(d2):
+                return False
+            for k, v in d2.items():
+                if not d1.get(k) or d1[k] != v:
+                    return False
+            return True
+        def remove_char(obj, key):
+            obj[key] -= 1
+            if obj[key] == 0:
+                del obj[key]
+        def add_char(obj, key):
+            if obj.get(key):
+                obj[key] += 1
+            else:
+                obj[key] = 1
+
+        need = dict()
+        have = dict()
+
+        for char in p:
+            add_char(need, char)
+
+        l = 0
+        r = len(p) - 1
+        indeces = list()
+
+        for i in range(r):
+            add_char(have, s[i])
+
+        while r < len(s):
+            add_char(have, s[r])
+            if is_anagram(need, have):
+                indeces.append(l)
+            remove_char(have, s[l])
+            l += 1
+            r += 1
+        return indeces
