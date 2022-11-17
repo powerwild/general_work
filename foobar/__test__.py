@@ -680,19 +680,23 @@ from datetime import datetime
 #         return min(end, next)
 
 
+# class Solution(object):
+#     def uniquePaths(self, m, n):
+#         def traverse(m, n, r, c, memo):
+#             key = '{0}-{1}'.format(r, c)
+#             if key in memo:
+#                 return memo[key]
+#             if m-1 == r and n-1 == c:
+#                 return 1
+#             if m == r or n == c:
+#                 return 0
+#             right = traverse(m, n, r, c+1, memo)
+#             down = traverse(m, n, r+1, c, memo)
+#             memo[key] = right + down
+#             return memo[key]
+#         d = dict()
+#         return traverse(m, n, 0, 0, d)
+
+
 class Solution(object):
-    def uniquePaths(self, m, n):
-        def traverse(m, n, r, c, memo):
-            key = '{0}-{1}'.format(r, c)
-            if key in memo:
-                return memo[key]
-            if m-1 == r and n-1 == c:
-                return 1
-            if m == r or n == c:
-                return 0
-            right = traverse(m, n, r, c+1, memo)
-            down = traverse(m, n, r+1, c, memo)
-            memo[key] = right + down
-            return memo[key]
-        d = dict()
-        return traverse(m, n, 0, 0, d)
+    def findAnagrams(self, s, p):
