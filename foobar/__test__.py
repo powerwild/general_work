@@ -668,13 +668,17 @@ from datetime import datetime
 #         return uniqueWays
 
 
+# class Solution(object):
+#     def minCostClimbingStairs(self, cost, price=0, index=0):
+#         l = len(cost)
+#         end = cost[l-1]
+#         next = cost[l-2]
+#         for i in range(l-3, -1, -1):
+#             prev = next
+#             next = min(next, end) + cost[i]
+#             end = prev
+#         return min(end, next)
+
+
 class Solution(object):
-    def minCostClimbingStairs(self, cost, price=0, index=0):
-        l = len(cost)
-        end = cost[l-1]
-        next = cost[l-2]
-        for i in range(l-3, -1, -1):
-            prev = next
-            next = min(next, end) + cost[i]
-            end = prev
-        return min(end, next)
+    def uniquePaths(self, m, n):
