@@ -764,14 +764,18 @@ from datetime import datetime
 #         return longest
 
 
+# class Solution(object):
+#     def twoSum(self, nums, target):
+#         need = dict()
+#         results = list()
+#         for i in range(len(nums)):
+#             if target-nums[i] in need:
+#                 results = [need[target-nums[i]], i]
+#                 break
+#             else:
+#                 need[nums[i]] = i
+#         return results
+
+
 class Solution(object):
-    def twoSum(self, nums, target):
-        need = dict()
-        results = list()
-        for i in range(len(nums)):
-            if target-nums[i] in need:
-                results = [need[target-nums[i]], i]
-                break
-            else:
-                need[nums[i]] = i
-        return results
+    def getHint(self, secret, guess):
