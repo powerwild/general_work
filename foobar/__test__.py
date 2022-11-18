@@ -739,26 +739,30 @@ from datetime import datetime
 #             r += 1
 #         return indeces
 
-from collections import defaultdict as ddict
+# from collections import defaultdict as ddict
+# class Solution(object):
+#     def characterReplacement(self, s, k):
+#         # def is_valid(map, num):
+#         #     largest = 0
+#         #     sum = 0
+#         #     for v in map.values():
+#         #         largest = max(largest, v)
+#         #         sum += v
+#         #     sum -= largest
+#         #     return sum <= num
+#         chars = ddict(int)
+#         l = 0
+#         longest = 0
+#         most_prolific = 0
+#         for r in range(len(s)):
+#             chars[s[r]] += 1
+#             most_prolific = max(most_prolific, chars[s[r]])
+#             while (r - l + 1) - most_prolific > k:
+#                 chars[s[l]] -= 1
+#                 l += 1
+#             longest = max(longest, r-l+1)
+#         return longest
+
+
 class Solution(object):
-    def characterReplacement(self, s, k):
-        # def is_valid(map, num):
-        #     largest = 0
-        #     sum = 0
-        #     for v in map.values():
-        #         largest = max(largest, v)
-        #         sum += v
-        #     sum -= largest
-        #     return sum <= num
-        chars = ddict(int)
-        l = 0
-        longest = 0
-        most_prolific = 0
-        for r in range(len(s)):
-            chars[s[r]] += 1
-            most_prolific = max(most_prolific, chars[s[r]])
-            while (r - l + 1) - most_prolific > k:
-                chars[s[l]] -= 1
-                l += 1
-            longest = max(longest, r-l+1)
-        return longest
+    def twoSum(self, nums, target):
