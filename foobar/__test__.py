@@ -777,19 +777,23 @@ from datetime import datetime
 #         return results
 
 
+# class Solution(object):
+#     def getHint(self, secret, guess):
+#         bulls = 0
+#         cows = 0
+#         secret_map = dict()
+#         guess_map = dict()
+#         for i in range(len(secret)):
+#             if secret[i] == guess[i]:
+#                 bulls += 1
+#             else:
+#                 secret_map[secret[i]] = secret_map[secret[i]]+1 if secret_map.get(secret[i]) else 1
+#                 guess_map[guess[i]] = guess_map[guess[i]]+1 if guess_map.get(guess[i]) else 1
+#         for k, v in guess_map.items():
+#             if k in secret_map:
+#                 cows += min(secret_map[k], v)
+#         return '{0}A{1}B'.format(bulls, cows)
+
+
 class Solution(object):
-    def getHint(self, secret, guess):
-        bulls = 0
-        cows = 0
-        secret_map = dict()
-        guess_map = dict()
-        for i in range(len(secret)):
-            if secret[i] == guess[i]:
-                bulls += 1
-            else:
-                secret_map[secret[i]] = secret_map[secret[i]]+1 if secret_map.get(secret[i]) else 1
-                guess_map[guess[i]] = guess_map[guess[i]]+1 if guess_map.get(guess[i]) else 1
-        for k, v in guess_map.items():
-            if k in secret_map:
-                cows += min(secret_map[k], v)
-        return '{0}A{1}B'.format(bulls, cows)
+    def backspaceCompare(self, s, t):
