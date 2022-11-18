@@ -1,6 +1,3 @@
-from datetime import datetime
-
-
 # def my_solution(n):
 #     hmap = {}
 #     for i in range(n+1):
@@ -814,3 +811,22 @@ from datetime import datetime
 
 class Solution(object):
     def decodeString(self, s):
+        decoded = ''
+        r = 0
+        diff = None
+        temp = ''
+        while r < len(s)-1:
+            if s[r].isdigit() and diff == None:
+                diff = int(s[r])
+            elif s[r].isdigit():
+                temp += self.decodeString(s[r:-1])
+            elif s[r].isalpha():
+                temp += s[r]
+            elif s[r] == ']':
+                decoded += temp*diff
+                diff = None
+                temp = ''
+            r += 1
+        return decoded
+s = Solution()
+print(s.decodeString('3[a2[c]]'))
