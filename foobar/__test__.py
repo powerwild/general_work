@@ -833,3 +833,16 @@
 
 class Solution(object):
     def intersect(self, nums1, nums2):
+        n1_dic = dict()
+        n2_dic = dict()
+        for num in nums1:
+            n1_dic[num] = n1_dic.get(num, 0) + 1
+        for num in nums2:
+            n2_dic[num] = n2_dic.get(num, 0) + 1
+        results = list()
+        for key in n2_dic.keys():
+            while n1_dic.get(key, 0) > 0 and n2_dic[key] > 0:
+                    results.append(key)
+                    n1_dic[key] -= 1
+                    n2_dic[key] -= 1
+        return results
