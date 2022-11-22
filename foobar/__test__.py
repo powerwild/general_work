@@ -833,4 +833,10 @@
 
 class Solution(object):
     def merge(self, nums1, m, nums2, n):
-        
+        n2_index = n-1
+        n1_index = m+n2_index
+        while n2_index >= 0:
+            nums1[n1_index] = nums2[n2_index]
+            n1_index -= 1
+            n2_index -= 1
+        return nums1.sort()
