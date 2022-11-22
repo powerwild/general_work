@@ -443,17 +443,16 @@
 
 
 // function htmlElements(s) {
-//     let elements = '';
+//     let elements = [];
 //     let beg = 0;
 //     for (let end = 0; end < s.length; ++end) {
 //         if (s[end] === '<' && (s[end+1] !== '<' && s[end-1] !== '<')) beg = end;
 //         if (s[end] === '>' && (s[end+1] !== '>' && s[end-1] !== '>')) {
 //             if (s[beg+1] === '\\') {
-//                 elements += ' /' + s.slice(beg+2, end);
-//             } else elements += ' ' + s.slice(beg+1, end);
+//                 elements.push('/' + s.slice(beg+2, end));
+//             } else elements.push(s.slice(beg+1, end));
 //         }
 //     }
-//     elements = elements.split(' ')
 //     const tags = [];
 //     for (let el of elements) {
 //         if (el[0] === '/') {
@@ -467,41 +466,43 @@
 
 
 
-function romanValue(str) {
-    const numerals = {
-        'L': 50,
-        'X': 10,
-        'V': 5,
-        'I': 1
-    };
-    let value = 0;
-    for (let i = 0; i < str.length; ++i) {
-        if (i < str.length - 2 && numerals[str[i+1]] > numerals[str[i]]) {
-            value += numerals[str[i+1]] - numerals[str[i]];
-        } else value += numerals[str[i]];
-    }
-    return value;
-}
-function sortRoman(names) {
-    const diffNames = {};
-    /* diffName = {
-        'name': [[name, numeral], [name, numeral]]
-    }
-    */
-    for (let name of names) {
-        name = name.split(' ');
-        if (diffNames[name[0]]) diffNames[name[0]].push(name);
-        else diffNames[name[0]] = [name];
-    }
-    const entries = Object.entries(diffNames);
-    entries.sort();
-    console.log(entries)
-    const result = [];
-    for (let [key, value] of entries) {
-        value.sort((a, b) => romanValue(a[1]) < romanValue(b[1]));
-        console.log(value)
-        value.forEach(el => result.push(el.join(' ')));
-    }
-    return result;
-}
+// function romanValue(str) {
+//     const numerals = {
+//         'L': 50,
+//         'X': 10,
+//         'V': 5,
+//         'I': 1
+//     };
+//     let value = 0;
+//     for (let i = 0; i < str.length; ++i) {
+//         if (i < str.length - 2 && numerals[str[i+1]] > numerals[str[i]]) {
+//             value += numerals[str[i+1]] - numerals[str[i]];
+//         } else value += numerals[str[i]];
+//     }
+//     return value;
+// }
+// function sortRoman(names) {
+//     const diffNames = {};
+//     /* diffName = {
+//         'name': [[name, numeral], [name, numeral]]
+//     }
+//     */
+//     for (let name of names) {
+//         name = name.split(' ');
+//         if (diffNames[name[0]]) diffNames[name[0]].push(name);
+//         else diffNames[name[0]] = [name];
+//     }
+//     const entries = Object.entries(diffNames);
+//     entries.sort();
+//     const result = [];
+//     for (let [key, value] of entries) {
+//         value.sort((a, b) => romanValue(a[1]) < romanValue(b[1]));
+//         value.forEach(el => result.push(el.join(' ')));
+//     }
+//     return result;
+// }
 
+
+function breakPalindrome(palindromeStr) {
+
+}
