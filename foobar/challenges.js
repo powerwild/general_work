@@ -503,6 +503,35 @@
 // }
 
 
+function isPalindrome(arr) {
+    let l = 0;
+    let r = arr.length - 1;
+    while (l < r) {
+        if (arr[l] !== arr[r]) return false;
+        ++l;
+        --r;
+    }
+    return true;
+}
+function lowestASCII(code) {
+    for (let i = 97; i <= 122; ++i) {
+        if (i < code) return i;
+        if (i >= code) break;
+    }
+    return code;
+}
 function breakPalindrome(palindromeStr) {
-
+    let currStr = palindromeStr.split('');
+    for (let i = 0; i < currStr.length; ++i) {
+        const currCode = currStr[i].charCodeAt();
+        const lowerCode = lowestASCII(currCode);
+        if (lowerCode < currCode) {
+            let temp = currStr[i];
+            currStr[i] = String.fromCharCode(lowerCode);
+            if (!isPalindrome(currStr)) {
+                return currStr.join('');
+            } else currStr[i] = temp;
+        }
+    }
+    return 'IMPOSSIBLE';
 }
