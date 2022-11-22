@@ -564,5 +564,13 @@
 
 
 function findMinimumPrice(price, m) {
-
+    price.sort((a, b) => a - b);
+    while (m > 0) {
+        for (let i = price.length - 1; i >= 0; --i){
+            price[i] = Math.floor(price[i] / 2);
+            --m;
+            if (m < 1) break;
+        }
+    }
+    return price.reduce((accum, el) => {return accum + el}, 0);
 }
