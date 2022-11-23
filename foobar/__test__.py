@@ -850,3 +850,14 @@
 
 class Solution(object):
     def matrixReshape(self, mat, r, c):
+        if len(mat) * len(mat[0]) != r * c:
+            return mat
+        result = list()
+        temp = list()
+        for arr in mat:
+            for el in arr:
+                temp.append(el)
+                if len(temp) == c:
+                    result.append(temp)
+                    temp = list()
+        return result
