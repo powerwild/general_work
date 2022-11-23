@@ -923,3 +923,21 @@
 
 class Solution(object):
     def searchMatrix(self, matrix, target):
+        r = len(matrix) - 1
+        while r >= 0 and matrix[r][0] > target:
+            r -= 1
+        if r < 0:
+            return False
+        s = 0
+        end = len(matrix[r]) - 1
+        if matrix[r][s] == target or matrix[r][end] == target:
+            return True
+        while s+1 < end:
+            mid = (end + s) // 2
+            if matrix[r][mid] == target:
+                return True
+            if matrix[r][mid] > target:
+                end = mid
+            else:
+                s = mid
+        return False
