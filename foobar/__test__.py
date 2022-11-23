@@ -883,3 +883,39 @@
 
 class Solution(object):
     def isValidSudoku(self, board):
+        return self.checkBoxes(board) and self.checkRows(board) and self.checkCols(board)
+    def checkRows(self, board):
+        valid_rows = True
+        for r in board:
+            row_nums = set()
+            for c in r:
+                if c in row_nums:
+                    valid_rows = False
+                if c != '.':
+                    row_nums.add(c)
+        return valid_rows
+    def checkCols(self, board):
+        valid_cols = True
+        for i in range(9):
+            col_nums = set()
+            for j in range(9):
+                if board[j][i] in col_nums:
+                    valid_cols = False
+                if board[j][i] != '.':
+                    col_nums.add(board[j][i])
+        return valid_cols
+    def checkBoxes(self, board):
+        valid_boxes = True
+        centers = [[1,1],[1,4],[1,7],[4,1],[4,4],[4,7],[7,1],[7,4],[7,7]]
+        dirs = [[-1,0],[1,0],[0,-1],[0,1],[-1,-1],[-1,1],[1,-1],[1,1]]
+        for r, c in centers:
+            box_nums = set()
+            if board[r][c] != '.':
+                box_nums.add(board[r][c])
+            for x, y in dirs:
+                new_r, new_c = r+x, c+y
+                if board[new_r][new_c] in box_nums:
+                    valid_boxes = False
+                if board[new_r][new_c] != '.':
+                    box_nums.add(board[new_r][new_c])
+        return valid_boxes
