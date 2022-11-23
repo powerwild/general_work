@@ -865,3 +865,17 @@
 
 class Solution(object):
     def generate(self, numRows):
+        if numRows == 1:
+            return [[1]]
+        triangle = [[1], [1,1]]
+        numRows -= 2
+        while numRows > 0:
+            arr = list()
+            arr.append(1)
+            for i in range(len(triangle[-1])):
+                if i < len(triangle[-1]) - 1:
+                    arr.append(triangle[-1][i] + triangle[-1][i+1])
+            arr.append(1)
+            triangle.append(arr)
+            numRows -= 1
+        return triangle
