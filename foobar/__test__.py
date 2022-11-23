@@ -945,3 +945,17 @@
 
 class Solution(object):
     def firstUniqChar(self, s):
+        indeces = {}
+        for i in range(len(s)):
+            if s[i] in indeces:
+                indeces[s[i]] = float('inf')
+            else:
+                indeces[s[i]] = i
+        print(indeces)
+        if len(indeces) == 0:
+            return -1
+        index = float('inf')
+        for k, v in indeces.items():
+            if v < index:
+                index = v
+        return index if index != float('inf') else -1
