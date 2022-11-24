@@ -961,16 +961,20 @@
 #         return index if index != float('inf') else -1
 
 
+# class Solution(object):
+#     def canConstruct(self, ransomNote, magazine):
+#         chars = dict()
+#         for char in ransomNote:
+#             chars[char] = chars.get(char, 0) + 1
+#         for let in magazine:
+#             if let in chars:
+#                 chars[let] -= 1
+#                 if chars[let] == 0:
+#                     del chars[let]
+#             if len(chars) == 0:
+#                 return True
+#         return False
+
+
 class Solution(object):
-    def canConstruct(self, ransomNote, magazine):
-        chars = dict()
-        for char in ransomNote:
-            chars[char] = chars.get(char, 0) + 1
-        for let in magazine:
-            if let in chars:
-                chars[let] -= 1
-                if chars[let] == 0:
-                    del chars[let]
-            if len(chars) == 0:
-                return True
-        return False
+    def isAnagram(self, s, t):
