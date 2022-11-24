@@ -978,3 +978,12 @@
 
 class Solution(object):
     def isAnagram(self, s, t):
+        s_chars = dict()
+        t_chars = dict()
+        for i in range(len(s)):
+            s_chars[s[i]] = s_chars.get(s[i], 0) + 1
+            t_chars[t[i]] = t_chars.get(t[i], 0) + 1
+        for k, v in s_chars.items():
+            if k not in t_chars or s_chars[k] != t_chars[k]:
+                return False
+        return True
