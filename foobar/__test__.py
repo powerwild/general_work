@@ -1000,5 +1000,26 @@
 #         return False
 
 
+def isAnagram(w1, w2):
+    if len(w1) != len(w2):
+        return False
+    w1_map = dict()
+    w2_map = dict()
+    for i in range(len(w1)):
+        char1, char2 = w1[i], w2[i]
+        w1_map[char1] = w1_map.get(char1, 0) + 1
+        w2_map[char2] = w2_map.get(char2, 0) + 1
+    for k, v in w1_map.items():
+        if not w2_map.get(k) or w2_map[k] != v:
+            return False
+    return True
 def getSearchResults(words, queries):
-    
+    results = list()
+    for q in queries:
+        matches = list()
+        for w in words:
+            if isAnagram(q, w):
+                matches.append(w)
+        matches.sort()
+        results.append(matches)
+    return results
