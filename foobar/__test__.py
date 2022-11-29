@@ -1023,17 +1023,49 @@
 #         matches.sort()
 #         results.append(matches)
 #     return results
-
-
+from datetime import date
+print(date(2017, 1, 13).strftime("%Y-%m-%dT%H:%M:%S"))
+def format_date(time_str, roll):
+    month, day, year = time_str.split('/')
+    year = '20' + year
+    return date(int(year), int(month), int(day)+roll).strftime("%Y-%m-%dT%H:%M:%S")
 def parse_for_platform(raw_ami_data):
-    sites = []
-    projects = []
+    sites = {}
+    projects = {}
     meters = []
 
     lines_of_data = raw_ami_data.split("|")
 
     for line in lines_of_data:
         row = make_row(line)
-        # Write your code here
-
+        row = {k.strip(): v.strip() for k, v in row.items()}
+        id = row['meter_number']
+        if 'amount' not in row or row['amount'] == '' or (id[0] != 'E' and id[0] != 'G'):
+            continue
+        if id not in sites:
+            new_site = {
+                'site_id': id,
+                'raw_address': f"{row['street']} {row['city']} CA {row['zipcode']}"
+            }
+            sites[id] = new_site
+        if row['project_name'] not in projects:
+            new_project = {
+                'project_id': row['project_name'],
+                'blackout_start_date': format_date(row['project_date'], 0),
+                'intervention_active_date': format_date(row['project_date'], 1),
+                'project_site': id
+            }
+            projects[row['project_name']] = new_project
+        new_meter = {
+            'meter_id': id,
+            'meter_site': id,
+            'type': 'gas' if id[0] == 'G' else 'electricity',
+            'unit': 'therm' if id[0] == 'G' else 'kwh',
+            'start': format_date(row['read_from'], 0),
+            'end': format_date(row['read_to'], 0),
+            'value': row['amount']
+        }
+        meters.append(new_meter)
+    sites = sites.values()
+    projects = projects.values()
     return sites, projects, meters
