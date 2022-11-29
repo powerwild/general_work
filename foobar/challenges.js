@@ -576,25 +576,30 @@
 // }
 
 
-function findLongestSingleSlot(leaveTimes) {
-    const ids = (() => {
-        const map = {};
-        let char = 97;
-        for (let i = 0; i < 26; ++i) {
-            map[i] = String.fromCharCode(char);
-            ++char;
-        }
-        return map;
-    })()
-    let id;
-    let beg = 0;
-    let max = 0;
-    for (let [num, end] of leaveTimes) {
-        if (end - beg > max) {
-            max = end - beg;
-            id = num;
-        }
-        beg = end;
-    }
-    return ids[id];
+// function findLongestSingleSlot(leaveTimes) {
+//     const ids = (() => {
+//         const map = {};
+//         let char = 97;
+//         for (let i = 0; i < 26; ++i) {
+//             map[i] = String.fromCharCode(char);
+//             ++char;
+//         }
+//         return map;
+//     })()
+//     let id;
+//     let beg = 0;
+//     let max = 0;
+//     for (let [num, end] of leaveTimes) {
+//         if (end - beg > max) {
+//             max = end - beg;
+//             id = num;
+//         }
+//         beg = end;
+//     }
+//     return ids[id];
+// }
+
+
+function twin_sum(head) {
+
 }
