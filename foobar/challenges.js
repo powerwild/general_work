@@ -537,40 +537,45 @@
 // }
 
 
-function isAnagram(s1, s2) {
-    const s1Map = {};
-    const s2Map = {};
-    for (let i = 0; i < s1.length; ++i) {
-        s1Map[s1[i]] = s1Map[s1[i]] + 1 || 1;
-        s2Map[s2[i]] = s2Map[s2[i]] + 1 || 1;
-    }
-    for (let key of Object.keys(s1Map)) {
-        if (!s2Map[key] || s1Map[key] !== s2Map[key]) return false;
-    }
-    return true;
-}
-function getSearchResults(words, queries) {
-    const results = [];
-    for (let str of queries) {
-        let matches = [];
-        for (let word of words) {
-            if (str.length === word.length && isAnagram(str, word)) matches.push(word);
-        }
-        matches.sort();
-        results.push(matches);
-    }
-    return results;
-}
+// function isAnagram(s1, s2) {
+//     const s1Map = {};
+//     const s2Map = {};
+//     for (let i = 0; i < s1.length; ++i) {
+//         s1Map[s1[i]] = s1Map[s1[i]] + 1 || 1;
+//         s2Map[s2[i]] = s2Map[s2[i]] + 1 || 1;
+//     }
+//     for (let key of Object.keys(s1Map)) {
+//         if (!s2Map[key] || s1Map[key] !== s2Map[key]) return false;
+//     }
+//     return true;
+// }
+// function getSearchResults(words, queries) {
+//     const results = [];
+//     for (let str of queries) {
+//         let matches = [];
+//         for (let word of words) {
+//             if (str.length === word.length && isAnagram(str, word)) matches.push(word);
+//         }
+//         matches.sort();
+//         results.push(matches);
+//     }
+//     return results;
+// }
 
 
-function findMinimumPrice(price, m) {
-    price.sort((a, b) => a - b);
-    while (m > 0) {
-        for (let i = price.length - 1; i >= 0; --i){
-            price[i] = Math.floor(price[i] / 2);
-            --m;
-            if (m < 1) break;
-        }
-    }
-    return price.reduce((accum, el) => {return accum + el}, 0);
+// function findMinimumPrice(price, m) {
+//     price.sort((a, b) => a - b);
+//     while (m > 0) {
+//         for (let i = price.length - 1; i >= 0; --i){
+//             price[i] = Math.floor(price[i] / 2);
+//             --m;
+//             if (m < 1) break;
+//         }
+//     }
+//     return price.reduce((accum, el) => {return accum + el}, 0);
+// }
+
+
+function findLongestSingleSlot(leaveTimes) {
+    
 }
