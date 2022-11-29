@@ -600,23 +600,28 @@
 // }
 
 
-function twin_sum(head) {
-    const nodes = ((node) => {
-        const results = [];
-        while (node) {
-            results.push(node);
-            node = node.next;
-        }
-        return results;
-    })(head);
-    let max = -Infinity;
-    let l = 0;
-    let r = nodes.length - 1;
-    while (r > l) {
-        let total = nodes[l].data + nodes[r].data;
-        if (total > max) max = total;
-        ++l;
-        --r;
-    }
-    return max;
+// function twin_sum(head) {
+//     const nodes = ((node) => {
+//         const results = [];
+//         while (node) {
+//             results.push(node);
+//             node = node.next;
+//         }
+//         return results;
+//     })(head);
+//     let max = -Infinity;
+//     let l = 0;
+//     let r = nodes.length - 1;
+//     while (r > l) {
+//         let total = nodes[l].data + nodes[r].data;
+//         if (total > max) max = total;
+//         ++l;
+//         --r;
+//     }
+//     return max;
+// }
+
+
+function minFuel(x, y) {
+
 }
