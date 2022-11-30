@@ -1075,3 +1075,17 @@
 
 class Solution(object):
     def isHappy(self, n):
+        visited = set()
+        while n not in visited:
+            visited.add(n)
+            if n == 1:
+                return True
+            num = 0
+            while n >= 10:
+                single = n % 10
+                num += single*single
+                n = n // 10
+            num += n*n
+            n = num
+        return False
+
