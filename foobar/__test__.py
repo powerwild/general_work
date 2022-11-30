@@ -1092,3 +1092,23 @@
 
 class Solution(object):
     def spiralOrder(self, matrix):
+        result = []
+        t = 0
+        r = len(matrix[0]) - 1
+        b = len(matrix) - 1
+        l = 0
+        while t <= b and l <= r:
+            for i in range(l, r):
+                result.append(matrix[t][i])
+            t += 1
+            for j in range(t-1, b):
+                result.append(matrix[j][r])
+            r -= 1
+            for m in range(r+1, l, -1):
+                result.append(matrix[b][m])
+            b -= 1
+            for n in range(b+1, t-1, -1):
+                result.append(matrix[n][l])
+            l += 1
+        result.append(matrix[t][l])
+        return result
