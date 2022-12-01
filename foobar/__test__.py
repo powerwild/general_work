@@ -1143,15 +1143,19 @@
 #         return results
 
 
+# class Solution(object):
+#     def longestCommonPrefix(self, strs):
+#         result = strs[0]
+#         for i in range(1, len(strs)):
+#             matches = ''
+#             for j in range(len(strs[i])):
+#                 if result[j] == strs[i][j]:
+#                     matches += result[j]
+#                 else:
+#                     break
+#             result = matches
+#         return result
+
+
 class Solution(object):
-    def longestCommonPrefix(self, strs):
-        result = strs[0]
-        for i in range(1, len(strs)):
-            matches = ''
-            for j in range(len(strs[i])):
-                if result[j] == strs[i][j]:
-                    matches += result[j]
-                else:
-                    break
-            result = matches
-        return result
+    def multiply(self, num1, num2):
