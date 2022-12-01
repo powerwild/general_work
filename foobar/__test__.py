@@ -1092,23 +1092,31 @@
 
 class Solution(object):
     def spiralOrder(self, matrix):
+        def add_to_results(m, r, x, y, v):
+            if f"{x}-{y}" not in v:
+                v.add(f"{x}-{y}")
+                r.append(m[x][y])
         result = []
+        visited = set()
         t = 0
         r = len(matrix[0]) - 1
         b = len(matrix) - 1
         l = 0
         while t <= b and l <= r:
-            for i in range(l, r):
-                result.append(matrix[t][i])
+            for h in range(l, r):
+                add_to_results(matrix, result, t, h, visited)
+            for i in range(t, b):
+                add_to_results(matrix, result, i, r, visited)
+            for j in range(r, l, -1):
+                add_to_results(matrix, result, b, j, visited)
+            for k in range(b, t, -1):
+                add_to_results(matrix, result, k, l, visited)
             t += 1
-            for j in range(t-1, b):
-                result.append(matrix[j][r])
             r -= 1
-            for m in range(r+1, l, -1):
-                result.append(matrix[b][m])
             b -= 1
-            for n in range(b+1, t-1, -1):
-                result.append(matrix[n][l])
             l += 1
-        result.append(matrix[t][l])
+        if len(result) != len(matrix) * len(matrix[0]):
+            x = len(matrix) // 2
+            y = len(matrix[0]) // 2
+            result.append(matrix[x][y])
         return result
