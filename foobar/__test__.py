@@ -1124,3 +1124,20 @@
 
 class Solution(object):
     def findBall(self, grid):
+        results = list()
+        for i in range(len(grid[0])):
+            index = i
+            for j in range(len(grid)):
+                if grid[j][index] == 1:
+                    if index+1 >= len(grid[0]) or grid[j][index+1] == -1:
+                        results.append(-1)
+                        break
+                    index += 1
+                if grid[j][index] == -1:
+                    if index-1 < 0 or grid[j][index-1] == 1:
+                        results.append(-1)
+                        break
+                    index -= 1
+                if j+1 == len(grid):
+                    results.append(index)
+        return results
