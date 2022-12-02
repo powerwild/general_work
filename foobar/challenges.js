@@ -622,26 +622,31 @@
 // }
 
 
-function minFuel(x, y) {
-    let min = Infinity;
-    for (let i = 0; i < x.length; ++i) {
-        let total = 0;
-        let [min_x, max_x] = [x[i]-1, x[i]+1];
-        for (let j = 0; j < x.length; ++j) {
-            let curr_total = 0;
-            if (j !== i) {
-                if (x[j] <= min_x) {
-                    curr_total += Math.abs(min_x - x[j]);
-                    --min_x;
-                } else {
-                    curr_total += Math.abs(max_x - x[j]);
-                    ++max_x;
-                }
-                curr_total += Math.abs(y[i] - y[j]);
-            }
-            total += curr_total;
-        }
-        min = Math.min(min, total);
-    }
-    return min;
-}
+// function minFuel(x, y) {
+//     let min = Infinity;
+//     for (let i = 0; i < x.length; ++i) {
+//         let total = 0;
+//         let [min_x, max_x] = [x[i]-1, x[i]+1];
+//         for (let j = 0; j < x.length; ++j) {
+//             let curr_total = 0;
+//             if (j !== i) {
+//                 if (x[j] <= min_x) {
+//                     curr_total += Math.abs(min_x - x[j]);
+//                     --min_x;
+//                 } else {
+//                     curr_total += Math.abs(max_x - x[j]);
+//                     ++max_x;
+//                 }
+//                 curr_total += Math.abs(y[i] - y[j]);
+//             }
+//             total += curr_total;
+//         }
+//         min = Math.min(min, total);
+//     }
+//     return min;
+// }
+
+
+/*
+
+ */
