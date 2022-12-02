@@ -648,5 +648,12 @@
 
 
 /*
+    SELECT department.dept_id, COUNT(employee.emp_id), SUM(employee.salary) FROM department
+    LEFT JOIN employee
+    ON department.dept_id = employee.dept_id
+    WHERE employee.salary IS NOT NULL
+    GROUP BY department.dept_id
+    HAVING COUNT(employee.emp_id) > 0
+    ORDER BY 1;
 
  */
