@@ -1206,24 +1206,28 @@
 #         return True
 
 
+# class Solution(object):
+#     def oddEvenList(self, head):
+#         if not head or not head.next:
+#             return head
+#         is_odd = True
+#         odds = ListNode()
+#         evens = ListNode()
+#         even_head = evens
+#         curr = head
+#         while curr:
+#             if is_odd:
+#                 odds.next = curr
+#                 odds = odds.next
+#             else:
+#                 evens.next = curr
+#                 evens = evens.next
+#             curr = curr.next
+#             is_odd = not is_odd
+#         evens.next = None
+#         odds.next = even_head.next
+#         return head
+
+
 class Solution(object):
-    def oddEvenList(self, head):
-        if not head or not head.next:
-            return head
-        is_odd = True
-        odds = ListNode()
-        evens = ListNode()
-        even_head = evens
-        curr = head
-        while curr:
-            if is_odd:
-                odds.next = curr
-                odds = odds.next
-            else:
-                evens.next = curr
-                evens = evens.next
-            curr = curr.next
-            is_odd = not is_odd
-        evens.next = None
-        odds.next = even_head.next
-        return head
+    def sortList(self, head):
