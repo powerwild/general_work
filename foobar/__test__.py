@@ -1192,3 +1192,15 @@
 
 class Solution(object):
     def isPalindrome(self, head):
+        values = list()
+        while head:
+            values.append(head.val)
+            head = head.next
+        l = 0
+        r = len(values) - 1
+        while l < r:
+            if values[l] != values[r]:
+                return False
+            l += 1
+            r -= 1
+        return True
