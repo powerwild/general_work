@@ -1170,21 +1170,25 @@
 #         return str(n1*n2)
 
 
+# class Solution(object):
+#     def removeNthFromEnd(self, head, n):
+#         if not head or not head.next:
+#             return None
+#         nodes = list()
+#         curr = head
+#         while curr:
+#             nodes.append(curr)
+#             curr = curr.next
+#         i = len(nodes) - n
+#         nodes[i].next = None
+#         nodes.pop(i)
+#         for j in range(len(nodes)):
+#             if j == len(nodes) - 1:
+#                 nodes[j].next = None
+#             else:
+#                 nodes[j].next = nodes[j+1]
+#         return nodes[0]
+
+
 class Solution(object):
-    def removeNthFromEnd(self, head, n):
-        if not head or not head.next:
-            return None
-        nodes = list()
-        curr = head
-        while curr:
-            nodes.append(curr)
-            curr = curr.next
-        i = len(nodes) - n
-        nodes[i].next = None
-        nodes.pop(i)
-        for j in range(len(nodes)):
-            if j == len(nodes) - 1:
-                nodes[j].next = None
-            else:
-                nodes[j].next = nodes[j+1]
-        return nodes[0]
+    def isPalindrome(self, head):
