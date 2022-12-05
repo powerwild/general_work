@@ -1190,17 +1190,40 @@
 #         return nodes[0]
 
 
+# class Solution(object):
+#     def isPalindrome(self, head):
+#         values = list()
+#         while head:
+#             values.append(head.val)
+#             head = head.next
+#         l = 0
+#         r = len(values) - 1
+#         while l < r:
+#             if values[l] != values[r]:
+#                 return False
+#             l += 1
+#             r -= 1
+#         return True
+
+
 class Solution(object):
-    def isPalindrome(self, head):
-        values = list()
-        while head:
-            values.append(head.val)
-            head = head.next
-        l = 0
-        r = len(values) - 1
-        while l < r:
-            if values[l] != values[r]:
-                return False
-            l += 1
-            r -= 1
-        return True
+    def oddEvenList(self, head):
+        if not head or not head.next:
+            return head
+        is_odd = True
+        odds = ListNode()
+        evens = ListNode()
+        even_head = evens
+        curr = head
+        while curr:
+            if is_odd:
+                odds.next = curr
+                odds = odds.next
+            else:
+                evens.next = curr
+                evens = evens.next
+            curr = curr.next
+            is_odd = not is_odd
+        evens.next = None
+        odds.next = even_head.next
+        return head
