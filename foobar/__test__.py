@@ -1229,16 +1229,20 @@
 #         return head
 
 
+# class Solution(object):
+#     def sortList(self, head):
+#         values = list()
+#         curr = head
+#         while curr:
+#             values.append(curr.val)
+#             curr = curr.next
+#         values.sort()
+#         curr = head
+#         for i in range(len(values)):
+#             curr.val = values[i]
+#             curr = curr.next
+#         return head
+
+
 class Solution(object):
-    def sortList(self, head):
-        values = list()
-        curr = head
-        while curr:
-            values.append(curr.val)
-            curr = curr.next
-        values.sort()
-        curr = head
-        for i in range(len(values)):
-            curr.val = values[i]
-            curr = curr.next
-        return head
+    def longestPalindrome(self, words):
