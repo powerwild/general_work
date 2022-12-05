@@ -1157,14 +1157,18 @@
 #         return result
 
 
+# class Solution(object):
+#     def multiply(self, num1, num2):
+#         n1 = 0
+#         for n in num1:
+#             n1 *= 10
+#             n1 += ord(n)-48
+#         n2 = 0
+#         for n in num2:
+#             n2 *= 10
+#             n2 += ord(n)-48
+#         return str(n1*n2)
+
+
 class Solution(object):
-    def multiply(self, num1, num2):
-        n1 = 0
-        for n in num1:
-            n1 *= 10
-            n1 += ord(n)-48
-        n2 = 0
-        for n in num2:
-            n2 *= 10
-            n2 += ord(n)-48
-        return str(n1*n2)
+    def removeNthFromEnd(self, head, n):

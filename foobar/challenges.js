@@ -673,6 +673,3 @@
 // }
 
 
-function solution(S) {
-    // write your code in JavaScript (Node.js 14)
-}
