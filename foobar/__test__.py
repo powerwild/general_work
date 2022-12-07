@@ -1269,3 +1269,15 @@
 
 class Solution(object):
     def leastInterval(self, tasks, n):
+        if n == 0:
+            return len(tasks)
+        counts = dict()
+        time = 0
+        for task in tasks:
+            counts[task] = counts.get(task, 0) + 1
+        values = counts.values()
+        most_rep = max(values)
+        for v in values:
+            if v == most_rep:
+                time += 1
+        return max((most_rep-1) * (n+1) + time, len(tasks))
