@@ -1247,14 +1247,21 @@
 class Solution(object):
     def longestPalindrome(self, words):
         counts = dict()
-        middle_count = 0
         for word in words:
-            counts[word] = counts.get(word, 0) + 1
-            if word == word[::-1] and counts[word]*2 > middle_count:
-                middle_count = counts[word]*2
-        reverse_count = 0
-        for w in words:
-            rev = w[::-1]
+            rev = word[::-1]
             if rev in counts:
-                reverse_count += min(counts[w], counts[rev])*4
-        return middle_count + reverse_count
+                counts[rev] -= 1
+                if counts[rev] <= 0:
+                    del counts[rev]
+            else:
+                counts[word] = counts.get(word, 0) + 1
+        total_chars = len(words)*2
+        has_middle = False
+        for k, v in counts.items():
+            rev = k[::-1]
+            if not has_middle and rev == k:
+                has_middle = True
+                continue
+            else:
+                total_chars -= v*2
+        return total_chars
