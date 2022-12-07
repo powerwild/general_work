@@ -1244,24 +1244,28 @@
 #         return head
 
 
+# class Solution(object):
+#     def longestPalindrome(self, words):
+#         counts = dict()
+#         for word in words:
+#             rev = word[::-1]
+#             if rev in counts:
+#                 counts[rev] -= 1
+#                 if counts[rev] <= 0:
+#                     del counts[rev]
+#             else:
+#                 counts[word] = counts.get(word, 0) + 1
+#         total_chars = len(words)*2
+#         has_middle = False
+#         for k, v in counts.items():
+#             rev = k[::-1]
+#             if not has_middle and rev == k:
+#                 has_middle = True
+#                 continue
+#             else:
+#                 total_chars -= v*2
+#         return total_chars
+
+
 class Solution(object):
-    def longestPalindrome(self, words):
-        counts = dict()
-        for word in words:
-            rev = word[::-1]
-            if rev in counts:
-                counts[rev] -= 1
-                if counts[rev] <= 0:
-                    del counts[rev]
-            else:
-                counts[word] = counts.get(word, 0) + 1
-        total_chars = len(words)*2
-        has_middle = False
-        for k, v in counts.items():
-            rev = k[::-1]
-            if not has_middle and rev == k:
-                has_middle = True
-                continue
-            else:
-                total_chars -= v*2
-        return total_chars
+    def leastInterval(self, tasks, n):
