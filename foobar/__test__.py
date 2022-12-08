@@ -1313,3 +1313,12 @@
 
 class Solution(object):
     def diameterOfBinaryTree(self, root):
+        if not root:
+            return 0
+        def get_max_path(node):
+            if not node:
+                return 0
+            left = get_max_path(node.left)
+            right = get_max_path(node.right)
+            return max(left, right) + 1
+        return max(get_max_path(root), self.diameterOfBinaryTree(root.left), self.diameterOfBinaryTree(root.right))
