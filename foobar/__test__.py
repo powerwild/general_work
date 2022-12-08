@@ -1297,14 +1297,19 @@
 #                 stack.append(curr.right)
 #         return root
 
+
+# class Solution(object):
+#     def isBalanced(self, root):
+#         def traverse(node):
+#             if not node:
+#                 return 0
+#             left = traverse(node.left)
+#             right = traverse(node.right)
+#             if left == -1 or right == -1 or abs(left - right) > 1:
+#                 return -1
+#             return max(left, right) + 1
+#         return traverse(root) != -1
+
+
 class Solution(object):
-    def isBalanced(self, root):
-        def traverse(node):
-            if not node:
-                return 0
-            left = traverse(node.left)
-            right = traverse(node.right)
-            if left == -1 or right == -1 or abs(left - right) > 1:
-                return -1
-            return max(left, right) + 1
-        return traverse(root) != -1
+    def diameterOfBinaryTree(self, root):
