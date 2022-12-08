@@ -1283,16 +1283,19 @@
 #         return max((most_rep-1) * (n+1) + time, len(tasks))
 
 
+# class Solution(object):
+#     def invertTree(self, root):
+#         stack = [root]
+#         while len(stack):
+#             curr = stack.pop()
+#             temp = curr.left
+#             curr.left = curr.right
+#             curr.right = temp
+#             if curr.left:
+#                 stack.append(curr.left)
+#             if curr.right:
+#                 stack.append(curr.right)
+#         return root
+
 class Solution(object):
-    def invertTree(self, root):
-        stack = [root]
-        while len(stack):
-            curr = stack.pop()
-            temp = curr.left
-            curr.left = curr.right
-            curr.right = temp
-            if curr.left:
-                stack.append(curr.left)
-            if curr.right:
-                stack.append(curr.right)
-        return root
+    def isBalanced(self, root):
