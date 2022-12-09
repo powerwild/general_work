@@ -1363,15 +1363,19 @@
 #         return False
 
 
+# class Solution(object):
+#     def search(self, nums, target):
+#         l = 0
+#         r = len(nums) - 1
+#         while l <= r:
+#             if nums[l] == target:
+#                 return l
+#             if nums[r] == target:
+#                 return r
+#             l += 1
+#             r -= 1
+#         return -1
+
+
 class Solution(object):
-    def search(self, nums, target):
-        l = 0
-        r = len(nums) - 1
-        while l <= r:
-            if nums[l] == target:
-                return l
-            if nums[r] == target:
-                return r
-            l += 1
-            r -= 1
-        return -1
+    def sortedArrayToBST(self, nums):
