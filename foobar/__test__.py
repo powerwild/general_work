@@ -1379,3 +1379,10 @@
 
 class Solution(object):
     def sortedArrayToBST(self, nums):
+        if not len(nums):
+            return None
+        mid = len(nums) // 2
+        root = TreeNode(nums[mid])
+        root.right = self.sortedArrayToBST(nums[mid+1::])
+        root.left = self.sortedArrayToBST(nums[:mid:])
+        return root
