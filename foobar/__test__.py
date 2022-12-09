@@ -1315,10 +1315,11 @@ class Solution(object):
     def diameterOfBinaryTree(self, root):
         if not root:
             return 0
-        def get_max_path(node):
+        def get_max_path(node, level=0):
             if not node:
                 return 0
-            left = get_max_path(node.left)
-            right = get_max_path(node.right)
-            return max(left, right) + 1
-        return max(get_max_path(root), self.diameterOfBinaryTree(root.left), self.diameterOfBinaryTree(root.right))
+            level += 1
+            left = get_max_path(node.left, level) if node.left else level
+            right = get_max_path(node.right, level) if node.right else level
+            return max(left, right)
+        return max(get_max_path(root.left)+get_max_path(root.right), self.diameterOfBinaryTree(root.left), self.diameterOfBinaryTree(root.right))
