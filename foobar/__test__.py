@@ -1325,17 +1325,22 @@
 #         return max(get_max_path(root.left)+get_max_path(root.right), self.diameterOfBinaryTree(root.left), self.diameterOfBinaryTree(root.right))
 
 
+# class Solution(object):
+#     def pathSum(self, root, targetSum):
+#         values = [targetSum]
+#         def traverse(node, vals, target):
+#             if not node:
+#                 return 0
+#             paths = 0
+#             for v in vals:
+#                 if v - node.val == 0:
+#                     paths += 1
+#             vals = [v - node.val for v in vals]
+#             vals.append(target)
+#             return traverse(node.left, vals, target) + traverse(node.right, vals, target) + paths
+#         return traverse(root, values, targetSum)
+
+
 class Solution(object):
-    def pathSum(self, root, targetSum):
-        values = [targetSum]
-        def traverse(node, vals, target):
-            if not node:
-                return 0
-            paths = 0
-            for v in vals:
-                if v - node.val == 0:
-                    paths += 1
-            vals = [v - node.val for v in vals]
-            vals.append(target)
-            return traverse(node.left, vals, target) + traverse(node.right, vals, target) + paths
-        return traverse(root, values, targetSum)
+    def searchMatrix(self, matrix, target):
+        
