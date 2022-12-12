@@ -699,6 +699,13 @@
 // }
 
 
-function getUmbrellas(requirement, sizes) {
-
-}
+// function getUmbrellas(requirement, sizes) {
+//     const vals = [[requirement, 1]];
+//     for (let s of sizes) {
+//         const temp = [];
+//         for (let [r, u] of vals) {
+//             if (s === r) return u;
+//             if (r - s > 0) vals.p
+//         }
+//     }
+// }
