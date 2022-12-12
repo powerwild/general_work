@@ -673,27 +673,32 @@
 // }
 
 
-function mostBalancedPartition(parent, files_size) {
-    const subs = [];
-    for (let h = 0; h < parent.length; ++h) subs.push([]);
-    for (let i = 1; i < parent.length; ++i) {
-        subs[parent[i]].push(i);
-    }
-    const sums = Array(parent.length);
-    function getSums(arr, i=0) {
-        arr[i] = files_size[i];
-        let sum = 0;
-        for (let s of subs[i]) {
-            sum += getSums(arr, s);
-        }
-        arr[i] += sum;
-        return arr[i];
-    }
-    getSums(sums, 0)
-    let min = Infinity;
-    for (let k = 1; k < sums.length; ++k) {
-        let curr = Math.abs(sums[0] - (sums[k] * 2));
-        if (curr < min) min = curr;
-    }
-    return min;
+// function mostBalancedPartition(parent, files_size) {
+//     const subs = [];
+//     for (let h = 0; h < parent.length; ++h) subs.push([]);
+//     for (let i = 1; i < parent.length; ++i) {
+//         subs[parent[i]].push(i);
+//     }
+//     const sums = Array(parent.length);
+//     function getSums(arr, i=0) {
+//         arr[i] = files_size[i];
+//         let sum = 0;
+//         for (let s of subs[i]) {
+//             sum += getSums(arr, s);
+//         }
+//         arr[i] += sum;
+//         return arr[i];
+//     }
+//     getSums(sums, 0)
+//     let min = Infinity;
+//     for (let k = 1; k < sums.length; ++k) {
+//         let curr = Math.abs(sums[0] - (sums[k] * 2));
+//         if (curr < min) min = curr;
+//     }
+//     return min;
+// }
+
+
+function getUmbrellas(requirement, sizes) {
+
 }
