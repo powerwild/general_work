@@ -1390,3 +1390,14 @@
 
 class Solution(object):
     def kthSmallest(self, root, k):
+        stack = [root]
+        values = []
+        while len(stack):
+            curr = stack.pop()
+            values.append(curr.val)
+            if curr.right:
+                stack.append(curr.right)
+            if curr.left:
+                stack.append(curr.left)
+        values.sort()
+        return values[k-1]
