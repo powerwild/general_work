@@ -1388,10 +1388,26 @@
 #         return root
 
 
-class Solution(object):
-    def kthSmallest(self, root, k):
+# class Solution(object):
+#     def kthSmallest(self, root, k):
+#         stack = [root]
+#         values = []
+#         while len(stack):
+#             curr = stack.pop()
+#             values.append(curr.val)
+#             if curr.right:
+#                 stack.append(curr.right)
+#             if curr.left:
+#                 stack.append(curr.left)
+#         values.sort()
+#         return values[k-1]
+
+
+class BSTIterator(object):
+
+    def get_values(self, root):
         stack = [root]
-        values = []
+        values = [float('-inf')]
         while len(stack):
             curr = stack.pop()
             values.append(curr.val)
@@ -1400,4 +1416,16 @@ class Solution(object):
             if curr.left:
                 stack.append(curr.left)
         values.sort()
-        return values[k-1]
+        return values
+
+    def __init__(self, root):
+        self.values = self.get_values(root)
+        self.pointer = 0
+
+    def next(self):
+        self.pointer += 1
+        return self.values[self.pointer]
+
+
+    def hasNext(self):
+        return self.pointer < len(self.values) - 1
