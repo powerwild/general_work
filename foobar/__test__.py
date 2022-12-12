@@ -1403,29 +1403,61 @@
 #         return values[k-1]
 
 
-class BSTIterator(object):
+# class BSTIterator(object):
 
-    def get_values(self, root):
-        stack = [root]
-        values = [float('-inf')]
-        while len(stack):
-            curr = stack.pop()
-            values.append(curr.val)
-            if curr.right:
-                stack.append(curr.right)
-            if curr.left:
-                stack.append(curr.left)
-        values.sort()
-        return values
+#     def get_values(self, root):
+#         stack = [root]
+#         values = [float('-inf')]
+#         while len(stack):
+#             curr = stack.pop()
+#             values.append(curr.val)
+#             if curr.right:
+#                 stack.append(curr.right)
+#             if curr.left:
+#                 stack.append(curr.left)
+#         values.sort()
+#         return values
 
-    def __init__(self, root):
-        self.values = self.get_values(root)
-        self.pointer = 0
+#     def __init__(self, root):
+#         self.values = self.get_values(root)
+#         self.pointer = 0
 
-    def next(self):
-        self.pointer += 1
-        return self.values[self.pointer]
+#     def next(self):
+#         self.pointer += 1
+#         return self.values[self.pointer]
 
 
-    def hasNext(self):
-        return self.pointer < len(self.values) - 1
+#     def hasNext(self):
+#         return self.pointer < len(self.values) - 1
+
+
+class Solution(object):
+    def orangesRotting(self, grid):
+        bad = []
+        good = 0
+        for i in range(len(grid)):
+                for j in range(len(grid[i])):
+                    if grid[i][j] == 1:
+                        good += 1
+                    if grid[i][j] == 2:
+                        bad.append([i, j])
+        if len(bad) == 0 and good > 0:
+            return -1
+        if len(bad) == 0:
+            return 0
+        time = 0
+        while len(bad):
+            new_bad = []
+            for x, y in bad:
+                adjusts = [[0, 1],[1, 0],[0, -1],[-1,0]]
+                for i, j in adjusts:
+                    r = x + i
+                    c = y + j
+                    if 0 <= r < len(grid) and 0 <= c < len(grid[r]) and grid[r][c] == 1:
+                        grid[r][c] = 2
+                        good -= 1
+                        new_bad.append([r, c])
+            bad = new_bad
+            if len(bad):
+                time += 1
+        return time if good == 0 else -1
