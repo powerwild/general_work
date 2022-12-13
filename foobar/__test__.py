@@ -1495,13 +1495,14 @@ class Solution(object):
         no = {}
         for c, req in prerequisites:
             yes[c] = yes.get(c, 0) + 1
-            no[req] = no.get(req, []).append(c)
+            no[req] = no.get(req) or list()
+            no[req].append(c)
         open = set(range(numCourses)) - set(yes)
         done = []
         while open:
             curr = open.pop()
             done.append(curr)
-            for r in no[curr]:
+            for r in no.get(curr, []):
                 yes[r] -= 1
                 yes[r] or open.add(r)
         return done * (len(done) == numCourses)
