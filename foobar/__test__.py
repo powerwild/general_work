@@ -1463,25 +1463,29 @@
 #         return time if good == 0 else -1
 
 
+# class Solution(object):
+#     def pacificAtlantic(self, heights):
+#         def traverse(visited, r, c, max_r, max_c):
+#             visited.add((r, c))
+#             for x, y in [[0, 1],[1, 0],[0, -1],[-1, 0]]:
+#                 new_r = r + x
+#                 new_c = c + y
+#                 if 0 <= new_r < max_r and 0 <= new_c < max_c and (new_r, new_c) not in visited and heights[new_r][new_c] >= heights[r][c]:
+#                     traverse(visited, new_r, new_c, max_r, max_c)
+#         if not heights or not heights[0]:
+#             return []
+#         reach_pac = set()
+#         reach_alt = set()
+#         l1 = len(heights)
+#         l2 = len(heights[0])
+#         for i in range(l1):
+#             traverse(reach_pac, i, 0, l1, l2)
+#             traverse(reach_alt, i, l2-1, l1, l2)
+#         for j in range(l2):
+#             traverse(reach_pac, 0, j, l1, l2)
+#             traverse(reach_alt, l1-1, j, l1, l2)
+#         return list(reach_pac.intersection(reach_alt))
+
+
 class Solution(object):
-    def pacificAtlantic(self, heights):
-        def traverse(visited, r, c, max_r, max_c):
-            visited.add((r, c))
-            for x, y in [[0, 1],[1, 0],[0, -1],[-1, 0]]:
-                new_r = r + x
-                new_c = c + y
-                if 0 <= new_r < max_r and 0 <= new_c < max_c and (new_r, new_c) not in visited and heights[new_r][new_c] >= heights[r][c]:
-                    traverse(visited, new_r, new_c, max_r, max_c)
-        if not heights or not heights[0]:
-            return []
-        reach_pac = set()
-        reach_alt = set()
-        l1 = len(heights)
-        l2 = len(heights[0])
-        for i in range(l1):
-            traverse(reach_pac, i, 0, l1, l2)
-            traverse(reach_alt, i, l2-1, l1, l2)
-        for j in range(l2):
-            traverse(reach_pac, 0, j, l1, l2)
-            traverse(reach_alt, l1-1, j, l1, l2)
-        return list(reach_pac.intersection(reach_alt))
+    def findOrder(self, numCourses, prerequisites):
