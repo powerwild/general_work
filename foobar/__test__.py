@@ -1534,3 +1534,13 @@
 
 class Solution(object):
     def rob(self, nums):
+        l = len(nums)
+        if l == 0:
+            return 0
+        vals = [0 for _ in range(l)]
+        for i in range(l):
+            if i-1 > 0:
+                vals[i] = nums[i] + max(vals[:i-1])
+            else:
+                vals[i] = nums[i]
+        return max(vals)
