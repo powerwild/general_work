@@ -1510,3 +1510,23 @@
 
 class Solution(object):
     def numBusesToDestination(self, routes, source, target):
+        if source == target:
+            return 0
+        routes = [set(r) for r in routes]
+        stops = [set() for _ in range(len(routes))]
+        for i in range(len(routes)):
+            for j in range(i):
+                if set(routes[i]) & set(routes[j]):
+                    stops[i].add(j)
+                    stops[j].add(i)
+        visited = set(i for i, r in enumerate(routes) if source in r)
+        destination = set(i for i, r in enumerate(routes) if target in r)
+        q = [(x, 1) for x in visited]
+        for x, buses in q:
+            if x in destination:
+                return buses
+            for y in stops[x]:
+                if y not in visited:
+                    visited.add(y)
+                    q.append((y, buses+1))
+        return -1
