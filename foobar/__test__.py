@@ -1487,22 +1487,26 @@
 #         return list(reach_pac.intersection(reach_alt))
 
 
+# class Solution(object):
+#     def findOrder(self, numCourses, prerequisites):
+#         if not len(prerequisites):
+#             return [i for i in range(numCourses)]
+#         yes = {}
+#         no = {}
+#         for c, req in prerequisites:
+#             yes[c] = yes.get(c, 0) + 1
+#             no[req] = no.get(req) or list()
+#             no[req].append(c)
+#         open = set(range(numCourses)) - set(yes)
+#         done = []
+#         while open:
+#             curr = open.pop()
+#             done.append(curr)
+#             for r in no.get(curr, []):
+#                 yes[r] -= 1
+#                 yes[r] or open.add(r)
+#         return done * (len(done) == numCourses)
+
+
 class Solution(object):
-    def findOrder(self, numCourses, prerequisites):
-        if not len(prerequisites):
-            return [i for i in range(numCourses)]
-        yes = {}
-        no = {}
-        for c, req in prerequisites:
-            yes[c] = yes.get(c, 0) + 1
-            no[req] = no.get(req) or list()
-            no[req].append(c)
-        open = set(range(numCourses)) - set(yes)
-        done = []
-        while open:
-            curr = open.pop()
-            done.append(curr)
-            for r in no.get(curr, []):
-                yes[r] -= 1
-                yes[r] or open.add(r)
-        return done * (len(done) == numCourses)
+    def numBusesToDestination(self, routes, source, target):
