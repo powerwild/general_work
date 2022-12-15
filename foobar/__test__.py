@@ -1560,3 +1560,21 @@
 
 class Solution(object):
     def canPartition(self, nums):
+        if len(nums) < 2:
+            return False
+        nums.sort()
+        total = sum(nums)
+        if total % 2 == 1:
+            return False
+        target = total / 2
+        poss = set([target])
+        for num in nums:
+            temp = set()
+            for p in poss:
+                p -= num
+                if p == 0:
+                    return True
+                if p > 0:
+                    temp.add(p)
+            poss = poss.union(temp)
+        return False
