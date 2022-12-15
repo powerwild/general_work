@@ -1548,3 +1548,11 @@
 
 class Solution(object):
     def coinChange(self, coins, amount):
+        if amount <= 0:
+            return 0
+        dyna = [float('inf') for _ in range(amount+1)]
+        dyna[0] = 0
+        for c in coins:
+            for i in range(c, amount+1):
+                dyna[i] = min(dyna[i], dyna[i-c]+1)
+        return dyna[amount] if dyna[amount] != float('inf') else -1
