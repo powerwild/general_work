@@ -1602,21 +1602,25 @@
 #         return maxim
 
 
+# class Solution(object):
+#     def lengthOfLongestSubstring(self, s):
+#         length = len(s)
+#         if length == 0:
+#             return 0
+#         l = 0
+#         r = 0
+#         longest = 0
+#         indeces = {}
+#         while r < length:
+#             if indeces.get(s[r], -1) >= 0:
+#                 while l <= indeces[s[r]]:
+#                     indeces[s[l]] = False
+#                     l += 1
+#             indeces[s[r]] = r
+#             longest = max(longest, (r-l)+1)
+#             r += 1
+#         return longest
+
+
 class Solution(object):
-    def lengthOfLongestSubstring(self, s):
-        length = len(s)
-        if length == 0:
-            return 0
-        l = 0
-        r = 0
-        longest = 0
-        indeces = {}
-        while r < length:
-            if indeces.get(s[r], -1) >= 0:
-                while l <= indeces[s[r]]:
-                    indeces[s[l]] = False
-                    l += 1
-            indeces[s[r]] = r
-            longest = max(longest, (r-l)+1)
-            r += 1
-        return longest
+    def threeSumClosest(self, nums, target):
