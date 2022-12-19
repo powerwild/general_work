@@ -1580,23 +1580,27 @@
 #         return False
 
 
+# class Solution(object):
+#     def maxProduct(self, nums):
+#         if not len(nums):
+#             return 0
+#         if len(nums) == 1:
+#             return nums[0]
+#         prod = 0
+#         num = 0
+#         maxim = nums[0]
+#         if nums[0] > 0:
+#             prod = nums[0]
+#         else:
+#             num = nums[0]
+#         for i in range(1, len(nums)):
+#             if nums[i] > 0:
+#                 prod, num = max(prod*nums[i], nums[i]), num * nums[i]
+#             else:
+#                 prod, num = num * nums[i], min(prod*nums[i], nums[i])
+#             maxim = max(maxim, prod)
+#         return maxim
+
+
 class Solution(object):
-    def maxProduct(self, nums):
-        if not len(nums):
-            return 0
-        if len(nums) == 1:
-            return nums[0]
-        prod = 0
-        num = 0
-        maxim = nums[0]
-        if nums[0] > 0:
-            prod = nums[0]
-        else:
-            num = nums[0]
-        for i in range(1, len(nums)):
-            if nums[i] > 0:
-                prod, num = max(prod*nums[i], nums[i]), num * nums[i]
-            else:
-                prod, num = num * nums[i], min(prod*nums[i], nums[i])
-            maxim = max(maxim, prod)
-        return maxim
+    def lengthOfLongestSubstring(self, s):
