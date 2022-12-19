@@ -1622,29 +1622,34 @@
 #         return longest
 
 
+# class Solution(object):
+#     def threeSumClosest(self, nums, target):
+#         length = len(nums)
+#         if length == 3:
+#             return sum(nums)
+#         nums.sort()
+#         result = 0
+#         curr_diff = float('inf')
+#         for i in range(length-2):
+#             if i > 0 and nums[i] == nums[i-1]:
+#                 continue
+#             l = i + 1
+#             r = length - 1
+#             while l < r:
+#                 total = nums[i] + nums[l] + nums[r]
+#                 diff = abs(total - target)
+#                 if diff == 0:
+#                     return total
+#                 if diff < curr_diff:
+#                     result = total
+#                     curr_diff = diff
+#                 if total < target:
+#                     l += 1
+#                 else:
+#                     r -= 1
+#         return result
+
+
 class Solution(object):
-    def threeSumClosest(self, nums, target):
-        length = len(nums)
-        if length == 3:
-            return sum(nums)
-        nums.sort()
-        result = 0
-        curr_diff = float('inf')
-        for i in range(length-2):
-            if i > 0 and nums[i] == nums[i-1]:
-                continue
-            l = i + 1
-            r = length - 1
-            while l < r:
-                total = nums[i] + nums[l] + nums[r]
-                diff = abs(total - target)
-                if diff == 0:
-                    return total
-                if diff < curr_diff:
-                    result = total
-                    curr_diff = diff
-                if total < target:
-                    l += 1
-                else:
-                    r -= 1
-        return result
+    def minWindow(self, s, t):
+        
