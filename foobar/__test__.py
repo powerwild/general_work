@@ -1650,31 +1650,35 @@
 #         return result
 
 
+# class Solution(object):
+#     def matches(self, m1 , m2):
+#         for k, v in m2.items():
+#             if k not in m1 or v > m1[k]:
+#                 return False
+#         return True
+#     def minWindow(self, s, t):
+#         if len(s) < len(t):
+#             return ''
+#         result = ''
+#         length = float('inf')
+#         s_map = {}
+#         t_map = {}
+#         for char in t:
+#             t_map[char] = t_map.get(char, 0) + 1
+#         l = 0
+#         r = 0
+#         while r < len(s):
+#             s_map[s[r]] = s_map.get(s[r], 0) + 1
+#             while l < r and (s[l] not in t_map or s_map[s[l]] > t_map[s[l]]):
+#                 s_map[s[l]] -= 1
+#                 l += 1
+#             new_len = (r - l) + 1
+#             if self.matches(s_map, t_map) and new_len < length:
+#                 length = new_len
+#                 result = s[l:r+1]
+#             r += 1
+#         return result
+
+
 class Solution(object):
-    def matches(self, m1 , m2):
-        for k, v in m2.items():
-            if k not in m1 or v > m1[k]:
-                return False
-        return True
-    def minWindow(self, s, t):
-        if len(s) < len(t):
-            return ''
-        result = ''
-        length = float('inf')
-        s_map = {}
-        t_map = {}
-        for char in t:
-            t_map[char] = t_map.get(char, 0) + 1
-        l = 0
-        r = 0
-        while r < len(s):
-            s_map[s[r]] = s_map.get(s[r], 0) + 1
-            while l < r and (s[l] not in t_map or s_map[s[l]] > t_map[s[l]]):
-                s_map[s[l]] -= 1
-                l += 1
-            new_len = (r - l) + 1
-            if self.matches(s_map, t_map) and new_len < length:
-                length = new_len
-                result = s[l:r+1]
-            r += 1
-        return result
+    def isSameTree(self, p, q):
