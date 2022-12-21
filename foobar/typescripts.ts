@@ -131,3 +131,28 @@ function log(mess): void {
     console.log(mess);
 }
 //void is typically used for a function that doesn't return a value
+
+
+function throwsError(): never {
+    throw new Error("Doesn't return!")
+}
+function func(a: number | string): boolean {
+    if (typeof a === 'string') return true;
+    if (typeof a === 'number') return false;
+    return throwsError();
+}
+//never type is used when a function only throws an error or will infinitely loop
+
+
+let unionType: string | number | boolean;
+// | allows multiple types to be assigned
+
+
+type letters = string;
+type lettersAndNumbers = string | number;
+let str: letters = 'abc';
+// types can be given an alias to use
+
+
+let accepted: 'yes' | 1 | true;
+//accepted can only be assigned one of the specified values
