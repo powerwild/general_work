@@ -1,12 +1,12 @@
 /*
 
 */
-function add(x: number, y: number) {
-    return x + y;
-}
-console.log(add(1, 2))
-let message: string = 'Hello World';
-console.log(message)
+// function add(x: number, y: number) {
+//     return x + y;
+// }
+// console.log(add(1, 2))
+// let message: string = 'Hello World';
+// console.log(message)
 
 function increment(counter: number): number {
     return ++counter
@@ -156,3 +156,18 @@ let str: letters = 'abc';
 
 let accepted: 'yes' | 1 | true;
 //accepted can only be assigned one of the specified values
+
+
+function multiply(a: number, b: number, c?:number): number {
+    if (c !== undefined) return a * b * c;
+    else return a * b;
+}
+//create an optional parameter with ?
+
+
+//overloading
+function add(a: number, b: number): number;
+function add(a: string, b: string): string;
+function add(a: any, b: any): any {
+    return a + b;
+}
