@@ -18,7 +18,7 @@ interface Product {
     name: string,
     price: number
 }
-function getProduct(id, price): Product {
+function getProduct(id: number, price: number): Product {
     return {
         id: id,
         name: `Awesome Gadget ${id}`,
@@ -29,7 +29,7 @@ function getProduct(id, price): Product {
 const prod = getProduct(1, 99.5);
 //console.log(`The product ${prod.Name} costs $${prod.price}`) //Will notify you that Name doesn't exist on prod
 
-const heading: HTMLHeadingElement | null = document.querySelector('h1')
+// const heading: HTMLHeadingElement | null = document.querySelector('h1')
 
 
 //let arr: type[] = []
@@ -74,3 +74,48 @@ lines!!!`; //back ticks can be used for string interpolation or spanning multipl
 
 //Boolean
 let isActive: boolean = true;
+
+
+
+//enum
+enum Month {
+    Jan=1,
+    Feb,
+    Mar,
+    Apr,
+    May,
+    Jun,
+    Jul,
+    Aug,
+    Sep,
+    Oct,
+    Nov,
+    Dec
+}
+//enums can also be indexed. index starts at 0 by default but can be set to start with a specific value
+function isItSummer(mon: Month): boolean {
+    let isSummer: boolean;
+    switch (mon) {
+        case Month.Jun || Month.Jul || Month.Aug:
+            isSummer = true;
+            break;
+        default:
+            isSummer = false;
+            break;
+    }
+    return isSummer;
+}
+
+enum ApprovalStatus {
+    draft,
+    submitted,
+    approved,
+    rejected
+}
+const req = {
+    id: 1,
+    status: ApprovalStatus[1],
+    description: 'This request is ready for approval'
+}
+req.status = ApprovalStatus[2]
+if (req.status === ApprovalStatus[2]) console.log('Request is approved.')
