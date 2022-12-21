@@ -31,10 +31,14 @@ const prod = getProduct(1, 99.5);
 
 const heading: HTMLHeadingElement | null = document.querySelector('h1')
 
+
 //let arr: type[] = []
 let strArr: string[] = ['a', 'b', 'c'];
 let numArr: number[] = [1, 2, 3];
 let str_num_arr: (number | string)[] = ['a', 'b', 1, 2]; //allows numbers and strings in array
+let tuple: [number, string, boolean, string?] = [10, 'apples', true];
+//tuples are arrays with fixed lengths and positional types for elements and can have optional elements at end
+
 
 let person: {
     name: string,
@@ -42,5 +46,31 @@ let person: {
 }
 //person will only accept an object with the preceeding form
 
+let employee: object;
+//employee can only be assigned an object
+
+let manager: Object;
+//manager can only be assigned an object but also inherits the functionality of the builtin Object like the toString() and valueOf() methods
+
 let greeting: (name: string) => string;
 // greeting can be assigned any function that accepts a string and returns a string
+
+
+
+// Types are number, bigint, string, boolean, null, undefined, symbol
+
+//Number
+let x: number = 9.99; //Decimal
+let bin: number = 0b100; //Binary
+let octal: number = 0o10; //Octal
+let hexa: number = 0XA; //Hexadecimal
+let big: bigint = 9007199254750991n; //Big Integers
+
+//String
+let fName: string = 'John';
+let sentence: string = `This string
+spans multiple
+lines!!!`; //back ticks can be used for string interpolation or spanning multiple lines
+
+//Boolean
+let isActive: boolean = true;
