@@ -119,3 +119,15 @@ const req = {
 }
 req.status = ApprovalStatus[2]
 if (req.status === ApprovalStatus[2]) console.log('Request is approved.')
+
+
+let something: any;
+something = 5.333333;
+console.log(something.toFixed(1))
+//any lets any type be assigned to the variable and call the builtin methods for the value assigned
+
+
+function log(mess): void {
+    console.log(mess);
+}
+//void is typically used for a function that doesn't return a value
