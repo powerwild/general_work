@@ -1693,11 +1693,15 @@
 #         return self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)
 
 
+# class Solution(object):
+#     def containsDuplicate(self, nums):
+#         has = set()
+#         for n in nums:
+#             if n in has:
+#                 return True
+#             has.add(n)
+#         return False
+
+
 class Solution(object):
-    def containsDuplicate(self, nums):
-        has = set()
-        for n in nums:
-            if n in has:
-                return True
-            has.add(n)
-        return False
+    def maxSubArray(self, nums):
