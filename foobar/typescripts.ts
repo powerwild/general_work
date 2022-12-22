@@ -192,3 +192,37 @@ class Person {
     public - default accessible anywhere anytime
     readonly - makes property immutable
 */
+abstract class APerson {
+    constructor(name: string, ein: number) {
+    }
+    abstract getSalary(): number
+}
+// abstract classes cannot be instatiated and can only be inherited from. has at least on abstract method that the child class with provide functionality to.
+
+
+interface Human {
+    firstName: string;
+    middleName?: string;
+    lastName: string;
+}
+interface FuncFormat {
+    (str: string, isUpper: boolean): string
+}
+//interface can be used to create custom typing for paramters or unassigned variables
+//interfaces can inherit from multiple other interfaces via extends i1, i2, i3
+//interfaces can inherit from classes but if private or protected properties are inherited then the interface can only be implemented by that class or its children
+interface Partner {
+    name: string;
+    credit: number;
+}
+interface Identity {
+    id: number;
+    name: string;
+}
+interface Contact {
+    email: string;
+    phone: string;
+}
+type Employee = Identity & Contact
+type Customer = Partner & Contact
+// & can be used to combine interfaces into one type that has all properties from the included interfaces
