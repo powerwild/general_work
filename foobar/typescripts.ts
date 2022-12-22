@@ -171,3 +171,24 @@ function add(a: string, b: string): string;
 function add(a: any, b: any): any {
     return a + b;
 }
+
+class Person {
+    private name: string;
+    protected password: string;
+    public email: string;
+    readonly birthDate: Date;
+    /*
+    constructor(private name: string, protected password: string, public email: string, readonly birthDate: Date) {
+        this.name = name;
+        this.password = password;
+        this.email = email;
+        this.birthDate = birthDate
+    }
+    */
+}
+/*
+    private - only methods and properties within the class can access the property
+    protected - only accessible from within the class or a class that inherits from it
+    public - default accessible anywhere anytime
+    readonly - makes property immutable
+*/
