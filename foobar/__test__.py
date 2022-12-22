@@ -1695,3 +1695,9 @@
 
 class Solution(object):
     def containsDuplicate(self, nums):
+        has = set()
+        for n in nums:
+            if n in has:
+                return True
+            has.add(n)
+        return False
