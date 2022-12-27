@@ -1703,11 +1703,25 @@
 #         return False
 
 
+# class Solution(object):
+#     def maxSubArray(self, nums):
+#         if len(nums) == 1:
+#             return nums[0]
+#         for i in range(len(nums)):
+#             if i > 0:
+#                 nums[i] = max(nums[i-1], nums[i-1] + nums[i], nums[i])
+#         return max(nums)
+
+
 class Solution(object):
-    def maxSubArray(self, nums):
-        if len(nums) == 1:
-            return nums[0]
-        for i in range(len(nums)):
-            if i > 0:
-                nums[i] = max(nums[i-1], nums[i-1] + nums[i], nums[i])
-        return max(nums)
+    def tribonacci(self, n):
+        third, second, first = 0,1,1
+        if n <= 2:
+            return [third, second, first][n]
+        while n > 2:
+            first += second + third
+            temp = second
+            second = first - (second+third)
+            third = temp
+            n -= 1
+        return first

@@ -765,5 +765,4 @@ function findRemainingBalls(direction, strength) {
 // };
 
 
-class Solution(object):
-    def tribonacci(self, n):
+
