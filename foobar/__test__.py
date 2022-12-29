@@ -1713,15 +1713,19 @@
 #         return max(nums)
 
 
+# class Solution(object):
+#     def tribonacci(self, n):
+#         third, second, first = 0,1,1
+#         if n <= 2:
+#             return [third, second, first][n]
+#         while n > 2:
+#             first += second + third
+#             temp = second
+#             second = first - (second+third)
+#             third = temp
+#             n -= 1
+#         return first
+
+
 class Solution(object):
-    def tribonacci(self, n):
-        third, second, first = 0,1,1
-        if n <= 2:
-            return [third, second, first][n]
-        while n > 2:
-            first += second + third
-            temp = second
-            second = first - (second+third)
-            third = temp
-            n -= 1
-        return first
+    def removeElements(self, head, val):
