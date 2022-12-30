@@ -1785,32 +1785,46 @@
 #         return checked and len(chars) == 0
 
 
-class MyQueue(object):
+# class MyQueue(object):
 
-    def __init__(self):
+#     def __init__(self):
+#         self.q = []
+
+#     def push(self, x):
+#         """
+#         :type x: int
+#         :rtype: None
+#         """
+#         self.q.append(x)
+#         return
 
 
-    def push(self, x):
+#     def pop(self):
+#         """
+#         :rtype: int
+#         """
+#         beg = self.q[0]
+#         self.q = self.q[1:]
+#         return beg
+
+#     def peek(self):
+#         """
+#         :rtype: int
+#         """
+#         return self.q[0]
+
+
+#     def empty(self):
+#         """
+#         :rtype: bool
+#         """
+#         return len(self.q) == 0
+
+
+class Solution(object):
+    def deleteAndEarn(self, nums):
         """
-        :type x: int
-        :rtype: None
-        """
-
-
-    def pop(self):
-        """
+        :type nums: List[int]
         :rtype: int
-        """
-
-
-    def peek(self):
-        """
-        :rtype: int
-        """
-
-
-    def empty(self):
-        """
-        :rtype: bool
         """
         
