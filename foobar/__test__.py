@@ -1746,3 +1746,21 @@
 
 class Solution(object):
     def deleteDuplicates(self, head):
+        if not head or not head.next:
+            return head
+        prev = head
+        curr = head.next
+        nex_n = curr.next
+        while nex_n:
+            while curr and curr.val == prev.val:
+                temp = curr
+                curr = curr.next
+                temp.next = None
+                nex_n = nex_n.next if nex_n else None
+            prev.next = curr
+            prev = curr
+            curr = nex_n
+            nex_n = nex_n.next if nex_n else None
+        if prev:
+            prev.next = curr if curr and curr.val != prev.val else None
+        return head
