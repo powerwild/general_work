@@ -1766,20 +1766,51 @@
 #         return head
 
 
-class Solution(object):
-    def isValid(self, s):
-        def check(arr, char):
-            l = len(arr)
-            if l == 0:
-                return False
-            if (char == ']' and arr[l-1] == '[') or (char == '}' and arr[l-1] == '{') or (char == ')' and arr[l-1] == '('):
-                arr.pop()
-            return len(arr) < l
-        chars = []
-        checked = True
-        for let in s:
-            if let == '(' or let == '{' or let == '[':
-                chars.append(let)
-            else:
-                checked = checked and check(chars, let)
-        return checked and len(chars) == 0
+# class Solution(object):
+#     def isValid(self, s):
+#         def check(arr, char):
+#             l = len(arr)
+#             if l == 0:
+#                 return False
+#             if (char == ']' and arr[l-1] == '[') or (char == '}' and arr[l-1] == '{') or (char == ')' and arr[l-1] == '('):
+#                 arr.pop()
+#             return len(arr) < l
+#         chars = []
+#         checked = True
+#         for let in s:
+#             if let == '(' or let == '{' or let == '[':
+#                 chars.append(let)
+#             else:
+#                 checked = checked and check(chars, let)
+#         return checked and len(chars) == 0
+
+
+class MyQueue(object):
+
+    def __init__(self):
+
+
+    def push(self, x):
+        """
+        :type x: int
+        :rtype: None
+        """
+
+
+    def pop(self):
+        """
+        :rtype: int
+        """
+
+
+    def peek(self):
+        """
+        :rtype: int
+        """
+
+
+    def empty(self):
+        """
+        :rtype: bool
+        """
+        
