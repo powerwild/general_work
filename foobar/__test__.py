@@ -1727,18 +1727,22 @@
 #         return first
 
 
+# class Solution(object):
+#     def removeElements(self, head, val):
+#         if not head:
+#             return head
+#         while head.val == val:
+#             head = head.next
+#         curr = head
+#         prev = None
+#         while curr:
+#             if curr.val == val:
+#                 prev.next = curr.next
+#             else:
+#                 prev = prev.next
+#             curr = curr.next
+#         return head
+
+
 class Solution(object):
-    def removeElements(self, head, val):
-        if not head:
-            return head
-        while head.val == val:
-            head = head.next
-        curr = head
-        prev = None
-        while curr:
-            if curr.val == val:
-                prev.next = curr.next
-            else:
-                prev = prev.next
-            curr = curr.next
-        return head
+    def deleteDuplicates(self, head):
