@@ -1821,19 +1821,27 @@
 #         return len(self.q) == 0
 
 
+# class Solution(object):
+#     def deleteAndEarn(self, nums):
+#         """
+#         :type nums: List[int]
+#         :rtype: int
+#         """
+#         if not nums:
+#             return 0
+#         new_nums = [0] * (max(nums)+1)
+#         nums.sort()
+#         for num in nums:
+#             new_nums[num] += num
+#         for ind in range(len(new_nums)):
+#             if ind > 1:
+#                 new_nums[ind] = max(new_nums[ind] + new_nums[ind-2], new_nums[ind-1])
+#         return max(new_nums)
+
+
 class Solution(object):
-    def deleteAndEarn(self, nums):
+    def canJump(self, nums):
         """
         :type nums: List[int]
-        :rtype: int
+        :rtype: bool
         """
-        if not nums:
-            return 0
-        new_nums = [0] * (max(nums)+1)
-        nums.sort()
-        for num in nums:
-            new_nums[num] += num
-        for ind in range(len(new_nums)):
-            if ind > 1:
-                new_nums[ind] = max(new_nums[ind] + new_nums[ind-2], new_nums[ind-1])
-        return max(new_nums)
