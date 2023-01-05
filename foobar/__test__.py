@@ -1863,3 +1863,14 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
+        curr = -1
+        nex_t = 0
+        jumps = 0
+        i = 0
+        while nex_t < len(nums)-1:
+            if i > curr:
+                jumps += 1
+                curr = nex_t
+            nex_t = max(nex_t, nums[i]+i)
+            i += 1
+        return jumps
