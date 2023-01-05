@@ -1839,19 +1839,27 @@
 #         return max(new_nums)
 
 
+# class Solution(object):
+#     def canJump(self, nums):
+#         """
+#         :type nums: List[int]
+#         :rtype: bool
+#         """
+#         if len(nums) == 1:
+#             return True
+#         curr = nums[0]
+#         for i in range(len(nums)-1):
+#             if curr < nums[i]:
+#                 curr = nums[i]
+#             if curr == 0:
+#                 return False
+#             curr -= 1
+#         return True
+
+
 class Solution(object):
-    def canJump(self, nums):
+    def jump(self, nums):
         """
         :type nums: List[int]
-        :rtype: bool
+        :rtype: int
         """
-        if len(nums) == 1:
-            return True
-        curr = nums[0]
-        for i in range(len(nums)-1):
-            if curr < nums[i]:
-                curr = nums[i]
-            if curr == 0:
-                return False
-            curr -= 1
-        return True
