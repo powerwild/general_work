@@ -1845,3 +1845,13 @@ class Solution(object):
         :type nums: List[int]
         :rtype: bool
         """
+        if len(nums) == 1:
+            return True
+        curr = nums[0]
+        for i in range(len(nums)-1):
+            if curr < nums[i]:
+                curr = nums[i]
+            if curr == 0:
+                return False
+            curr -= 1
+        return True
