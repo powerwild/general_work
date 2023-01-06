@@ -1927,21 +1927,29 @@
 #         return max(max_sum, cir_sum)
 
 
-class Solution:
-    def getMaxLen(self, nums):
-        total = 0
-        positive = 0
-        negative = 0
-        for num in nums:
-            if num > 0:
-                positive += 1
-                negative = negative + 1 if negative else 0
-            elif num < 0:
-                temp = positive
-                positive = negative + 1 if negative else 0
-                negative = temp + 1
-            else:
-                positive = 0
-                negative = 0
-            total = max(total, positive)
-        return total
+# class Solution:
+#     def getMaxLen(self, nums):
+#         total = 0
+#         positive = 0
+#         negative = 0
+#         for num in nums:
+#             if num > 0:
+#                 positive += 1
+#                 negative = negative + 1 if negative else 0
+#             elif num < 0:
+#                 temp = positive
+#                 positive = negative + 1 if negative else 0
+#                 negative = temp + 1
+#             else:
+#                 positive = 0
+#                 negative = 0
+#             total = max(total, positive)
+#         return total
+
+
+class Solution(object):
+    def maxScoreSightseeingPair(self, values):
+        """
+        :type values: List[int]
+        :rtype: int
+        """
