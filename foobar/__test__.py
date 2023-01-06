@@ -1857,20 +1857,28 @@
 #         return True
 
 
+# class Solution(object):
+#     def jump(self, nums):
+#         """
+#         :type nums: List[int]
+#         :rtype: int
+#         """
+#         curr = -1
+#         nex_t = 0
+#         jumps = 0
+#         i = 0
+#         while nex_t < len(nums)-1:
+#             if i > curr:
+#                 jumps += 1
+#                 curr = nex_t
+#             nex_t = max(nex_t, nums[i]+i)
+#             i += 1
+#         return jumps
+
+
 class Solution(object):
-    def jump(self, nums):
+    def hammingWeight(self, n):
         """
-        :type nums: List[int]
+        :type n: int
         :rtype: int
         """
-        curr = -1
-        nex_t = 0
-        jumps = 0
-        i = 0
-        while nex_t < len(nums)-1:
-            if i > curr:
-                jumps += 1
-                curr = nex_t
-            nex_t = max(nex_t, nums[i]+i)
-            i += 1
-        return jumps
