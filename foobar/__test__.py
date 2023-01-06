@@ -1908,4 +1908,20 @@
 
 class Solution(object):
     def maxSubarraySumCircular(self, nums):
-        
+        length = len(nums)
+        cir_sum = nums[0]
+        csum = nums[0]
+        max_sum = nums[0]
+        for i in range(1, length):
+            cir_sum += nums[i]
+            csum = max(nums[i], nums[i]+csum)
+            max_sum = max(csum, max_sum)
+        csum = nums[0]
+        min_sum = nums[0]
+        for j in range(1, length):
+            csum = min(nums[j], nums[j]+csum)
+            min_sum = min(csum, min_sum)
+        cir_sum -= min_sum
+        if cir_sum == 0:
+            return max_sum
+        return max(max_sum, cir_sum)
