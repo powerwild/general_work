@@ -1953,3 +1953,17 @@ class Solution(object):
         :type values: List[int]
         :rtype: int
         """
+        # length = len(values)
+        # rights = [values[i]-i for i in range(length)]
+        # lefts = [values[i]+i for i in range(length)]
+        # for i in range(length):
+        #     values[i] = lefts[i] + max(rights[i+1:])
+        # return max(values)
+        length = len(values)
+        maxi = 0
+        i = 0
+        for j in range(i+1, length):
+            maxi = max(maxi, values[i] + values[j] + i - j)
+            if values[j] + j - i > values[i]:
+                i = j
+        return maxi
