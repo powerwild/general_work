@@ -1890,17 +1890,22 @@
 #         return total
 
 
+# class Solution(object):
+#     def subtractProductAndSum(self, n):
+#         """
+#         :type n: int
+#         :rtype: int
+#         """
+#         p = 1
+#         s = 0
+#         while n > 0:
+#             dig = n % 10
+#             n = n // 10
+#             p *= dig
+#             s += dig
+#         return p - s
+
+
 class Solution(object):
-    def subtractProductAndSum(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
-        p = 1
-        s = 0
-        while n > 0:
-            dig = n % 10
-            n = n // 10
-            p *= dig
-            s += dig
-        return p - s
+    def maxSubarraySumCircular(self, nums):
+        
