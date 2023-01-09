@@ -699,15 +699,20 @@
 // }
 
 
-function minStart(arr) {
-    let res = 0;
-    let total = 0;
-    for (let n of arr) {
-        total += n;
-        if (total < 1) {
-            res += Math.abs(total)+1;
-            total = 1;
-        }
-    }
-    return res;
+// function minStart(arr) {
+//     let res = 0;
+//     let total = 0;
+//     for (let n of arr) {
+//         total += n;
+//         if (total < 1) {
+//             res += Math.abs(total)+1;
+//             total = 1;
+//         }
+//     }
+//     return res;
+// }
+
+
+function getTotalExecutionTime(n, logs) {
+
 }
