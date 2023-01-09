@@ -713,26 +713,31 @@
 // }
 
 
-function getTotalExecutionTime(n, logs) {
-    let funcs = [];
-    for (let i = 0; i < n; ++i) funcs.push([0,0,0,0]);
-    for (let log of logs) {
-        let [id_str, s_or_e, time_str] = log.split(':');
-        const id = Number(id_str);
-        const time = Number(time_str);
-        if (s_or_e === 'start') {
-            funcs[id][0] = time;
-        } else {
-            funcs[id][1] = time;
-            funcs[id][2] = funcs[id][1] - funcs[id][0] + 1;
-        }
-    }
-    for (let i = 0; i < funcs.length; ++i) {
-        for (let j = i+1; j < funcs.length; ++j) {
-            if (funcs[j][0] > funcs[i][0] && funcs[j][1] < funcs[i][1]) {
-                funcs[i][2] -= funcs[j][2];
-            }
-        }
-    }
-    return funcs.map((el, i) => el[2]);
+// function getTotalExecutionTime(n, logs) {
+//     let funcs = [];
+//     for (let i = 0; i < n; ++i) funcs.push([0,0,0,0]);
+//     for (let log of logs) {
+//         let [id_str, s_or_e, time_str] = log.split(':');
+//         const id = Number(id_str);
+//         const time = Number(time_str);
+//         if (s_or_e === 'start') {
+//             funcs[id][0] = time;
+//         } else {
+//             funcs[id][1] = time;
+//             funcs[id][2] = funcs[id][1] - funcs[id][0] + 1;
+//         }
+//     }
+//     for (let i = 0; i < funcs.length; ++i) {
+//         for (let j = i+1; j < funcs.length; ++j) {
+//             if (funcs[j][0] > funcs[i][0] && funcs[j][1] < funcs[i][1]) {
+//                 funcs[i][2] -= funcs[j][2];
+//             }
+//         }
+//     }
+//     return funcs.map((el, i) => el[2]);
+// }
+
+
+function right_side_view(root) {
+    
 }
