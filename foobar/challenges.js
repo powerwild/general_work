@@ -739,5 +739,16 @@
 
 
 function right_side_view(root) {
-    
+    if (!root) return root;
+    let vals = [root.val];
+    root = root.right;
+    let q = [];
+    if (root) q.push(root);
+    while (q.length) {
+        let curr = q.shift();
+        vals.push(curr.val);
+        if (curr.left) q.push(curr.left);
+        if (curr.right) q.push(curr.right);
+    }
+    return vals;
 }
