@@ -1969,15 +1969,25 @@
 #         return maxi
 
 
+# class Solution(object):
+#     def largestPerimeter(self, nums):
+#         """
+#         :type nums: List[int]
+#         :rtype: int
+#         """
+#         nums.sort()
+#         for i in range(len(nums)-3, -1, -1):
+#             n1, n2, n3 = nums[i], nums[i+1], nums[i+2]
+#             if n1 + n2 > n3:
+#                 return n1 + n2 + n3
+#         return 0
+
+
 class Solution(object):
-    def largestPerimeter(self, nums):
+    def nearestValidPoint(self, x, y, points):
         """
-        :type nums: List[int]
+        :type x: int
+        :type y: int
+        :type points: List[List[int]]
         :rtype: int
         """
-        nums.sort()
-        for i in range(len(nums)-3, -1, -1):
-            n1, n2, n3 = nums[i], nums[i+1], nums[i+2]
-            if n1 + n2 > n3:
-                return n1 + n2 + n3
-        return 0
