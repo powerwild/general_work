@@ -2003,16 +2003,24 @@
 #         return index
 
 
+# class Solution(object):
+#     def arraySign(self, nums):
+#         """
+#         :type nums: List[int]
+#         :rtype: int
+#         """
+#         negs = 0
+#         for n in nums:
+#             if n == 0:
+#                 return 0
+#             if n < 0:
+#                 negs += 1
+#         return 1 if negs % 2 == 0 else -1
+
+
 class Solution(object):
-    def arraySign(self, nums):
+    def canMakeArithmeticProgression(self, arr):
         """
-        :type nums: List[int]
-        :rtype: int
+        :type arr: List[int]
+        :rtype: bool
         """
-        negs = 0
-        for n in nums:
-            if n == 0:
-                return 0
-            if n < 0:
-                negs += 1
-        return 1 if negs % 2 == 0 else -1
