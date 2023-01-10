@@ -2062,3 +2062,21 @@ class Solution(object):
         :type s2: str
         :rtype: bool
         """
+        def check_set(char, charset):
+            if char in charset:
+                charset.remove(char)
+            else:
+                charset.add(char)
+            return
+        needed = set()
+        swaps = 0
+        for i in range(len(s1)):
+            if s1[i] not in s2 or s2[i] not in s1:
+                return False
+            if s1[i] == s2[i]:
+                continue
+            else:
+                swaps += 1
+                check_set(s1[i], needed)
+                check_set(s2[i], needed)
+        return True if swaps <= 2 and len(needed) == 0 else False
