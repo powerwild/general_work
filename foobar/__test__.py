@@ -2038,3 +2038,18 @@ class Solution(object):
         :type n: int
         :rtype: bool
         """
+        if n <= 0:
+            return False
+        visited = set()
+        while n != 1:
+            if n in visited:
+                return False
+            else: visited.add(n)
+            new_n = 0
+            while n > 9:
+                ones = n % 10
+                new_n += ones * ones
+                n = n // 10
+            new_n += n * n
+            n = new_n
+        return True
