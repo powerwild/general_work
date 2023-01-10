@@ -1991,3 +1991,13 @@ class Solution(object):
         :type points: List[List[int]]
         :rtype: int
         """
+        index = -1
+        curr_dis = float('inf')
+        for i in range(len(points)):
+            [r, c] = points[i]
+            if r == x or c == y:
+                dis = abs(x-r) + abs(y-c)
+                if dis < curr_dis:
+                    curr_dis = dis
+                    index = i
+        return index
