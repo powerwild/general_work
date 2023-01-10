@@ -2032,24 +2032,33 @@
 #         return True
 
 
+# class Solution(object):
+#     def isHappy(self, n):
+#         """
+#         :type n: int
+#         :rtype: bool
+#         """
+#         if n <= 0:
+#             return False
+#         visited = set()
+#         while n != 1:
+#             if n in visited:
+#                 return False
+#             else: visited.add(n)
+#             new_n = 0
+#             while n > 9:
+#                 ones = n % 10
+#                 new_n += ones * ones
+#                 n = n // 10
+#             new_n += n * n
+#             n = new_n
+#         return True
+
+
 class Solution(object):
-    def isHappy(self, n):
+    def areAlmostEqual(self, s1, s2):
         """
-        :type n: int
+        :type s1: str
+        :type s2: str
         :rtype: bool
         """
-        if n <= 0:
-            return False
-        visited = set()
-        while n != 1:
-            if n in visited:
-                return False
-            else: visited.add(n)
-            new_n = 0
-            while n > 9:
-                ones = n % 10
-                new_n += ones * ones
-                n = n // 10
-            new_n += n * n
-            n = new_n
-        return True
