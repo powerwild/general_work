@@ -2088,3 +2088,11 @@ class Solution(object):
         :type root: Node
         :rtype: List[int]
         """
+        def recurse(root, result=[]):
+            if not root:
+                return result
+            result.append(root.val)
+            for child in root.children:
+                recurse(child, result)
+            return result
+        return recurse(root)
