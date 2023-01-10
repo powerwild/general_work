@@ -1975,3 +1975,9 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
+        nums.sort()
+        for i in range(len(nums)-3, -1, -1):
+            n1, n2, n3 = nums[i], nums[i+1], nums[i+2]
+            if n1 + n2 > n3:
+                return n1 + n2 + n3
+        return 0
