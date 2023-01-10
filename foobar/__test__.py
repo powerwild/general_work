@@ -2082,17 +2082,26 @@
 #         return True if swaps <= 2 and len(needed) == 0 else False
 
 
+# class Solution(object):
+#     def preorder(self, root):
+#         """
+#         :type root: Node
+#         :rtype: List[int]
+#         """
+#         def recurse(root, result=[]):
+#             if not root:
+#                 return result
+#             result.append(root.val)
+#             for child in root.children:
+#                 recurse(child, result)
+#             return result
+#         return recurse(root)
+
+
 class Solution(object):
-    def preorder(self, root):
+    def nextGreaterElement(self, nums1, nums2):
         """
-        :type root: Node
+        :type nums1: List[int]
+        :type nums2: List[int]
         :rtype: List[int]
         """
-        def recurse(root, result=[]):
-            if not root:
-                return result
-            result.append(root.val)
-            for child in root.children:
-                recurse(child, result)
-            return result
-        return recurse(root)
