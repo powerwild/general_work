@@ -2018,15 +2018,23 @@
 #         return 1 if negs % 2 == 0 else -1
 
 
+# class Solution(object):
+#     def canMakeArithmeticProgression(self, arr):
+#         """
+#         :type arr: List[int]
+#         :rtype: bool
+#         """
+#         arr.sort()
+#         diff = arr[1] - arr[0]
+#         for i in range(1, len(arr)):
+#             if i < len(arr) - 1 and arr[i+1] - arr[i] != diff:
+#                 return False
+#         return True
+
+
 class Solution(object):
-    def canMakeArithmeticProgression(self, arr):
+    def isHappy(self, n):
         """
-        :type arr: List[int]
+        :type n: int
         :rtype: bool
         """
-        arr.sort()
-        diff = arr[1] - arr[0]
-        for i in range(1, len(arr)):
-            if i < len(arr) - 1 and arr[i+1] - arr[i] != diff:
-                return False
-        return True
