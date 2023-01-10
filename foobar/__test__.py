@@ -1983,21 +1983,29 @@
 #         return 0
 
 
+# class Solution(object):
+#     def nearestValidPoint(self, x, y, points):
+#         """
+#         :type x: int
+#         :type y: int
+#         :type points: List[List[int]]
+#         :rtype: int
+#         """
+#         index = -1
+#         curr_dis = float('inf')
+#         for i in range(len(points)):
+#             [r, c] = points[i]
+#             if r == x or c == y:
+#                 dis = abs(x-r) + abs(y-c)
+#                 if dis < curr_dis:
+#                     curr_dis = dis
+#                     index = i
+#         return index
+
+
 class Solution(object):
-    def nearestValidPoint(self, x, y, points):
+    def arraySign(self, nums):
         """
-        :type x: int
-        :type y: int
-        :type points: List[List[int]]
+        :type nums: List[int]
         :rtype: int
         """
-        index = -1
-        curr_dis = float('inf')
-        for i in range(len(points)):
-            [r, c] = points[i]
-            if r == x or c == y:
-                dis = abs(x-r) + abs(y-c)
-                if dis < curr_dis:
-                    curr_dis = dis
-                    index = i
-        return index
