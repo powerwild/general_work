@@ -2105,3 +2105,12 @@ class Solution(object):
         :type nums2: List[int]
         :rtype: List[int]
         """
+        ans = [-1 for _ in range(len(nums1))]
+        for i in range(len(nums2)):
+            n = nums2[i]
+            if n in nums1:
+                for j in range(i+1,len(nums2)):
+                    if nums2[j] > n:
+                        ans[nums1.index(n)] = nums2[j]
+                        break
+        return ans
