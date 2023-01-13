@@ -2129,4 +2129,11 @@
 
 class Solution:
     def sumOddLengthSubarrays(self, arr):
-        
+        total = 0
+        for i in range(len(arr)):
+            num = arr[i]
+            l = i
+            r = len(arr) - i - 1
+            total += num * (l // 2 + 1) * (r // 2 + 1)
+            total += num * ((l+1) // 2) * ((r+1) // 2)
+        return total
