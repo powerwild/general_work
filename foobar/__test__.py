@@ -2148,9 +2148,13 @@
 #                 index += 1
 
 
+# class Solution(object):
+#     def maximumWealth(self, accounts):
+#         maxi = 0
+#         for acc in accounts:
+#             maxi = max(maxi, sum(acc))
+#         return maxi
+
+
 class Solution(object):
-    def maximumWealth(self, accounts):
-        maxi = 0
-        for acc in accounts:
-            maxi = max(maxi, sum(acc))
-        return maxi
+    def diagonalSum(self, mat):
