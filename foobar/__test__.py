@@ -2158,3 +2158,23 @@
 
 class Solution(object):
     def diagonalSum(self, mat):
+        def add(r, c, m, v):
+            if (r, c) not in v:
+                v.add((r, c))
+                return m[r][c]
+            return 0
+        rl = len(mat)
+        cl = len(mat[0])
+        visited = set()
+        x, y = 0, 0
+        total = 0
+        while x < rl and y < cl:
+            total += add(x, y, mat, visited)
+            x += 1
+            y += 1
+        x, y = 0, cl-1
+        while x < rl and y >= 0:
+            total += add(x, y, mat, visited)
+            x += 1
+            y -= 1
+        return total
