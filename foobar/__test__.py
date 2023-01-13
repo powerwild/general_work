@@ -2182,3 +2182,16 @@
 
 class Solution(object):
     def matrixReshape(self, mat, r, c):
+        rl = len(mat)
+        cl = len(mat[0])
+        if rl * cl != r * c:
+            return mat
+        new = []
+        lis = []
+        for arr in mat:
+            for num in arr:
+                lis.append(num)
+                if len(lis) == c:
+                    new.append(lis)
+                    lis = []
+        return new
