@@ -2241,3 +2241,18 @@ class Solution(object):
         :type grid: List[List[int]]
         :rtype: List[int]
         """
+        rl = len(grid)
+        cl = len(grid[0])
+        res = []
+        for i in range(cl):
+            r = 0
+            ball = i
+            while r < rl:
+                curr = grid[r][ball]
+                if (curr == -1 and (ball == 0 or grid[r][ball-1] == 1)) or (curr == 1 and (ball == cl-1 or grid[r][ball+1] == -1)):
+                    ball = -1
+                    break
+                ball += 1 if curr == 1 else -1
+                r += 1
+            res.append(ball)
+        return res
