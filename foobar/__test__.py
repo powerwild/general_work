@@ -2197,39 +2197,47 @@
 #         return new
 
 
+# class Solution(object):
+#     def spiralOrder(self, matrix):
+#         """
+#         :type matrix: List[List[int]]
+#         :rtype: List[int]
+#         """
+#         def add(m, v, a, x, y):
+#             key = (x, y)
+#             if key not in v:
+#                 v.add(key)
+#                 a.append(m[x][y])
+#         cl = len(matrix[0])
+#         rl = len(matrix)
+#         nums = cl * rl
+#         t = 0
+#         r = cl - 1
+#         b = rl - 1
+#         l = 0
+#         res = []
+#         visited = set()
+#         while len(res) < nums:
+#             for h in range(l, r+1):
+#                 add(matrix, visited, res, t, h)
+#             for i in range(t, b+1):
+#                 add(matrix, visited, res, i, r)
+#             for j in range(r, l-1, -1):
+#                 add(matrix, visited, res, b, j)
+#             for k in range(b, t-1, -1):
+#                 add(matrix, visited, res, k, l)
+#             t += 1
+#             b -= 1
+#             r -= 1
+#             l += 1
+#             if len(res) == nums-1:
+#                 res.append(matrix[rl//2][cl//2])
+#         return res
+
+
 class Solution(object):
-    def spiralOrder(self, matrix):
+    def findBall(self, grid):
         """
-        :type matrix: List[List[int]]
+        :type grid: List[List[int]]
         :rtype: List[int]
         """
-        def add(m, v, a, x, y):
-            key = (x, y)
-            if key not in v:
-                v.add(key)
-                a.append(m[x][y])
-        cl = len(matrix[0])
-        rl = len(matrix)
-        nums = cl * rl
-        t = 0
-        r = cl - 1
-        b = rl - 1
-        l = 0
-        res = []
-        visited = set()
-        while len(res) < nums:
-            for h in range(l, r+1):
-                add(matrix, visited, res, t, h)
-            for i in range(t, b+1):
-                add(matrix, visited, res, i, r)
-            for j in range(r, l-1, -1):
-                add(matrix, visited, res, b, j)
-            for k in range(b, t-1, -1):
-                add(matrix, visited, res, k, l)
-            t += 1
-            b -= 1
-            r -= 1
-            l += 1
-            if len(res) == nums-1:
-                res.append(matrix[rl//2][cl//2])
-        return res
