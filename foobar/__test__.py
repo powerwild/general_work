@@ -2264,3 +2264,7 @@ class Solution(object):
         :type x: int
         :rtype: bool
         """
+        x = str(x)
+        y = [x[i] for i in range(len(x))]
+        y.reverse()
+        return x == ''.join(y)
