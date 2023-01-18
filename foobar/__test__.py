@@ -2286,19 +2286,27 @@
 #         return strs[0][:end]
 
 
+# class Solution(object):
+#     def multiply(self, num1, num2):
+#         """
+#         :type num1: str
+#         :type num2: str
+#         :rtype: str
+#         """
+#         def to_num(num):
+#             number = 0
+#             mul = 1
+#             for i in range(len(num)-1, -1, -1):
+#                 n = int(num[i])
+#                 number += n * mul
+#                 mul *= 10
+#             return number
+#         return str(to_num(num1) * to_num(num2))
+
+
 class Solution(object):
-    def multiply(self, num1, num2):
+    def romanToInt(self, s):
         """
-        :type num1: str
-        :type num2: str
-        :rtype: str
+        :type s: str
+        :rtype: int
         """
-        def to_num(num):
-            number = 0
-            mul = 1
-            for i in range(len(num)-1, -1, -1):
-                n = int(num[i])
-                number += n * mul
-                mul *= 10
-            return number
-        return str(to_num(num1) * to_num(num2))
