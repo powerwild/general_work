@@ -2304,29 +2304,37 @@
 #         return str(to_num(num1) * to_num(num2))
 
 
+# class Solution(object):
+#     def romanToInt(self, s):
+#         """
+#         :type s: str
+#         :rtype: int
+#         """
+#         r_n = {
+#             'I': 1,
+#             'V': 5,
+#             'X': 10,
+#             'L': 50,
+#             'C': 100,
+#             'D': 500,
+#             'M': 1000
+#         }
+#         l = len(s)
+#         total = 0
+#         i = 0
+#         while i < l:
+#             if i < l-1 and r_n[s[i]] < r_n[s[i+1]]:
+#                 total += r_n[s[i+1]] - r_n[s[i]]
+#                 i += 1
+#             else:
+#                 total += r_n[s[i]]
+#             i += 1
+#         return total
+
+
 class Solution(object):
-    def romanToInt(self, s):
+    def removeDuplicates(self, nums):
         """
-        :type s: str
+        :type nums: List[int]
         :rtype: int
         """
-        r_n = {
-            'I': 1,
-            'V': 5,
-            'X': 10,
-            'L': 50,
-            'C': 100,
-            'D': 500,
-            'M': 1000
-        }
-        l = len(s)
-        total = 0
-        i = 0
-        while i < l:
-            if i < l-1 and r_n[s[i]] < r_n[s[i+1]]:
-                total += r_n[s[i+1]] - r_n[s[i]]
-                i += 1
-            else:
-                total += r_n[s[i]]
-            i += 1
-        return total
