@@ -2258,13 +2258,21 @@
 #         return res
 
 
+# class Solution(object):
+#     def isPalindrome(self, x):
+#         """
+#         :type x: int
+#         :rtype: bool
+#         """
+#         x = str(x)
+#         y = [x[i] for i in range(len(x))]
+#         y.reverse()
+#         return x == ''.join(y)
+
+
 class Solution(object):
-    def isPalindrome(self, x):
+    def longestCommonPrefix(self, strs):
         """
-        :type x: int
-        :rtype: bool
+        :type strs: List[str]
+        :rtype: str
         """
-        x = str(x)
-        y = [x[i] for i in range(len(x))]
-        y.reverse()
-        return x == ''.join(y)
