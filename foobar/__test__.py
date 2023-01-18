@@ -2270,17 +2270,26 @@
 #         return x == ''.join(y)
 
 
+# class Solution(object):
+#     def longestCommonPrefix(self, strs):
+#         """
+#         :type strs: List[str]
+#         :rtype: str
+#         """
+#         end = len(strs[0])
+#         for i in range(1, len(strs)):
+#             end = min(end, len(strs[i]))
+#             for j in range(end):
+#                 if strs[0][j] != strs[i][j]:
+#                     end = j
+#                     break
+#         return strs[0][:end]
+
+
 class Solution(object):
-    def longestCommonPrefix(self, strs):
+    def multiply(self, num1, num2):
         """
-        :type strs: List[str]
+        :type num1: str
+        :type num2: str
         :rtype: str
         """
-        end = len(strs[0])
-        for i in range(1, len(strs)):
-            end = min(end, len(strs[i]))
-            for j in range(min(len(strs[i]), end)):
-                if strs[0][j] != strs[i][j]:
-                    end = j
-                    break
-        return strs[0][:end]
