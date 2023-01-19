@@ -2338,3 +2338,11 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
+        i = 0
+        ns = set()
+        for num in nums:
+            if num not in ns:
+                nums[i] = num
+                ns.add(num)
+                i += 1
+        return len(ns)
