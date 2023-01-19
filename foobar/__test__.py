@@ -2332,17 +2332,26 @@
 #         return total
 
 
+# class Solution(object):
+#     def removeDuplicates(self, nums):
+#         """
+#         :type nums: List[int]
+#         :rtype: int
+#         """
+#         i = 0
+#         ns = set()
+#         for num in nums:
+#             if num not in ns:
+#                 nums[i] = num
+#                 ns.add(num)
+#                 i += 1
+#         return len(ns)
+
+
 class Solution(object):
-    def removeDuplicates(self, nums):
+    def removeNthFromEnd(self, head, n):
         """
-        :type nums: List[int]
-        :rtype: int
+        :type head: ListNode
+        :type n: int
+        :rtype: ListNode
         """
-        i = 0
-        ns = set()
-        for num in nums:
-            if num not in ns:
-                nums[i] = num
-                ns.add(num)
-                i += 1
-        return len(ns)
