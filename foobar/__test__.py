@@ -2397,3 +2397,10 @@ class Solution(object):
         :type val: int
         :rtype: int
         """
+        vals = 0
+        for i in range(len(nums)):
+            if nums[i] == val:
+                nums[i] = float('inf')
+                vals += 1
+        nums.sort()
+        return len(nums) - vals
