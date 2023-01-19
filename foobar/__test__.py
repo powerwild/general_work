@@ -2355,3 +2355,16 @@ class Solution(object):
         :type n: int
         :rtype: ListNode
         """
+        if n == 1 and not head.next:
+            return None
+        nodes = []
+        while head:
+            nodes.append(head)
+            head = head.next
+        nodes.pop(len(nodes)-n)
+        l = len(nodes)
+        for i in range(l):
+            if i < l - 1:
+                nodes[i].next = nodes[i+1]
+        nodes[l-1].next = None
+        return nodes[0]
