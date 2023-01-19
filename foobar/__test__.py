@@ -2348,23 +2348,31 @@
 #         return len(ns)
 
 
+# class Solution(object):
+#     def removeNthFromEnd(self, head, n):
+#         """
+#         :type head: ListNode
+#         :type n: int
+#         :rtype: ListNode
+#         """
+#         if n == 1 and not head.next:
+#             return None
+#         nodes = []
+#         while head:
+#             nodes.append(head)
+#             head = head.next
+#         nodes.pop(len(nodes)-n)
+#         l = len(nodes)
+#         for i in range(l):
+#             if i < l - 1:
+#                 nodes[i].next = nodes[i+1]
+#         nodes[l-1].next = None
+#         return nodes[0]
+
+
 class Solution(object):
-    def removeNthFromEnd(self, head, n):
+    def isPalindrome(self, head):
         """
         :type head: ListNode
-        :type n: int
-        :rtype: ListNode
+        :rtype: bool
         """
-        if n == 1 and not head.next:
-            return None
-        nodes = []
-        while head:
-            nodes.append(head)
-            head = head.next
-        nodes.pop(len(nodes)-n)
-        l = len(nodes)
-        for i in range(l):
-            if i < l - 1:
-                nodes[i].next = nodes[i+1]
-        nodes[l-1].next = None
-        return nodes[0]
