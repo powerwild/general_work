@@ -2376,3 +2376,15 @@ class Solution(object):
         :type head: ListNode
         :rtype: bool
         """
+        nodes = []
+        while head:
+            nodes.append(head)
+            head = head.next
+        j = len(nodes) - 1
+        i = 0
+        while i <= j:
+            if nodes[i].val != nodes[j].val:
+                return False
+            j -= 1
+            i += 1
+        return True
