@@ -2370,21 +2370,30 @@
 #         return nodes[0]
 
 
+# class Solution(object):
+#     def isPalindrome(self, head):
+#         """
+#         :type head: ListNode
+#         :rtype: bool
+#         """
+#         nodes = []
+#         while head:
+#             nodes.append(head)
+#             head = head.next
+#         j = len(nodes) - 1
+#         i = 0
+#         while i <= j:
+#             if nodes[i].val != nodes[j].val:
+#                 return False
+#             j -= 1
+#             i += 1
+#         return True
+
+
 class Solution(object):
-    def isPalindrome(self, head):
+    def removeElement(self, nums, val):
         """
-        :type head: ListNode
-        :rtype: bool
+        :type nums: List[int]
+        :type val: int
+        :rtype: int
         """
-        nodes = []
-        while head:
-            nodes.append(head)
-            head = head.next
-        j = len(nodes) - 1
-        i = 0
-        while i <= j:
-            if nodes[i].val != nodes[j].val:
-                return False
-            j -= 1
-            i += 1
-        return True
