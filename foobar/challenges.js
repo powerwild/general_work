@@ -775,6 +775,24 @@
 // }
 
 
+function isWeak(str, strs) {
+    if (str.length < 6) return true;
+    if (str === str.toLowerCase()) return true;
+    if (str === str.toUpperCase()) return true;
+    // if ((new RegExp('^[^a-z]*$')).test(str)) return true;
+    // if ((new RegExp('^[^A-Z]*$')).test(str)) return true;
+    if ((new RegExp('^\d+$')).test(str)) return true;
+    for (let s of strs) {
+        if (s === str) return true;
+        if ((new RegExp(`${s}+`)).test(str)) return true;
+    }
+    return false;
+}
 function getPasswordStrength(passwords, common_words) {
-
+    const res = [];
+    for (let pass of passwords) {
+        if (isWeak(pass, common_words)) res.push('weak');
+        else res.push('strong');
+    }
+    return res;
 }
