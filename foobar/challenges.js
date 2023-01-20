@@ -754,22 +754,27 @@
 // }
 
 
-function commonSubstring(a, b) {
-    for (let index in a) {
-        let chars = new Set();
-        for (let i in a[index]) {
-            chars.add(a[index][i]);
-        }
-        a[index] = chars;
-    }
-    for (let index in b) {
-        let hasCom = false;
-        for (let char of b[index]) {
-            if (a[index].has(char)) {
-                hasCom = true;
-                break;
-            }
-        }
-        console.log(hasCom ? 'YES' : 'NO');
-    }
+// function commonSubstring(a, b) {
+//     for (let index in a) {
+//         let chars = new Set();
+//         for (let i in a[index]) {
+//             chars.add(a[index][i]);
+//         }
+//         a[index] = chars;
+//     }
+//     for (let index in b) {
+//         let hasCom = false;
+//         for (let char of b[index]) {
+//             if (a[index].has(char)) {
+//                 hasCom = true;
+//                 break;
+//             }
+//         }
+//         console.log(hasCom ? 'YES' : 'NO');
+//     }
+// }
+
+
+function getPasswordStrength(passwords, common_words) {
+
 }
