@@ -2390,17 +2390,25 @@
 #         return True
 
 
+# class Solution(object):
+#     def removeElement(self, nums, val):
+#         """
+#         :type nums: List[int]
+#         :type val: int
+#         :rtype: int
+#         """
+#         vals = 0
+#         for i in range(len(nums)):
+#             if nums[i] == val:
+#                 nums[i] = float('inf')
+#                 vals += 1
+#         nums.sort()
+#         return len(nums) - vals
+
+
 class Solution(object):
-    def removeElement(self, nums, val):
+    def oddEvenList(self, head):
         """
-        :type nums: List[int]
-        :type val: int
-        :rtype: int
+        :type head: ListNode
+        :rtype: ListNode
         """
-        vals = 0
-        for i in range(len(nums)):
-            if nums[i] == val:
-                nums[i] = float('inf')
-                vals += 1
-        nums.sort()
-        return len(nums) - vals
