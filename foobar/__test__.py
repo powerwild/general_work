@@ -2406,24 +2406,32 @@
 #         return len(nums) - vals
 
 
+# class Solution(object):
+#     def oddEvenList(self, head):
+#         """
+#         :type head: ListNode
+#         :rtype: ListNode
+#         """
+#         if not head or not head.next:
+#             return head
+#         even_head = head.next
+#         odd = head
+#         even = even_head
+#         while odd.next and even.next:
+#             odd.next = even.next
+#             odd = odd.next
+#             if odd:
+#                 even.next = odd.next
+#             even = even.next
+#         odd.next = even_head
+#         if even:
+#             even.next = None
+#         return head
+
+
 class Solution(object):
-    def oddEvenList(self, head):
+    def sortList(self, head):
         """
         :type head: ListNode
         :rtype: ListNode
         """
-        if not head or not head.next:
-            return head
-        even_head = head.next
-        odd = head
-        even = even_head
-        while odd.next and even.next:
-            odd.next = even.next
-            odd = odd.next
-            if odd:
-                even.next = odd.next
-            even = even.next
-        odd.next = even_head
-        if even:
-            even.next = None
-        return head
