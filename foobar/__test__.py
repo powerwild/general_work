@@ -2435,3 +2435,16 @@ class Solution(object):
         :type head: ListNode
         :rtype: ListNode
         """
+        if not head or not head.next:
+            return head
+        vals = []
+        curr = head
+        while curr:
+            vals.append(curr.val)
+            curr = curr.next
+        vals.sort()
+        curr = head
+        for val in vals:
+            curr.val = val
+            curr = curr.next
+        return head
