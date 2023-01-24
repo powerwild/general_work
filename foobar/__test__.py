@@ -2466,10 +2466,18 @@
 #         return False
 
 
+# class Solution(object):
+#     def search(self, nums, target):
+#         try:
+#             i = nums.index(target)
+#         except ValueError:
+#             return -1
+#         return i
+
+
 class Solution(object):
-    def search(self, nums, target):
-        try:
-            i = nums.index(target)
-        except ValueError:
-            return -1
-        return i
+    def lengthOfLastWord(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
