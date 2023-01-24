@@ -2503,11 +2503,19 @@
 #         return digits
 
 
+# class Solution(object):
+#     def addBinary(self, a, b):
+#         """
+#         :type a: str
+#         :type b: str
+#         :rtype: str
+#         """
+#         return bin(int(a, base=2)+int(b, base=2))[2:]
+
+
 class Solution(object):
-    def addBinary(self, a, b):
+    def mySqrt(self, x):
         """
-        :type a: str
-        :type b: str
-        :rtype: str
+        :type x: int
+        :rtype: int
         """
-        return bin(int(a, base=2)+int(b, base=2))[2:]
