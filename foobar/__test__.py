@@ -2475,11 +2475,20 @@
 #         return i
 
 
+# class Solution(object):
+#     def lengthOfLastWord(self, s):
+#         """
+#         :type s: str
+#         :rtype: int
+#         """
+#         s = s.strip()
+#         return len(s.split()[-1])
+
+
 class Solution(object):
-    def lengthOfLastWord(self, s):
+    def plusOne(self, digits):
         """
-        :type s: str
-        :rtype: int
+        :type digits: List[int]
+        :rtype: List[int]
         """
-        s = s.strip()
-        return len(s.split()[-1])
+
