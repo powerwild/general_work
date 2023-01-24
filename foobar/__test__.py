@@ -2457,4 +2457,10 @@ class Solution(object):
         :type target: int
         :rtype: bool
         """
-        
+        i = 0
+        while i < len(matrix) and matrix[i][0] <= target:
+            i += 1
+        for num in matrix[i-1]:
+            if num == target:
+                return True
+        return False
