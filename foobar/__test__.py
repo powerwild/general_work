@@ -2429,22 +2429,32 @@
 #         return head
 
 
+# class Solution(object):
+#     def sortList(self, head):
+#         """
+#         :type head: ListNode
+#         :rtype: ListNode
+#         """
+#         if not head or not head.next:
+#             return head
+#         vals = []
+#         curr = head
+#         while curr:
+#             vals.append(curr.val)
+#             curr = curr.next
+#         vals.sort()
+#         curr = head
+#         for val in vals:
+#             curr.val = val
+#             curr = curr.next
+#         return head
+
+
 class Solution(object):
-    def sortList(self, head):
+    def searchMatrix(self, matrix, target):
         """
-        :type head: ListNode
-        :rtype: ListNode
+        :type matrix: List[List[int]]
+        :type target: int
+        :rtype: bool
         """
-        if not head or not head.next:
-            return head
-        vals = []
-        curr = head
-        while curr:
-            vals.append(curr.val)
-            curr = curr.next
-        vals.sort()
-        curr = head
-        for val in vals:
-            curr.val = val
-            curr = curr.next
-        return head
+        
