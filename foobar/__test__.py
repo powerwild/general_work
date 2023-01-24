@@ -2450,17 +2450,21 @@
 #         return head
 
 
+# class Solution(object):
+#     def searchMatrix(self, matrix, target):
+#         """
+#         :type matrix: List[List[int]]
+#         :type target: int
+#         :rtype: bool
+#         """
+#         i = 0
+#         while i < len(matrix) and matrix[i][0] <= target:
+#             i += 1
+#         for num in matrix[i-1]:
+#             if num == target:
+#                 return True
+#         return False
+
+
 class Solution(object):
-    def searchMatrix(self, matrix, target):
-        """
-        :type matrix: List[List[int]]
-        :type target: int
-        :rtype: bool
-        """
-        i = 0
-        while i < len(matrix) and matrix[i][0] <= target:
-            i += 1
-        for num in matrix[i-1]:
-            if num == target:
-                return True
-        return False
+    def search(self, nums, target):
