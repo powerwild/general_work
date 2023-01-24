@@ -2468,3 +2468,8 @@
 
 class Solution(object):
     def search(self, nums, target):
+        try:
+            i = nums.index(target)
+        except ValueError:
+            return -1
+        return i
