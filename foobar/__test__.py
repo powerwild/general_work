@@ -2519,3 +2519,16 @@ class Solution(object):
         :type x: int
         :rtype: int
         """
+        if x == 1:
+            return 1
+        l = 0
+        r = x
+        while l <= r:
+            m = (l + r) // 2
+            if m*m > x:
+                r = m - 1
+            elif m*m < x:
+                l = m + 1
+            else:
+                return m
+        return r
