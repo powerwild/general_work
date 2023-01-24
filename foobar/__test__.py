@@ -2485,19 +2485,28 @@
 #         return len(s.split()[-1])
 
 
+# class Solution(object):
+#     def plusOne(self, digits):
+#         """
+#         :type digits: List[int]
+#         :rtype: List[int]
+#         """
+#         i = len(digits) - 1
+#         digits[i] += 1
+#         while i >= 0 and digits[i] > 9:
+#             digits[i] = 0
+#             if i > 0:
+#                 digits[i-1] += 1
+#             else:
+#                 digits = [1] + digits
+#             i -= 1
+#         return digits
+
+
 class Solution(object):
-    def plusOne(self, digits):
+    def addBinary(self, a, b):
         """
-        :type digits: List[int]
-        :rtype: List[int]
+        :type a: str
+        :type b: str
+        :rtype: str
         """
-        i = len(digits) - 1
-        digits[i] += 1
-        while i >= 0 and digits[i] > 9:
-            digits[i] = 0
-            if i > 0:
-                digits[i-1] += 1
-            else:
-                digits = [1] + digits
-            i -= 1
-        return digits
