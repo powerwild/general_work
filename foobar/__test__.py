@@ -2513,22 +2513,39 @@
 #         return bin(int(a, base=2)+int(b, base=2))[2:]
 
 
+# class Solution(object):
+#     def mySqrt(self, x):
+#         """
+#         :type x: int
+#         :rtype: int
+#         """
+#         if x == 1:
+#             return 1
+#         l = 0
+#         r = x
+#         while l <= r:
+#             m = (l + r) // 2
+#             if m*m > x:
+#                 r = m - 1
+#             elif m*m < x:
+#                 l = m + 1
+#             else:
+#                 return m
+#         return r
+
+
 class Solution(object):
-    def mySqrt(self, x):
+    def inorderTraversal(self, root):
         """
-        :type x: int
-        :rtype: int
+        :type root: TreeNode
+        :rtype: List[int]
         """
-        if x == 1:
-            return 1
-        l = 0
-        r = x
-        while l <= r:
-            m = (l + r) // 2
-            if m*m > x:
-                r = m - 1
-            elif m*m < x:
-                l = m + 1
-            else:
-                return m
-        return r
+        res = []
+        def traverse(n, r):
+            if not n:
+                return r
+            traverse(n.left, r)
+            r.append(n.val)
+            traverse(n.right, r)
+            return r
+        return traverse(root, res)
