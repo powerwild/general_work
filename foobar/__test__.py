@@ -2534,18 +2534,26 @@
 #         return r
 
 
+# class Solution(object):
+#     def inorderTraversal(self, root):
+#         """
+#         :type root: TreeNode
+#         :rtype: List[int]
+#         """
+#         res = []
+#         def traverse(n, r):
+#             if not n:
+#                 return r
+#             traverse(n.left, r)
+#             r.append(n.val)
+#             traverse(n.right, r)
+#             return r
+#         return traverse(root, res)
+
+
 class Solution(object):
-    def inorderTraversal(self, root):
+    def isSymmetric(self, root):
         """
         :type root: TreeNode
-        :rtype: List[int]
+        :rtype: bool
         """
-        res = []
-        def traverse(n, r):
-            if not n:
-                return r
-            traverse(n.left, r)
-            r.append(n.val)
-            traverse(n.right, r)
-            return r
-        return traverse(root, res)
