@@ -818,8 +818,23 @@
 
 
 function ArrayChallenge(strArr) {
-
-    // code goes here
-    return strArr;
-
+    function getMin(curr, val) {
+        return Math.min(curr, val);
+    }
+    function getMax(curr, val) {
+        return Math.max(curr, val);
+    }
+    let min_x = Infinity;
+    let max_x = -Infinity;
+    let min_y = Infinity;
+    let max_y = -Infinity;
+    for (let str of strArr) {
+        let x = Number(str[1]);
+        let y = Number(str[3]);
+        min_x = getMin(min_x, x);
+        max_x = getMax(max_x, x);
+        min_y = getMin(min_y, y);
+        max_y = getMax(max_y, y);
+    }
+    return (max_x - min_x) * (max_y - min_y);
   }
