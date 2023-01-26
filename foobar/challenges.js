@@ -798,20 +798,28 @@
 // }
 
 
-class OrderedStream {
-    constructor(n) {
-        this.stream = new Array(n).fill(null);
-        this.beg = 0;
-    }
+// class OrderedStream {
+//     constructor(n) {
+//         this.stream = new Array(n).fill(null);
+//         this.beg = 0;
+//     }
 
-    insert(idKey, value) {
-        this.stream[idKey-1] = value;
-        const res = [];
-        while (this.beg < this.stream.length) {
-            if (this.stream[this.beg] === null) break;
-            res.push(this.stream[this.beg]);
-            ++this.beg;
-        }
-        return res;
-    }
-}
+//     insert(idKey, value) {
+//         this.stream[idKey-1] = value;
+//         const res = [];
+//         while (this.beg < this.stream.length) {
+//             if (this.stream[this.beg] === null) break;
+//             res.push(this.stream[this.beg]);
+//             ++this.beg;
+//         }
+//         return res;
+//     }
+// }
+
+
+function ArrayChallenge(strArr) {
+
+    // code goes here
+    return strArr;
+
+  }

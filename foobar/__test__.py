@@ -2568,3 +2568,4 @@ class Solution(object):
                 return False
             return check(l.left, r.right) and check(l.right, r.left)
         return check(root, root)
+
