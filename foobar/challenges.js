@@ -840,17 +840,22 @@
 //   }
 
 
-function maxDifference(px) {
-    let diff = -1;
-    let min = px[0];
-    for (let i = 1; i < px.length; ++i) {
-        let num = px[i];
-        if (num > min) {
-            diff = Math.max(diff, num - min);
-        }
-        if (num < min) {
-            min = num;
-        }
-    }
-    return diff;
+// function maxDifference(px) {
+//     let diff = -1;
+//     let min = px[0];
+//     for (let i = 1; i < px.length; ++i) {
+//         let num = px[i];
+//         if (num > min) {
+//             diff = Math.max(diff, num - min);
+//         }
+//         if (num < min) {
+//             min = num;
+//         }
+//     }
+//     return diff;
+// }
+
+
+function plus_one(digits) {
+
 }
