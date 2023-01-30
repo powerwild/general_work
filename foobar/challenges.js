@@ -838,3 +838,8 @@
 //     }
 //     return (max_x - min_x) * (max_y - min_y);
 //   }
+
+
+function maxDifference(px) {
+
+}
