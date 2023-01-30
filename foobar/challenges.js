@@ -873,5 +873,18 @@
 
 
 function reverse_parentheses(s) {
-
+    const stack = [];
+    for (let char in s) {
+        if (char === ')') {
+            let temp = '';
+            while (stack[stack.length-1] !=='(') {
+                temp = temp + stack.pop();
+            }
+            stack.pop();
+            for (let charac in temp) {
+                stack.push(charac);
+            }
+        } else stack.push(char);
+    }
+    return stack.join('');
 }
