@@ -1489,5 +1489,17 @@ var groupAnagrams = function(strs) {
 
 
 function updateTimes(signalOne, signalTwo) {
-
+    const duration = signalOne.length < signalTwo.length ? signalOne.length : signalTwo.length;
+    let maxFreq = -Infinity;
+    let updates = 0;
+    for (let i = 0; i < duration; ++i) {
+        const s1 = signalOne[i];
+        if (s1 === signalTwo[i]) {
+            if (s1 > maxFreq) {
+                maxFreq = s1;
+                updates += 1;
+            }
+        }
+    }
+    return updates;
 }
