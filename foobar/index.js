@@ -1525,5 +1525,14 @@ var groupAnagrams = function(strs) {
 
 
 function can_jump(nums) {
-
+    const l = nums.length - 1;
+    for (let i = 0; i < l; ++i) {
+        let index = i;
+        while (index < l) {
+            if (nums[index] === 0) break;
+            index += nums[index];
+        }
+        if (index === l) return true;
+    }
+    return false;
 }
