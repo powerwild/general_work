@@ -1519,7 +1519,7 @@ var groupAnagrams = function(strs) {
 //             if (pattern_val[key] !== word) return false;
 //         }
 //     }
-//     if ((Object.keys()).length !== (new Set(s)).size) return false;
+//     if ((Object.keys(pattern_val)).length !== (new Set(s)).size) return false;
 //     return true;
 // }
 

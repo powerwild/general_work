@@ -2551,21 +2551,28 @@
 #         return traverse(root, res)
 
 
+# class Solution(object):
+#     def isSymmetric(self, root):
+#         """
+#         :type root: TreeNode
+#         :rtype: bool
+#         """
+#         if not root:
+#             return True
+#         def check(l, r):
+#             if not l and not r:
+#                 return True
+#             if not l or not r:
+#                 return False
+#             if l.val != r.val:
+#                 return False
+#             return check(l.left, r.right) and check(l.right, r.left)
+#         return check(root, root)
+
+
 class Solution(object):
-    def isSymmetric(self, root):
+    def rightSideView(self, root):
         """
         :type root: TreeNode
-        :rtype: bool
+        :rtype: List[int]
         """
-        if not root:
-            return True
-        def check(l, r):
-            if not l and not r:
-                return True
-            if not l or not r:
-                return False
-            if l.val != r.val:
-                return False
-            return check(l.left, r.right) and check(l.right, r.left)
-        return check(root, root)
-
