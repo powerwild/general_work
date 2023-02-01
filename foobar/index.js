@@ -1506,5 +1506,19 @@ var groupAnagrams = function(strs) {
 
 
 function word_pattern(pattern, s) {
-
+    s = s.split(' ');
+    if (pattern.length !== s.length) return false;
+    const pattern_val = {};
+    for (let i = 0; i < pattern.length; ++i) {
+        const word = s[i];
+        const key = pattern[i];
+        if (word.trim() === '') return false;
+        if (!pattern_val[key]) {
+            pattern_val[key] = word;
+        } else {
+            if (pattern_val[key] !== word) return false;
+        }
+    }
+    if ((Object.keys()).length !== (new Set(s)).size) return false;
+    return true;
 }
