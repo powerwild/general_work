@@ -1488,4 +1488,6 @@ var groupAnagrams = function(strs) {
 // console.log(largestCountValue([2,3,1]))
 
 
+function updateTimes(signalOne, signalTwo) {
 
+}
