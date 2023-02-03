@@ -2593,46 +2593,72 @@
 #         return res
 
 
-class MinStack(object):
+# class MinStack(object):
+
+#     def __init__(self):
+#         self.stack = []
+#         self.min_i = None
+
+
+#     def push(self, val):
+#         """
+#         :type val: int
+#         :rtype: None
+#         """
+#         self.stack.append(val)
+#         if self.min_i == None:
+#             self.min_i = 0
+#         elif val < self.stack[self.min_i]:
+#             self.min_i = len(self.stack)-1
+
+
+#     def pop(self):
+#         """
+#         :rtype: None
+#         """
+#         l = len(self.stack)-1
+#         self.stack.pop()
+#         if len(self.stack) and self.min_i == l:
+#             self.min_i = self.stack.index(min(self.stack))
+#         if not len(self.stack):
+#             self.min_i = None
+
+
+#     def top(self):
+#         """
+#         :rtype: int
+#         """
+#         return self.stack[-1]
+
+
+#     def getMin(self):
+#         """
+#         :rtype: int
+#         """
+#         return self.stack[self.min_i]
+
+
+class Trie(object):
 
     def __init__(self):
-        self.stack = []
-        self.min_i = None
+        self.trie = {}
 
-
-    def push(self, val):
+    def insert(self, word):
         """
-        :type val: int
+        :type word: str
         :rtype: None
         """
-        self.stack.append(val)
-        if self.min_i == None:
-            self.min_i = 0
-        elif val < self.stack[self.min_i]:
-            self.min_i = len(self.stack)-1
 
 
-    def pop(self):
+    def search(self, word):
         """
-        :rtype: None
+        :type word: str
+        :rtype: bool
         """
-        l = len(self.stack)-1
-        self.stack.pop()
-        if len(self.stack) and self.min_i == l:
-            self.min_i = self.stack.index(min(self.stack))
-        if not len(self.stack):
-            self.min_i = None
 
 
-    def top(self):
+    def startsWith(self, prefix):
         """
-        :rtype: int
+        :type prefix: str
+        :rtype: bool
         """
-        return self.stack[-1]
-
-
-    def getMin(self):
-        """
-        :rtype: int
-        """
-        return self.stack[self.min_i]
