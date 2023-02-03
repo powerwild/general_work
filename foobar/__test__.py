@@ -2748,3 +2748,16 @@ class Solution(object):
         :type asteroids: List[int]
         :rtype: List[int]
         """
+        res = []
+        for ast in asteroids:
+            while len(res) and ast < 0 < res[-1]:
+                val = ast * -1
+                if res[-1] < val:
+                    res.pop()
+                    continue
+                elif res[-1] == val:
+                    res.pop()
+                break
+            else:
+                res.append(ast)
+        return res
