@@ -2638,52 +2638,61 @@
 #         return self.stack[self.min_i]
 
 
-class Trie(object):
+# class Trie(object):
 
-    def __init__(self):
-        self.trie = {}
+#     def __init__(self):
+#         self.trie = {}
 
-    def insert(self, word):
-        """
-        :type word: str
-        :rtype: None
-        """
-        l = len(word)
-        curr = self.trie
-        for i in range(l):
-            let = word[i]
-            if let in curr:
-                curr = curr[let]
-            else:
-                curr[let] = {"is_word": False}
-                curr = curr[let]
-            if i == l-1:
-                curr['is_word'] = True
+#     def insert(self, word):
+#         """
+#         :type word: str
+#         :rtype: None
+#         """
+#         l = len(word)
+#         curr = self.trie
+#         for i in range(l):
+#             let = word[i]
+#             if let in curr:
+#                 curr = curr[let]
+#             else:
+#                 curr[let] = {"is_word": False}
+#                 curr = curr[let]
+#             if i == l-1:
+#                 curr['is_word'] = True
 
 
-    def search(self, word):
-        """
-        :type word: str
-        :rtype: bool
-        """
-        l = len(word)
-        curr = self.trie
-        for i in range(l):
-            let = word[i]
-            if let not in curr:
-                return False
-            curr = curr[let]
-            if i == l-1:
-                return curr['is_word']
+#     def search(self, word):
+#         """
+#         :type word: str
+#         :rtype: bool
+#         """
+#         l = len(word)
+#         curr = self.trie
+#         for i in range(l):
+#             let = word[i]
+#             if let not in curr:
+#                 return False
+#             curr = curr[let]
+#             if i == l-1:
+#                 return curr['is_word']
 
-    def startsWith(self, prefix):
+#     def startsWith(self, prefix):
+#         """
+#         :type prefix: str
+#         :rtype: bool
+#         """
+#         curr = self.trie
+#         for let in prefix:
+#             if let not in curr:
+#                 return False
+#             curr = curr[let]
+#         return True
+
+
+class Solution(object):
+    def insert(self, intervals, newInterval):
         """
-        :type prefix: str
-        :rtype: bool
+        :type intervals: List[List[int]]
+        :type newInterval: List[int]
+        :rtype: List[List[int]]
         """
-        curr = self.trie
-        for let in prefix:
-            if let not in curr:
-                return False
-            curr = curr[let]
-        return True
