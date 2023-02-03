@@ -2716,27 +2716,35 @@
 #         return res
 
 
+# class Solution(object):
+#     def merge(self, intervals):
+#         """
+#         :type intervals: List[List[int]]
+#         :rtype: List[List[int]]
+#         """
+#         if not len(intervals):
+#             return intervals
+#         intervals.sort(key=lambda x: x[0])
+#         res = []
+#         [s, e] = intervals[0]
+#         for i in range(1, len(intervals)):
+#             [s2, e2] = intervals[i]
+#             if s > e2:
+#                 res.append([s2, e2])
+#             elif e < s2:
+#                 res.append([s, e])
+#                 s = s2
+#                 e = e2
+#             else:
+#                 s = min(s, s2)
+#                 e = max(e, e2)
+#         res.append([s, e])
+#         return res
+
+
 class Solution(object):
-    def merge(self, intervals):
+    def asteroidCollision(self, asteroids):
         """
-        :type intervals: List[List[int]]
-        :rtype: List[List[int]]
+        :type asteroids: List[int]
+        :rtype: List[int]
         """
-        if not len(intervals):
-            return intervals
-        intervals.sort(key=lambda x: x[0])
-        res = []
-        [s, e] = intervals[0]
-        for i in range(1, len(intervals)):
-            [s2, e2] = intervals[i]
-            if s > e2:
-                res.append([s2, e2])
-            elif e < s2:
-                res.append([s, e])
-                s = s2
-                e = e2
-            else:
-                s = min(s, s2)
-                e = max(e, e2)
-        res.append([s, e])
-        return res
