@@ -2576,3 +2576,18 @@ class Solution(object):
         :type root: TreeNode
         :rtype: List[int]
         """
+        stack = [[root]]
+        res = []
+        while len(stack):
+            level = stack.pop()
+            if level[0] == None: break
+            res.append(level[0].val)
+            new_level = []
+            for node in level:
+                if node.right:
+                    new_level.append(node.right)
+                if node.left:
+                    new_level.append(node.left)
+            if len(new_level):
+                stack.append(new_level)
+        return res
