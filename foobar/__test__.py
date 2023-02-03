@@ -2570,24 +2570,55 @@
 #         return check(root, root)
 
 
-class Solution(object):
-    def rightSideView(self, root):
+# class Solution(object):
+#     def rightSideView(self, root):
+#         """
+#         :type root: TreeNode
+#         :rtype: List[int]
+#         """
+#         stack = [[root]]
+#         res = []
+#         while len(stack):
+#             level = stack.pop()
+#             if level[0] == None: break
+#             res.append(level[0].val)
+#             new_level = []
+#             for node in level:
+#                 if node.right:
+#                     new_level.append(node.right)
+#                 if node.left:
+#                     new_level.append(node.left)
+#             if len(new_level):
+#                 stack.append(new_level)
+#         return res
+
+
+class MinStack(object):
+
+    def __init__(self):
+
+
+    def push(self, val):
         """
-        :type root: TreeNode
-        :rtype: List[int]
+        :type val: int
+        :rtype: None
         """
-        stack = [[root]]
-        res = []
-        while len(stack):
-            level = stack.pop()
-            if level[0] == None: break
-            res.append(level[0].val)
-            new_level = []
-            for node in level:
-                if node.right:
-                    new_level.append(node.right)
-                if node.left:
-                    new_level.append(node.left)
-            if len(new_level):
-                stack.append(new_level)
-        return res
+
+
+    def pop(self):
+        """
+        :rtype: None
+        """
+
+
+    def top(self):
+        """
+        :rtype: int
+        """
+
+
+    def getMin(self):
+        """
+        :rtype: int
+        """
+        
