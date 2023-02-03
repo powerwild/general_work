@@ -2696,3 +2696,21 @@ class Solution(object):
         :type newInterval: List[int]
         :rtype: List[List[int]]
         """
+        if not len(intervals):
+            return [newInterval]
+        res = []
+        [s, e] = newInterval
+        for i in range(len(intervals)):
+            curr = intervals[i]
+            if curr[1] < s:
+                res.append(curr)
+            elif curr[0] > e:
+                res.append([s, e])
+                res.append(curr)
+                s = float('inf')
+            else:
+                s = min(s, curr[0])
+                e = max(e, curr[1])
+        if s != float('inf'):
+            res.append([s, e])
+        return res
