@@ -2648,6 +2648,17 @@ class Trie(object):
         :type word: str
         :rtype: None
         """
+        l = len(word)
+        curr = self.trie
+        for i in range(l):
+            let = word[i]
+            if let in curr:
+                curr = curr[let]
+            else:
+                curr[let] = {"is_word": False}
+                curr = curr[let]
+            if i == l-1:
+                curr['is_word'] = True
 
 
     def search(self, word):
@@ -2655,10 +2666,24 @@ class Trie(object):
         :type word: str
         :rtype: bool
         """
-
+        l = len(word)
+        curr = self.trie
+        for i in range(l):
+            let = word[i]
+            if let not in curr:
+                return False
+            curr = curr[let]
+            if i == l-1:
+                return curr['is_word']
 
     def startsWith(self, prefix):
         """
         :type prefix: str
         :rtype: bool
         """
+        curr = self.trie
+        for let in prefix:
+            if let not in curr:
+                return False
+            curr = curr[let]
+        return True
