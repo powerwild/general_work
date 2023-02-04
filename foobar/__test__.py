@@ -2852,3 +2852,12 @@ def minDepth(self, root):
         :type root: TreeNode
         :rtype: int
         """
+        if not root:
+            return 0
+        def search(node):
+            if not node:
+                 return float('inf')
+            if not node.left and not node.right:
+                return 1
+            return min(search(node.left), search(node.right)) + 1
+        return search(root)
