@@ -2870,3 +2870,13 @@ class Solution(object):
         :type targetSum: int
         :rtype: bool
         """
+        if not root:
+            return False
+        def search(node, target):
+            if not node:
+                return False
+            if not node.left and not node.right and target - node.val == 0:
+                return True
+            t = target - node.val
+            return search(node.left, t) or search(node.right, t)
+        return search(root, targetSum)
