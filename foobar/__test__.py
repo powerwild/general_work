@@ -2820,28 +2820,35 @@
 #         return provs + l - len(visited)
 
 
-class Solution(object):
-    def removeStones(self, stones):
+# class Solution(object):
+#     def removeStones(self, stones):
+#         """
+#         :type stones: List[List[int]]
+#         :rtype: int
+#         """
+#         l = len(stones)
+#         if l <= 1:
+#             return 0
+#         def remove(x, y):
+#             connected = []
+#             index = 0
+#             while index < len(stones):
+#                 cx, cy = stones[index]
+#                 if cx == x or cy == y:
+#                     connected.append(stones.pop(index))
+#                 else:
+#                     index += 1
+#             for stone in connected:
+#                 remove(*stone)
+#         res = l
+#         while stones:
+#             remove(*stones.pop())
+#             res -= 1
+#         return res
+
+
+def minDepth(self, root):
         """
-        :type stones: List[List[int]]
+        :type root: TreeNode
         :rtype: int
         """
-        l = len(stones)
-        if l <= 1:
-            return 0
-        def remove(x, y):
-            connected = []
-            index = 0
-            while index < len(stones):
-                cx, cy = stones[index]
-                if cx == x or cy == y:
-                    connected.append(stones.pop(index))
-                else:
-                    index += 1
-            for stone in connected:
-                remove(*stone)
-        res = l
-        while stones:
-            remove(*stones.pop())
-            res -= 1
-        return res
