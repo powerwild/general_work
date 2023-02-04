@@ -2799,3 +2799,22 @@ class Solution(object):
         :type isConnected: List[List[int]]
         :rtype: int
         """
+        if not isConnected or not isConnected[0]:
+            return 0
+        visited = set()
+        def dfs(index):
+            for n in range(len(isConnected[index])):
+                if isConnected[index][n] == 1 and n not in visited:
+                    visited.add(n)
+                    dfs(n)
+        provs = 0
+        l = len(isConnected)
+        for i in range(l):
+            for j in range(i+1, l):
+                if isConnected[i][j] == 1:
+                    if i not in visited and j not in visited:
+                        provs += 1
+                        dfs(j)
+                    visited.add(i)
+                    visited.add(j)
+        return provs + l - len(visited)
