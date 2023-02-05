@@ -2919,23 +2919,31 @@
 #         return res
 
 
+# class Solution(object):
+#     def getRow(self, rowIndex):
+#         """
+#         :type rowIndex: int
+#         :rtype: List[int]
+#         """
+#         if rowIndex == 0:
+#             return [1]
+#         level = [1, 1]
+#         curr_level = 1
+#         while curr_level < rowIndex:
+#             new_level = [1]
+#             l = len(level)
+#             for i in range(l):
+#                 if i < l - 1:
+#                     new_level.append(level[i] + level[i+1])
+#             new_level.append(1)
+#             level = new_level
+#             curr_level += 1
+#         return level
+
+
 class Solution(object):
-    def getRow(self, rowIndex):
+    def singleNumber(self, nums):
         """
-        :type rowIndex: int
-        :rtype: List[int]
+        :type nums: List[int]
+        :rtype: int
         """
-        if rowIndex == 0:
-            return [1]
-        level = [1, 1]
-        curr_level = 1
-        while curr_level < rowIndex:
-            new_level = [1]
-            l = len(level)
-            for i in range(l):
-                if i < l - 1:
-                    new_level.append(level[i] + level[i+1])
-            new_level.append(1)
-            level = new_level
-            curr_level += 1
-        return level
