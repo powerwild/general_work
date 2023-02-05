@@ -2902,18 +2902,26 @@
 #         return res
 
 
+# class Solution(object):
+#     def permute(self, nums):
+#         """
+#         :type nums: List[int]
+#         :rtype: List[List[int]]
+#         """
+#         res = []
+#         def perm_search(numbs, combo):
+#             if not numbs:
+#                 res.append(combo)
+#                 return
+#             for i in range(len(numbs)):
+#                 perm_search(numbs[:i] + numbs[i+1:], combo + [numbs[i]])
+#         perm_search(nums, [])
+#         return res
+
+
 class Solution(object):
-    def permute(self, nums):
+    def getRow(self, rowIndex):
         """
-        :type nums: List[int]
-        :rtype: List[List[int]]
+        :type rowIndex: int
+        :rtype: List[int]
         """
-        res = []
-        def perm_search(numbs, combo):
-            if not numbs:
-                res.append(combo)
-                return
-            for i in range(len(numbs)):
-                perm_search(numbs[:i] + numbs[i+1:], combo + [numbs[i]])
-        perm_search(nums, [])
-        return res
