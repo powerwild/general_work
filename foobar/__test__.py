@@ -2889,3 +2889,14 @@ class Solution(object):
         :type target: int
         :rtype: List[List[int]]
         """
+        res = []
+        def search(nums, t, combo):
+            if t < 0:
+                return
+            if t == 0:
+                res.append(combo)
+                return
+            for i in range(len(nums)):
+                search(nums[i:], t - nums[i], combo + [nums[i]])
+        search(candidates, target, [])
+        return res
