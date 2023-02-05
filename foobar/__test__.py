@@ -2947,3 +2947,10 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
+        numbers = set()
+        for n in nums:
+            if n not in numbers:
+                numbers.add(n)
+            else:
+                numbers.remove(n)
+        return numbers.pop()
