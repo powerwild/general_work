@@ -2882,21 +2882,29 @@
 #         return search(root, targetSum)
 
 
+# class Solution(object):
+#     def combinationSum(self, candidates, target):
+#         """
+#         :type candidates: List[int]
+#         :type target: int
+#         :rtype: List[List[int]]
+#         """
+#         res = []
+#         def search(nums, t, combo):
+#             if t < 0:
+#                 return
+#             if t == 0:
+#                 res.append(combo)
+#                 return
+#             for i in range(len(nums)):
+#                 search(nums[i:], t - nums[i], combo + [nums[i]])
+#         search(candidates, target, [])
+#         return res
+
+
 class Solution(object):
-    def combinationSum(self, candidates, target):
+    def permute(self, nums):
         """
-        :type candidates: List[int]
-        :type target: int
+        :type nums: List[int]
         :rtype: List[List[int]]
         """
-        res = []
-        def search(nums, t, combo):
-            if t < 0:
-                return
-            if t == 0:
-                res.append(combo)
-                return
-            for i in range(len(nums)):
-                search(nums[i:], t - nums[i], combo + [nums[i]])
-        search(candidates, target, [])
-        return res
