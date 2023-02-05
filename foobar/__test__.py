@@ -2941,16 +2941,24 @@
 #         return level
 
 
+# class Solution(object):
+#     def singleNumber(self, nums):
+#         """
+#         :type nums: List[int]
+#         :rtype: int
+#         """
+#         numbers = set()
+#         for n in nums:
+#             if n not in numbers:
+#                 numbers.add(n)
+#             else:
+#                 numbers.remove(n)
+#         return numbers.pop()
+
+
 class Solution(object):
-    def singleNumber(self, nums):
+    def preorderTraversal(self, root):
         """
-        :type nums: List[int]
-        :rtype: int
+        :type root: TreeNode
+        :rtype: List[int]
         """
-        numbers = set()
-        for n in nums:
-            if n not in numbers:
-                numbers.add(n)
-            else:
-                numbers.remove(n)
-        return numbers.pop()
