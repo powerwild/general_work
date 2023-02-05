@@ -2863,20 +2863,29 @@
 #         return search(root)
 
 
+# class Solution(object):
+#     def hasPathSum(self, root, targetSum):
+#         """
+#         :type root: TreeNode
+#         :type targetSum: int
+#         :rtype: bool
+#         """
+#         if not root:
+#             return False
+#         def search(node, target):
+#             if not node:
+#                 return False
+#             if not node.left and not node.right and target - node.val == 0:
+#                 return True
+#             t = target - node.val
+#             return search(node.left, t) or search(node.right, t)
+#         return search(root, targetSum)
+
+
 class Solution(object):
-    def hasPathSum(self, root, targetSum):
+    def combinationSum(self, candidates, target):
         """
-        :type root: TreeNode
-        :type targetSum: int
-        :rtype: bool
+        :type candidates: List[int]
+        :type target: int
+        :rtype: List[List[int]]
         """
-        if not root:
-            return False
-        def search(node, target):
-            if not node:
-                return False
-            if not node.left and not node.right and target - node.val == 0:
-                return True
-            t = target - node.val
-            return search(node.left, t) or search(node.right, t)
-        return search(root, targetSum)
