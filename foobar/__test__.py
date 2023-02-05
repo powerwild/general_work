@@ -2925,3 +2925,17 @@ class Solution(object):
         :type rowIndex: int
         :rtype: List[int]
         """
+        if rowIndex == 0:
+            return [1]
+        level = [1, 1]
+        curr_level = 1
+        while curr_level < rowIndex:
+            new_level = [1]
+            l = len(level)
+            for i in range(l):
+                if i < l - 1:
+                    new_level.append(level[i] + level[i+1])
+            new_level.append(1)
+            level = new_level
+            curr_level += 1
+        return level
