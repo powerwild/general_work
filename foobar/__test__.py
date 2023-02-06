@@ -2993,20 +2993,28 @@
 #         return res
 
 
+# class Solution(object):
+#     def getIntersectionNode(self, headA, headB):
+#         """
+#         :type head1, head1: ListNode
+#         :rtype: ListNode
+#         """
+#         nodes = {}
+#         curr = headA
+#         while curr:
+#             nodes[curr] = True
+#             curr = curr.next
+#         curr = headB
+#         while curr:
+#             if curr in nodes:
+#                 return curr
+#             curr = curr.next
+#         return None
+
+
 class Solution(object):
-    def getIntersectionNode(self, headA, headB):
+    def convertToTitle(self, columnNumber):
         """
-        :type head1, head1: ListNode
-        :rtype: ListNode
+        :type columnNumber: int
+        :rtype: str
         """
-        nodes = {}
-        curr = headA
-        while curr:
-            nodes[curr] = True
-            curr = curr.next
-        curr = headB
-        while curr:
-            if curr in nodes:
-                return curr
-            curr = curr.next
-        return None
