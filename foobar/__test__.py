@@ -2976,18 +2976,26 @@
 #         return res
 
 
+# class Solution(object):
+#     def postorderTraversal(self, root):
+#         """
+#         :type root: TreeNode
+#         :rtype: List[int]
+#         """
+#         res = []
+#         def dfs(node):
+#             if not node:
+#                 return
+#             dfs(node.left)
+#             dfs(node.right)
+#             res.append(node.val)
+#         dfs(root)
+#         return res
+
+
 class Solution(object):
-    def postorderTraversal(self, root):
+    def getIntersectionNode(self, headA, headB):
         """
-        :type root: TreeNode
-        :rtype: List[int]
+        :type head1, head1: ListNode
+        :rtype: ListNode
         """
-        res = []
-        def dfs(node):
-            if not node:
-                return
-            dfs(node.left)
-            dfs(node.right)
-            res.append(node.val)
-        dfs(root)
-        return res
