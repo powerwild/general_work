@@ -2999,3 +2999,14 @@ class Solution(object):
         :type head1, head1: ListNode
         :rtype: ListNode
         """
+        nodes = {}
+        curr = headA
+        while curr:
+            nodes[curr] = True
+            curr = curr.next
+        curr = headB
+        while curr:
+            if curr in nodes:
+                return curr
+            curr = curr.next
+        return None
