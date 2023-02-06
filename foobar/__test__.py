@@ -3027,11 +3027,19 @@
 #         return res
 
 
+# class Solution(object):
+#     def majorityElement(self, nums):
+#         """
+#         :type nums: List[int]
+#         :rtype: int
+#         """
+#         nums.sort()
+#         return nums[len(nums)//2]
+
+
 class Solution(object):
-    def majorityElement(self, nums):
+    def titleToNumber(self, columnTitle):
         """
-        :type nums: List[int]
+        :type columnTitle: str
         :rtype: int
         """
-        nums.sort()
-        return nums[len(nums)//2]
