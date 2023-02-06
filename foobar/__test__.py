@@ -3018,3 +3018,10 @@ class Solution(object):
         :type columnNumber: int
         :rtype: str
         """
+        res = ''
+        while columnNumber > 0:
+            columnNumber -= 1
+            remain = columnNumber % 26
+            columnNumber //= 26
+            res = chr(remain+65) + res
+        return res
