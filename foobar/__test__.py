@@ -3043,3 +3043,8 @@ class Solution(object):
         :type columnTitle: str
         :rtype: int
         """
+        res = 0
+        for char in columnTitle:
+            res *= 26
+            res += ord(char) - 64
+        return res
