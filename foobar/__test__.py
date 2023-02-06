@@ -2956,21 +2956,29 @@
 #         return numbers.pop()
 
 
+# class Solution(object):
+#     def preorderTraversal(self, root):
+#         """
+#         :type root: TreeNode
+#         :rtype: List[int]
+#         """
+#         if not root:
+#             return []
+#         stack = [root]
+#         res = []
+#         while len(stack):
+#             curr = stack.pop()
+#             res.append(curr.val)
+#             if curr.right:
+#                 stack.append(curr.right)
+#             if curr.left:
+#                 stack.append(curr.left)
+#         return res
+
+
 class Solution(object):
-    def preorderTraversal(self, root):
+    def postorderTraversal(self, root):
         """
         :type root: TreeNode
         :rtype: List[int]
         """
-        if not root:
-            return []
-        stack = [root]
-        res = []
-        while len(stack):
-            curr = stack.pop()
-            res.append(curr.val)
-            if curr.right:
-                stack.append(curr.right)
-            if curr.left:
-                stack.append(curr.left)
-        return res
