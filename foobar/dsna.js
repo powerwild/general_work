@@ -791,24 +791,29 @@ function findRemainingBalls(direction, strength) {
 // };
 
 
-var MyStack = function() {
-    this.stack = [];
-};
+// var MyStack = function() {
+//     this.stack = [];
+// };
 
-MyStack.prototype.push = function(x) {
-    this.stack.push(x);
-    return;
-};
+// MyStack.prototype.push = function(x) {
+//     this.stack.push(x);
+//     return;
+// };
 
-MyStack.prototype.pop = function() {
-    const el = this.stack.pop();
-    return el;
-};
+// MyStack.prototype.pop = function() {
+//     const el = this.stack.pop();
+//     return el;
+// };
 
-MyStack.prototype.top = function() {
-    return this.stack[this.stack.length - 1];
-};
+// MyStack.prototype.top = function() {
+//     return this.stack[this.stack.length - 1];
+// };
 
-MyStack.prototype.empty = function() {
-    return this.stack.length < 1;
+// MyStack.prototype.empty = function() {
+//     return this.stack.length < 1;
+// };
+
+
+var summaryRanges = function(nums) {
+
 };
