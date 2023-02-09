@@ -765,4 +765,6 @@ function findRemainingBalls(direction, strength) {
 // };
 
 
+var containsNearbyDuplicate = function(nums, k) {
 
+};
