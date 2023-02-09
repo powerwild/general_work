@@ -889,7 +889,18 @@
 //     return stack.join('');
 // }
 
-
+function itAndAdd(o1, o2, res) {
+    for (let key in o1) {
+        if (o2[key] && o1[key] !== o2[key]) res.add(key);
+    }
+    return;
+}
 function getJSONDiff(json1, json2) {
-
+    json1 = JSON.parse(json1);
+    json2 = JSON.parse(json2);
+    let res = new Set();
+    itAndAdd(json1, json2, res);
+    itAndAdd(json2, json1, res);
+    res = [...res];
+    return res.sort();
 }
