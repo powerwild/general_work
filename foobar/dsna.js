@@ -765,27 +765,48 @@ function findRemainingBalls(direction, strength) {
 // };
 
 
-var containsNearbyDuplicate = function(nums, k) {
-    // const l = nums.length;
-    // for (let i = 0; i < l; ++i) {
-    //     const num = nums[i];
-    //     for (let j = i+1; j < l && j <= i + k; ++j) {
-    //         if (nums[j] === num) return true;
-    //     }
-    // }
-    // return false;
-    const currNums = new Set();
-    let l = 0;
-    let r = 0;
-    while (r < nums.length) {
-        const num = nums[r];
-        if (currNums.has(num)) return true;
-        else currNums.add(num);
-        ++r;
-        if (r - l > k) {
-            currNums.delete(nums[l]);
-            ++l;
-        }
-    }
-    return false;
+// var containsNearbyDuplicate = function(nums, k) {
+//     // const l = nums.length;
+//     // for (let i = 0; i < l; ++i) {
+//     //     const num = nums[i];
+//     //     for (let j = i+1; j < l && j <= i + k; ++j) {
+//     //         if (nums[j] === num) return true;
+//     //     }
+//     // }
+//     // return false;
+//     const currNums = new Set();
+//     let l = 0;
+//     let r = 0;
+//     while (r < nums.length) {
+//         const num = nums[r];
+//         if (currNums.has(num)) return true;
+//         else currNums.add(num);
+//         ++r;
+//         if (r - l > k) {
+//             currNums.delete(nums[l]);
+//             ++l;
+//         }
+//     }
+//     return false;
+// };
+
+
+var MyStack = function() {
+
+};
+
+MyStack.prototype.push = function(x) {
+
+};
+
+MyStack.prototype.pop = function() {
+
+};
+
+MyStack.prototype.top = function() {
+
+};
+
+MyStack.prototype.empty = function() {
+
 };
