@@ -815,5 +815,16 @@ function findRemainingBalls(direction, strength) {
 
 
 var summaryRanges = function(nums) {
-
+    if (!nums.length) return [];
+    nums.push(Infinity);
+    const res = [];
+    let l = 0;
+    for (let r = 1; r < nums.length; ++r) {
+        if (nums[r] - nums[l] !== r - l) {
+            if (r - l >= 2) res.push(nums[l] + '->' + nums[r-1]);
+            else res.push(nums[l].toString());
+            l = r;
+        }
+    }
+    return res;
 };
