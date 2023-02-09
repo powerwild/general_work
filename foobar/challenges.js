@@ -906,17 +906,22 @@
 // }
 
 
-function longest_common_prefix(strs) {
-    let common = strs[0];
-    for (let str of strs) {
-        if (common === '') return common;
-        let temp = '';
-        for (let i in str) {
-            if (i < common.length && str[i] === common[i]) {
-                temp += str[i];
-            }
-        }
-        common = temp;
-    }
-    return common;
+// function longest_common_prefix(strs) {
+//     let common = strs[0];
+//     for (let str of strs) {
+//         if (common === '') return common;
+//         let temp = '';
+//         for (let i in str) {
+//             if (i < common.length && str[i] === common[i]) {
+//                 temp += str[i];
+//             }
+//         }
+//         common = temp;
+//     }
+//     return common;
+// }
+
+
+function malarkey_sort(arr) {
+
 }
