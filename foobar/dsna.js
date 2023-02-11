@@ -838,18 +838,23 @@ function findRemainingBalls(direction, strength) {
 // };
 
 
-var binaryTreePaths = function(root) {
-    const res = [];
-    function dfs(node, path) {
-        if (!node) return;
-        if (!node.left && !node.right) {
-            res.push(path+node.val);
-            return;
-        }
-        path += node.val += '->';
-        dfs(node.left, path);
-        dfs(node.right, path);
-    }
-    dfs(root, '');
-    return res;
+// var binaryTreePaths = function(root) {
+//     const res = [];
+//     function dfs(node, path) {
+//         if (!node) return;
+//         if (!node.left && !node.right) {
+//             res.push(path+node.val);
+//             return;
+//         }
+//         path += node.val += '->';
+//         dfs(node.left, path);
+//         dfs(node.right, path);
+//     }
+//     dfs(root, '');
+//     return res;
+// };
+
+
+var addDigits = function(num) {
+
 };
