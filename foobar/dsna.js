@@ -830,9 +830,14 @@ function findRemainingBalls(direction, strength) {
 // };
 
 
-var isPowerOfTwo = function(n) {
-    if (n === 1) return true;
-    let num = 2;
-    while (num < n) num *= 2;
-    return num === n;
+// var isPowerOfTwo = function(n) {
+//     if (n === 1) return true;
+//     let num = 2;
+//     while (num < n) num *= 2;
+//     return num === n;
+// };
+
+
+var binaryTreePaths = function(root) {
+
 };
