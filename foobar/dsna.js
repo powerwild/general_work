@@ -856,5 +856,14 @@ function findRemainingBalls(direction, strength) {
 
 
 var addDigits = function(num) {
-
+    let temp = 0;
+    while (num > 0) {
+        temp += num % 10;
+        num = Math.floor(num/10);
+        if (num === 0 && temp > 9) {
+            num = temp;
+            temp = 0;
+        }
+    }
+    return temp;
 };
