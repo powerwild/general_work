@@ -906,5 +906,5 @@ function findRemainingBalls(direction, strength) {
 
 
 var canWinNim = function(n) {
-
+    return n % 4 !== 0;
 };
