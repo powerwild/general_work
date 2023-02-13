@@ -905,6 +905,15 @@ function findRemainingBalls(direction, strength) {
 // };
 
 
-var canWinNim = function(n) {
-    return n % 4 !== 0;
+// var canWinNim = function(n) {
+//     return n % 4 !== 0;
+// };
+
+
+var NumArray = function(nums) {
+
+};
+
+NumArray.prototype.sumRange = function(left, right) {
+
 };
