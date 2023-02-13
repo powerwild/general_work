@@ -870,5 +870,15 @@ function findRemainingBalls(direction, strength) {
 
 
 var isUgly = function(n) {
-
+    if (n <= 0) return false;
+    function divide(divisor) {
+        while (n % divisor === 0) {
+            n /= divisor;
+        }
+        return;
+    }
+    divide(2);
+    divide(3);
+    divide(5);
+    return n === 1;
 };
