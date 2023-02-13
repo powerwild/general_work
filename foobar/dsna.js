@@ -884,22 +884,27 @@ function findRemainingBalls(direction, strength) {
 // };
 
 
-var wordPattern = function(pattern, s) {
-    s = s.split(' ');
-    if (s.length !== pattern.length) return false;
-    const vals = {};
-    const chars = new Set();
-    for (let i = 0; i < s.length; ++i) {
-        const letter = pattern[i];
-        if (!vals[letter]) {
-            vals[letter] = s[i];
-            chars.add(letter);
-        } else {
-            if (vals[letter] !== s[i]) return false;
-        }
-        for (let char of chars) {
-            if (char !== letter && vals[char] === vals[letter]) return false;
-        }
-    }
-    return true;
+// var wordPattern = function(pattern, s) {
+//     s = s.split(' ');
+//     if (s.length !== pattern.length) return false;
+//     const vals = {};
+//     const chars = new Set();
+//     for (let i = 0; i < s.length; ++i) {
+//         const letter = pattern[i];
+//         if (!vals[letter]) {
+//             vals[letter] = s[i];
+//             chars.add(letter);
+//         } else {
+//             if (vals[letter] !== s[i]) return false;
+//         }
+//         for (let char of chars) {
+//             if (char !== letter && vals[char] === vals[letter]) return false;
+//         }
+//     }
+//     return true;
+// };
+
+
+var canWinNim = function(n) {
+
 };
