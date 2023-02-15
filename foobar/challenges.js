@@ -922,17 +922,22 @@
 // }
 
 
-function malarkey_sort(arr) {
-    arr.sort();
-    const res = [];
-    let l = 0;
-    let r = arr.length - 1;
-    while (l < r) {
-        res.push(arr[r]);
-        res.push(arr[l]);
-        --r;
-        ++l;
-    }
-    if (res.length < arr.length) res.push(arr[l]);
-    return res;
+// function malarkey_sort(arr) {
+//     arr.sort();
+//     const res = [];
+//     let l = 0;
+//     let r = arr.length - 1;
+//     while (l < r) {
+//         res.push(arr[r]);
+//         res.push(arr[l]);
+//         --r;
+//         ++l;
+//     }
+//     if (res.length < arr.length) res.push(arr[l]);
+//     return res;
+// }
+
+
+function getSpamEmails(subjects, spam_words) {
+
 }
