@@ -938,25 +938,30 @@
 // }
 
 
-function arrToObj(arr) {
-    const obj = {};
-    for (let word of arr) obj[word.toLowerCase()] = true;
-    return obj;
-}
-function getSpamEmails(subjects, spam_words) {
-    for (let i = 0; i < subjects.length; ++i) subjects[i] = subjects[i].split(' ');
+// function arrToObj(arr) {
+//     const obj = {};
+//     for (let word of arr) obj[word.toLowerCase()] = true;
+//     return obj;
+// }
+// function getSpamEmails(subjects, spam_words) {
+//     for (let i = 0; i < subjects.length; ++i) subjects[i] = subjects[i].split(' ');
 
-    spam_words = arrToObj(spam_words);
+//     spam_words = arrToObj(spam_words);
 
-    const res = [];
-    for (let subject of subjects) {
-        let count = 0;
-        for (let sub of subject) {
-            if (spam_words[sub.toLowerCase()]) ++count;
-            if (count === 2) break;
-        }
-        if (count === 2) res.push('spam');
-        else res.push('not_spam');
-    }
-    return res;
+//     const res = [];
+//     for (let subject of subjects) {
+//         let count = 0;
+//         for (let sub of subject) {
+//             if (spam_words[sub.toLowerCase()]) ++count;
+//             if (count === 2) break;
+//         }
+//         if (count === 2) res.push('spam');
+//         else res.push('not_spam');
+//     }
+//     return res;
+// }
+
+
+function lengthOfLongestSubstring(s) {
+
 }
