@@ -963,5 +963,19 @@
 
 
 function lengthOfLongestSubstring(s) {
-
+    const chars = {};
+    let l = 0;
+    let r = 0;
+    let max = 0;
+    while (r < s.length) {
+        const char = s[r];
+        chars[char] = chars[char] ? chars[char] + 1 : 1;
+        while (chars[char] > 1) {
+            --chars[s[l]];
+            ++l;
+        }
+        max = Math.max(r - l + 1, max);
+        ++r;
+    }
+    return max;
 }
