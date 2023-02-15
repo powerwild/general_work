@@ -982,5 +982,23 @@
 
 
 function convert(s, numRows) {
-
+    const l = s.length;
+    const lets = [];
+    for (let i = 0; i < numRows; ++i) lets.push([]);
+    let i = 0;
+    while (i < l) {
+        for (let j = 0; j < lets.length && i < l; ++j) {
+            lets[j].push(s[i]);
+            ++i;
+        }
+        for (let k = lets.length - 2; k > 0 && i < l; --k) {
+            lets[k].push(s[i]);
+            ++i;
+        }
+    }
+    let res = '';
+    for (let arr of lets) {
+        for (let char of arr) res += char;
+    }
+    return res;
 }
