@@ -950,17 +950,22 @@ function findRemainingBalls(direction, strength) {
 // };
 
 
-var reverseVowels = function(s) {
-    s = s.split('');
-    let l = 0;
-    let r = s.length - 1;
-    const vowels = {'a': 1, 'e': 1, 'i': 1, 'o': 1, 'u': 1};
-    while (l < r) {
-        while (!vowels[s[l].toLowerCase()]) ++l;
-        while (!vowels[s[r].toLowerCase()]) --r;
-        [s[l], s[r]] = [s[r], s[l]];
-        ++l;
-        --r;
-    }
-    return s.join('');
+// var reverseVowels = function(s) {
+//     s = s.split('');
+//     let l = 0;
+//     let r = s.length - 1;
+//     const vowels = {'a': 1, 'e': 1, 'i': 1, 'o': 1, 'u': 1};
+//     while (l < r) {
+//         while (!vowels[s[l].toLowerCase()]) ++l;
+//         while (!vowels[s[r].toLowerCase()]) --r;
+//         [s[l], s[r]] = [s[r], s[l]];
+//         ++l;
+//         --r;
+//     }
+//     return s.join('');
+// };
+
+
+var intersection = function(nums1, nums2) {
+
 };
