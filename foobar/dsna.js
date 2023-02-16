@@ -966,14 +966,19 @@ function findRemainingBalls(direction, strength) {
 // };
 
 
-var intersection = function(nums1, nums2) {
-    const nums = new Set(nums1);
-    const res = [];
-    for (let num of nums2) {
-        if (nums.has(num)) {
-            res.push(num);
-            nums.delete(num);
-        }
-    }
-    return res;
+// var intersection = function(nums1, nums2) {
+//     const nums = new Set(nums1);
+//     const res = [];
+//     for (let num of nums2) {
+//         if (nums.has(num)) {
+//             res.push(num);
+//             nums.delete(num);
+//         }
+//     }
+//     return res;
+// };
+
+
+var isPerfectSquare = function(num) {
+    
 };
