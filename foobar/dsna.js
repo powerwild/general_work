@@ -1012,5 +1012,15 @@ function findRemainingBalls(direction, strength) {
 
 
 var sumOfLeftLeaves = function(root) {
-    
+    const res = [];
+    const stack = [root];
+    while (stack.length) {
+        let curr = stack.pop();
+        if (curr.left) {
+            if (!curr.left.left && !curr.left.right) res.push(curr.left);
+            else stack.push(curr.left);
+        }
+        if (curr.right) stack.push(curr.right);
+    }
+    return res.reduce((accum, n) => accum + n.val, 0);
 };
