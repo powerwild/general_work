@@ -979,8 +979,13 @@ function findRemainingBalls(direction, strength) {
 // };
 
 
-var isPerfectSquare = function(num) {
-    let n = 1;
-    for (let i = 2; n < num; ++i) n = i * i;
-    return n === num;
+// var isPerfectSquare = function(num) {
+//     let n = 1;
+//     for (let i = 2; n < num; ++i) n = i * i;
+//     return n === num;
+// };
+
+
+var guessNumber = function(n) {
+
 };
