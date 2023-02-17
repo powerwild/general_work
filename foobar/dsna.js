@@ -987,5 +987,15 @@ function findRemainingBalls(direction, strength) {
 
 
 var guessNumber = function(n) {
-
+    if (guess(1) === 0) return 1;
+    if (guess(n) === 0) return n;
+    let l = 1;
+    let r = n;
+    while (l + 1 < r) {
+        let mid = Math.floor((l + r) / 2);
+        let res = guess(mid);
+        if (res === 0) return mid;
+        else if (res < 0) r = mid;
+        else l = mid;
+    }
 };
