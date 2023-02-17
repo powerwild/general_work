@@ -1001,11 +1001,16 @@ function findRemainingBalls(direction, strength) {
 // };
 
 
-var findTheDifference = function(s, t) {
-    const chars = {};
-    for (let char of s) chars[char] = chars[char] ? chars[char] + 1 : 1;
-    for (let char of t) {
-        if (!chars[char]) return char;
-        if (chars[char]) --chars[char];
-    }
+// var findTheDifference = function(s, t) {
+//     const chars = {};
+//     for (let char of s) chars[char] = chars[char] ? chars[char] + 1 : 1;
+//     for (let char of t) {
+//         if (!chars[char]) return char;
+//         if (chars[char]) --chars[char];
+//     }
+// };
+
+
+var sumOfLeftLeaves = function(root) {
+    
 };
