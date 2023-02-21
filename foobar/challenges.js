@@ -1051,5 +1051,16 @@
 
 
 function generate(numRows) {
-
+    if (numRows === 1) return [[1]];
+    const pTri = [[1], [1, 1]];
+    while (pTri.length < numRows) {
+        const level = [1];
+        const prev = pTri[pTri.length-1];
+        for (let i = 1; i < prev.length; ++i) {
+            level.push(prev[i] + prev[i-1]);
+        }
+        level.push(1);
+        pTri.push(level);
+    }
+    return pTri;
 }
