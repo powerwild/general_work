@@ -1004,19 +1004,47 @@
 // }
 
 
-function closedPaths(number) {
-    const paths = {
-        '0': 1,
-        '4': 1,
-        '6': 1,
-        '8': 2,
-        '9': 1
-    };
-    number = number + '';
-    let count = 0;
-    for (let i = 0; i < number.length; ++i) {
-        const num = number[i];
-        count += paths[num] || 0;
+// function closedPaths(number) {
+//     const paths = {
+//         '0': 1,
+//         '4': 1,
+//         '6': 1,
+//         '8': 2,
+//         '9': 1
+//     };
+//     number = number + '';
+//     let count = 0;
+//     for (let i = 0; i < number.length; ++i) {
+//         const num = number[i];
+//         count += paths[num] || 0;
+//     }
+//     return count;
+// }
+
+
+function push(arr, index, val) {
+    if (index >= 0) arr[index] += val;
+    else arr.unshift(val);
+}
+function addToArrayForm(num, k) {
+    console.log(k)
+    let ind = num.length - 1;
+    while (k > 9) {
+        let rem = k % 10;
+        k = Math.floor(k / 10);
+        push(num, ind, rem);
+        --ind;
     }
-    return count;
+    push(num, ind, k);
+    for (let i = num.length - 1; i >= 0; --i) {
+        let n = num[i];
+        if (n > 9) {
+            let remain = n % 10;
+            n = Math.floor(n / 10);
+            num[i] = remain;
+            if (i === 0) num.unshift(n);
+            else num[i-1] += n ;
+        }
+    }
+    return num;
 }
