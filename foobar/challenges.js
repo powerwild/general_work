@@ -1005,5 +1005,18 @@
 
 
 function closedPaths(number) {
-
+    const paths = {
+        '0': 1,
+        '4': 1,
+        '6': 1,
+        '8': 2,
+        '9': 1
+    };
+    number = number + '';
+    let count = 0;
+    for (let i = 0; i < number.length; ++i) {
+        const num = number[i];
+        count += paths[num] || 0;
+    }
+    return count;
 }
