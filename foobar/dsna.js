@@ -1057,23 +1057,28 @@ function findRemainingBalls(direction, strength) {
 // };
 
 
-var addStrings = function(num1, num2) {
-    let res = '';
-    let n1L = num1.length - 1;
-    let n2L = num2.length - 1;
-    let rem;
-    while (n1L > -1 || n2L > -1) {
-        let n1 = n1L >= 0 ? num1[n1L] - '0' : 0;
-        let n2 = n2L >= 0 ? num2[n2L] - '0' : 0;
-        let sum = n1 + n2 + (rem || 0);
-        if (sum > 9) {
-            rem = 1;
-            sum = sum % 10;
-        } else rem = undefined;
-        res = sum + res;
-        --n1L;
-        --n2L;
-    }
-    if (rem) res = rem + res;
-    return res;
+// var addStrings = function(num1, num2) {
+//     let res = '';
+//     let n1L = num1.length - 1;
+//     let n2L = num2.length - 1;
+//     let rem;
+//     while (n1L > -1 || n2L > -1) {
+//         let n1 = n1L >= 0 ? num1[n1L] - '0' : 0;
+//         let n2 = n2L >= 0 ? num2[n2L] - '0' : 0;
+//         let sum = n1 + n2 + (rem || 0);
+//         if (sum > 9) {
+//             rem = 1;
+//             sum = sum % 10;
+//         } else rem = undefined;
+//         res = sum + res;
+//         --n1L;
+//         --n2L;
+//     }
+//     if (rem) res = rem + res;
+//     return res;
+// };
+
+
+var countSegments = function(s) {
+    
 };
