@@ -1026,19 +1026,24 @@ function findRemainingBalls(direction, strength) {
 // };
 
 
-var thirdMax = function(nums) {
-    let min = -Infinity;
-    let mid = -Infinity;
-    let max = -Infinity;
-    for (let num of nums) {
-        if (num > max) {
-            min = mid;
-            mid = max;
-            max = num;
-        } else if (num > mid && num !== max) {
-            min = mid;
-            mid = num;
-        } else if (num > min && num !== mid) min = num;
-    }
-    return min === -Infinity ? max : min;
+// var thirdMax = function(nums) {
+//     let min = -Infinity;
+//     let mid = -Infinity;
+//     let max = -Infinity;
+//     for (let num of nums) {
+//         if (num > max) {
+//             min = mid;
+//             mid = max;
+//             max = num;
+//         } else if (num > mid && num !== max) {
+//             min = mid;
+//             mid = num;
+//         } else if (num > min && num !== mid) min = num;
+//     }
+//     return min === -Infinity ? max : min;
+// };
+
+
+var fizzBuzz = function(n) {
+
 };
