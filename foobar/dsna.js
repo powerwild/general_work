@@ -1095,5 +1095,11 @@ function findRemainingBalls(direction, strength) {
 
 
 var arrangeCoins = function(n) {
-
+    let stairs = 0;
+    for (let i = 1; n > 0; ++i) {
+        if (i > n) break;
+        n -= i;
+        stairs += 1;
+    }
+    return stairs;
 };
