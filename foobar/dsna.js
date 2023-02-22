@@ -1079,16 +1079,21 @@ function findRemainingBalls(direction, strength) {
 // };
 
 
-var countSegments = function(s) {
-    if (!s) return 0;
-    let count = 0;
-    let i = 0;
-    while (i < s.length) {
-        if (s[i] !== ' ') {
-            while (s[i] !== ' ' && i < s.length) i += 1;
-            count += 1;
-        }
-        i += 1;
-    }
-    return count;
+// var countSegments = function(s) {
+//     if (!s) return 0;
+//     let count = 0;
+//     let i = 0;
+//     while (i < s.length) {
+//         if (s[i] !== ' ') {
+//             while (s[i] !== ' ' && i < s.length) i += 1;
+//             count += 1;
+//         }
+//         i += 1;
+//     }
+//     return count;
+// };
+
+
+var arrangeCoins = function(n) {
+
 };
