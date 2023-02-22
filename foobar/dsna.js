@@ -1117,5 +1117,17 @@ function findRemainingBalls(direction, strength) {
 
 
 var findContentChildren = function(g, s) {
-
+    g.sort((a, b) => a - b);
+    s.sort((a, b) => a - b);
+    let sats = 0;
+    let gi = 0;
+    let si = 0;
+    while (gi < g.length && si < s.length) {
+        if (s[si] >= g[gi]) {
+            ++sats;
+            ++gi;
+            ++si;
+        } else ++si;
+    }
+    return sats;
 };
