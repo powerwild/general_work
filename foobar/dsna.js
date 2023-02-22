@@ -1106,5 +1106,11 @@ function findRemainingBalls(direction, strength) {
 
 
 var findDisappearedNumbers = function(nums) {
-
+    const res = [];
+    const len = nums.length;
+    nums = new Set(nums);
+    for (let i = 1; i <= len; ++i) {
+        if (!nums.has(i)) res.push(i);
+    }
+    return res;
 };
