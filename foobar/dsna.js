@@ -1191,11 +1191,16 @@ function findRemainingBalls(direction, strength) {
 // };
 
 
-var findComplement = function(num) {
-    num = num.toString(2).split('');
-    for (let i = 0; i < num.length; ++i) {
-        if (num[i] === '0') num[i] = '1';
-        else num[i] = '0';
-    }
-    return parseInt(num.join(''), 2);
+// var findComplement = function(num) {
+//     num = num.toString(2).split('');
+//     for (let i = 0; i < num.length; ++i) {
+//         if (num[i] === '0') num[i] = '1';
+//         else num[i] = '0';
+//     }
+//     return parseInt(num.join(''), 2);
+// };
+
+
+var licenseKeyFormatting = function(s, k) {
+
 };
