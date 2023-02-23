@@ -1145,5 +1145,20 @@ function findRemainingBalls(direction, strength) {
 
 
 var hammingDistance = function(x, y) {
-
+    x = x.toString(2);
+    y = y.toString(2);
+    const len = x.length > y.length ? x.length : y.length;
+    x = x.padStart(len, '0');
+    y = y.padStart(len, '0');
+    let diff = 0;
+    for (let i = 0; i < x.length; ++i) {
+        if (x[i] !== y[i]) ++diff;
+    }
+    return diff;
+    // const n = (x^y).toString(2);
+    // let diff = 0;
+    // for (let char of n) {
+    //     if (char === '1') ++diff;
+    // }
+    // return diff;
 };
