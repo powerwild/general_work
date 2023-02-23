@@ -1163,7 +1163,28 @@ function findRemainingBalls(direction, strength) {
 //     // return diff;
 // };
 
-
+function check(x, y, mat) {
+    let count = 0;
+    const x0 = x === 0;
+    const xL = x === mat.length - 1;
+    if (x0) ++count;
+    if (xL) ++count;
+    if (!x0 && mat[x-1][y] === 0) ++count;
+    if (!xL && mat[x+1][y] === 0) ++count;
+    const y0 = y === 0;
+    const yL = y === mat[0].length - 1
+    if (y0) ++count;
+    if (yL) ++count;
+    if (!y0 && mat[x][y-1] === 0) ++count;
+    if (!yL && mat[x][y+1] === 0) ++count;
+    return count;
+}
 var islandPerimeter = function(grid) {
-
+    let perim = 0;
+    for (let i = 0; i < grid.length; ++i) {
+        for (let j = 0; j < grid[i].length; ++j) {
+            if (grid[i][j] === 1) perim += check(i, j, grid);
+        }
+    }
+    return perim;
 };
