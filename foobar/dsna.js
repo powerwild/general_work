@@ -1201,19 +1201,24 @@ function findRemainingBalls(direction, strength) {
 // };
 
 
-var licenseKeyFormatting = function(s, k) {
-    s = s.replaceAll('-', '').split('');
-    let res = '';
-    let group = '';
-    while (s.length) {
-        while (s.length && group.length < k) {
-            const char = s.pop();
-            if (char === '-') continue;
-            group = char.toUpperCase() + group;
-        }
-        if (group.length < k || !s.length) res = group + res;
-        else res = '-' + group + res;
-        group = '';
-    }
-    return res;
+// var licenseKeyFormatting = function(s, k) {
+//     s = s.replaceAll('-', '').split('');
+//     let res = '';
+//     let group = '';
+//     while (s.length) {
+//         while (s.length && group.length < k) {
+//             const char = s.pop();
+//             if (char === '-') continue;
+//             group = char.toUpperCase() + group;
+//         }
+//         if (group.length < k || !s.length) res = group + res;
+//         else res = '-' + group + res;
+//         group = '';
+//     }
+//     return res;
+// };
+
+
+var findMaxConsecutiveOnes = function(nums) {
+    
 };
