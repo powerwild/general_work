@@ -1278,5 +1278,24 @@ function findRemainingBalls(direction, strength) {
 
 
 var findMode = function(root) {
-    
+    if (!root.left && !root.right) return [root.val];
+    const vals = {};
+    let res = [];
+    function dfs(node) {
+        if (!node) return;
+        const val = node.val + '';
+        vals[val] = vals[val] ? vals[val] + 1 : 1;
+        dfs(node.left);
+        dfs(node.right);
+    }
+    dfs(root);
+    let max = -Infinity;
+    for (let key in vals) {
+        if (vals[key] === max) res.push(key);
+        else if (vals[key] > max) {
+            res = [key];
+            max = vals[key];
+        }
+    }
+    return res;
 };
