@@ -1254,5 +1254,24 @@ function findRemainingBalls(direction, strength) {
 
 
 var findWords = function(words) {
-
+    const r1 = new Set("qwertyuiop");
+    const r2 = new Set("asdfghjkl");
+    const r3 = new Set("zxcvbnm");
+    const res = [];
+    for (const word of words) {
+        for (const row of [r1, r2, r3]) {
+            let isValid = true;
+            for (const char of word) {
+                if (!row.has(char.toLowerCase())) {
+                    isValid = false;
+                    break;
+                }
+            }
+            if (isValid) {
+                res.push(word);
+                break;
+            }
+        }
+    }
+    return res;
 };
