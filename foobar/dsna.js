@@ -1219,16 +1219,21 @@ function findRemainingBalls(direction, strength) {
 // };
 
 
-var findMaxConsecutiveOnes = function(nums) {
-    let curr = 0;
-    const len = nums.length;
-    for (let i = 0; i < len; ++i) {
-        const num = nums[i];
-        if (num === 1) ++curr;
-        if (num === 0 || i === len - 1) {
-            max = Math.max(max, curr);
-            curr = 0;
-        }
-    }
-    return max;
+// var findMaxConsecutiveOnes = function(nums) {
+//     let curr = 0;
+//     const len = nums.length;
+//     for (let i = 0; i < len; ++i) {
+//         const num = nums[i];
+//         if (num === 1) ++curr;
+//         if (num === 0 || i === len - 1) {
+//             max = Math.max(max, curr);
+//             curr = 0;
+//         }
+//     }
+//     return max;
+// };
+
+
+var constructRectangle = function(area) {
+    
 };
