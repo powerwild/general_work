@@ -1243,5 +1243,11 @@ function findRemainingBalls(direction, strength) {
 
 
 var findPoisonedDuration = function(timeSeries, duration) {
-
+    let time = duration;
+    for (let i = 1; i < timeSeries.length; ++i) {
+        const poisoned = timeSeries[i-1] + duration;
+        if (poisoned > timeSeries[i]) time -= poisoned - timeSeries[i];
+        time += duration;
+    }
+    return time;
 };
