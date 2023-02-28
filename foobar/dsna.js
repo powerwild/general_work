@@ -1306,17 +1306,22 @@ function findRemainingBalls(direction, strength) {
 // };
 
 
-var findRelativeRanks = function(score) {
-    const order = score.slice().sort((a, b) => b - a);
-    for (let i = 0; i < score.length; ++i) {
-        const ind = order.indexOf(score[i]);
-        if (ind === 0) {
-            score[i] = 'Gold Medal';
-        } else if (ind === 1) {
-            score[i] = 'Silver Medal';
-        } else if (ind === 2) {
-            score[i] = 'Bronze Medal';
-        } else score[i] = ind+1 + '';
-    }
-    return score;
+// var findRelativeRanks = function(score) {
+//     const order = score.slice().sort((a, b) => b - a);
+//     for (let i = 0; i < score.length; ++i) {
+//         const ind = order.indexOf(score[i]);
+//         if (ind === 0) {
+//             score[i] = 'Gold Medal';
+//         } else if (ind === 1) {
+//             score[i] = 'Silver Medal';
+//         } else if (ind === 2) {
+//             score[i] = 'Bronze Medal';
+//         } else score[i] = ind+1 + '';
+//     }
+//     return score;
+// };
+
+
+var detectCapitalUse = function(word) {
+    
 };
