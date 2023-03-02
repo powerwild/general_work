@@ -1348,5 +1348,17 @@ function findRemainingBalls(direction, strength) {
 
 
 var findLHS = function(nums) {
-    
+    const vals = new Object();
+    let res = 0;
+    for (let num of nums) vals[num] = (vals[num] || 0) + 1;
+    for (let k in vals) {
+        k = k - '0';
+        const upper = vals[k+1] ? vals[k+1] : 0;
+        const lower = vals[k-1] ? vals[k-1] : 0;
+        const val = vals[k];
+        if (upper > 0 || lower > 0) {
+            res = Math.max(res, val + upper, val + lower);
+        }
+    }
+    return res;
 };
