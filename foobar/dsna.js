@@ -1340,8 +1340,13 @@ function findRemainingBalls(direction, strength) {
 // };
 
 
-var distributeCandies = function(candyType) {
-    const possible = candyType.length / 2;
-    candyType = new Set(candyType);
-    return possible <= candyType.size ? possible : candyType.size;
+// var distributeCandies = function(candyType) {
+//     const possible = candyType.length / 2;
+//     candyType = new Set(candyType);
+//     return possible <= candyType.size ? possible : candyType.size;
+// };
+
+
+var findLHS = function(nums) {
+    
 };
