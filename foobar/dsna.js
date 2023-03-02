@@ -1322,11 +1322,16 @@ function findRemainingBalls(direction, strength) {
 // };
 
 
-var detectCapitalUse = function(word) {
-    if (word.toUpperCase() === word || word.toLowerCase() === word) return true;
-    for (let i = 0; i < word.length; ++i) {
-        if (i === 0 && word[i] !== word[i].toUpperCase()) return false;
-        else if (i > 0 && word[i] !== word[i].toLowerCase()) return false;
-    }
-    return true;
+// var detectCapitalUse = function(word) {
+//     if (word.toUpperCase() === word || word.toLowerCase() === word) return true;
+//     for (let i = 0; i < word.length; ++i) {
+//         if (i === 0 && word[i] !== word[i].toUpperCase()) return false;
+//         else if (i > 0 && word[i] !== word[i].toLowerCase()) return false;
+//     }
+//     return true;
+// };
+
+
+var arrayPairSum = function(nums) {
+    
 };
