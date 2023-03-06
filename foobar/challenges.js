@@ -1067,5 +1067,18 @@
 
 
 function balancedSum(arr) {
-
+    let l = 0;
+    let r = arr.length - 1;
+    let lSum = arr[l];
+    let rSum = arr[r];
+    while (r - 1 > l) {
+        if (lSum < rSum) {
+            ++l;
+            lSum += arr[l];
+        } else {
+            --r;
+            rSum += arr[r];
+        }
+    }
+    return l + 1;
 }
