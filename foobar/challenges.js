@@ -1084,19 +1084,24 @@
 // }
 
 
-function first_occurrence(haystack, needle) {
-    let res = -1;
-    for (let i = 0; i < haystack.length; ++i) {
-        if (haystack[i] === needle[0]) {
-            res = i;
-            for (let j = 0; j < needle.length; ++j, ++i) {
-                if (haystack[i] !== needle[j]) {
-                    res = -1;
-                    break;
-                }
-            }
-        }
-        if (res !== -1) break;
-    }
-    return res;
+// function first_occurrence(haystack, needle) {
+//     let res = -1;
+//     for (let i = 0; i < haystack.length; ++i) {
+//         if (haystack[i] === needle[0]) {
+//             res = i;
+//             for (let j = 0; j < needle.length; ++j, ++i) {
+//                 if (haystack[i] !== needle[j]) {
+//                     res = -1;
+//                     break;
+//                 }
+//             }
+//         }
+//         if (res !== -1) break;
+//     }
+//     return res;
+// }
+
+
+function removeDuplicates(s) {
+
 }
