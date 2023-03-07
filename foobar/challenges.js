@@ -1069,15 +1069,14 @@
 // function balancedSum(arr) {
 //     let l = 0;
 //     let r = arr.length - 1;
-//     let lSum = arr[l];
-//     let rSum = arr[r];
+//     let sum = arr[r] - arr[l];
 //     while (r - 1 > l) {
-//         if (lSum < rSum) {
+//         if (sum > 0) {
 //             ++l;
-//             lSum += arr[l];
+//             sum -= arr[l];
 //         } else {
 //             --r;
-//             rSum += arr[r];
+//             sum += arr[r];
 //         }
 //     }
 //     return l + 1;
