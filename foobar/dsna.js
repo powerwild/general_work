@@ -1375,5 +1375,18 @@ function findRemainingBalls(direction, strength) {
 
 
 var getMinimumDifference = function(root) {
-
+    const vals = [];
+    const recurse = (node) => {
+        if (!node) return;
+        recurse(node.left);
+        vals.push(node.val);
+        recurse(node.right);
+    }
+    recurse(root);
+    let min = Infinity;
+    for (let i = 1; i < vals.length; ++i) {
+        const val = vals[i] - vals[i-1];
+        if (val < min) min = val;
+    }
+    return min;
 };
