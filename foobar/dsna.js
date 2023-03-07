@@ -1436,5 +1436,11 @@ function findRemainingBalls(direction, strength) {
 
 
 var maxDepth = function(root) {
-    
+    function dfs(node) {
+        if (!node) return 0;
+        let max = 0;
+        for (let child of node.children) max = Math.max(max, dfs(child));
+        return max + 1;
+    }
+    return dfs(root);
 };
