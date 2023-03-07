@@ -1420,5 +1420,16 @@ function findRemainingBalls(direction, strength) {
 
 
 var reverseWords = function(s) {
-
+    const len = s.length;
+    let res = '';
+    for (let i = 0; i < len; ++i) {
+        let curr = '';
+        while (i < len && s[i] !== ' ') {
+            curr = s[i] + curr;
+            ++i;
+        }
+        if (i < len && s[i] === ' ') res += curr + ' ';
+        else res += curr;
+    }
+    return res;
 };
