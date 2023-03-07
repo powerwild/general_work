@@ -1393,5 +1393,17 @@ function findRemainingBalls(direction, strength) {
 
 
 var reverseStr = function(s, k) {
-
+    const len = s.length;
+    let group = k * 2;
+    let i = 0;
+    let res = [];
+    while (true) {
+        let curr = '';
+        for (let j = 0; j < k && i < len; ++j, ++i) curr = s[i] + curr;
+        for (;i < len && i < group; ++i) curr += s[i];
+        group += k * 2;
+        res.push(curr);
+        if (i >= len) break;
+    }
+    return res.join('');
 };
