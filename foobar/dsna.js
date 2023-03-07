@@ -1364,3 +1364,11 @@ function findRemainingBalls(direction, strength) {
 // };
 
 
+var checkPerfectNumber = function(num) {
+    let max = Math.floor(num / 2);
+    let sum = 0;
+    for (let i = 1; i <= max; ++i) {
+        if (num % i === 0) sum += i;
+    }
+    return sum === num;
+};
