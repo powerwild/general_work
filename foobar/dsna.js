@@ -1410,5 +1410,10 @@ function findRemainingBalls(direction, strength) {
 
 
 var checkRecord = function(s) {
-
+    let absent = 0;
+    for (let i = 0; i < s.length; ++i) {
+        if (i >= 2 && s[i] === 'L' && s[i-1] === 'L' && s[i-2] === 'L') return false;
+        if (s[i] === 'A') absent += 1;
+    }
+    return absent < 2;
 };
