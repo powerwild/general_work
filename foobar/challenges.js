@@ -1113,19 +1113,42 @@
 // }
 
 
-function shorten(str) {
-    str = [...new Set(str)];
-    str.sort();
-    return str.join('');
-};
-function countSimilarPairs(words) {
-    const len = words.length;
-    const vals = {};
-    let pairs = 0;
-    for (let i = 0; i < len; ++i) {
-        const word = shorten(words[i]);
-        pairs += vals[word] ? vals[word] : 0;
-        vals[word] = vals[word] ? vals[word] + 1 : 1;
+// function shorten(str) {
+//     str = [...new Set(str)];
+//     str.sort();
+//     return str.join('');
+// };
+// function countSimilarPairs(words) {
+//     const len = words.length;
+//     const vals = {};
+//     let pairs = 0;
+//     for (let i = 0; i < len; ++i) {
+//         const word = shorten(words[i]);
+//         pairs += vals[word] ? vals[word] : 0;
+//         vals[word] = vals[word] ? vals[word] + 1 : 1;
+//     }
+//     return pairs;
+// }
+
+
+class Trie {
+    constructor(){
+
     }
-    return pairs;
+
+    insert(word){
+
+    }
+
+    search(word){
+
+    }
+
+    startswrith(prefix){
+
+    }
+}
+
+function main(commands) {
+
 }
