@@ -1101,13 +1101,18 @@
 // }
 
 
-function removeDuplicates(s) {
-    const stack = [];
-    for (let i = 0; i < s.length; ++i) {
-        let last = stack.length - 1;
-        if (last >= 0 && stack[last] === s[i]) {
-            stack.pop();
-        } else stack.push(s[i]);
-    }
-    return stack.join('');
+// function removeDuplicates(s) {
+//     const stack = [];
+//     for (let i = 0; i < s.length; ++i) {
+//         let last = stack.length - 1;
+//         if (last >= 0 && stack[last] === s[i]) {
+//             stack.pop();
+//         } else stack.push(s[i]);
+//     }
+//     return stack.join('');
+// }
+
+
+function countSimilarPairs(words) {
+
 }
