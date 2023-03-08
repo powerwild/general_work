@@ -1133,22 +1133,65 @@
 
 class Trie {
     constructor(){
-
+        this.children = {};
     }
 
     insert(word){
-
+        let curr = this.children;
+        const last = word.length - 1;
+        for (let i = 0; i <= last; ++i) {
+            const char = word[i];
+            if (!curr[char]) curr[char] = {};
+            curr = curr[char];
+            if (i === last) curr['isWord'] = true;
+        }
+        return;
     }
 
     search(word){
-
+        let curr = this.children;
+        const len = word.length;
+        for (let i = 0; i < len; ++i) {
+            const char = word[i];
+            if (!curr[char]) return false;
+            curr = curr[char];
+        }
+        return curr['isWord'];
     }
 
     startswrith(prefix){
-
+        let curr = this.children;
+        const len = prefix.length;
+        for (let i = 0; i < len; ++i) {
+            const char = prefix[i];
+            if (!curr[char]) return false;
+            curr = curr[char];
+        }
+        return true;
     }
 }
 
 function main(commands) {
-
+    const trie = new Trie();
+    let res = '';
+    function addTOrF(tOrF) {
+        if (tOrF) res += 'true';
+        else res += 'false';
+        return;
+    }
+    for (let command of commands) {
+        const [com, val] = command.split(' ');
+        if (res !== '') res += ';';
+        if (com === 'insert') {
+            res += 'none';
+            trie.insert(val);
+        } else if (com === 'search') {
+            const isInTrie = trie.search(val);
+            addTOrF(isInTrie);
+        } else {
+            const prefixThere = trie.startswrith(val);
+            addTOrF(prefixThere);
+        }
+    }
+    return res;
 }
