@@ -1446,15 +1446,20 @@ function findRemainingBalls(direction, strength) {
 // };
 
 
-var findTilt = function(root) {
-    let sum = 0;
-    function dfs(node, total) {
-        if (!node) return 0;
-        const left = dfs(node.left, total);
-        const right = dfs(node.right, total);
-        sum += Math.abs(left - right);
-        return total + node.val + left + right;
-    }
-    dfs(root, 0);
-    return sum;
+// var findTilt = function(root) {
+//     let sum = 0;
+//     function dfs(node, total) {
+//         if (!node) return 0;
+//         const left = dfs(node.left, total);
+//         const right = dfs(node.right, total);
+//         sum += Math.abs(left - right);
+//         return total + node.val + left + right;
+//     }
+//     dfs(root, 0);
+//     return sum;
+// };
+
+
+var postorder = function(root) {
+
 };
