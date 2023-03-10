@@ -1472,29 +1472,34 @@ function findRemainingBalls(direction, strength) {
 // };
 
 
-var maxCount = function(m, n, ops) {
-    if (!ops.length) return m * n;
-    // let [x, y] = [m, n];
-    // for (const [r, c] of ops) {
-    //     x = Math.min(x, r);
-    //     y = Math.min(y, c);
-    // }
-    // return x * y;
-    const matObj = {};
-    let max = 0;
-    let count = 0;
-    for (const [x, y] of ops) {
-        for (let i = 0; i < x; ++i) {
-            for (let j = 0; j < y; ++j) {
-                const key = i + '-' + j;
-                matObj[key] = (matObj[key] || 0) + 1;
-                if (matObj[key] > max) {
-                    max = matObj[key];
-                    count = 1;
-                } else if (matObj[key] === max) ++count;
-                else continue;
-            }
-        }
-    }
-    return count;
+// var maxCount = function(m, n, ops) {
+//     if (!ops.length) return m * n;
+//     // let [x, y] = [m, n];
+//     // for (const [r, c] of ops) {
+//     //     x = Math.min(x, r);
+//     //     y = Math.min(y, c);
+//     // }
+//     // return x * y;
+//     const matObj = {};
+//     let max = 0;
+//     let count = 0;
+//     for (const [x, y] of ops) {
+//         for (let i = 0; i < x; ++i) {
+//             for (let j = 0; j < y; ++j) {
+//                 const key = i + '-' + j;
+//                 matObj[key] = (matObj[key] || 0) + 1;
+//                 if (matObj[key] > max) {
+//                     max = matObj[key];
+//                     count = 1;
+//                 } else if (matObj[key] === max) ++count;
+//                 else continue;
+//             }
+//         }
+//     }
+//     return count;
+// };
+
+
+var findRestaurant = function(list1, list2) {
+
 };
