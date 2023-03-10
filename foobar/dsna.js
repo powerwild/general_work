@@ -1500,23 +1500,28 @@ function findRemainingBalls(direction, strength) {
 // };
 
 
-var findRestaurant = function(list1, list2) {
-    const words1 = {};
-    for (let i = 0; i < list1.length; ++i) {
-        const word = list1[i];
-        words1[word] = i;
-    }
-    let min = Infinity;
-    let res = [];
-    for (let i = 0; i < list2.length; ++i) {
-        const word = list2[i];
-        if (words1[word] >= 0) {
-            const val = words1[word] + i;
-            if (val < min) {
-                res = [word];
-                min = val;
-            } else if (val === min) res.push(word);
-        }
-    }
-    return res;
+// var findRestaurant = function(list1, list2) {
+//     const words1 = {};
+//     for (let i = 0; i < list1.length; ++i) {
+//         const word = list1[i];
+//         words1[word] = i;
+//     }
+//     let min = Infinity;
+//     let res = [];
+//     for (let i = 0; i < list2.length; ++i) {
+//         const word = list2[i];
+//         if (words1[word] >= 0) {
+//             const val = words1[word] + i;
+//             if (val < min) {
+//                 res = [word];
+//                 min = val;
+//             } else if (val === min) res.push(word);
+//         }
+//     }
+//     return res;
+// };
+
+
+var canPlaceFlowers = function(flowerbed, n) {
+
 };
