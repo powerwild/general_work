@@ -1523,5 +1523,17 @@ function findRemainingBalls(direction, strength) {
 
 
 var canPlaceFlowers = function(flowerbed, n) {
-
+    let i = 0;
+    const len = flowerbed.length;
+    while (n > 0 && i < len) {
+        const prev = i > 0 ? flowerbed[i-1] : 0;
+        const curr = flowerbed[i];
+        const next = i < len - 1 ? flowerbed[i+1] : 0;
+        if (prev === 0 && curr === 0 && next === 0) {
+            flowerbed[i] = 1;
+            --n;
+        }
+        ++i;
+    }
+    return n <= 0;
 };
