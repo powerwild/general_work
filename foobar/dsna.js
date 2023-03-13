@@ -1540,5 +1540,18 @@ function findRemainingBalls(direction, strength) {
 
 
 var tree2str = function(root) {
-    
+    let str = '' + root.val;
+    function dfs(node) {
+        if (!node) return '';
+        str += '(' + node.val;
+        dfs(node.left);
+        if (node.right && !node.left) str += '()';
+        dfs(node.right);
+        str += ')';
+        return '';
+    }
+    dfs(root.left);
+    if (root.right && !root.left) str += '()';
+    dfs(root.right);
+    return str;
 };
