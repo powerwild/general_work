@@ -1578,23 +1578,28 @@ function findRemainingBalls(direction, strength) {
 // };
 
 
-var averageOfLevels = function(root) {
-    const res = [];
-    const stack = [root];
-    while (stack.length) {
-        let curr = stack.pop();
-        let nodes = 0;
-        let sum = 0;
-        let level = [];
-        while (curr) {
-            if (curr.left) level.push(curr.left);
-            if (curr.right) level.push(curr.right);
-            ++nodes;
-            sum += curr.val;
-            curr = stack.pop()
-        }
-        res.push(sum / nodes);
-        stack.push(...level);
-    }
-    return res;
+// var averageOfLevels = function(root) {
+//     const res = [];
+//     const stack = [root];
+//     while (stack.length) {
+//         let curr = stack.pop();
+//         let nodes = 0;
+//         let sum = 0;
+//         let level = [];
+//         while (curr) {
+//             if (curr.left) level.push(curr.left);
+//             if (curr.right) level.push(curr.right);
+//             ++nodes;
+//             sum += curr.val;
+//             curr = stack.pop()
+//         }
+//         res.push(sum / nodes);
+//         stack.push(...level);
+//     }
+//     return res;
+// };
+
+
+var findMaxAverage = function(nums, k) {
+
 };
