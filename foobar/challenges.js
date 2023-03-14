@@ -1197,11 +1197,16 @@
 // }
 
 
-function countStudents(height) {
-    const req = height.slice().sort((a, b) => a - b);
-    let wrong = 0;
-    for (let i = 0; i < height.length; ++i) {
-        if (height[i] !== req[i]) ++wrong;
-    }
-    return wrong;
+// function countStudents(height) {
+//     const req = height.slice().sort((a, b) => a - b);
+//     let wrong = 0;
+//     for (let i = 0; i < height.length; ++i) {
+//         if (height[i] !== req[i]) ++wrong;
+//     }
+//     return wrong;
+// }
+
+
+function majorityElement(nums) {
+
 }
