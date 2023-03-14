@@ -1570,9 +1570,14 @@ function findRemainingBalls(direction, strength) {
 // };
 
 
-var maximumProduct = function(nums) {
-    nums.sort((a, b) => a - b);
-    const last = nums.length - 1;
-    //three largest numbers vs. largest and two smallest negative numbers
-    return Math.max(nums[last]*nums[last-1]*nums[last-2], nums[last]*nums[0]*nums[1]);
+// var maximumProduct = function(nums) {
+//     nums.sort((a, b) => a - b);
+//     const last = nums.length - 1;
+//     //three largest numbers vs. largest and two smallest negative numbers
+//     return Math.max(nums[last]*nums[last-1]*nums[last-2], nums[last]*nums[0]*nums[1]);
+// };
+
+
+var averageOfLevels = function(root) {
+
 };
