@@ -1614,5 +1614,13 @@ function findRemainingBalls(direction, strength) {
 
 
 var findErrorNums = function(nums) {
-    
+    const res = [];
+    const numbers = new Set();
+    for (let i = 1; i <= nums.length; ++i) numbers.add(i);
+    for (let num of nums) {
+        if (numbers.has(num)) numbers.delete(num);
+        else res.push(num);
+    }
+    res.push(...numbers);
+    return res;
 };
