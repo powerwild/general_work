@@ -1626,13 +1626,18 @@ function findRemainingBalls(direction, strength) {
 // };
 
 
-var findTarget = function(root, k) {
-    const res = new Set();
-    function dfs(node) {
-        if (!node) return false;
-        if (res.has(node.val)) return true;
-        res.add(k - node.val);
-        return dfs(node.left) || dfs(node.right);
-    }
-    return dfs(root);
+// var findTarget = function(root, k) {
+//     const res = new Set();
+//     function dfs(node) {
+//         if (!node) return false;
+//         if (res.has(node.val)) return true;
+//         res.add(k - node.val);
+//         return dfs(node.left) || dfs(node.right);
+//     }
+//     return dfs(root);
+// };
+
+
+var judgeCircle = function(moves) {
+
 };
