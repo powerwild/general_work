@@ -1686,22 +1686,27 @@ function findRemainingBalls(direction, strength) {
 // };
 
 
-var findSecondMinimumValue = function(root) {
-    let small;
-    let smaller;
-    function dfs(n) {
-        if (!n) return;
-        if (!smaller) {
-            smaller = n.val;
-        } else if (n.val < smaller) {
-            small = smaller;
-            smaller = n.val;
-        } else if (n.val !== smaller) {
-            if (!small || n.val < small) small = n.val;
-        }
-        dfs(n.left);
-        dfs(n.right);
-    }
-    dfs(root);
-    return small ? small : -1;
+// var findSecondMinimumValue = function(root) {
+//     let small;
+//     let smaller;
+//     function dfs(n) {
+//         if (!n) return;
+//         if (!smaller) {
+//             smaller = n.val;
+//         } else if (n.val < smaller) {
+//             small = smaller;
+//             smaller = n.val;
+//         } else if (n.val !== smaller) {
+//             if (!small || n.val < small) small = n.val;
+//         }
+//         dfs(n.left);
+//         dfs(n.right);
+//     }
+//     dfs(root);
+//     return small ? small : -1;
+// };
+
+
+var findLengthOfLCIS = function(nums) {
+
 };
