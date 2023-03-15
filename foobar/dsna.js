@@ -1661,26 +1661,31 @@ function findRemainingBalls(direction, strength) {
 // };
 
 
-var imageSmoother = function(img) {
-    const res = [];
-    const matLen = img.length;
-    const nestLen = img[0].length;
-    for (let i = 0; i < matLen; ++i) {
-        const level = [];
-        for (let j = 0; j < nestLen; ++j) {
-            let num = img[i][j];
-            let nums = 1;
+// var imageSmoother = function(img) {
+//     const res = [];
+//     const matLen = img.length;
+//     const nestLen = img[0].length;
+//     for (let i = 0; i < matLen; ++i) {
+//         const level = [];
+//         for (let j = 0; j < nestLen; ++j) {
+//             let num = img[i][j];
+//             let nums = 1;
 
-            for (let [x, y] of [[-1,0],[0,-1],[-1,-1],[-1,1],[1,-1],[0,1],[1,0],[1,1]]) {
-                const [r, c] = [i+x, j+y];
-                if (r >= 0 && r < matLen && c >= 0 && c < nestLen) {
-                    num += img[r][c];
-                    ++nums;
-                }
-            }
-            level.push(Math.floor(num / nums));
-        }
-        res.push(level);
-    }
-    return res;
+//             for (let [x, y] of [[-1,0],[0,-1],[-1,-1],[-1,1],[1,-1],[0,1],[1,0],[1,1]]) {
+//                 const [r, c] = [i+x, j+y];
+//                 if (r >= 0 && r < matLen && c >= 0 && c < nestLen) {
+//                     num += img[r][c];
+//                     ++nums;
+//                 }
+//             }
+//             level.push(Math.floor(num / nums));
+//         }
+//         res.push(level);
+//     }
+//     return res;
+// };
+
+
+var findSecondMinimumValue = function(root) {
+
 };
