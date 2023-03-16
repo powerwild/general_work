@@ -1766,18 +1766,35 @@ function findRemainingBalls(direction, strength) {
 // };
 
 
-var MyHashSet = function() {
-    this.set = new Set();
+// var MyHashSet = function() {
+//     this.set = new Set();
+// };
+
+// MyHashSet.prototype.add = function(key) {
+//     this.set.add(key);
+// };
+
+// MyHashSet.prototype.remove = function(key) {
+//     this.set.delete(key);
+// };
+
+// MyHashSet.prototype.contains = function(key) {
+//     return this.set.has(key);
+// };
+
+
+var MyHashMap = function() {
+
 };
 
-MyHashSet.prototype.add = function(key) {
-    this.set.add(key);
+MyHashMap.prototype.put = function(key, value) {
+
 };
 
-MyHashSet.prototype.remove = function(key) {
-    this.set.delete(key);
+MyHashMap.prototype.get = function(key) {
+
 };
 
-MyHashSet.prototype.contains = function(key) {
-    return this.set.has(key);
+MyHashMap.prototype.remove = function(key) {
+
 };
