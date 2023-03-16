@@ -1719,29 +1719,34 @@ function findRemainingBalls(direction, strength) {
 // };
 
 
-var calPoints = function(operations) {
-    const res = [];
-    let sum = 0;
-    function addAndPush(val) {
-        res.push(val);
-        sum += val;
-    }
-    for (let op of operations) {
-        const last = res.length - 1;
-        let curr;
-        if (op === '+') {
-            curr = res[last] + res[last-1];
-            addAndPush(curr);
-        } else if (op === 'D') {
-            curr = res[last] * 2;
-            addAndPush(curr);
-        } else if (op === 'C') {
-            const removed = res.pop();
-            sum -= removed;
-        } else {
-            curr = op - '0'
-            addAndPush(curr);
-        }
-    }
-    return sum;
+// var calPoints = function(operations) {
+//     const res = [];
+//     let sum = 0;
+//     function addAndPush(val) {
+//         res.push(val);
+//         sum += val;
+//     }
+//     for (let op of operations) {
+//         const last = res.length - 1;
+//         let curr;
+//         if (op === '+') {
+//             curr = res[last] + res[last-1];
+//             addAndPush(curr);
+//         } else if (op === 'D') {
+//             curr = res[last] * 2;
+//             addAndPush(curr);
+//         } else if (op === 'C') {
+//             const removed = res.pop();
+//             sum -= removed;
+//         } else {
+//             curr = op - '0'
+//             addAndPush(curr);
+//         }
+//     }
+//     return sum;
+// };
+
+
+var hasAlternatingBits = function(n) {
+    
 };
