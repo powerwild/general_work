@@ -1756,11 +1756,28 @@ function findRemainingBalls(direction, strength) {
 // };
 
 
-var searchBST = function(root, val) {
-    function dfs(n) {
-        if (!n) return null;
-        if (n.val === val) return n;
-        return dfs(n.left) || dfs(n.right);
-    }
-    return dfs(root);
+// var searchBST = function(root, val) {
+//     function dfs(n) {
+//         if (!n) return null;
+//         if (n.val === val) return n;
+//         return dfs(n.left) || dfs(n.right);
+//     }
+//     return dfs(root);
+// };
+
+
+var MyHashSet = function() {
+
+};
+
+MyHashSet.prototype.add = function(key) {
+
+};
+
+MyHashSet.prototype.remove = function(key) {
+
+};
+
+MyHashSet.prototype.contains = function(key) {
+
 };
