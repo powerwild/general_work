@@ -1767,17 +1767,17 @@ function findRemainingBalls(direction, strength) {
 
 
 var MyHashSet = function() {
-
+    this.set = new Set();
 };
 
 MyHashSet.prototype.add = function(key) {
-
+    this.set.add(key);
 };
 
 MyHashSet.prototype.remove = function(key) {
-
+    this.set.delete(key);
 };
 
 MyHashSet.prototype.contains = function(key) {
-
+    return this.set.has(key);
 };
