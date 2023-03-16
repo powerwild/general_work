@@ -1707,13 +1707,18 @@ function findRemainingBalls(direction, strength) {
 // };
 
 
-var findLengthOfLCIS = function(nums) {
-    let max = 1;
-    let seq = 1;
-    for (let i = 1; i < nums.length; ++i) {
-        if (nums[i] > nums[i-1]) ++seq;
-        else seq = 1;
-        max = Math.max(max, seq);
-    }
-    return max;
+// var findLengthOfLCIS = function(nums) {
+//     let max = 1;
+//     let seq = 1;
+//     for (let i = 1; i < nums.length; ++i) {
+//         if (nums[i] > nums[i-1]) ++seq;
+//         else seq = 1;
+//         max = Math.max(max, seq);
+//     }
+//     return max;
+// };
+
+
+var calPoints = function(operations) {
+
 };
