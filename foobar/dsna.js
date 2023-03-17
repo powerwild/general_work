@@ -1878,5 +1878,11 @@ function findRemainingBalls(direction, strength) {
 
 
 var numJewelsInStones = function(jewels, stones) {
-    
+    const jewelMap = {};
+    for (let jewel of jewels) jewelMap[jewel] = 1;
+    let count = 0;
+    for (let stone of stones) {
+        count += jewelMap[stone] ?? 0;
+    }
+    return count;
 };
