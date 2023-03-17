@@ -1852,5 +1852,16 @@ function findRemainingBalls(direction, strength) {
 
 
 var dominantIndex = function(nums) {
-
+    let largest = -Infinity;
+    let lIndex  = -1;
+    let large = -Infinity;
+    for (let i = 0; i < nums.length; ++i) {
+        const num = nums[i];
+        if (num > largest) {
+            large = largest;
+            largest = num;
+            lIndex = i;
+        } else if (num > large) large = num;
+    }
+    return largest >= large*2 ? lIndex : -1;
 };
