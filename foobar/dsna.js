@@ -1824,20 +1824,25 @@ function findRemainingBalls(direction, strength) {
 // };
 
 
-function isSelfDividing(n) {
-    let curr = n;
-    while (curr > 0) {
-        let remain = curr % 10;
-        if (n % remain !== 0) return false;
-        curr = Math.floor(curr / 10);
-    }
-    return true;
-}
-var selfDividingNumbers = function(left, right) {
-    const res = [];
-    while (left <= right) {
-        if (isSelfDividing(left)) res.push(left);
-        ++left;
-    }
-    return res;
+// function isSelfDividing(n) {
+//     let curr = n;
+//     while (curr > 0) {
+//         let remain = curr % 10;
+//         if (n % remain !== 0) return false;
+//         curr = Math.floor(curr / 10);
+//     }
+//     return true;
+// }
+// var selfDividingNumbers = function(left, right) {
+//     const res = [];
+//     while (left <= right) {
+//         if (isSelfDividing(left)) res.push(left);
+//         ++left;
+//     }
+//     return res;
+// };
+
+
+var nextGreatestLetter = function(letters, target) {
+    
 };
