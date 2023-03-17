@@ -1800,13 +1800,18 @@ function findRemainingBalls(direction, strength) {
 // };
 
 
-var toLowerCase = function(s) {
-    let res = '';
-    for (let char of s) {
-        const code = char.charCodeAt();
-        if (code < 65 || code > 90) {
-            res += char;
-        } else res += String.fromCharCode(code + 32);
-    }
-    return res;
+// var toLowerCase = function(s) {
+//     let res = '';
+//     for (let char of s) {
+//         const code = char.charCodeAt();
+//         if (code < 65 || code > 90) {
+//             res += char;
+//         } else res += String.fromCharCode(code + 32);
+//     }
+//     return res;
+// };
+
+
+var isOneBitCharacter = function(bits) {
+
 };
