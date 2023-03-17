@@ -1812,13 +1812,18 @@ function findRemainingBalls(direction, strength) {
 // };
 
 
-var isOneBitCharacter = function(bits) {
-    const len = bits.length;
-    let curr = '';
-    for (let i = 0; i < len; ++i) {
-        curr += bits[i];
-        if (i === len - 1 && curr !== '0') return false;
-        if (curr === '0' || curr === '10' || curr === '11') curr = '';
-    }
-    return true;
+// var isOneBitCharacter = function(bits) {
+//     const len = bits.length;
+//     let curr = '';
+//     for (let i = 0; i < len; ++i) {
+//         curr += bits[i];
+//         if (i === len - 1 && curr !== '0') return false;
+//         if (curr === '0' || curr === '10' || curr === '11') curr = '';
+//     }
+//     return true;
+// };
+
+
+var selfDividingNumbers = function(left, right) {
+
 };
