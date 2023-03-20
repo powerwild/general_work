@@ -1887,29 +1887,35 @@ function findRemainingBalls(direction, strength) {
 //     return count;
 // };
 
-function toOBJ(str) {
-    const obj = {};
-    for (let char of str) {
-        const code = char.charCodeAt();
-        if ((code >= 65 && code <= 90) || (code >= 97 && code <= 122)) {
-            char = char.toLowerCase();
-            obj[char] = (obj[char] ?? 0) + 1;
-        }
-    }
-    return obj;
-};
-function compareOBJS(need, have) {
-    for (let k in need) {
-        if (!have[k] || have[k] < need[k]) return false;
-    }
-    return true;
-}
-var shortestCompletingWord = function(licensePlate, words) {
-    const needed = toOBJ(licensePlate);
-    let res;
-    for (let word of words) {
-        const curr = toOBJ(word);
-        if (compareOBJS(needed, curr) && (!res || word.length < res.length)) res = word;
-    }
-    return res;
+
+// function toOBJ(str) {
+//     const obj = {};
+//     for (let char of str) {
+//         const code = char.charCodeAt();
+//         if ((code >= 65 && code <= 90) || (code >= 97 && code <= 122)) {
+//             char = char.toLowerCase();
+//             obj[char] = (obj[char] ?? 0) + 1;
+//         }
+//     }
+//     return obj;
+// };
+// function compareOBJS(need, have) {
+//     for (let k in need) {
+//         if (!have[k] || have[k] < need[k]) return false;
+//     }
+//     return true;
+// }
+// var shortestCompletingWord = function(licensePlate, words) {
+//     const needed = toOBJ(licensePlate);
+//     let res;
+//     for (let word of words) {
+//         const curr = toOBJ(word);
+//         if (compareOBJS(needed, curr) && (!res || word.length < res.length)) res = word;
+//     }
+//     return res;
+// };
+
+
+var rotateString = function(s, goal) {
+
 };
