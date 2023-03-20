@@ -1927,15 +1927,20 @@ function findRemainingBalls(direction, strength) {
 // };
 
 
-var uniqueMorseRepresentations = function(words) {
-    const morseCodes = [".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."];
-    const variations = new Set();
-    for (let word of words) {
-        let morse = '';
-        for (let char of word) {
-            morse += morseCodes[char.charCodeAt()-97];
-        }
-        variations.add(morse);
-    }
-    return variations.size;
+// var uniqueMorseRepresentations = function(words) {
+//     const morseCodes = [".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."];
+//     const variations = new Set();
+//     for (let word of words) {
+//         let morse = '';
+//         for (let char of word) {
+//             morse += morseCodes[char.charCodeAt()-97];
+//         }
+//         variations.add(morse);
+//     }
+//     return variations.size;
+// };
+
+
+var numberOfLines = function(widths, s) {
+
 };
