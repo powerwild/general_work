@@ -1917,5 +1917,11 @@ function findRemainingBalls(direction, strength) {
 
 
 var rotateString = function(s, goal) {
-
+    let shift = '';
+    for (let i = 0; i < s.length; ++i) {
+        const char = s[i];
+        if (char === goal[0] && s.slice(i) + shift === goal) return true;
+        shift += char;
+    }
+    return false;
 };
