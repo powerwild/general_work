@@ -1942,5 +1942,16 @@ function findRemainingBalls(direction, strength) {
 
 
 var numberOfLines = function(widths, s) {
-
+    const res = [1, 0];
+    let curr = 100;
+    for (let char of s) {
+        const width = widths[char.charCodeAt()-97];
+        if (width > curr) {
+            ++res[0];
+            curr = 100;
+        }
+        curr -= width;
+    }
+    res[1] = 100 - curr;
+    return res;
 };
