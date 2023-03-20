@@ -1916,12 +1916,26 @@ function findRemainingBalls(direction, strength) {
 // };
 
 
-var rotateString = function(s, goal) {
-    let shift = '';
-    for (let i = 0; i < s.length; ++i) {
-        const char = s[i];
-        if (char === goal[0] && s.slice(i) + shift === goal) return true;
-        shift += char;
+// var rotateString = function(s, goal) {
+//     let shift = '';
+//     for (let i = 0; i < s.length; ++i) {
+//         const char = s[i];
+//         if (char === goal[0] && s.slice(i) + shift === goal) return true;
+//         shift += char;
+//     }
+//     return false;
+// };
+
+
+var uniqueMorseRepresentations = function(words) {
+    const morseCodes = [".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."];
+    const variations = new Set();
+    for (let word of words) {
+        let morse = '';
+        for (let char of word) {
+            morse += morseCodes[char.charCodeAt()-97];
+        }
+        variations.add(morse);
     }
-    return false;
+    return variations.size;
 };
