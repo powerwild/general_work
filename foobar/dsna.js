@@ -1990,18 +1990,23 @@ function findRemainingBalls(direction, strength) {
 // };
 
 
-var toGoatLatin = function(sentence) {
-    sentence = sentence.split(' ');
-    const vowels = new Set('aeiouAEIOU');
-    let ending = 'a';
-    let res = '';
-    for (let i = 0; i < sentence.length; ++i) {
-        const word = sentence[i];
-        if (i > 0) res += ' ';
-        if (vowels.has(word[0])) {
-            res += word + 'ma' + ending;
-        } else res += word.slice(1, word.length) + word[0] + 'ma' + ending;
-        ending += 'a';
-    }
-    return res;
+// var toGoatLatin = function(sentence) {
+//     sentence = sentence.split(' ');
+//     const vowels = new Set('aeiouAEIOU');
+//     let ending = 'a';
+//     let res = '';
+//     for (let i = 0; i < sentence.length; ++i) {
+//         const word = sentence[i];
+//         if (i > 0) res += ' ';
+//         if (vowels.has(word[0])) {
+//             res += word + 'ma' + ending;
+//         } else res += word.slice(1, word.length) + word[0] + 'ma' + ending;
+//         ending += 'a';
+//     }
+//     return res;
+// };
+
+
+var largeGroupPositions = function(s) {
+
 };
