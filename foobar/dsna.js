@@ -1974,17 +1974,22 @@ function findRemainingBalls(direction, strength) {
 // };
 
 
-var mostCommonWord = function(paragraph, banned) {
-    banned = new Set(banned);
-    paragraph = paragraph.toLowerCase().split(/\W+/);
-    const words = {};
-    let mostCommon;
-    for (let word of paragraph) {
-        word = word.toLowerCase();
-        if (!banned.has(word)) {
-            words[word] = (words[word] ?? 0) + 1;
-            if (!mostCommon || words[word] > words[mostCommon]) mostCommon = word;
-        }
-    }
-    return mostCommon;
+// var mostCommonWord = function(paragraph, banned) {
+//     banned = new Set(banned);
+//     paragraph = paragraph.toLowerCase().split(/\W+/);
+//     const words = {};
+//     let mostCommon;
+//     for (let word of paragraph) {
+//         word = word.toLowerCase();
+//         if (!banned.has(word)) {
+//             words[word] = (words[word] ?? 0) + 1;
+//             if (!mostCommon || words[word] > words[mostCommon]) mostCommon = word;
+//         }
+//     }
+//     return mostCommon;
+// };
+
+
+var toGoatLatin = function(sentence) {
+
 };
