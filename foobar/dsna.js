@@ -1958,5 +1958,17 @@ function findRemainingBalls(direction, strength) {
 
 
 var minDiffInBST = function(root) {
-
+    const vals = [];
+    function traverse(n) {
+        if (!n) return;
+        traverse(n.left);
+        vals.push(n.val);
+        traverse(n.right);
+    }
+    traverse(root);
+    let min = Infinity;
+    for (let i = 1; i < vals.length; ++i) {
+        min = Math.min(min, vals[i] - vals[i-1]);
+    }
+    return min;
 };
