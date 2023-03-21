@@ -2008,5 +2008,18 @@ function findRemainingBalls(direction, strength) {
 
 
 var largeGroupPositions = function(s) {
-
+    const res = [];
+    const len = s.length;
+    for (let i = 0; i < len; ++i) {
+        for (let j = i+1; j < len; ++j) {
+            if (s[j] !== s[j-1]) {
+                if (j - i >= 3) res.push([i, j-1]);
+                i = j;
+            } else if (j === len-1 && s[j] === s[j-1] && j - i + 1 >=3) {
+                res.push([i, j]);
+                i = j;
+                }
+        }
+    }
+    return res;
 };
