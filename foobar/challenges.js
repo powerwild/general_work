@@ -1207,7 +1207,12 @@
 // }
 
 
-function majorityElement(nums) {
-    nums.sort((a, b) => a - b);
-    return nums[Math.floor(nums.length / 2)];
+// function majorityElement(nums) {
+//     nums.sort((a, b) => a - b);
+//     return nums[Math.floor(nums.length / 2)];
+// }
+
+
+function smallest_not_included(A) {
+
 }
