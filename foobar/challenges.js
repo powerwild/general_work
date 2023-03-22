@@ -1213,9 +1213,14 @@
 // }
 
 
-function smallest_not_included(A) {
-    const nums = new Set(A);
-    for (let i = 1;;++i) {
-        if (!nums.has(i)) return i;
-    }
+// function smallest_not_included(A) {
+//     const nums = new Set(A);
+//     for (let i = 1;;++i) {
+//         if (!nums.has(i)) return i;
+//     }
+// }
+
+
+function merge_intervals(intervals) {
+
 }
