@@ -2069,5 +2069,17 @@ function findRemainingBalls(direction, strength) {
 
 
 var transpose = function(matrix) {
-
+    const newCol = matrix.length;
+    const res = [];
+    let level = [];
+    for (let j = 0; j < matrix[0].length; ++j) {
+        for (let i = 0; i < newCol; ++i) {
+            level.push(matrix[i][j]);
+            if (level.length === newCol) {
+                res.push(level);
+                level = [];
+            }
+        }
+    }
+    return res;
 };
