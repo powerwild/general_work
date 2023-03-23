@@ -2047,22 +2047,27 @@ function findRemainingBalls(direction, strength) {
 // };
 
 
-var lemonadeChange = function(bills) {
-    let fives = 0;
-    let tens = 0;
-    for (let bill of bills) {
-        let currBill = bill;
-        while (currBill > 5) {
-            if (currBill > 10 && tens > 0) {
-                currBill -= 10;
-                --tens;
-            } else if (currBill > 5 && fives > 0) {
-                currBill -= 5;
-                --fives;
-            } else return false;
-        }
-        if (bill === 10) ++tens;
-        if (bill === 5) ++fives;
-    }
-    return true;
+// var lemonadeChange = function(bills) {
+//     let fives = 0;
+//     let tens = 0;
+//     for (let bill of bills) {
+//         let currBill = bill;
+//         while (currBill > 5) {
+//             if (currBill > 10 && tens > 0) {
+//                 currBill -= 10;
+//                 --tens;
+//             } else if (currBill > 5 && fives > 0) {
+//                 currBill -= 5;
+//                 --fives;
+//             } else return false;
+//         }
+//         if (bill === 10) ++tens;
+//         if (bill === 5) ++fives;
+//     }
+//     return true;
+// };
+
+
+var transpose = function(matrix) {
+
 };
