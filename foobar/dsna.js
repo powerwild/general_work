@@ -2086,5 +2086,14 @@ function findRemainingBalls(direction, strength) {
 
 
 var isMonotonic = function(nums) {
-
+    let asc = true;
+    let desc = true;
+    for (let i = 1; i < nums.length; ++i) {
+        const curr = nums[i];
+        const prev = nums[i-1];
+        if (curr === prev) continue;
+        if (curr < prev && asc) asc = false;
+        if (curr > prev && desc) desc = false;
+    }
+    return asc || desc;
 };
