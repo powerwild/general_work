@@ -2024,24 +2024,29 @@ function findRemainingBalls(direction, strength) {
 //     return res;
 // };
 
-function flipOneZero(n) {
-    if (n === 1) return 0;
-    return 1;
-}
-var flipAndInvertImage = function(image) {
-    for (let i = 0; i < image.length; ++i) {
-        let l = 0;
-        let r = image[i].length - 1;
-        while (l <= r) {
-            if (l === r) image[i][l] = flipOneZero(image[i][l]);
-            else {
-                const temp = flipOneZero(image[i][l]);
-                image[i][l] = flipOneZero(image[i][r]);
-                image[i][r] = temp;
-            }
-            ++l;
-            --r;
-        }
-    }
-    return image;
+// function flipOneZero(n) {
+//     if (n === 1) return 0;
+//     return 1;
+// }
+// var flipAndInvertImage = function(image) {
+//     for (let i = 0; i < image.length; ++i) {
+//         let l = 0;
+//         let r = image[i].length - 1;
+//         while (l <= r) {
+//             if (l === r) image[i][l] = flipOneZero(image[i][l]);
+//             else {
+//                 const temp = flipOneZero(image[i][l]);
+//                 image[i][l] = flipOneZero(image[i][r]);
+//                 image[i][r] = temp;
+//             }
+//             ++l;
+//             --r;
+//         }
+//     }
+//     return image;
+// };
+
+
+var lemonadeChange = function(bills) {
+
 };
