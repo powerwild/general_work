@@ -2170,5 +2170,7 @@ function findRemainingBalls(direction, strength) {
 
 
 var mostWordsFound = function(sentences) {
-
+    let max = 0;
+    for (let sen of sentences) max = Math.max(max, sen.split(' ').length);
+    return max;
 };
