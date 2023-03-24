@@ -2122,9 +2122,14 @@ function findRemainingBalls(direction, strength) {
 // };
 
 
-var finalValueAfterOperations = function(operations) {
-    return operations.reduce((accum, el) => {
-        if (el[1] === '+') return accum + 1;
-        else return accum - 1;
-    }, 0);
+// var finalValueAfterOperations = function(operations) {
+//     return operations.reduce((accum, el) => {
+//         if (el[1] === '+') return accum + 1;
+//         else return accum - 1;
+//     }, 0);
+// };
+
+
+var leftRigthDifference = function(nums) {
+
 };
