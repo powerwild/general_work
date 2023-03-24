@@ -2144,15 +2144,20 @@ function findRemainingBalls(direction, strength) {
 // };
 
 
-var numIdenticalPairs = function(nums) {
-    let pairs = 0;
-    const map = {};
-    for (let num of nums) {
-        const curr = map[num];
-        if (curr) {
-            pairs += curr;
-            ++map[num];
-        } else map[num] = 1;
-    }
-    return pairs;
+// var numIdenticalPairs = function(nums) {
+//     let pairs = 0;
+//     const map = {};
+//     for (let num of nums) {
+//         const curr = map[num];
+//         if (curr) {
+//             pairs += curr;
+//             ++map[num];
+//         } else map[num] = 1;
+//     }
+//     return pairs;
+// };
+
+
+var kidsWithCandies = function(candies, extraCandies) {
+
 };
