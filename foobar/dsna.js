@@ -2111,12 +2111,17 @@ function findRemainingBalls(direction, strength) {
 // };
 
 
-var shuffle = function(nums, n) {
-    let j = n;
-    const res = [];
-    for (let i = 1; i < n; ++i, ++j) {
-        res.push(nums[i]);
-        res.push(nums[j]);
-    }
-    return res;
+// var shuffle = function(nums, n) {
+//     let j = n;
+//     const res = [];
+//     for (let i = 1; i < n; ++i, ++j) {
+//         res.push(nums[i]);
+//         res.push(nums[j]);
+//     }
+//     return res;
+// };
+
+
+var finalValueAfterOperations = function(operations) {
+
 };
