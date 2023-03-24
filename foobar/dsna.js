@@ -2169,8 +2169,15 @@ function findRemainingBalls(direction, strength) {
 // };
 
 
-var mostWordsFound = function(sentences) {
-    let max = 0;
-    for (let sen of sentences) max = Math.max(max, sen.split(' ').length);
-    return max;
+// var mostWordsFound = function(sentences) {
+//     let max = 0;
+//     for (let sen of sentences) max = Math.max(max, sen.split(' ').length);
+//     return max;
+// };
+
+
+var smallerNumbersThanCurrent = function(nums) {
+    const sorted = nums.slice().sort((a, b) => a - b);
+    for (let i = 0; i < nums.length; ++i) nums[i] = sorted.indexOf(nums[i]);
+    return nums;
 };
