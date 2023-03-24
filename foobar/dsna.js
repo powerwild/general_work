@@ -2158,12 +2158,17 @@ function findRemainingBalls(direction, strength) {
 // };
 
 
-var kidsWithCandies = function(candies, extraCandies) {
-    const biggest = Math.max(...candies);
-    for (let i = 0; i < candies.length; ++i) {
-        const newCount = candies[i] + extraCandies;
-        if (biggest <= newCount) candies[i] = true;
-        else candies[i] = false;
-    }
-    return candies;
+// var kidsWithCandies = function(candies, extraCandies) {
+//     const biggest = Math.max(...candies);
+//     for (let i = 0; i < candies.length; ++i) {
+//         const newCount = candies[i] + extraCandies;
+//         if (biggest <= newCount) candies[i] = true;
+//         else candies[i] = false;
+//     }
+//     return candies;
+// };
+
+
+var mostWordsFound = function(sentences) {
+
 };
