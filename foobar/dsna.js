@@ -2131,5 +2131,14 @@ function findRemainingBalls(direction, strength) {
 
 
 var leftRigthDifference = function(nums) {
-
+    let rSum = nums.reduce((accum, el) => accum + el, 0);
+    let lSum = 0;
+    const res = [];
+    for (let i = 0; i < nums.length; ++i) {
+        const num = nums[i];
+        rSum -= num;
+        res.push(Math.abs(lSum - rSum));
+        lSum += num;
+    }
+    return res;
 };
