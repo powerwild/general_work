@@ -2104,8 +2104,13 @@ function findRemainingBalls(direction, strength) {
 // };
 
 
-var getConcatenation = function(nums) {
-    const len = nums.length;
-    for (let i = 0; i < len; ++i) nums.push(nums[i]);
-    return nums;
+// var getConcatenation = function(nums) {
+//     const len = nums.length;
+//     for (let i = 0; i < len; ++i) nums.push(nums[i]);
+//     return nums;
+// };
+
+
+var shuffle = function(nums, n) {
+
 };
