@@ -2100,5 +2100,5 @@ function findRemainingBalls(direction, strength) {
 
 
 var buildArray = function(nums) {
-
+    return nums.map(el => nums[el]);
 };
