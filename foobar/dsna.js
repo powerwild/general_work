@@ -2215,22 +2215,27 @@ function findRemainingBalls(direction, strength) {
 // };
 
 
-var sortArrayByParityII = function(nums) {
-    const len = nums.length;
-    let even = 0;
-    let odd = 0;
-    while (even < len && odd < len) {
-        while (even < len) {
-            if (nums[even] % 2 === 0 && even % 2 !== 0) break;
-            ++even;
-        }
-        while (odd < len) {
-            if (nums[odd] % 2 !== 0 && odd % 2 === 0) break;
-            ++odd;
-        }
-        if (even < len && odd < len) even < odd ? [nums[even], nums[odd]] = [nums[odd], nums[even]] : [nums[odd], nums[even]] = [nums[even], nums[odd]];
-        ++even;
-        ++odd;
-    }
-    return nums;
+// var sortArrayByParityII = function(nums) {
+//     const len = nums.length;
+//     let even = 0;
+//     let odd = 0;
+//     while (even < len && odd < len) {
+//         while (even < len) {
+//             if (nums[even] % 2 === 0 && even % 2 !== 0) break;
+//             ++even;
+//         }
+//         while (odd < len) {
+//             if (nums[odd] % 2 !== 0 && odd % 2 === 0) break;
+//             ++odd;
+//         }
+//         if (even < len && odd < len) even < odd ? [nums[even], nums[odd]] = [nums[odd], nums[even]] : [nums[odd], nums[even]] = [nums[even], nums[odd]];
+//         ++even;
+//         ++odd;
+//     }
+//     return nums;
+// };
+
+
+var numUniqueEmails = function(emails) {
+    
 };
