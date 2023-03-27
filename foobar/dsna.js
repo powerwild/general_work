@@ -2183,15 +2183,20 @@ function findRemainingBalls(direction, strength) {
 // };
 
 
-var sortArrayByParity = function(nums) {
-    let l = 0;
-    let r = nums.length - 1;
-    while (l < r) {
-        while (nums[l] % 2 === 0 && l < r) ++l;
-        while (nums[r] % 2 !== 0 && l < r) --r;
-        if (l < r) [nums[l], nums[r]] = [nums[r], nums[l]];
-        ++l;
-        --r;
-    }
-    return nums;
+// var sortArrayByParity = function(nums) {
+//     let l = 0;
+//     let r = nums.length - 1;
+//     while (l < r) {
+//         while (nums[l] % 2 === 0 && l < r) ++l;
+//         while (nums[r] % 2 !== 0 && l < r) --r;
+//         if (l < r) [nums[l], nums[r]] = [nums[r], nums[l]];
+//         ++l;
+//         --r;
+//     }
+//     return nums;
+// };
+
+
+var hasGroupsSizeX = function(deck) {
+
 };
