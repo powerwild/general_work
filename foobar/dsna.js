@@ -2176,8 +2176,13 @@ function findRemainingBalls(direction, strength) {
 // };
 
 
-var smallerNumbersThanCurrent = function(nums) {
-    const sorted = nums.slice().sort((a, b) => a - b);
-    for (let i = 0; i < nums.length; ++i) nums[i] = sorted.indexOf(nums[i]);
-    return nums;
+// var smallerNumbersThanCurrent = function(nums) {
+//     const sorted = nums.slice().sort((a, b) => a - b);
+//     for (let i = 0; i < nums.length; ++i) nums[i] = sorted.indexOf(nums[i]);
+//     return nums;
+// };
+
+
+var sortArrayByParity = function(nums) {
+
 };
