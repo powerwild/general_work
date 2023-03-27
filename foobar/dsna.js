@@ -2197,19 +2197,24 @@ function findRemainingBalls(direction, strength) {
 // };
 
 
-var hasGroupsSizeX = function(deck) {
-    const counts = {};
-    for (let num of deck) counts[num] = (counts[num] ?? 0) + 1;
-    const vals = Object.values(counts);
-    function gcd(x, y) {
-        let n1 = x;
-        let n2 = y;
-        while (n2 !== 0) {
-            let div = n1 % n2;
-            n1 = n2;
-            n2 = div;
-        }
-        return n1;
-    }
-    return vals.reduce((accum, el) => gcd(accum, el), vals[0]) > 1;
+// var hasGroupsSizeX = function(deck) {
+//     const counts = {};
+//     for (let num of deck) counts[num] = (counts[num] ?? 0) + 1;
+//     const vals = Object.values(counts);
+//     function gcd(x, y) {
+//         let n1 = x;
+//         let n2 = y;
+//         while (n2 !== 0) {
+//             let div = n1 % n2;
+//             n1 = n2;
+//             n2 = div;
+//         }
+//         return n1;
+//     }
+//     return vals.reduce((accum, el) => gcd(accum, el), vals[0]) > 1;
+// };
+
+
+var sortArrayByParityII = function(nums) {
+
 };
