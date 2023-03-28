@@ -2258,5 +2258,22 @@ function findRemainingBalls(direction, strength) {
 
 
 var leafSimilar = function(root1, root2) {
-
+    function dfs(n, arr=[]) {
+        if (!n) return;
+        const leaf = !n.left && !n.right;
+        if (leaf) arr.push(n.val);
+        if (!leaf) {
+            dfs(n.left, arr);
+            dfs(n.right, arr);
+        }
+        return arr;
+    }
+    const vals1 = dfs(root1);
+    const vals2 = dfs(root2);
+    const len = vals1.length;
+    if (len !== vals2.length) return false;
+    for (let i = 0; i < len; ++i) {
+        if (vals1[i] !== vals2[i]) return false;
+    }
+    return true;
 };
