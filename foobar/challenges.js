@@ -1221,21 +1221,26 @@
 // }
 
 
-function merge_intervals(intervals) {
-    intervals.sort((a, b) => a[0] - b[0]);
-    const res = [];
-    let start = intervals[0][0];
-    let end = intervals[0][1];
-    for (let i = 1; i < intervals.length; ++i) {
-        const [s, e] = intervals[i];
-        if (s <= end) {
-            end = e > end ? e : end;
-        }else {
-            res.push([start, end]);
-            start = s;
-            end = e;
-        }
-    }
-    res.push([start, end]);
-    return res;
+// function merge_intervals(intervals) {
+//     intervals.sort((a, b) => a[0] - b[0]);
+//     const res = [];
+//     let start = intervals[0][0];
+//     let end = intervals[0][1];
+//     for (let i = 1; i < intervals.length; ++i) {
+//         const [s, e] = intervals[i];
+//         if (s <= end) {
+//             end = e > end ? e : end;
+//         }else {
+//             res.push([start, end]);
+//             start = s;
+//             end = e;
+//         }
+//     }
+//     res.push([start, end]);
+//     return res;
+// }
+
+
+function insert_interval(intervals, newInterval) {
+
 }
