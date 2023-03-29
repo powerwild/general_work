@@ -1241,6 +1241,4 @@
 // }
 
 
-function insert_interval(intervals, newInterval) {
 
-}
