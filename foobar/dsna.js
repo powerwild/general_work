@@ -2306,5 +2306,11 @@ function findRemainingBalls(direction, strength) {
 
 
 var validMountainArray = function(arr) {
-
+    const len = arr.length;
+    if (len < 3) return false;
+    let i = 0;
+    while (i < len-1 && arr[i] < arr[i+1]) ++i;
+    if (i === len-1 || i === 0) return false;
+    while (i < len-1 && arr[i] > arr[i+1]) ++i;
+    return i === len-1;
 };
