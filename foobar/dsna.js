@@ -2278,7 +2278,27 @@ function findRemainingBalls(direction, strength) {
 //     return true;
 // };
 
-
+function isLetter(char) {
+    const code = char.charCodeAt();
+    if ((code >= 65 && code <= 90) || (code >= 97 && code <= 122)) return true;
+    return false;
+}
 var reverseOnlyLetters = function(s) {
-
+    s = s.split('');
+    let l = 0;
+    let r = s.length - 1;
+    while (l < r) {
+        const lChar = s[l];
+        const lIsL = isLetter(lChar);
+        const rChar = s[r];
+        const rIsL = isLetter(rChar);
+        if (lIsL && rIsL) {
+            [s[l], s[r]] = [s[r], s[l]];
+            ++l;
+            --r;
+        }
+        if (!lIsL) ++l;
+        if (!rIsL) --r;
+    }
+    return s.join('');
 };
