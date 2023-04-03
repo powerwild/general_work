@@ -2351,6 +2351,25 @@ function findRemainingBalls(direction, strength) {
 // };
 
 
+function safeInt(num) {
+    const max = Math.pow(2, 31) - 1;
+    const min = -Math.pow(2, 31);
+    return Math.max(min, Math.min(max, num));
+}
 var divide = function(dividend, divisor) {
-
+    const neg = (dividend < 0 && divisor < 0) || (dividend > 0 && divisor > 0) ? 1 : -1;
+    dividend = Math.abs(dividend);
+    divisor = Math.abs(divisor);
+    let quotient = 0;
+    while (dividend >= divisor) {
+        let val = divisor;
+        let mul = 1;
+        while (val + val <= dividend) {
+            val += val;
+            mul += mul;
+        }
+        dividend -= val;
+        quotient += mul;
+    }
+    return safeInt(quotient*neg);
 };
