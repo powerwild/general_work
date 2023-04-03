@@ -2317,5 +2317,9 @@ function findRemainingBalls(direction, strength) {
 
 
 var myAtoi = function(s) {
-
+    const max = Math.pow(2, 31) - 1;
+    const min = -Math.pow(2, 31);
+    const val = parseInt(s);
+    if (Number.isNaN(val)) return 0;
+    return Math.max(min, Math.min(max, val));
 };
