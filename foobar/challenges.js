@@ -1241,16 +1241,26 @@
 // }
 
 
-function preprocessDate(dates) {
-    const months = {'Jan': '01', 'Feb': '02', 'Mar': '03', 'Apr': '04', 'May': '05', 'Jun': '06', 'Jul': '07', 'Aug': '08', 'Sep': '09', 'Oct': '10', 'Nov': '11', 'Dec': '12'}
-    for (let i = 0; i < dates.length; ++i) {
-        let str = '';
-        let [day, mon, year] = dates[i].split(' ');
-        str += year + '-';
-        str += months[mon];
-        if (day.length < 4) day = '0' + day;
-        str += day.slice(0, day.length - 2);
-        dates[i] = str;
-    }
-    return dates;
+// function preprocessDate(dates) {
+//     const months = {'Jan': '01', 'Feb': '02', 'Mar': '03', 'Apr': '04', 'May': '05', 'Jun': '06', 'Jul': '07', 'Aug': '08', 'Sep': '09', 'Oct': '10', 'Nov': '11', 'Dec': '12'}
+//     for (let i = 0; i < dates.length; ++i) {
+//         let str = '';
+//         let [day, mon, year] = dates[i].split(' ');
+//         str += year + '-';
+//         str += months[mon];
+//         if (day.length < 4) day = '0' + day;
+//         str += day.slice(0, day.length - 2);
+//         dates[i] = str;
+//     }
+//     return dates;
+// }
+
+
+function arrange(sentence) {
+    sentence = sentence.toLowerCase();
+    sentence = sentence.slice(0, sentence.length - 1).split(' ');
+    sentence.sort((a, b) => a.length - b.length);
+    sentence[0] = sentence[0][0].toUpperCase() + sentence[0].slice(1);
+    sentence = sentence.join(' ') + '.';
+    return sentence;
 }
